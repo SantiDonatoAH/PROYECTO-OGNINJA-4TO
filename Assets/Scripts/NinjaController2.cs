@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NinjaController : MonoBehaviour
+public class NinjaController2 : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 10f;
@@ -23,12 +23,12 @@ public class NinjaController : MonoBehaviour
 
     void Move()
     {
-        if (Input.GetKey(KeyCode.A))
+        if (Input.GetKey(KeyCode.J))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             transform.localScale = new Vector3(-1, 1, 1);
         }
-        else if (Input.GetKey(KeyCode.D))
+        else if (Input.GetKey(KeyCode.L))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
             transform.localScale = new Vector3(1, 1, 1);
@@ -41,7 +41,7 @@ public class NinjaController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.I) && isGrounded)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isGrounded = false;
@@ -50,7 +50,7 @@ public class NinjaController : MonoBehaviour
 
     void Crouch()
     {
-        if (Input.GetKey(KeyCode.S))
+        if (Input.GetKey(KeyCode.K))
         {
             //añadir el cambio de sprite
             //por ahora solo detecta la tecla
