@@ -26,12 +26,10 @@ public class NinjaController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-            transform.localScale = new Vector3(-1, 1, 1);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-            transform.localScale = new Vector3(1, 1, 1);
         }
         else
         {
