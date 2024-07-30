@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerBlink : MonoBehaviour
+public class playerBlink2 : MonoBehaviour
 {
     SpriteRenderer renderer;
     Color damageColor = Color.red;
@@ -33,5 +33,4 @@ public class PlayerBlink : MonoBehaviour
     {
         renderer.color = normalColor;
     }
-
 }

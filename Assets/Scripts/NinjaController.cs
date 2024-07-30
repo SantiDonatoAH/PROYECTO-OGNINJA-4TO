@@ -26,10 +26,12 @@ public class NinjaController : MonoBehaviour
         if (Input.GetKey(KeyCode.A))
         {
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+            GetComponent<SpriteRenderer>().flipX = false;
         }
         else if (Input.GetKey(KeyCode.D))
         {
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+            GetComponent<SpriteRenderer>().flipX = true;
         }
         else
         {
