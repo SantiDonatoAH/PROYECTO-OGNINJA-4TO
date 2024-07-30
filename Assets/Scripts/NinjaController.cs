@@ -5,9 +5,9 @@ using UnityEngine;
 public class NinjaController : MonoBehaviour
 {
     public float moveSpeed = 5f;
-    public float jumpForce = 10f;
+    public float jumpForce = 3f;
     private Rigidbody2D rb;
-    private bool isGrounded = true;
+    private bool isGrounded = false;
 
     void Start()
     {
