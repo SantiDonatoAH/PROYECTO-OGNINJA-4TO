@@ -43,7 +43,7 @@ public class NinjaController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && isGrounded)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce * rb.velocity.y);
             isGrounded = false;
         }
     }
@@ -62,6 +62,10 @@ public class NinjaController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -1f);
         }
     }
 }
