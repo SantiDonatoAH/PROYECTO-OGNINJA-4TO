@@ -651,6 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf56606c8802964382c78e504d28bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
 --- !u!61 &1019354699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -935,6 +936,8 @@ MonoBehaviour:
   moveSpeed: 5
   jumpForce: 8
   damageP1: {fileID: 1019354698}
+  "pu\xF1o": {fileID: 4275034187886592611, guid: 33a310232268f604abcb1485cdd3d76d,
+    type: 3}
 --- !u!114 &1412429947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -947,6 +950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa090b5759229642b981b4095e03c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 10
 --- !u!61 &1412429948
 BoxCollider2D:
   m_ObjectHideFlags: 0

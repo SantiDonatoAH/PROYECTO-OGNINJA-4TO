@@ -10,6 +10,7 @@ public class NinjaController2 : MonoBehaviour
     private bool isGrounded = false;
     private bool isTouchingWall = false;
     public PlayerBlink damageP1;
+    public GameObject puño;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
