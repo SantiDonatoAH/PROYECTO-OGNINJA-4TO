@@ -7,6 +7,7 @@ public class PlayerBlink : MonoBehaviour
     SpriteRenderer renderer;
     Color damageColor = Color.red;
     Color normalColor;
+    public int health = 10;
 
     private void Awake()
     {
@@ -20,13 +21,21 @@ public class PlayerBlink : MonoBehaviour
     // Update is called once per frame
     public void Blink()
     {
-        Invoke("EnableBlink", 0);
-        Invoke("DisableBlink", 0.2f);
+        if (health != 0)
+        {
+            Invoke("EnableBlink", 0);
+            Invoke("DisableBlink", 0.2f);
+        }
+        else
+        {
+            Debug.Log("poder");
+        }
     }
 
     void EnableBlink()
     {
         renderer.color = damageColor;
+        health -= 1;
     }
 
     void DisableBlink()

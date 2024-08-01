@@ -7,7 +7,7 @@ public class playerBlink2 : MonoBehaviour
     SpriteRenderer renderer;
     Color damageColor = Color.red;
     Color normalColor;
-
+    public int health = 10;
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -27,6 +27,7 @@ public class playerBlink2 : MonoBehaviour
     void EnableBlink()
     {
         renderer.color = damageColor;
+        health -= 1;
     }
 
     void DisableBlink()
