@@ -30,6 +30,7 @@ public class playerBlink2 : MonoBehaviour
         }
         else
         {
+            Debug.Log("gano el jugador 1");
             SceneManager.LoadScene("GAMEOVER");
         }
     }

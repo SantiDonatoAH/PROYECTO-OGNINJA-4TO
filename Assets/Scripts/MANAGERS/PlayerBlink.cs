@@ -29,6 +29,7 @@ public class PlayerBlink : MonoBehaviour
         }
         else
         {
+            Debug.Log("gano el jugador 2");
             SceneManager.LoadScene("GAMEOVER");
         }
     }
