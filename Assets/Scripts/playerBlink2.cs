@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class playerBlink2 : MonoBehaviour
 {
@@ -20,8 +22,16 @@ public class playerBlink2 : MonoBehaviour
     // Update is called once per frame
     public void Blink()
     {
-        Invoke("EnableBlink", 0);
-        Invoke("DisableBlink", 0.2f);
+
+        if (health != 0)
+        {
+            Invoke("EnableBlink", 0);
+            Invoke("DisableBlink", 0.2f);
+        }
+        else
+        {
+            SceneManager.LoadScene("GAMEOVER");
+        }
     }
 
     void EnableBlink()
