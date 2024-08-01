@@ -24,8 +24,7 @@ public class NinjaController2 : MonoBehaviour
 
     void Move()
     {
-        if (!isTouchingWall || isGrounded)
-        {
+        
             if (Input.GetKey(KeyCode.LeftArrow))
             {
                 rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
@@ -40,12 +39,12 @@ public class NinjaController2 : MonoBehaviour
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
-        }
+        
     }
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded || Input.GetKeyDown(KeyCode.UpArrow) && isTouchingWall)
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isGrounded = false;
@@ -54,7 +53,8 @@ public class NinjaController2 : MonoBehaviour
 
     void Crouch()
     {
-        if (Input.GetKey(KeyCode.K))
+        if (Input.GetKey(KeyCode.DownArrow))
+
         {
             //añadir el cambio de sprite
             //por ahora solo detecta la tecla
