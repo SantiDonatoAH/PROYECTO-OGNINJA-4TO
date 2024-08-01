@@ -10,6 +10,7 @@ public class NinjaController : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded = false;
     private bool isTouchingWall = false;
+    public playerBlink2 damageP2;
 
     void Start()
     {
@@ -21,6 +22,10 @@ public class NinjaController : MonoBehaviour
         Move();
         Jump();
         Crouch();
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            damageP2.Blink();
+        }
     }
 
     void Move()

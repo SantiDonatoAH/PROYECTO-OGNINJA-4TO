@@ -638,6 +638,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 8
+  damageP2: {fileID: 1412429947}
 --- !u!114 &1019354698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -933,7 +934,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 8
-  poder: {fileID: 1019354698}
+  damageP1: {fileID: 1019354698}
 --- !u!114 &1412429947
 MonoBehaviour:
   m_ObjectHideFlags: 0
