@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerBlink : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class PlayerBlink : MonoBehaviour
         }
         else
         {
-            Debug.Log("poder");
+            SceneManager.LoadScene("GAMEOVER");
         }
     }
 
