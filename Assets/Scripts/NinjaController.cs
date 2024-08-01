@@ -25,8 +25,7 @@ public class NinjaController : MonoBehaviour
 
     void Move()
     {
-        if (!isTouchingWall || isGrounded) 
-        {
+       
             if (Input.GetKey(KeyCode.A))
             {
                 rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
@@ -43,7 +42,7 @@ public class NinjaController : MonoBehaviour
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
-        }
+        
     }
 
     void Jump()
