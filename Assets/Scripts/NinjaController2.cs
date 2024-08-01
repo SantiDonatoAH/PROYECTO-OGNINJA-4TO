@@ -8,6 +8,7 @@ public class NinjaController2 : MonoBehaviour
     public float jumpForce = 3f;
     private Rigidbody2D rb;
     private bool isGrounded = false;
+    private bool isTouchingWall = false;
 
     void Start()
     {
@@ -23,19 +24,22 @@ public class NinjaController2 : MonoBehaviour
 
     void Move()
     {
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (!isTouchingWall || isGrounded)
         {
-            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-            GetComponent<SpriteRenderer>().flipX = false;
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-            GetComponent<SpriteRenderer>().flipX = true;
-        }
-        else
-        {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            if (Input.GetKey(KeyCode.LeftArrow))
+            {
+                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+                GetComponent<SpriteRenderer>().flipX = false;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+                GetComponent<SpriteRenderer>().flipX = true;
+            }
+            else
+            {
+                rb.velocity = new Vector2(0, rb.velocity.y);
+            }
         }
     }
 
@@ -62,6 +66,21 @@ public class NinjaController2 : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            // Si colisiona con una pared, anula la velocidad horizontal
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            isTouchingWall = true;
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isTouchingWall = false;
         }
     }
 }
