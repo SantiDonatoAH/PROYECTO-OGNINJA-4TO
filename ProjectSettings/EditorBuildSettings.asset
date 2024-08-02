@@ -11,13 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GAMEOVER.unity
     guid: cf9da3a15a3af8c429b86c8497ad00b9
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/SEGUNDO.unity
     guid: e56218d4661ef2f48be63acc79f82b53
-  - enabled: 0
-    path: Assets/Scenes/TERCERO.unity
-    guid: b61bfd83e9d821d46aee206a4535fc79
-  - enabled: 1
-    path: Assets/Scenes/INICIO.unity
-    guid: e3f07dcec80bd7340b0b99f3b041dffb
   m_configObjects: {}
