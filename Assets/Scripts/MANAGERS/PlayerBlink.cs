@@ -10,7 +10,8 @@ public class PlayerBlink : MonoBehaviour
     Color normalColor;
     public int health = 10;
     private int totalBlinks = 0;
-    public RoundManager rondas;
+    private int totalBlinks2 = 0;
+    private int totalBlinks3 = 0;
 
     private void Awake()
     {
@@ -32,21 +33,41 @@ public class PlayerBlink : MonoBehaviour
         else
         {
             totalBlinks++;
-            if (totalBlinks == 1)
+            if (SceneManager.GetActiveScene().name == "PRINCIPAL")
             {
-                Debug.Log("Gano el jugador 2");
+                if (totalBlinks >= 10)
+                {
+                    Debug.Log("Gano el jugador 2");
+                    SceneManager.LoadScene("SEGUNDO");
+                }
             }
-
+            else if (SceneManager.GetActiveScene().name == "SEGUNDO")
+            {
+                if (totalBlinks2 >= 10)
+                {
+                    Debug.Log("Gano el jugador 2");
+                    SceneManager.LoadScene("TERCERO");
+                }
+            }
+            else if (SceneManager.GetActiveScene().name == "TERCERO")
+            {
+                if (totalBlinks3 >= 10)
+                {
+                    Debug.Log("Gano el jugador 2");
+                    SceneManager.LoadScene("GAMEOVER");
+                }
+            }
         }
     }
-        void EnableBlink()
-        {
-            renderer.color = damageColor;
-            health -= 1;
-        }
 
-        void DisableBlink()
-        {
-            renderer.color = normalColor;
-        }
+    void EnableBlink()
+    {
+        renderer.color = damageColor;
+        health -= 1;
+    }
+
+    void DisableBlink()
+    {
+        renderer.color = normalColor;
+    }
 }
