@@ -74,6 +74,7 @@ public class NinjaController2 : MonoBehaviour
     {
         bool isCrouching = Input.GetKey(KeyCode.DownArrow);
         anim.SetBool("IsCrouching", isCrouching);
+        if(isCrouching == true) { rb.velocity = new Vector2(0, -10f); }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
