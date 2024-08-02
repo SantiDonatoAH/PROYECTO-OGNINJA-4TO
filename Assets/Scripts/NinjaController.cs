@@ -10,36 +10,49 @@ public class NinjaController : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded = false;
     private bool isTouchingWall = false;
-    public playerBlink2 damageP2;
+    public PlayerBlink damageP1;
+    public GameObject puño;
+    bool crouch = false;
+    [SerializeField] Animator anim;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
 
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
+
     void Update()
     {
         Move();
         Jump();
         Crouch();
+
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            damageP2.Blink();
+            damageP1.Blink();
         }
     }
 
     void Move()
     {
-       
-            if (Input.GetKey(KeyCode.A))
+        float moveInput = 0f;
+
+        if (Input.GetKey(KeyCode.A))
             {
-                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
+            moveInput = -1f;
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
                 
                 GetComponent<SpriteRenderer>().flipX = true;
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
+            moveInput = 1f;
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
                 
                 GetComponent<SpriteRenderer>().flipX = false;
             }
@@ -47,7 +60,7 @@ public class NinjaController : MonoBehaviour
             {
                 rb.velocity = new Vector2(0, rb.velocity.y);
             }
-        
+        anim.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 
     void Jump()
@@ -61,13 +74,9 @@ public class NinjaController : MonoBehaviour
 
     void Crouch()
     {
-        if (Input.GetKey(KeyCode.S))
-        {
-            //añadir el cambio de sprite
-            //por ahora solo detecta la tecla
-        }
+        bool isCrouching = Input.GetKey(KeyCode.S);
+        anim.SetBool("IsCrouching", isCrouching);
     }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -77,7 +86,7 @@ public class NinjaController : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Wall"))
         {
-            // Si colisiona con una pared, anula la velocidad horizontal
+            
             rb.velocity = new Vector2(0, rb.velocity.y);
             isTouchingWall = true;
         }

@@ -11,10 +11,19 @@ public class NinjaController2 : MonoBehaviour
     private bool isTouchingWall = false;
     public PlayerBlink damageP1;
     public GameObject puño;
+    bool crouch = false;
+    [SerializeField] Animator anim;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
     }
+
+    void Awake()
+    {
+        anim = GetComponent<Animator>();
+    }
+
 
     void Update()
     {
@@ -30,22 +39,26 @@ public class NinjaController2 : MonoBehaviour
 
     void Move()
     {
-        
-            if (Input.GetKey(KeyCode.LeftArrow))
-            {
-                rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-                GetComponent<SpriteRenderer>().flipX = true;
-            }
-            else if (Input.GetKey(KeyCode.RightArrow))
-            {
-                rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
-                GetComponent<SpriteRenderer>().flipX = false;
-            }
-            else
-            {
-                rb.velocity = new Vector2(0, rb.velocity.y);
-            }
-        
+        float moveInput = 0f;
+
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            moveInput = -1f;
+            rb.velocity = new Vector2(moveSpeed * moveInput, rb.velocity.y);
+            GetComponent<SpriteRenderer>().flipX = true;
+        }
+        else if (Input.GetKey(KeyCode.RightArrow))
+        {
+            moveInput = 1f;
+            rb.velocity = new Vector2(moveSpeed * moveInput, rb.velocity.y);
+            GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
+
+        anim.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 
     void Jump()
@@ -59,12 +72,8 @@ public class NinjaController2 : MonoBehaviour
 
     void Crouch()
     {
-        if (Input.GetKey(KeyCode.DownArrow))
-
-        {
-            //añadir el cambio de sprite
-            //por ahora solo detecta la tecla
-        }
+        bool isCrouching = Input.GetKey(KeyCode.DownArrow);
+        anim.SetBool("IsCrouching", isCrouching);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -76,7 +85,7 @@ public class NinjaController2 : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Wall"))
         {
-            // Si colisiona con una pared, anula la velocidad horizontal
+            
             rb.velocity = new Vector2(0, rb.velocity.y);
             isTouchingWall = true;
         }
