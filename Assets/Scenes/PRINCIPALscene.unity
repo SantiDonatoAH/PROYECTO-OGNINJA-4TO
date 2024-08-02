@@ -173,6 +173,7 @@ GameObject:
   - component: {fileID: 1019354697}
   - component: {fileID: 1019354698}
   - component: {fileID: 1019354699}
+  - component: {fileID: 1019354700}
   m_Layer: 0
   m_Name: ninja1
   m_TagString: Untagged
@@ -303,7 +304,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 8
-  damageP2: {fileID: 1412429947}
+  damageP1: {fileID: 0}
+  "pu\xF1o": {fileID: 0}
+  anim: {fileID: 0}
 --- !u!114 &1019354698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,6 +346,25 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.05}
   m_EdgeRadius: 0
+--- !u!95 &1019354700
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019354692}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f0d00abc48b4ca842a0c91cba9893a2b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1095287914
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +626,7 @@ MonoBehaviour:
   damageP1: {fileID: 1019354698}
   "pu\xF1o": {fileID: 4275034187886592611, guid: 33a310232268f604abcb1485cdd3d76d,
     type: 3}
+  anim: {fileID: 0}
 --- !u!114 &1412429947
 MonoBehaviour:
   m_ObjectHideFlags: 0
