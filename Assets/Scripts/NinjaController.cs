@@ -37,7 +37,7 @@ public class NinjaController : MonoBehaviour
             damageP1.Blink();
         }
        
-        if (isTouchingWall == true)
+        if (isTouchingWall == true && isGrounded == false)
         {
             rb.velocity = new Vector2(0, rb.velocity.y);       
         }
@@ -51,8 +51,7 @@ public class NinjaController : MonoBehaviour
             {
             moveInput = -1f;
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
-                
-                GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = true;
             }
             else if (Input.GetKey(KeyCode.D))
             {
@@ -81,6 +80,7 @@ public class NinjaController : MonoBehaviour
     {
         bool isCrouching = Input.GetKey(KeyCode.S);
         anim.SetBool("IsCrouching", isCrouching);
+        if (isCrouching == true) { rb.velocity = new Vector2(0, -10f); }
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
