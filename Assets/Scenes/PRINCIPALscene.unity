@@ -708,6 +708,11 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 0.43401527
       objectReference: {fileID: 0}
+    - target: {fileID: 6442034802644969635, guid: 2e0c9ca0b1116884290745cd49cd2535,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 6442034802644969663, guid: 2e0c9ca0b1116884290745cd49cd2535,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -778,6 +783,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6442034803938479313, guid: 2e0c9ca0b1116884290745cd49cd2535,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 6442034803938479341, guid: 2e0c9ca0b1116884290745cd49cd2535,
         type: 3}
       propertyPath: m_LocalPosition.y
@@ -787,6 +797,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.x
       value: 0.5146396
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442034803938479342, guid: 2e0c9ca0b1116884290745cd49cd2535,
+        type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6442034803938479342, guid: 2e0c9ca0b1116884290745cd49cd2535,
+        type: 3}
+      propertyPath: m_FlipY
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e0c9ca0b1116884290745cd49cd2535, type: 3}

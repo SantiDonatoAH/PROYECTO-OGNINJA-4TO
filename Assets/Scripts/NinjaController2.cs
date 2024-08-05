@@ -1,6 +1,5 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using TMPro.EditorUtilities;
 using UnityEngine;
 
 public class NinjaController2 : MonoBehaviour
@@ -10,6 +9,7 @@ public class NinjaController2 : MonoBehaviour
     private Rigidbody2D rb;
     private bool isGrounded = false;
     private bool isTouchingWall = false;
+    private bool isWallSliding = false;
     public PlayerBlink damageP1;
     public GameObject puño;
     bool crouch = false;
@@ -25,21 +25,27 @@ public class NinjaController2 : MonoBehaviour
         anim = GetComponent<Animator>();
     }
 
-
     void Update()
     {
         Move();
         Jump();
         Crouch();
+        WallSlide();
 
         if (Input.GetKeyDown(KeyCode.L))
         {
             damageP1.Blink();
         }
 
-        if (isTouchingWall == true && isGrounded == false)
+        // Controla el deslizamiento de la pared
+        if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);
+            isWallSliding = true;
+            rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
+        }
+        else
+        {
+            isWallSliding = false;
         }
     }
 
@@ -50,13 +56,13 @@ public class NinjaController2 : MonoBehaviour
         if (Input.GetKey(KeyCode.LeftArrow))
         {
             moveInput = -1f;
-            rb.velocity = new Vector2(moveSpeed * moveInput, rb.velocity.y);
+            rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             GetComponent<SpriteRenderer>().flipX = true;
         }
         else if (Input.GetKey(KeyCode.RightArrow))
         {
             moveInput = 1f;
-            rb.velocity = new Vector2(moveSpeed * moveInput, rb.velocity.y);
+            rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
             GetComponent<SpriteRenderer>().flipX = false;
         }
         else
@@ -64,15 +70,22 @@ public class NinjaController2 : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
+        // Permitir la separación de la pared
+        if (isTouchingWall && moveInput != 0 && !isGrounded)
+        {
+            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+        }
+
         anim.SetFloat("Speed", Mathf.Abs(moveInput));
     }
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && isGrounded || Input.GetKeyDown(KeyCode.UpArrow) && isTouchingWall)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGrounded || isTouchingWall))
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isGrounded = false;
+            isWallSliding = false;
         }
     }
 
@@ -80,7 +93,15 @@ public class NinjaController2 : MonoBehaviour
     {
         bool isCrouching = Input.GetKey(KeyCode.DownArrow);
         anim.SetBool("IsCrouching", isCrouching);
-        if(isCrouching == true) { rb.velocity = new Vector2(0, -10f); }
+        if (isCrouching) { rb.velocity = new Vector2(0, -10f); }
+    }
+
+    void WallSlide()
+    {
+        if (isWallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -92,8 +113,6 @@ public class NinjaController2 : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Wall"))
         {
-            
-            rb.velocity = new Vector2(0, rb.velocity.y);
             isTouchingWall = true;
         }
     }
@@ -103,6 +122,7 @@ public class NinjaController2 : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingWall = false;
+            isWallSliding = false;
         }
     }
 }
