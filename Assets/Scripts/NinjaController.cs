@@ -36,6 +36,11 @@ public class NinjaController : MonoBehaviour
         {
             damageP1.Blink();
         }
+       
+        if (isTouchingWall == true)
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);       
+        }
     }
 
     void Move()
