@@ -808,5 +808,10 @@ PrefabInstance:
       propertyPath: m_FlipY
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6442034804121913442, guid: 2e0c9ca0b1116884290745cd49cd2535,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e0c9ca0b1116884290745cd49cd2535, type: 3}
