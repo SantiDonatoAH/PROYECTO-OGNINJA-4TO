@@ -38,7 +38,7 @@ public class NinjaController : MonoBehaviour
         }
 
         // Controla el deslizamiento de la pared
-        if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
+        if (isTouchingWall && !isGrounded && rb.velocity.y <= 0)
         {
             isWallSliding = true;
             rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
@@ -81,11 +81,12 @@ public class NinjaController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.W) && (isGrounded || isTouchingWall))
+        if (Input.GetKeyDown(KeyCode.W) && (isGrounded || isTouchingWall || isWallSliding))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isGrounded = false;
             isWallSliding = false;
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            
         }
     }
 
