@@ -39,7 +39,7 @@ public class NinjaController : MonoBehaviour
        
         if (isTouchingWall == true && isGrounded == false)
         {
-            rb.velocity = new Vector2(0, rb.velocity.y);       
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y-1);       
         }
     }
 
@@ -71,7 +71,7 @@ public class NinjaController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && isGrounded || Input.GetKeyDown(KeyCode.W) && isTouchingWall)
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(0, rb.velocity.y + jumpForce);
             isGrounded = false;
         }
     }
