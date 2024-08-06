@@ -89,11 +89,6 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("IsJumping", true);
 
         }
-
-        if (isGrounded)
-        {
-            anim.SetBool("IsJumping", false);
-        }
     }
 
     void Crouch()
