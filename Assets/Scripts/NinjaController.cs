@@ -50,10 +50,7 @@ public class NinjaController : MonoBehaviour
 
        
     }
-    public void Onlanding()
-    {
-        anim.SetBool("IsJumping", false);
-    }
+    
 
     void Move()
     {
@@ -89,21 +86,23 @@ public class NinjaController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && (isGrounded || isTouchingWall || isWallSliding))
         {
+            anim.SetBool("IsJumping", true);
             isGrounded = false;
             isWallSliding = false;
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            anim.SetBool("IsJumping", true);
-
+            
         }
     }
-
-   
 
     void Crouch()
     {
         bool isCrouching = Input.GetKey(KeyCode.S);
-        anim.SetBool("IsCrouching", isCrouching);
-        if (isCrouching) { rb.velocity = new Vector2(0, -10f); }
+        
+        if (isCrouching) {
+            anim.SetBool("IsJumping", false);
+            anim.SetBool("IsCrouching", isCrouching);
+            rb.velocity = new Vector2(0, -10f); }
+        else { anim.SetBool("IsCrouching", false); }
     }
 
     void WallSlide()
@@ -118,11 +117,13 @@ public class NinjaController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            anim.SetBool("IsJumping", false);
             isGrounded = true;
         }
 
         if (collision.gameObject.CompareTag("Wall"))
         {
+            anim.SetBool("IsJumping", false);
             isTouchingWall = true;
         }
     }
