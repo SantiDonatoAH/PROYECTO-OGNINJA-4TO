@@ -101,7 +101,9 @@ public class NinjaController : MonoBehaviour
         if (isCrouching) {
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
-            rb.velocity = new Vector2(0, -10f); }
+            rb.velocity = new Vector2(0, -10f);
+            isGrounded = true;
+        }
         else { anim.SetBool("IsCrouching", false); }
     }
 
