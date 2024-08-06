@@ -47,6 +47,12 @@ public class NinjaController : MonoBehaviour
         {
             isWallSliding = false;
         }
+
+       
+    }
+    public void Onlanding()
+    {
+        anim.SetBool("IsJumping", false);
     }
 
     void Move()
@@ -90,6 +96,8 @@ public class NinjaController : MonoBehaviour
 
         }
     }
+
+   
 
     void Crouch()
     {
