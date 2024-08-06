@@ -13,6 +13,7 @@ public class NinjaController2 : MonoBehaviour
     public PlayerBlink damageP1;
     public GameObject puño;
     bool crouch = false;
+    bool isCrouching = false;
     [SerializeField] Animator anim;
 
     void Start()
@@ -81,7 +82,7 @@ public class NinjaController2 : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGrounded || isTouchingWall))
+        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGrounded || isTouchingWall) && isCrouching == false)
         {
             anim.SetBool("IsJumping", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpForce);
@@ -92,13 +93,12 @@ public class NinjaController2 : MonoBehaviour
     }
     void Crouch()
     {
-        bool isCrouching = Input.GetKey(KeyCode.DownArrow);
+        isCrouching = Input.GetKey(KeyCode.DownArrow);
         if (isCrouching)
         {
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
-            isGrounded = true;
         }
         else { anim.SetBool("IsCrouching", false); rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y); }
     }
