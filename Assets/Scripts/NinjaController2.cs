@@ -37,7 +37,7 @@ public class NinjaController2 : MonoBehaviour
             damageP1.Blink();
         }
 
-        // Controla el deslizamiento de la pared
+        
         if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
         {
             isWallSliding = true;
@@ -70,7 +70,7 @@ public class NinjaController2 : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-        // Permitir la separación de la pared
+       
         if (isTouchingWall && moveInput != 0 && !isGrounded)
         {
             rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
