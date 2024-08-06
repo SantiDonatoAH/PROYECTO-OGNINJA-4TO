@@ -9,31 +9,36 @@ public class playerBlink2 : MonoBehaviour
     Color damageColor = Color.red;
     Color normalColor;
     public int health = 10;
-    private int totalBlinks = 0;
 
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
     }
+
     void Start()
     {
         normalColor = renderer.color;
     }
 
-    // Update is called once per frame
     public void Blink()
     {
-        if (health != 0)
+        if (health > 0)
         {
-            Invoke("EnableBlink", 0);
+            health -= 1;
+            EnableBlink();
             Invoke("DisableBlink", 0.5f);
+
+            if (health <= 0)
+            {
+                // Maneja la muerte del ninja aquí, por ejemplo, reiniciando la escena
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
         }
     }
 
     void EnableBlink()
     {
         renderer.color = damageColor;
-        health -= 1;
     }
 
     void DisableBlink()

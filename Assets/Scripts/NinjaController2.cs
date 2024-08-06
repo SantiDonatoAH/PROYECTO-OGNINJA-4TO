@@ -10,8 +10,6 @@ public class NinjaController2 : MonoBehaviour
     private bool isGrounded = false;
     private bool isTouchingWall = false;
     private bool isWallSliding = false;
-    public PlayerBlink damageP1;
-    public GameObject puño;
     bool crouch = false;
     bool isCrouching = false;
     [SerializeField] Animator anim;
@@ -32,12 +30,6 @@ public class NinjaController2 : MonoBehaviour
         Jump();
         Crouch();
         WallSlide();
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            damageP1.Blink();
-        }
-
         
         if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
         {
