@@ -6,18 +6,22 @@ using UnityEngine.SceneManagement;
 public class PlayerBlink : MonoBehaviour
 {
     SpriteRenderer renderer;
+    SpriteRenderer renderer2;
     Color damageColor = Color.red;
     Color normalColor;
     public int health = 10;
+    int health2;
 
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
+        renderer2 = GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
         normalColor = renderer.color;
+        normalColor = renderer2.color;
     }
 
     public void Blink()
