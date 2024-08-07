@@ -34,6 +34,7 @@ public class NinjaController2 : MonoBehaviour
         if (isTouchingWall && !isGrounded && rb.velocity.y < 0)
         {
             isWallSliding = true;
+            isGrounded = true;
             rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
         }
         else
@@ -74,13 +75,12 @@ public class NinjaController2 : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGrounded || isTouchingWall) && isCrouching == false)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGrounded == true || isTouchingWall == true) && isCrouching == false)
         {
             anim.SetBool("IsJumping", true);
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
             isGrounded = false;
             isWallSliding = false;
-            
+            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
         }
     }
     void Crouch()
@@ -92,7 +92,7 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
         }
-        else { anim.SetBool("IsCrouching", false); rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y); }
+        else { anim.SetBool("IsCrouching", false); }
     }
 
     void WallSlide()

@@ -527,6 +527,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
+  anim: {fileID: 1019354700}
+  anim2: {fileID: 1412429949}
 --- !u!1 &1095287914
 GameObject:
   m_ObjectHideFlags: 0
@@ -859,6 +861,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
+  anim: {fileID: 1019354700}
+  anim2: {fileID: 1412429949}
 --- !u!1001 &6442034804393446607
 PrefabInstance:
   m_ObjectHideFlags: 0

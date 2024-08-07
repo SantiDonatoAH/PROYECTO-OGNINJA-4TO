@@ -8,6 +8,8 @@ public class CombatManager : MonoBehaviour
     public GameObject ninja2;
     private PlayerBlink ninja1Blink;
     private playerBlink2 ninja2Blink;
+    [SerializeField] Animator anim;
+    [SerializeField] Animator anim2;
 
     void Start()
     {
@@ -25,7 +27,7 @@ public class CombatManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            // Ninja1 golpea a Ninja2
+            anim.SetBool("IsPunching", true);
             if (IsInRange(ninja1, ninja2))
             {
                 ninja2Blink.Blink();

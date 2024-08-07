@@ -34,6 +34,7 @@ public class NinjaController : MonoBehaviour
         if (isTouchingWall && !isGrounded && rb.velocity.y <= 0)
         {
             isWallSliding = true;
+            isGrounded = true;
             rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
         }
         else
@@ -77,7 +78,7 @@ public class NinjaController : MonoBehaviour
 
     void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.W) && (isGrounded || isTouchingWall || isWallSliding) && isCrouching == false)
+        if (Input.GetKeyDown(KeyCode.W) && isCrouching == false &&(isTouchingWall == true || isGrounded == true ))
         {
             anim.SetBool("IsJumping", true);
             isGrounded = false;
