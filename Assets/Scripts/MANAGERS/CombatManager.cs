@@ -32,8 +32,10 @@ public class CombatManager : MonoBehaviour
             {
                 ninja2Blink.Blink();
             }
-            
+                   
+ 
         }
+            
         
         if (Input.GetKeyDown(KeyCode.L))
         {
