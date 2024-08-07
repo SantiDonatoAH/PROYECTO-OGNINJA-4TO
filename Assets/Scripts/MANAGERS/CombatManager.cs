@@ -32,7 +32,7 @@ public class CombatManager : MonoBehaviour
             {
                 ninja2Blink.Blink();
             }
-            anim.SetBool("IsPunching", false);
+            
         }
         
         if (Input.GetKeyDown(KeyCode.L))
