@@ -4,9 +4,17 @@ using UnityEngine;
 
 public class CombatManager : MonoBehaviour
 {
-    public PlayerBlink BlinkScript;
     public GameObject ninja1;
     public GameObject ninja2;
+    private PlayerBlink ninja1Blink;
+    private playerBlink2 ninja2Blink;
+
+    void Start()
+    {
+        // Obtiene los componentes PlayerBlink y playerBlink2 de los GameObjects asignados
+        ninja1Blink = ninja1.GetComponent<PlayerBlink>();
+        ninja2Blink = ninja2.GetComponent<playerBlink2>();
+    }
 
     void Update()
     {
@@ -17,19 +25,19 @@ public class CombatManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            
+            // Ninja1 golpea a Ninja2
             if (IsInRange(ninja1, ninja2))
             {
-                BlinkScript.BlinkP2();
+                ninja2Blink.Blink();
             }
         }
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            
+            // Ninja2 golpea a Ninja1
             if (IsInRange(ninja2, ninja1))
             {
-                BlinkScript.Blink();
+                ninja1Blink.Blink();
             }
         }
     }
@@ -37,6 +45,6 @@ public class CombatManager : MonoBehaviour
     bool IsInRange(GameObject attacker, GameObject target)
     {
         float distance = Vector2.Distance(attacker.transform.position, target.transform.position);
-        return distance < 5f; 
+        return distance < 1.5f; // Ajusta este valor según el rango de ataque
     }
 }

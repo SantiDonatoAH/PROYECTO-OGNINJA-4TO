@@ -6,22 +6,18 @@ using UnityEngine.SceneManagement;
 public class PlayerBlink : MonoBehaviour
 {
     SpriteRenderer renderer;
-    SpriteRenderer renderer2;
     Color damageColor = Color.red;
     Color normalColor;
-    public int health = 10;
-    int health2;
+    public int health = 20;
 
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
-        renderer2 = GetComponent<SpriteRenderer>();
     }
 
     void Start()
     {
         normalColor = renderer.color;
-        normalColor = renderer2.color;
     }
 
     public void Blink()
@@ -39,21 +35,6 @@ public class PlayerBlink : MonoBehaviour
         }
     }
 
-    public void BlinkP2()
-    {
-        if (health > 0)
-        {
-            health -= 1;
-            EnableBlink2();
-            Invoke("DisableBlink2", 0.5f);
-
-            if (health <= 0)
-            {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-            }
-        }
-    }
-
     void EnableBlink()
     {
         renderer.color = damageColor;
@@ -62,15 +43,5 @@ public class PlayerBlink : MonoBehaviour
     void DisableBlink()
     {
         renderer.color = normalColor;
-    }  
-    
-    void EnableBlink2()
-    {
-        renderer2.color = damageColor;
-    }
-
-    void DisableBlink2()
-    {
-        renderer2.color = normalColor;
     }
 }

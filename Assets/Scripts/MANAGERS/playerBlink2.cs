@@ -8,7 +8,7 @@ public class playerBlink2 : MonoBehaviour
     SpriteRenderer renderer;
     Color damageColor = Color.red;
     Color normalColor;
-    public int health = 10;
+    public int health = 20;
 
     private void Awake()
     {
@@ -30,7 +30,6 @@ public class playerBlink2 : MonoBehaviour
 
             if (health <= 0)
             {
-                // Maneja la muerte del ninja aquí, por ejemplo, reiniciando la escena
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

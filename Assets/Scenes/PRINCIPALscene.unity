@@ -233,7 +233,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &679159771
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -320,10 +320,10 @@ GameObject:
   - component: {fileID: 1019354693}
   - component: {fileID: 1019354696}
   - component: {fileID: 1019354697}
-  - component: {fileID: 1019354698}
   - component: {fileID: 1019354699}
   - component: {fileID: 1019354700}
   - component: {fileID: 1019354701}
+  - component: {fileID: 1019354698}
   m_Layer: 0
   m_Name: ninja1
   m_TagString: Untagged
@@ -467,7 +467,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf56606c8802964382c78e504d28bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!61 &1019354699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -525,7 +525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c8a34ac9eef5c43a51963247992a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlinkScript: {fileID: 0}
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
 --- !u!1 &1095287914
@@ -655,8 +654,8 @@ GameObject:
   - component: {fileID: 1412429946}
   - component: {fileID: 1412429948}
   - component: {fileID: 1412429949}
-  - component: {fileID: 1412429947}
   - component: {fileID: 1412429950}
+  - component: {fileID: 1412429947}
   m_Layer: 0
   m_Name: ninja2
   m_TagString: Untagged
@@ -797,10 +796,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1412429941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddf56606c8802964382c78e504d28bda, type: 3}
+  m_Script: {fileID: 11500000, guid: efa090b5759229642b981b4095e03c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 20
 --- !u!61 &1412429948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -858,7 +857,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c8a34ac9eef5c43a51963247992a97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BlinkScript: {fileID: 0}
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
 --- !u!1001 &6442034804393446607
