@@ -34,7 +34,21 @@ public class PlayerBlink : MonoBehaviour
 
             if (health <= 0)
             {
-                // Maneja la muerte del ninja aquí, por ejemplo, reiniciando la escena
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            }
+        }
+    }
+
+    public void BlinkP2()
+    {
+        if (health > 0)
+        {
+            health -= 1;
+            EnableBlink2();
+            Invoke("DisableBlink2", 0.5f);
+
+            if (health <= 0)
+            {
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
@@ -48,5 +62,15 @@ public class PlayerBlink : MonoBehaviour
     void DisableBlink()
     {
         renderer.color = normalColor;
+    }  
+    
+    void EnableBlink2()
+    {
+        renderer2.color = damageColor;
+    }
+
+    void DisableBlink2()
+    {
+        renderer2.color = normalColor;
     }
 }
