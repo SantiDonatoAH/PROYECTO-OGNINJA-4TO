@@ -14,7 +14,7 @@ public class NinjaController2 : MonoBehaviour
     [SerializeField] Animator anim;
     public float move;
     public float movey;
-
+    bool isHoldingWeapon = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -102,6 +102,12 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("IsJumping", false);
             isGrounded = false;
             isTouchingWall = true;
+        }
+
+        if (collision.gameObject.tag == "Weapon")
+        {
+            Destroy(collision.gameObject);
+            isHoldingWeapon = true;
         }
     }
 
