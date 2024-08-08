@@ -30,8 +30,10 @@ public class playerBlink2 : MonoBehaviour
 
             if (health <= 0)
             {
+                Debug.Log("Gano el jugadort 1");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
+
         }
     }
 
