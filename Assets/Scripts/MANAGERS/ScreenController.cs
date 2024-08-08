@@ -26,5 +26,12 @@ public class ScreenController : MonoBehaviour
     private void PausePanel()
     {
         pausePanel.SetActive(true);
+        Time.timeScale = 0;
+    }
+
+    public void ContinuePanel ()
+    {
+        pausePanel.SetActive(false);
+        Time.timeScale = 1;
     }
 }
