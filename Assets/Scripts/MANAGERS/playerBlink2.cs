@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class playerBlink2 : MonoBehaviour
@@ -9,6 +10,8 @@ public class playerBlink2 : MonoBehaviour
     Color damageColor = Color.red;
     Color normalColor;
     public int health = 20;
+    public Text txt2;
+
 
     private void Awake()
     {
@@ -17,6 +20,7 @@ public class playerBlink2 : MonoBehaviour
 
     void Start()
     {
+        txt2.text = health.ToString();
         normalColor = renderer.color;
     }
 
@@ -25,6 +29,7 @@ public class playerBlink2 : MonoBehaviour
         if (health > 0)
         {
             health -= 1;
+            txt2.text = health.ToString();
             EnableBlink();
             Invoke("DisableBlink", 0.5f);
 

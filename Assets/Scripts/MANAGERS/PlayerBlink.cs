@@ -19,6 +19,7 @@ public class PlayerBlink : MonoBehaviour
 
     void Start()
     {
+        txt1.text = health.ToString();
         normalColor = renderer.color;
     }
 
@@ -27,12 +28,12 @@ public class PlayerBlink : MonoBehaviour
         if (health > 0)
         {
             health -= 1;
+            txt1.text = health.ToString();
             EnableBlink();
             Invoke("DisableBlink", 0.5f);
 
             if (health <= 0)
             {
-                txt1.text = "2";
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }
