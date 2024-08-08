@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class PlayerBlink : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerBlink : MonoBehaviour
     Color damageColor = Color.red;
     Color normalColor;
     public int health = 20;
+    public Text txt1;
 
     private void Awake()
     {
@@ -30,7 +32,7 @@ public class PlayerBlink : MonoBehaviour
 
             if (health <= 0)
             {
-                Debug.Log("Gano el jugadort 2");
+                txt1.text = "2";
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

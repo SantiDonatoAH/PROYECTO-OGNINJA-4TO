@@ -124,7 +124,7 @@ GameObject:
   - component: {fileID: 107064042}
   - component: {fileID: 107064041}
   m_Layer: 5
-  m_Name: Text (1)
+  m_Name: Pts2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -715,6 +715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 20
+  txt1: {fileID: 107064041}
 --- !u!61 &1019354699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1138,7 +1139,7 @@ GameObject:
   - component: {fileID: 1789834489}
   - component: {fileID: 1789834488}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Pts1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
