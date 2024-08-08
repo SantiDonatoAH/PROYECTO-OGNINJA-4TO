@@ -38,7 +38,7 @@ public class CombatManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.L))
         {
-            anim.SetBool("IsPunching", true);
+            anim2.SetBool("IsPunching", true);
             if (IsInRange(ninja2, ninja1))
             {
                 ninja1Blink.Blink();
@@ -59,7 +59,7 @@ public class CombatManager : MonoBehaviour
     }
     void endAttack2()
     {
-        anim.SetBool("IsPunching", false);
+        anim2.SetBool("IsPunching", false);
     }
 }
 
