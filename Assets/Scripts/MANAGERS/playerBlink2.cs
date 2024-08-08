@@ -9,7 +9,7 @@ public class playerBlink2 : MonoBehaviour
     SpriteRenderer renderer;
     Color damageColor = Color.red;
     Color normalColor;
-    public int health = 20;
+    public float health = 10;
     public Text txt2;
 
 
@@ -28,7 +28,7 @@ public class playerBlink2 : MonoBehaviour
     {
         if (health > 0)
         {
-            health -= 1;
+            health -= 0.5f;
             txt2.text = health.ToString();
             EnableBlink();
             Invoke("DisableBlink", 0.5f);
