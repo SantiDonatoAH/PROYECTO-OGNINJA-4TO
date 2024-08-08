@@ -38,6 +38,7 @@ public class PlayerBlink : MonoBehaviour
 
             if (health <= 0)
             {
+                Debug.Log("Gano el jugadort 2");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

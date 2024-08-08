@@ -11,7 +11,8 @@ public class playerBlink2 : MonoBehaviour
     Color normalColor;
     public float health = 10;
     public Text txt2;
-
+ public Image healthBar;
+    public float healthAmount = 10f;
 
     private void Awake()
     {
@@ -30,6 +31,8 @@ public class playerBlink2 : MonoBehaviour
         {
             health -= 0.5f;
             txt2.text = health.ToString();
+            healthAmount -= health;
+            healthBar.fillAmount = healthAmount / 100f;
             EnableBlink();
             Invoke("DisableBlink", 0.5f);
 
