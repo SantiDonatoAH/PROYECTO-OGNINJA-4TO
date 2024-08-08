@@ -25,7 +25,7 @@ public class CombatManager : MonoBehaviour
 
     void HandleCombat()
     {
-        if (Input.GetKeyDown(KeyCode.Z))
+        if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             anim.SetBool("IsPunching", true);
             if (IsInRange(ninja1, ninja2))
