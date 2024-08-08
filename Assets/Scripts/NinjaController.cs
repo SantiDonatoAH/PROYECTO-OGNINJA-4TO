@@ -10,10 +10,10 @@ public class NinjaController : MonoBehaviour
     private bool isGrounded = false;
     private bool isTouchingWall = false;
     private bool isWallSliding = false;
-    bool crouch = false;
+    public float move;
     [SerializeField] Animator anim;
     bool isCrouching;
-
+    public float movey;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,26 +31,31 @@ public class NinjaController : MonoBehaviour
         Crouch();
         WallSlide();
         
-        if (isTouchingWall && !isGrounded && rb.velocity.y <= 0)
-        {
-            isWallSliding = true;
-            isGrounded = true;
-            rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
-        }
-        else
-        {
-            isWallSliding = false;
-        }
+      
 
        
     }
-    
+
 
     void Move()
     {
-        float moveInput = 0f;
-
-        if (Input.GetKey(KeyCode.A))
+        move = Input.GetAxisRaw("Horizontal");
+        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+        if (rb.velocity.x >0) 
+        {
+            GetComponent<SpriteRenderer>().flipX = false;
+            anim.SetBool("Run", true); 
+        }
+        else if (rb.velocity.x < 0)
+        {
+            GetComponent<SpriteRenderer>().flipX = true;
+            anim.SetBool("Run", true);
+        }
+        else
+        {
+            anim.SetBool("Run", false);
+        }
+        /*if (Input.GetKey(KeyCode.A))
         {
             moveInput = -1f;
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
@@ -69,24 +74,23 @@ public class NinjaController : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
 
-       
-        if (isTouchingWall && moveInput != 0 && !isGrounded)
+       */
+        if (isTouchingWall && move != 0 && !isGrounded)
         {
-            rb.velocity = new Vector2(moveInput * moveSpeed, rb.velocity.y);
+            rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         }
 
-        anim.SetFloat("Speed", Mathf.Abs(moveInput));
     }
-
     void Jump()
     {
+        movey = Input.GetAxisRaw("Vertical");
         if (Input.GetKeyDown(KeyCode.W) && isCrouching == false &&(isTouchingWall == true || isGrounded == true ))
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
             isWallSliding = false;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+            rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
             
         }
     }
@@ -106,10 +110,10 @@ public class NinjaController : MonoBehaviour
 
     void WallSlide()
     {
-        if (isWallSliding)
+       /* if (isWallSliding)
         {
             rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
-        }
+        }*/
     }
 
     void OnCollisionEnter2D(Collision2D collision)

@@ -33,12 +33,12 @@ public class CombatManager : MonoBehaviour
                 ninja2Blink.Blink();
             }
         }
-        
-            
-        
+
+
+
         if (Input.GetKeyDown(KeyCode.L))
         {
-            // Ninja2 golpea a Ninja1
+            anim.SetBool("IsPunching", true);
             if (IsInRange(ninja2, ninja1))
             {
                 ninja1Blink.Blink();
@@ -52,4 +52,14 @@ public class CombatManager : MonoBehaviour
         float distance = Vector2.Distance(attacker.transform.position, target.transform.position);
         return distance < 1.5f; // Ajusta este valor según el rango de ataque
     }
+
+    void endAttack1()
+    {
+        anim.SetBool("IsPunching", false);
+    }
+    void endAttack2()
+    {
+        anim.SetBool("IsPunching", false);
+    }
 }
+
