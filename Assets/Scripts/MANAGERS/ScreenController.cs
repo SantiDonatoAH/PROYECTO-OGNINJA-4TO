@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class ScreenController : MonoBehaviour
 {
     public GameObject pausePanel;
     public GameObject settingsPanel;
+    public Button pauseButton;
     
 
     // Update is called once per frame
@@ -28,12 +31,14 @@ public class ScreenController : MonoBehaviour
     {
         pausePanel.SetActive(true);
         Time.timeScale = 0;
+        pauseButton.gameObject.SetActive(false);
     }
 
     public void ContinuePanel()
     {
         pausePanel.SetActive(false);
         Time.timeScale = 1;
+        pauseButton.gameObject.SetActive(true);
     }
 
     public void OnSettings()
