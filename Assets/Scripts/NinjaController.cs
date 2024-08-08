@@ -55,12 +55,14 @@ public class NinjaController : MonoBehaviour
             moveInput = -1f;
             rb.velocity = new Vector2(-moveSpeed, rb.velocity.y);
             GetComponent<SpriteRenderer>().flipX = true;
+            anim.SetBool("IsPunching", false);
         }
         else if (Input.GetKey(KeyCode.D))
         {
             moveInput = 1f;
             rb.velocity = new Vector2(moveSpeed, rb.velocity.y);
             GetComponent<SpriteRenderer>().flipX = false;
+            anim.SetBool("IsPunching", false);
         }
         else
         {
@@ -80,6 +82,7 @@ public class NinjaController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W) && isCrouching == false &&(isTouchingWall == true || isGrounded == true ))
         {
+            anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
             isWallSliding = false;
@@ -93,6 +96,7 @@ public class NinjaController : MonoBehaviour
         isCrouching = Input.GetKey(KeyCode.S);
         
         if (isCrouching) {
+            anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);

@@ -32,9 +32,8 @@ public class CombatManager : MonoBehaviour
             {
                 ninja2Blink.Blink();
             }
-                   
- 
         }
+        
             
         
         if (Input.GetKeyDown(KeyCode.L))
@@ -46,6 +45,7 @@ public class CombatManager : MonoBehaviour
             }
         }
     }
+
 
     bool IsInRange(GameObject attacker, GameObject target)
     {
