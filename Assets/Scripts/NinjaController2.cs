@@ -129,3 +129,4 @@ public class NinjaController2 : MonoBehaviour
         }
     }
 }
+//e
