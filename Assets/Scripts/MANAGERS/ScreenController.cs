@@ -9,8 +9,11 @@ public class ScreenController : MonoBehaviour
     public GameObject pausePanel;
     public GameObject settingsPanel;
     public Button pauseButton;
-    
 
+    void Start()
+    {
+        pausePanel.SetActive(false);
+    }
     // Update is called once per frame
     void Update()
     {
