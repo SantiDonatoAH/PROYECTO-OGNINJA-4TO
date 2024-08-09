@@ -15,6 +15,7 @@ public class NinjaController : MonoBehaviour
     bool isCrouching;
     public float movey;
     bool isHoldingWeapon = false;
+   public  bool derecha = false;
 
     void Start()
     {
@@ -33,19 +34,25 @@ public class NinjaController : MonoBehaviour
         Crouch();
         WallSlide();
         CheckHoldingWeapon(); 
+
+       
+
     }
 
     void Move()
     {
+
         move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (rb.velocity.x > 0)
         {
+            derecha = true;
             GetComponent<SpriteRenderer>().flipX = false;
             anim.SetBool("Run", true);
         }
         else if (rb.velocity.x < 0)
         {
+            derecha = false;
             GetComponent<SpriteRenderer>().flipX = true;
             anim.SetBool("Run", true);
         }
@@ -54,10 +61,19 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-        if (isTouchingWall && move != 0 && !isGrounded)
+        if (isTouchingWall == true && Input.GetKey(KeyCode.D) && derecha == true)
         {
-            rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
+            moveSpeed = 0;
         }
+        else if (isTouchingWall == true && Input.GetKey(KeyCode.A) && derecha == false)
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = 5;
+        }
+
     }
 
     void Jump()
