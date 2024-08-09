@@ -1540,6 +1540,7 @@ MonoBehaviour:
   ninja2: {fileID: 1412429941}
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
+  pausemanager: {fileID: 1174501606}
 --- !u!1 &1062728683
 GameObject:
   m_ObjectHideFlags: 0
@@ -1839,6 +1840,7 @@ MonoBehaviour:
   pausePanel: {fileID: 1062728683}
   settingsPanel: {fileID: 1900978943}
   pauseButton: {fileID: 432520451}
+  ispaused: 1
 --- !u!4 &1174501607
 Transform:
   m_ObjectHideFlags: 0
@@ -2395,6 +2397,7 @@ MonoBehaviour:
   ninja2: {fileID: 1412429941}
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
+  pausemanager: {fileID: 1174501606}
 --- !u!1 &1646592012
 GameObject:
   m_ObjectHideFlags: 0

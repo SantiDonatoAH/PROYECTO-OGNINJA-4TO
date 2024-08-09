@@ -31,10 +31,6 @@ public class NinjaController : MonoBehaviour
         Jump();
         Crouch();
         WallSlide();
-        
-      
-
-       
     }
 
 

@@ -10,6 +10,7 @@ public class CombatManager : MonoBehaviour
     private playerBlink2 ninja2Blink;
     [SerializeField] Animator anim;
     [SerializeField] Animator anim2;
+    public ScreenController pausemanager;
 
     void Start()
     {
@@ -25,23 +26,24 @@ public class CombatManager : MonoBehaviour
 
     void HandleCombat()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (pausemanager.ispaused == false)
         {
-            anim.SetBool("IsPunching", true);
-            if (IsInRange(ninja1, ninja2))
+            if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                ninja2Blink.Blink();
+                anim.SetBool("IsPunching", true);
+                if (IsInRange(ninja1, ninja2))
+                {
+                    ninja2Blink.Blink();
+                }
             }
-        }
 
-
-
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            anim2.SetBool("IsPunching", true);
-            if (IsInRange(ninja2, ninja1))
+            if (Input.GetKeyDown(KeyCode.L))
             {
-                ninja1Blink.Blink();
+                anim2.SetBool("IsPunching", true);
+                if (IsInRange(ninja2, ninja1))
+                {
+                    ninja1Blink.Blink();
+                }
             }
         }
     }
