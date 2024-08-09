@@ -31,7 +31,7 @@ public class NinjaController2 : MonoBehaviour
         Jump();
         Crouch();
         WallSlide();
-        
+        CheckHoldingWeapon();
     }
 
     void Move()
@@ -53,7 +53,7 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-       }
+    }
 
     void Jump()
     {
@@ -108,6 +108,7 @@ public class NinjaController2 : MonoBehaviour
         {
             Destroy(collision.gameObject);
             isHoldingWeapon = true;
+            anim.SetBool("IsHoldingManguera", true);
         }
     }
 
@@ -117,6 +118,14 @@ public class NinjaController2 : MonoBehaviour
         {
             isTouchingWall = false;
             isWallSliding = false;
+        }
+    }
+
+    void CheckHoldingWeapon()
+    {
+        if (isHoldingWeapon)
+        {
+            anim.SetBool("IsPunching", false);
         }
     }
 }

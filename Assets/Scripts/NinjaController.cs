@@ -15,6 +15,7 @@ public class NinjaController : MonoBehaviour
     bool isCrouching;
     public float movey;
     bool isHoldingWeapon = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -31,17 +32,17 @@ public class NinjaController : MonoBehaviour
         Jump();
         Crouch();
         WallSlide();
+        CheckHoldingWeapon(); 
     }
-
 
     void Move()
     {
         move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
-        if (rb.velocity.x >0) 
+        if (rb.velocity.x > 0)
         {
             GetComponent<SpriteRenderer>().flipX = false;
-            anim.SetBool("Run", true); 
+            anim.SetBool("Run", true);
         }
         else if (rb.velocity.x < 0)
         {
@@ -52,38 +53,40 @@ public class NinjaController : MonoBehaviour
         {
             anim.SetBool("Run", false);
         }
-        
+
         if (isTouchingWall && move != 0 && !isGrounded)
         {
             rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         }
-
     }
+
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.W) && isCrouching == false &&(isTouchingWall == true || isGrounded == true ))
+        if (Input.GetKeyDown(KeyCode.W) && isCrouching == false && (isTouchingWall == true || isGrounded == true))
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
             isWallSliding = false;
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
-            
         }
     }
 
     void Crouch()
     {
         isCrouching = Input.GetKey(KeyCode.S);
-        
-        if (isCrouching) {
+        if (isCrouching)
+        {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
         }
-        else { anim.SetBool("IsCrouching", false); }
+        else
+        {
+            anim.SetBool("IsCrouching", false);
+        }
     }
 
     void WallSlide()
@@ -114,6 +117,7 @@ public class NinjaController : MonoBehaviour
         {
             Destroy(collision.gameObject);
             isHoldingWeapon = true;
+            anim.SetBool("IsHoldingManguera", true);
         }
     }
 
@@ -123,6 +127,14 @@ public class NinjaController : MonoBehaviour
         {
             isTouchingWall = false;
             isWallSliding = false;
+        }
+    }
+
+    void CheckHoldingWeapon()
+    {
+        if (isHoldingWeapon)
+        {
+            anim.SetBool("IsPunching", false);
         }
     }
 }
