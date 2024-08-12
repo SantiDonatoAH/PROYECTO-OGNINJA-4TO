@@ -14,19 +14,21 @@ public class Manguera : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         combatManager = GetComponent<CombatManager>();
+        bala.SetActive(false);
     }
 
     void Update()
     {
         if (anim.GetBool("IsHoldingManguera") && Input.GetKeyDown(KeyCode.LeftShift))
         {
+            bala.SetActive(true);
             Fire();
         }
     }
 
     void Fire()
     {
-        
+
         GameObject nuevaBala = Instantiate(bala, firePoint.position, firePoint.rotation);
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed;
