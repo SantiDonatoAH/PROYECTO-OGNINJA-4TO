@@ -26,24 +26,9 @@ public class Manguera : MonoBehaviour
 
     void Fire()
     {
-        GameObject bullet = Instantiate(bala, firePoint.position, firePoint.rotation);
-        Rigidbody2D rbBullet = bullet.GetComponent<Rigidbody2D>();
-        rbBullet.velocity = transform.right * bulletSpeed * (GetComponent<SpriteRenderer>().flipX ? -1 : 1);
-    }
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.tag == "Ninja2")
-        {
-            playerBlink2 ninja2 = collision.gameObject.GetComponent<playerBlink2>();
-            if (ninja2 != null)
-            {
-                ninja2.Blink();
-            }
-            Destroy(gameObject); 
-        }
-        else
-        {
-            Destroy(gameObject); 
-        }
+        
+        GameObject nuevaBala = Instantiate(bala, firePoint.position, firePoint.rotation);
+        Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
+        rb.velocity = firePoint.right * bulletSpeed;
     }
 }
