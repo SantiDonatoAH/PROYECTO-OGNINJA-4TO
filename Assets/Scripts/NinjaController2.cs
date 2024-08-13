@@ -15,6 +15,7 @@ public class NinjaController2 : MonoBehaviour
     public float move;
     public float movey;
     public bool isHoldingWeapon = false;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -52,7 +53,6 @@ public class NinjaController2 : MonoBehaviour
         {
             anim.SetBool("Run", false);
         }
-
     }
 
     void Jump()
@@ -67,6 +67,7 @@ public class NinjaController2 : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpForce * movey);
         }
     }
+
     void Crouch()
     {
         isCrouching = Input.GetKey(KeyCode.DownArrow);
@@ -77,20 +78,23 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
         }
-        else { anim.SetBool("IsCrouching", false); }
+        else
+        {
+            anim.SetBool("IsCrouching", false);
+        }
     }
 
     void WallSlide()
     {
-        /* if (isWallSliding)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
-        }*/
+        // Uncomment and adjust the following if you want wall sliding behavior
+        // if (isWallSliding)
+        // {
+        //     rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
+        // }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        isGrounded = true;
         if (collision.gameObject.CompareTag("Ground"))
         {
             anim.SetBool("IsJumping", false);
@@ -104,7 +108,7 @@ public class NinjaController2 : MonoBehaviour
             isTouchingWall = true;
         }
 
-        if (collision.gameObject.tag == "Weapon")
+        if (collision.gameObject.CompareTag("Weapon"))
         {
             Destroy(collision.gameObject);
             isHoldingWeapon = true;
