@@ -14,7 +14,7 @@ public class NinjaController : MonoBehaviour
     [SerializeField] Animator anim;
     bool isCrouching;
     public float movey;
-    bool isHoldingWeapon = false;
+    public bool isHoldingWeapon = false;
    public  bool derecha = false;
 
     void Start()

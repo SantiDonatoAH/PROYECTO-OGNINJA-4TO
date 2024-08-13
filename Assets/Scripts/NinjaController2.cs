@@ -14,7 +14,7 @@ public class NinjaController2 : MonoBehaviour
     [SerializeField] Animator anim;
     public float move;
     public float movey;
-    bool isHoldingWeapon = false;
+    public bool isHoldingWeapon = false;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
