@@ -8,20 +8,20 @@ public class Manguera : MonoBehaviour
     public Transform firePoint;
     public float bulletSpeed = 10f;
     private Animator anim;
-    public Transform ninja1;
-    public Transform ninja2;
-    public int multiplicador = 1;
+    private CombatManager combatManager;
+    public Transform Ninja1;
+    public int multiplicador = 0;
 
     void Start()
     {
         anim = GetComponent<Animator>();
+        combatManager = GetComponent<CombatManager>();
         // No es necesario desactivar la bala en el Start
     }
 
     void Update()
     {
-        // Detecta cuál ninja está usando la manguera y dispara en consecuencia
-        if (anim.GetBool("IsHoldingManguera") && Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.L))
+        if (anim.GetBool("IsHoldingManguera") && Input.GetKeyDown(KeyCode.LeftShift))
         {
             Fire();
         }
@@ -29,14 +29,14 @@ public class Manguera : MonoBehaviour
 
     void Fire()
     {
-        // Detecta la dirección del ninja que está usando la manguera
-        if (ninja1.GetComponent<NinjaController>().derecha)
+       
+        if (Ninja1.rotation.y > 0) // Si el ninja está mirando hacia la izquierda
         {
-            multiplicador = 1;
+            multiplicador = -1; // Cambia la dirección de disparo
         }
-        else
+        else if (Ninja1.rotation.y == 0)
         {
-            multiplicador = -1;
+            multiplicador = 1; // Dirección normal hacia la derecha
         }
 
         // Calcula la posición de la bala con base en el multiplicador
@@ -45,6 +45,6 @@ public class Manguera : MonoBehaviour
 
         // Configura la dirección de la bala
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
-        rb.velocity = firePoint.right * bulletSpeed * multiplicador;
+        rb.velocity = firePoint.right * bulletSpeed;
     }
 }
