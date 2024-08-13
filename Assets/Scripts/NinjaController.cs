@@ -64,11 +64,11 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-        if (isTouchingWall == true && Input.GetKey(KeyCode.D) && derecha == true)
+        if (isTouchingWall == true && Input.GetKey(KeyCode.D) && transform.rotation.y == 0)
         {
             moveSpeed = 0;
         }
-        else if (isTouchingWall == true && Input.GetKey(KeyCode.A) && derecha == false)
+        else if (isTouchingWall == true && Input.GetKey(KeyCode.A) && transform.rotation.y == 180)
         {
             moveSpeed = 0;
         }
