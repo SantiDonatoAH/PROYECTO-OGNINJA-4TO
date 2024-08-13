@@ -8,7 +8,7 @@ public class Bala : MonoBehaviour
     private PlayerBlink ninjaBlink;
     void Start()
     {
-        // Encuentra el objeto con el tag "player2" en la escena y obtiene su componente playerBlink2
+       
         GameObject ninja2 = GameObject.FindWithTag("player2");
         ninja2Blink = ninja2.GetComponent<playerBlink2>();
 
@@ -21,6 +21,7 @@ public class Bala : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             Destroy(gameObject);
+            Debug.Log("pruebita");
         }
         else if (collision.gameObject.CompareTag("player2"))
         {

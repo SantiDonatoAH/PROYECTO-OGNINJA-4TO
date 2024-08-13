@@ -15,7 +15,7 @@ public class NinjaController : MonoBehaviour
     bool isCrouching;
     public float movey;
     public bool isHoldingWeapon = false;
-   public  bool derecha = false;
+   public  bool derecha = true;
 
     void Start()
     {
@@ -53,12 +53,21 @@ public class NinjaController : MonoBehaviour
         else if (rb.velocity.x < 0)
         {
             derecha = false;
-            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = false;
             anim.SetBool("Run", true);
         }
         else
         {
             anim.SetBool("Run", false);
+        }
+
+        if (derecha == true)
+        {
+            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotación normal
+        }
+        else
+        {
+            transform.rotation = Quaternion.Euler(0, 180, 0); // Rotación en Y a 180 grados
         }
 
         if (isTouchingWall == true && Input.GetKey(KeyCode.D) && derecha == true)
@@ -115,7 +124,7 @@ public class NinjaController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        isGrounded = true;
+        
         if (collision.gameObject.CompareTag("Ground"))
         {
             anim.SetBool("IsJumping", false);
