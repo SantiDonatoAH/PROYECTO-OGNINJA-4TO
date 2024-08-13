@@ -49,26 +49,19 @@ public class NinjaController : MonoBehaviour
         {
             derecha = true;
             GetComponent<SpriteRenderer>().flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotación normal
             anim.SetBool("Run", true);
         }
         else if (rb.velocity.x < 0)
         {
             derecha = false;
             GetComponent<SpriteRenderer>().flipX = false;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             anim.SetBool("Run", true);
         }
         else
         {
             anim.SetBool("Run", false);
-        }
-
-        if (derecha == true)
-        {
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotación normal
-        }
-        else
-        {
-            transform.rotation = Quaternion.Euler(0, 180, 0); // Rotación en Y a 180 grados
         }
 
         if (isTouchingWall == true && Input.GetKey(KeyCode.D) && derecha == true)
