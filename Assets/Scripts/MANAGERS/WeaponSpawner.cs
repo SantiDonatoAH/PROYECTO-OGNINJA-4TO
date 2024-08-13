@@ -5,15 +5,22 @@ using UnityEngine;
 public class WeaponSpawner : MonoBehaviour
 {
     public GameObject[] armas;
-    // Start is called before the first frame update
+    public Transform[] spawnPoints;
+
     void Start()
     {
-        
+        SpawnWeapon();
     }
 
-    // Update is called once per frame
-    void Update()
+    void SpawnWeapon()
     {
         
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+
+       
+        GameObject armaSeleccionada = armas[Random.Range(0, armas.Length)];
+
+        
+        Instantiate(armaSeleccionada, spawnPoint.position, spawnPoint.rotation);
     }
 }
