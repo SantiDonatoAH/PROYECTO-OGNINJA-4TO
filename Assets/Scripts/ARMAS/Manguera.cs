@@ -10,6 +10,7 @@ public class Manguera : MonoBehaviour
     private Animator anim;
     private CombatManager combatManager;
     public Transform Ninja1;
+    public Transform Ninja2;
     public int multiplicador = 1;
 
     void Start()
@@ -21,7 +22,7 @@ public class Manguera : MonoBehaviour
 
     void Update()
     {
-        if (anim.GetBool("IsHoldingManguera") && Input.GetKeyDown(KeyCode.LeftShift))
+        if (anim.GetBool("IsHoldingManguera") && Input.GetKeyDown(KeyCode.LeftShift) && Input.GetKeyDown(KeyCode.L))
         {
             Fire();
         }
@@ -37,6 +38,15 @@ public class Manguera : MonoBehaviour
         else if (Ninja1.rotation.y == 0)
         {
             multiplicador = 1; // Dirección normal hacia la derecha
+        }
+        
+        if (Ninja2.rotation.y > 0) 
+        {
+            multiplicador = -1; 
+        }
+        else if (Ninja2.rotation.y == 0)
+        {
+            multiplicador = 1; 
         }
 
         // Calcula la posición de la bala con base en el multiplicador

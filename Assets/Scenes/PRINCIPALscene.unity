@@ -1600,6 +1600,7 @@ MonoBehaviour:
   firePoint: {fileID: 1019354695}
   bulletSpeed: 10
   Ninja1: {fileID: 1019354695}
+  Ninja2: {fileID: 0}
   multiplicador: 1
 --- !u!1 &1062728683
 GameObject:
@@ -2251,6 +2252,7 @@ GameObject:
   - component: {fileID: 1412429949}
   - component: {fileID: 1412429950}
   - component: {fileID: 1412429947}
+  - component: {fileID: 1412429951}
   m_Layer: 0
   m_Name: ninja2
   m_TagString: player2
@@ -2463,6 +2465,24 @@ MonoBehaviour:
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
+--- !u!114 &1412429951
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412429941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f24f08613fa83b408c67707aa3baa8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bala: {fileID: 274009862990131284, guid: bfd938af8dce78947b750bfe80932920, type: 3}
+  firePoint: {fileID: 1412429944}
+  bulletSpeed: 10
+  Ninja1: {fileID: 0}
+  Ninja2: {fileID: 1412429944}
+  multiplicador: 1
 --- !u!1 &1646592012
 GameObject:
   m_ObjectHideFlags: 0
