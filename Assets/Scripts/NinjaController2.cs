@@ -61,11 +61,11 @@ public class NinjaController2 : MonoBehaviour
 
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
 
-        if (isTouchingWall && Input.GetKey(KeyCode.RightArrow) && !derecha)
+        if (isTouchingWall && Input.GetKey(KeyCode.RightArrow) && transform.rotation.y == 0)
         {
             moveSpeed = 0;
         }
-        else if (isTouchingWall && Input.GetKey(KeyCode.LeftArrow) && derecha)
+        else if (isTouchingWall && Input.GetKey(KeyCode.LeftArrow) && transform.rotation.y == 180)
         {
             moveSpeed = 0;
         }

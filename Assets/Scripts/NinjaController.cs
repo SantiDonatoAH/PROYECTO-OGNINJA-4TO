@@ -134,7 +134,7 @@ public class NinjaController : MonoBehaviour
 
         if (collision.gameObject.tag == "Weapon")
         {
-            Destroy(collision.gameObject);
+            collision.gameObject.transform.position = new Vector2(200, 0); 
             isHoldingWeapon = true;
             anim.SetBool("IsHoldingManguera", true);
             

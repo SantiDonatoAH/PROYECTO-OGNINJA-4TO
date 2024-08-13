@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1945186774527015353}
   - component: {fileID: 8071781096801706804}
   - component: {fileID: 61535140111996316}
+  - component: {fileID: 114822019631866956}
   m_Layer: 0
   m_Name: Manguera_1
   m_TagString: Weapon
@@ -106,3 +107,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &114822019631866956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026039771719922884}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f24f08613fa83b408c67707aa3baa8c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bala: {fileID: 274009862990131284, guid: bfd938af8dce78947b750bfe80932920, type: 3}
+  bulletSpeed: 10
+  multiplicador: 0
+  pausemanager: {fileID: 0}

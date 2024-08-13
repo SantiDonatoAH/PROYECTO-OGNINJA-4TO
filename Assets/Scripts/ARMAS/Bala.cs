@@ -18,7 +18,7 @@ public class Bala : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(gameObject);
+        
         if (collision.gameObject.CompareTag("player2"))
         {
             Destroy(gameObject);
@@ -38,5 +38,6 @@ public class Bala : MonoBehaviour
             ninjaBlink.Blink();
             ninjaBlink.Blink();
         }
+        Destroy(gameObject);
     }
 }
