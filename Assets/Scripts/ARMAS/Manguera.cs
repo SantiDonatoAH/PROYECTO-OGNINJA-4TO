@@ -40,7 +40,7 @@ public class Manguera : MonoBehaviour
         }
 
         // Calcula la posición de la bala con base en el multiplicador
-        Vector3 spawnPosition = firePoint.position + (Vector3.right * 0.25f * multiplicador);
+        Vector3 spawnPosition = firePoint.position + (Vector3.right * 0.5f * multiplicador);
         GameObject nuevaBala = Instantiate(bala, spawnPosition, firePoint.rotation);
 
         // Configura la dirección de la bala
