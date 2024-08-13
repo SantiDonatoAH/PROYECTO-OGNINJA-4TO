@@ -29,6 +29,8 @@ public class Bala : MonoBehaviour
 
             ninja2Blink.Blink();
             ninja2Blink.Blink();
+            ninja2Blink.Blink();
+            ninja2Blink.Blink();
 
         }
     }
