@@ -40,25 +40,24 @@ public class NinjaController2 : MonoBehaviour
     void Move()
     {
         move = Input.GetAxisRaw("Horizontal2");
-        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
-        if (rb.velocity.x > 0)
+        if (move > 0)
         {
             derecha = true;
             GetComponent<SpriteRenderer>().flipX = false;
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotación normal
             anim.SetBool("Run", true);
         }
-        else if (rb.velocity.x < 0)
+        else if (move < 0)
         {
             derecha = false;
             GetComponent<SpriteRenderer>().flipX = true;
-            transform.rotation = Quaternion.Euler(0, 180, 0);
             anim.SetBool("Run", true);
         }
         else
         {
             anim.SetBool("Run", false);
         }
+
+        rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
 
         if (isTouchingWall && Input.GetKey(KeyCode.RightArrow) && !derecha)
         {
