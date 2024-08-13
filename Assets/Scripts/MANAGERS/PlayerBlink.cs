@@ -31,14 +31,15 @@ public class PlayerBlink : MonoBehaviour
         {
             health -= 0.5f;
             txt1.text = health.ToString();
-            healthAmount -= health;
-            healthBar.fillAmount = healthAmount / 100f;
+            healthAmount = health; // Ajustar esta línea para que refleje correctamente la salud restante
+            healthBar.fillAmount = healthAmount / 10f; // Cambia el divisor si la salud máxima no es 10
+
             EnableBlink();
             Invoke("DisableBlink", 0.5f);
 
             if (health <= 0)
             {
-                Debug.Log("Gano el jugadort 2");
+                Debug.Log("Ganó el jugador 2");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
         }

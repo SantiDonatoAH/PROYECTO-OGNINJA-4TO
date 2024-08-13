@@ -10,13 +10,13 @@ public class NinjaController2 : MonoBehaviour
     private bool isGrounded = false;
     private bool isTouchingWall = false;
     private bool isWallSliding = false;
-    bool isCrouching = false;
-    [SerializeField] Animator anim;
     public float move;
+    [SerializeField] Animator anim;
+    bool isCrouching;
     public float movey;
     public bool isHoldingWeapon = false;
+    public bool derecha = true;
     public BoxCollider2D agachar;
-
 
     void Start()
     {
@@ -43,30 +43,47 @@ public class NinjaController2 : MonoBehaviour
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (rb.velocity.x > 0)
         {
+            derecha = true;
             GetComponent<SpriteRenderer>().flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotación normal
             anim.SetBool("Run", true);
         }
         else if (rb.velocity.x < 0)
         {
+            derecha = false;
             GetComponent<SpriteRenderer>().flipX = true;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             anim.SetBool("Run", true);
         }
         else
         {
             anim.SetBool("Run", false);
         }
+
+        if (isTouchingWall && Input.GetKey(KeyCode.RightArrow) && !derecha)
+        {
+            moveSpeed = 0;
+        }
+        else if (isTouchingWall && Input.GetKey(KeyCode.LeftArrow) && derecha)
+        {
+            moveSpeed = 0;
+        }
+        else
+        {
+            moveSpeed = 5;
+        }
     }
 
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical2");
-        if (Input.GetKeyDown(KeyCode.UpArrow) && (isGrounded == true || isTouchingWall == true) && isCrouching == false)
+        if (Input.GetKeyDown(KeyCode.UpArrow) && !isCrouching && (isTouchingWall || isGrounded))
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
             isWallSliding = false;
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce * movey);
+            rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
         }
     }
 
@@ -90,7 +107,7 @@ public class NinjaController2 : MonoBehaviour
 
     void WallSlide()
     {
-        // Uncomment and adjust the following if you want wall sliding behavior
+        // Uncomment and adjust if you want wall sliding behavior
         // if (isWallSliding)
         // {
         //     rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);

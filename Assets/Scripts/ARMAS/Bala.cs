@@ -27,7 +27,16 @@ public class Bala : MonoBehaviour
             ninja2Blink.Blink();
             ninja2Blink.Blink();
             ninja2Blink.Blink();
+        }
 
+        if (collision.gameObject.CompareTag("player1"))
+        {
+            Destroy(gameObject);
+
+            ninjaBlink.Blink();
+            ninjaBlink.Blink();
+            ninjaBlink.Blink();
+            ninjaBlink.Blink();
         }
     }
 }
