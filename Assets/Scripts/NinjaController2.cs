@@ -44,12 +44,14 @@ public class NinjaController2 : MonoBehaviour
         {
             derecha = true;
             GetComponent<SpriteRenderer>().flipX = false;
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             anim.SetBool("Run", true);
         }
         else if (move < 0)
         {
             derecha = false;
-            GetComponent<SpriteRenderer>().flipX = true;
+            GetComponent<SpriteRenderer>().flipX = false;
+            transform.rotation = Quaternion.Euler(0, 180, 0);
             anim.SetBool("Run", true);
         }
         else
