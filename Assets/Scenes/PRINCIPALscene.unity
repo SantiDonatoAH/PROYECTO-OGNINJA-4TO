@@ -1507,6 +1507,7 @@ MonoBehaviour:
   movey: 0
   isHoldingWeapon: 0
   derecha: 0
+  agachar: {fileID: 1019354696}
 --- !u!114 &1019354698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2386,6 +2387,7 @@ MonoBehaviour:
   move: 0
   movey: 0
   isHoldingWeapon: 0
+  agachar: {fileID: 1412429945}
 --- !u!114 &1412429947
 MonoBehaviour:
   m_ObjectHideFlags: 0

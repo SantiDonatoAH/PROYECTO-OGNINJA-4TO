@@ -15,6 +15,8 @@ public class NinjaController2 : MonoBehaviour
     public float move;
     public float movey;
     public bool isHoldingWeapon = false;
+    public BoxCollider2D agachar;
+
 
     void Start()
     {
@@ -77,10 +79,12 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
+            agachar.enabled = false;
         }
         else
         {
             anim.SetBool("IsCrouching", false);
+            agachar.enabled = true;
         }
     }
 

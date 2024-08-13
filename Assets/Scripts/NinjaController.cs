@@ -16,6 +16,7 @@ public class NinjaController : MonoBehaviour
     public float movey;
     public bool isHoldingWeapon = false;
    public  bool derecha = true;
+    public BoxCollider2D agachar;
 
     void Start()
     {
@@ -107,10 +108,12 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
+            agachar.enabled = false;
         }
         else
         {
             anim.SetBool("IsCrouching", false);
+            agachar.enabled = true;
         }
     }
 
@@ -124,7 +127,6 @@ public class NinjaController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
         if (collision.gameObject.CompareTag("Ground"))
         {
             anim.SetBool("IsJumping", false);
@@ -134,7 +136,6 @@ public class NinjaController : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             anim.SetBool("IsJumping", false);
-            isGrounded = false;
             isTouchingWall = true;
         }
 
@@ -143,6 +144,7 @@ public class NinjaController : MonoBehaviour
             Destroy(collision.gameObject);
             isHoldingWeapon = true;
             anim.SetBool("IsHoldingManguera", true);
+            
         }
     }
 
