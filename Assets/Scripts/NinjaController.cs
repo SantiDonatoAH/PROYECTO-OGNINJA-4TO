@@ -6,17 +6,18 @@ public class NinjaController : MonoBehaviour
 {
     public float moveSpeed = 5f;
     public float jumpForce = 3f;
+    public float move;
+    public float movey;
+
     private Rigidbody2D rb;
+    [SerializeField] Animator anim;
+    public BoxCollider2D agachar;
+
     private bool isGrounded = false;
     private bool isTouchingWall = false;
-    private bool isWallSliding = false;
-    public float move;
-    [SerializeField] Animator anim;
     bool isCrouching;
-    public float movey;
     public bool isHoldingWeapon = false;
-   public  bool derecha = true;
-    public BoxCollider2D agachar;
+    public bool derecha = true;
 
     void Start()
     {
@@ -33,11 +34,7 @@ public class NinjaController : MonoBehaviour
         Move();
         Jump();
         Crouch();
-        WallSlide();
-        CheckHoldingWeapon(); 
-
-       
-
+        CheckHoldingWeapon();
     }
 
     void Move()
@@ -87,7 +84,6 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
-            isWallSliding = false;
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
         }
     }
@@ -146,7 +142,6 @@ public class NinjaController : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingWall = false;
-            isWallSliding = false;
         }
     }
 

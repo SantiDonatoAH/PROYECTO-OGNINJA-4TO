@@ -7,11 +7,8 @@ public class Manguera : MonoBehaviour
     public GameObject bala;
     public float bulletSpeed = 10f;
 
-    private Animator anim;
-    private Animator anim2;
-
-    private CombatManager combatManager;
-    private NinjaController ninjaController;
+    public Animator anim;
+    public Animator anim2;
 
     public int multiplicador = 0;
 
@@ -25,7 +22,6 @@ public class Manguera : MonoBehaviour
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
-        combatManager = GetComponent<CombatManager>();
     }
 
     void Update()
@@ -35,7 +31,7 @@ public class Manguera : MonoBehaviour
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingManguera") && Input.GetKeyDown(KeyCode.L))
+        if (anim2.GetBool("IsHoldingManguera") == true && Input.GetKeyDown(KeyCode.L))
         {
             Fire2();
         }
@@ -48,15 +44,11 @@ public class Manguera : MonoBehaviour
         
         if (firePoint.rotation.y == 0)
         {
-            Debug.Log(firePoint.rotation.y);
-
             multiplicador = 1; // Dirección normal hacia la derecha
         }
         
         else if (firePoint.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
         {
-            Debug.Log(firePoint.rotation.y);
-
             multiplicador = -1; // Cambia la dirección de disparo
         }
 
@@ -68,18 +60,15 @@ public class Manguera : MonoBehaviour
 
     void Fire2()
     {
-        Debug.Log("Cua");
         GameObject ninja2 = GameObject.FindWithTag("player2");
         Transform firePoint2 = ninja2.GetComponent<Transform>();
 
         if (firePoint2.rotation.y == -1) // Si el ninja está mirando hacia la izquierda
         {
-            Debug.Log("ji");
             multiplicador = -1; // Cambia la dirección de disparo
         }
         else if (firePoint2.rotation.y == 0)
         {
-            Debug.Log("ji");
             multiplicador = 1; // Dirección normal hacia la derecha
         }
 
