@@ -98,6 +98,7 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = false;
+
         }
         else
         {
