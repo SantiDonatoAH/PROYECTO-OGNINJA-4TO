@@ -1599,10 +1599,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bala: {fileID: 274009862990131284, guid: bfd938af8dce78947b750bfe80932920, type: 3}
-  firePoint: {fileID: 1019354695}
   bulletSpeed: 10
-  Ninja1: {fileID: 1019354695}
   multiplicador: 1
+  pausemanager: {fileID: 0}
 --- !u!1 &1062728683
 GameObject:
   m_ObjectHideFlags: 0
@@ -3569,7 +3568,7 @@ PrefabInstance:
     - target: {fileID: 6442034802836327137, guid: 2e0c9ca0b1116884290745cd49cd2535,
         type: 3}
       propertyPath: m_TagString
-      value: One Way Platform
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 6442034802836327166, guid: 2e0c9ca0b1116884290745cd49cd2535,
         type: 3}
