@@ -121,5 +121,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 274009862990131284, guid: bfd938af8dce78947b750bfe80932920, type: 3}
   bulletSpeed: 10
-  multiplicador: 0
+  multiplicador: -1
   pausemanager: {fileID: 0}

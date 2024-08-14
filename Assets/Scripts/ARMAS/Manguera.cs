@@ -7,9 +7,6 @@ public class Manguera : MonoBehaviour
     public GameObject bala;
     public float bulletSpeed = 10f;
 
-    private Transform firePoint;
-    private Transform firePoint2;
-
     private Animator anim;
     private Animator anim2;
 
@@ -23,10 +20,8 @@ public class Manguera : MonoBehaviour
     void Start()
     {
         GameObject ninja1 = GameObject.FindWithTag("player1");
-        firePoint = ninja1.GetComponent<Transform>();
 
         GameObject ninja2 = GameObject.FindWithTag("player2");
-        firePoint2 = ninja2.GetComponent<Transform>();
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
@@ -48,19 +43,23 @@ public class Manguera : MonoBehaviour
 
     void Fire()
     {
-
-        if (firePoint.rotation.y == 180) // Si el ninja está mirando hacia la izquierda
+        GameObject ninja1 = GameObject.FindWithTag("player1");
+        Transform firePoint = ninja1.GetComponent<Transform>();
+        
+        if (firePoint.rotation.y == 0)
         {
-            Debug.Log("ki");
-
-            multiplicador = -1; // Cambia la dirección de disparo
-        }
-        else if (firePoint.rotation.y == 0)
-        {
-            Debug.Log("ki");
+            Debug.Log(firePoint.rotation.y);
 
             multiplicador = 1; // Dirección normal hacia la derecha
         }
+        
+        else if (firePoint.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
+        {
+            Debug.Log(firePoint.rotation.y);
+
+            multiplicador = -1; // Cambia la dirección de disparo
+        }
+
         GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
 
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
@@ -69,19 +68,22 @@ public class Manguera : MonoBehaviour
 
     void Fire2()
     {
-        if (firePoint2.rotation.y > 0) // Si el ninja está mirando hacia la izquierda
-        {
 
+        GameObject ninja2 = GameObject.FindWithTag("player2");
+        Transform firePoint2 = ninja2.GetComponent<Transform>();
+
+        if (firePoint2.rotation.y == -1) // Si el ninja está mirando hacia la izquierda
+        {
+            Debug.Log("ji");
             multiplicador = -1; // Cambia la dirección de disparo
         }
         else if (firePoint2.rotation.y == 0)
         {
-
+            Debug.Log("ji");
             multiplicador = 1; // Dirección normal hacia la derecha
         }
 
-        Vector3 spawnPosition = firePoint2.position + (Vector3.right * 0.5f * multiplicador);
-        GameObject nuevaBala = Instantiate(bala, spawnPosition, firePoint2.rotation);
+        GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint2.position.x + (0.5f * multiplicador), firePoint2.position.y, 0), firePoint2.rotation);
 
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint2.right * bulletSpeed;
