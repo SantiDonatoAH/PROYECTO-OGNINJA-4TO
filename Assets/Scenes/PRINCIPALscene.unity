@@ -1341,7 +1341,6 @@ GameObject:
   - component: {fileID: 1019354700}
   - component: {fileID: 1019354701}
   - component: {fileID: 1019354698}
-  - component: {fileID: 1019354702}
   m_Layer: 0
   m_Name: ninja1
   m_TagString: player1
@@ -1490,7 +1489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ddf56606c8802964382c78e504d28bda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   txt1: {fileID: 1789834488}
   healthBar: {fileID: 2004384195}
   healthAmount: 100
@@ -1556,24 +1555,6 @@ MonoBehaviour:
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
---- !u!114 &1019354702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019354692}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f24f08613fa83b408c67707aa3baa8c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bala: {fileID: 274009862990131284, guid: bfd938af8dce78947b750bfe80932920, type: 3}
-  bulletSpeed: 10
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
-  multiplicador: 1
-  pausemanager: {fileID: 0}
 --- !u!1 &1062728683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2374,7 +2355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: efa090b5759229642b981b4095e03c7c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 10
+  health: 100
   txt2: {fileID: 107064041}
   healthBar: {fileID: 216285394}
   healthAmount: 100

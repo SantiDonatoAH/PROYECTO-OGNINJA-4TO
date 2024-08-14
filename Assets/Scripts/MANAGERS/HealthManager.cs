@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class HealthManager : MonoBehaviour
 {
     public Image healthBar;
-    public float healthAmount = 10f;
+    public float healthAmount = 100f;
 
 
     // Start is called before the first frame update
@@ -19,23 +19,13 @@ public class HealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            TakeDamage(20);
-
-        }
-
-        if (Input.GetKeyDown(KeyCode.Y))
-        {
-            Heal(20);
-
-        }
+       
     }
 
     public void TakeDamage(float damage)
     {
         healthAmount -= damage;
-        healthBar.fillAmount = healthAmount / 10f;
+        healthBar.fillAmount = healthAmount / 100f;
     }
 
     public void Heal(float healingAmount)
