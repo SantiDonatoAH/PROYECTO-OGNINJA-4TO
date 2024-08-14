@@ -68,7 +68,7 @@ public class Manguera : MonoBehaviour
 
     void Fire2()
     {
-
+        Debug.Log("Cua");
         GameObject ninja2 = GameObject.FindWithTag("player2");
         Transform firePoint2 = ninja2.GetComponent<Transform>();
 

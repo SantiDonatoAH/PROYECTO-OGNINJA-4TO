@@ -68,7 +68,7 @@ public class NinjaController : MonoBehaviour
         {
             moveSpeed = 0;
         }
-        else if (isTouchingWall == true && Input.GetKey(KeyCode.A) && transform.rotation.y == 180)
+        else if (isTouchingWall == true && Input.GetKey(KeyCode.A) && transform.rotation.y != 0)
         {
             moveSpeed = 0;
         }
