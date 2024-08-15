@@ -12,6 +12,7 @@ public class NinjaController : MonoBehaviour
     private Rigidbody2D rb;
     [SerializeField] Animator anim;
     public BoxCollider2D agachar;
+    public BoxCollider2D parado;
 
     private bool isGrounded = false;
     private bool isTouchingWall = false;
@@ -98,13 +99,15 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
-            agachar.enabled = false;
+            agachar.enabled = true;
+            parado.enabled = false;
 
         }
         else
         {
             anim.SetBool("IsCrouching", false);
-            agachar.enabled = true;
+            agachar.enabled = false;
+            parado.enabled = true;
         }
     }
 
