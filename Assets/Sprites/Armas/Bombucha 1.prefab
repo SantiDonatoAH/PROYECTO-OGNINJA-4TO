@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 123297613596716995}
   - component: {fileID: 61905842386328378}
   - component: {fileID: 50353128983589256}
-  - component: {fileID: 114522585842031312}
+  - component: {fileID: 114819879289925190}
   m_Layer: 0
-  m_Name: Bombucha
-  m_TagString: Weapon
+  m_Name: Bombucha 1
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -106,7 +106,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.15, y: 0.1}
+  m_Size: {x: 0.075, y: 0.075}
   m_EdgeRadius: 0
 --- !u!50 &50353128983589256
 Rigidbody2D:
@@ -120,16 +120,16 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 5
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 3
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &114522585842031312
+--- !u!114 &114819879289925190
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,13 +138,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 7371005533148593032}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a5088c00dfc4d2488addbd0d1bff4c4, type: 3}
+  m_Script: {fileID: 11500000, guid: f7b1b31c9a0f7dc42a7249bb4ed16a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bala: {fileID: 7371005533148593032, guid: aa316320670335d4fb0cb29a8f021416, type: 3}
-  bulletSpeed: 10
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
-  multiplicador: 0
-  multiplicador2: 0
-  pausemanager: {fileID: 0}
