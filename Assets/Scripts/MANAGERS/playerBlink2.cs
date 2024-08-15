@@ -9,10 +9,10 @@ public class playerBlink2 : MonoBehaviour
     SpriteRenderer renderer;
     Color damageColor = Color.red;
     Color normalColor;
-    public float health = 100;
+    public float health = 10;
     public Text txt2;
  public Image healthBar;
-    public float healthAmount = 100f;
+    public float healthAmount = 10f;
 
     private void Awake()
     {
@@ -23,19 +23,18 @@ public class playerBlink2 : MonoBehaviour
     {
         txt2.text = health.ToString();
         normalColor = renderer.color;
-        
     }
 
     public void Blink()
     {
         if (health > 0)
         {
-            health -= 5f;
+            health -= 0.5f;
             txt2.text = health.ToString();
             healthAmount -= health;
             healthBar.fillAmount = healthAmount / 100f;
             EnableBlink();
-            Invoke("DisableBlink", 2f);
+            Invoke("DisableBlink", 0.5f);
 
             if (health <= 0)
             {
