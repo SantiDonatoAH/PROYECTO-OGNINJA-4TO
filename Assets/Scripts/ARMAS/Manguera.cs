@@ -11,6 +11,7 @@ public class Manguera : MonoBehaviour
     public Animator anim2;
 
     public int multiplicador = 0;
+    public int multiplicador2 = 0;
 
     public ScreenController pausemanager;
 
@@ -65,14 +66,14 @@ public class Manguera : MonoBehaviour
 
         if (firePoint2.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
         {
-            multiplicador = -1; // Cambia la dirección de disparo
+            multiplicador2 = -1; // Cambia la dirección de disparo
         }
         else if (firePoint2.rotation.y == 0)
         {
-            multiplicador = 1; // Dirección normal hacia la derecha
+            multiplicador2 = 1; // Dirección normal hacia la derecha
         }
 
-        GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint2.position.x + (0.5f * multiplicador), firePoint2.position.y, 0), firePoint2.rotation);
+        GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
 
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint2.right * bulletSpeed;
