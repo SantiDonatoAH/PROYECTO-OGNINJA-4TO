@@ -1696,7 +1696,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armas:
   - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
-  - {fileID: 3108512195720148897, guid: 7245b4e0a70dfc44bb12405b29e9cfb9, type: 3}
+  - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   spawnPoints:
   - {fileID: 870233830}
   - {fileID: 1778200177}
