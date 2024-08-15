@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bombucha : MonoBehaviour
+public class Bombuch : MonoBehaviour
 {
     public GameObject bala;
     public float bulletSpeed = 10f;
