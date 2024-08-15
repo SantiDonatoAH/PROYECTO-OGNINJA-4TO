@@ -63,7 +63,7 @@ public class Manguera : MonoBehaviour
         GameObject ninja2 = GameObject.FindWithTag("player2");
         Transform firePoint2 = ninja2.GetComponent<Transform>();
 
-        if (firePoint2.rotation.y == -1) // Si el ninja está mirando hacia la izquierda
+        if (firePoint2.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
         {
             multiplicador = -1; // Cambia la dirección de disparo
         }
