@@ -159,6 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7b1b31c9a0f7dc42a7249bb4ed16a61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ouchSound: {fileID: 0}
 --- !u!114 &114726032942655026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,3 +172,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63af416887ff3a34c8559d0323292491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  splashSound: {fileID: 8300000, guid: a63c3f18de64de3469e13972f2d218b9, type: 3}
+  explosionRadius: 2

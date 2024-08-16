@@ -7,6 +7,8 @@ public class BalaBombucha : MonoBehaviour
     private playerBlink2 ninja2Blink;
     private PlayerBlink ninjaBlink;
 
+    [SerializeField] private AudioClip splashSound;
+
     public float explosionRadius = 2f;
 
     void Start()
@@ -36,12 +38,14 @@ public class BalaBombucha : MonoBehaviour
                         ninjaBlink.Blink();
                         ninjaBlink.Blink();
                         ninjaBlink.Blink();
+                        AudioManager.instance.PlaySound(splashSound);
                     }
                     else
                     {
                         // Radio mayor o igual a 2: 2 blinks
                         ninjaBlink.Blink();
                         ninjaBlink.Blink();
+                        AudioManager.instance.PlaySound(splashSound);
                     }
                 }
             }
@@ -57,12 +61,14 @@ public class BalaBombucha : MonoBehaviour
                         ninja2Blink.Blink();
                         ninja2Blink.Blink();
                         ninja2Blink.Blink();
+                        AudioManager.instance.PlaySound(splashSound);
                     }
                     else
                     {
                         // Radio mayor o igual a 2: 2 blinks
                         ninja2Blink.Blink();
                         ninja2Blink.Blink();
+                        AudioManager.instance.PlaySound(splashSound);
                     }
                 }
             }
