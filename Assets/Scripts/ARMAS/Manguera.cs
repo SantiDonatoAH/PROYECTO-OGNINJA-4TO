@@ -13,6 +13,8 @@ public class Manguera : MonoBehaviour
     public int multiplicador = 0;
     public int multiplicador2 = 0;
 
+    [SerializeField] private AudioClip pewSound;
+
     public ScreenController pausemanager;
 
     void Start()
@@ -57,6 +59,7 @@ public class Manguera : MonoBehaviour
 
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed;
+        AudioManager.instance.PlaySound(pewSound);
     }
 
     void Fire2()
@@ -77,5 +80,6 @@ public class Manguera : MonoBehaviour
 
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint2.right * bulletSpeed;
+        AudioManager.instance.PlaySound(pewSound);
     }
 }

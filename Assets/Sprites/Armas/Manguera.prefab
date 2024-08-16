@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 61535140111996316}
   - component: {fileID: 114822019631866956}
   m_Layer: 0
-  m_Name: Manguera_1
+  m_Name: Manguera
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -121,5 +121,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bala: {fileID: 274009862990131284, guid: bfd938af8dce78947b750bfe80932920, type: 3}
   bulletSpeed: 10
+  anim: {fileID: 0}
+  anim2: {fileID: 0}
   multiplicador: -1
+  multiplicador2: 0
+  pewSound: {fileID: 8300000, guid: db5d82569e9b5d04fa5b70fa66c63635, type: 3}
   pausemanager: {fileID: 0}
