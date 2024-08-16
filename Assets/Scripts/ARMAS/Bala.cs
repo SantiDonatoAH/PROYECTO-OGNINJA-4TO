@@ -6,6 +6,7 @@ public class Bala : MonoBehaviour
 {
     private playerBlink2 ninja2Blink;
     private PlayerBlink ninjaBlink;
+    [SerializeField] private AudioClip ouchSound;
     void Start()
     {
        
@@ -27,6 +28,7 @@ public class Bala : MonoBehaviour
             ninja2Blink.Blink();
             ninja2Blink.Blink();
             ninja2Blink.Blink();
+            AudioManager.instance.PlaySound(ouchSound);
         }
 
         if (collision.gameObject.CompareTag("player1"))
@@ -37,6 +39,7 @@ public class Bala : MonoBehaviour
             ninjaBlink.Blink();
             ninjaBlink.Blink();
             ninjaBlink.Blink();
+            AudioManager.instance.PlaySound(ouchSound);
         }
         Destroy(gameObject);
     }

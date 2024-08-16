@@ -3,11 +3,13 @@
 public class AudioManager : MonoBehaviour
 {
     [Header("----------Audio Source----------")]
-    [SerializeField] AudioSource musicSource; 
+    [SerializeField] AudioSource musicSource;
     [Header("----------Audio Clip----------")]
-    public AudioClip bakground; 
+    public AudioClip bakground;
+    [SerializeField] AudioSource sfxAudioSource;
 
-    private static AudioManager instance;
+    public static AudioManager instance;
+
 
     private void Awake()
     {
@@ -27,5 +29,10 @@ public class AudioManager : MonoBehaviour
     {
         musicSource.clip = bakground;
         musicSource.Play();
+    }
+
+    public void PlaySound(AudioClip clip)
+    {
+        sfxAudioSource.PlayOneShot(clip);
     }
 }
