@@ -9,6 +9,8 @@ public class BalaBombucha : MonoBehaviour
 
     [SerializeField] private AudioClip splashSound;
 
+    public float radioExplosion = 2;
+
     void Start()
     {
         GameObject ninja2 = GameObject.FindWithTag("player2");
@@ -20,8 +22,7 @@ public class BalaBombucha : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
-
+       
         
             if (collision.gameObject.CompareTag("player1"))
             {
