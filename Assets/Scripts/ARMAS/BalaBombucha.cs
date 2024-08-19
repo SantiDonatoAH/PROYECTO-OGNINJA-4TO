@@ -13,7 +13,7 @@ public class BalaBombucha : MonoBehaviour
 
     void Start()
     {
-        // Inicializa las referencias aquí si es necesario.
+        // Opcional: Puedes inicializar las referencias aquí si el método Start no es necesario.
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -21,7 +21,7 @@ public class BalaBombucha : MonoBehaviour
         // Reproduce el sonido de explosión
         AudioManager.instance.PlaySound(splashSound);
 
-        // Si la colisión es directa con un jugador
+        // Marca el impacto directo si el collider es un jugador
         if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2"))
         {
             isDirectHit = true;
@@ -31,10 +31,9 @@ public class BalaBombucha : MonoBehaviour
         Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, radioExplosion);
         foreach (var hitCollider in hitColliders)
         {
-            // Solo afecta a los jugadores
+            // Verifica si el collider pertenece a un jugador
             if (hitCollider.CompareTag("player1") || hitCollider.CompareTag("player2"))
             {
-                // Determina si el collider está dentro del rango de la explosión
                 float distance = Vector2.Distance(transform.position, hitCollider.transform.position);
                 bool isWithinExplosionRange = distance <= radioExplosion;
 
@@ -43,8 +42,10 @@ public class BalaBombucha : MonoBehaviour
                     PlayerBlink ninjaBlink = hitCollider.GetComponent<PlayerBlink>();
                     if (ninjaBlink != null)
                     {
-                        if (isDirectHit && isWithinExplosionRange)
+                        // Aplica el efecto de Blink basado en si fue un golpe directo o en área
+                        if (isDirectHit)
                         {
+                            // Daño directo: llama a Blink 4 veces
                             ninjaBlink.Blink();
                             ninjaBlink.Blink();
                             ninjaBlink.Blink();
@@ -52,6 +53,7 @@ public class BalaBombucha : MonoBehaviour
                         }
                         else if (!isDirectHit && isWithinExplosionRange)
                         {
+                            // Daño en área: llama a Blink 2 veces
                             ninjaBlink.Blink();
                             ninjaBlink.Blink();
                         }
@@ -62,8 +64,10 @@ public class BalaBombucha : MonoBehaviour
                     playerBlink2 ninja2Blink = hitCollider.GetComponent<playerBlink2>();
                     if (ninja2Blink != null)
                     {
-                        if (isDirectHit && isWithinExplosionRange)
+                        // Aplica el efecto de Blink basado en si fue un golpe directo o en área
+                        if (isDirectHit)
                         {
+                            // Daño directo: llama a Blink 4 veces
                             ninja2Blink.Blink();
                             ninja2Blink.Blink();
                             ninja2Blink.Blink();
@@ -71,6 +75,7 @@ public class BalaBombucha : MonoBehaviour
                         }
                         else if (!isDirectHit && isWithinExplosionRange)
                         {
+                            // Daño en área: llama a Blink 2 veces
                             ninja2Blink.Blink();
                             ninja2Blink.Blink();
                         }
