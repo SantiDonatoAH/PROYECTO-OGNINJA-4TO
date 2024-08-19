@@ -9,7 +9,7 @@ public class BalaBombucha : MonoBehaviour
 
     [SerializeField] private AudioClip splashSound;
 
-    public float radioExplosion = 2;
+    public float radioExplosion = 2f;
 
     void Start()
     {
