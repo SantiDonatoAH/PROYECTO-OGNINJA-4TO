@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 61905842386328378}
   - component: {fileID: 50353128983589256}
   - component: {fileID: 58085008896022230}
-  - component: {fileID: 114819879289925190}
   - component: {fileID: 114726032942655026}
   m_Layer: 0
   m_Name: Bombucha 1
@@ -147,19 +146,6 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.31999996
---- !u!114 &114819879289925190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7371005533148593032}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7b1b31c9a0f7dc42a7249bb4ed16a61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ouchSound: {fileID: 0}
 --- !u!114 &114726032942655026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -173,4 +159,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   splashSound: {fileID: 8300000, guid: a63c3f18de64de3469e13972f2d218b9, type: 3}
-  explosionRadius: 2
