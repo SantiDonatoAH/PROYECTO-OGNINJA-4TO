@@ -8,42 +8,74 @@ public class BalaBombucha : MonoBehaviour
     private PlayerBlink ninjaBlink;
 
     [SerializeField] private AudioClip splashSound;
-
     public float radioExplosion = 2f;
+    private bool isDirectHit = false;
 
     void Start()
     {
-        GameObject ninja2 = GameObject.FindWithTag("player2");
-        ninja2Blink = ninja2.GetComponent<playerBlink2>();
-
-        GameObject ninja1 = GameObject.FindWithTag("player1");
-        ninjaBlink = ninja1.GetComponent<PlayerBlink>();
+        // Opcional: Puedes inicializar las referencias aquí si el método Start no es necesario.
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-       
-        
-            if (collision.gameObject.CompareTag("player1"))
-            {
-            Destroy(gameObject);
+        // Reproduce el sonido de explosión
+        AudioManager.instance.PlaySound(splashSound);
 
-            ninjaBlink.Blink();
-                        ninjaBlink.Blink();
-                        AudioManager.instance.PlaySound(splashSound);
-                    
-                
-            }
-            if (collision.gameObject.CompareTag("player2"))
+        // Si la colisión es directa con un jugador
+        if (collision.gameObject.CompareTag("player1") || collision.gameObject.CompareTag("player2"))
+        {
+            isDirectHit = true;
+        }
+
+        // Detecta todos los colliders dentro del radio de explosión
+        Collider2D[] hitColliders = Physics2D.OverlapCircleAll(transform.position, radioExplosion);
+        foreach (var hitCollider in hitColliders)
+        {
+            if (hitCollider.CompareTag("player1"))
             {
-            Destroy(gameObject);
-            ninja2Blink.Blink();
-                        ninja2Blink.Blink();
-                        AudioManager.instance.PlaySound(splashSound);
+                PlayerBlink ninjaBlink = hitCollider.GetComponent<PlayerBlink>();
+                if (ninjaBlink != null)
+                {
+
+                    if (isDirectHit)
+                    {
+                        ninjaBlink.Blink();
+                        ninjaBlink.Blink();
+                        ninjaBlink.Blink();
+                        ninjaBlink.Blink();
                     }
-                
+                    else
+                    {
+                        ninjaBlink.Blink();
+                        ninjaBlink.Blink();
+                    }
+                }
+            }
+            else if (hitCollider.CompareTag("player2"))
+            {
+                playerBlink2 ninja2Blink = hitCollider.GetComponent<playerBlink2>();
+                if (ninja2Blink != null)
+                {
+                    // Aplica el efecto de Blink basado en si fue un golpe directo o en área
+                    if (isDirectHit)
+                    {
+                        ninja2Blink.Blink();
+                        ninja2Blink.Blink();
+                        ninja2Blink.Blink();
+                        ninja2Blink.Blink();
+                    }
+                    else
+                    {
+                        ninja2Blink.Blink();
+                        ninja2Blink.Blink();
+                    }
+                }
+            }
             
+        }
         
+
+        // Destruye la bala después de la explosión
         Destroy(gameObject);
     }
 }

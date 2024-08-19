@@ -1961,6 +1961,7 @@ MonoBehaviour:
   anim2: {fileID: 0}
   multiplicador: 1
   multiplicador2: 0
+  pewSound: {fileID: 0}
   pausemanager: {fileID: 0}
 --- !u!1 &1062728683
 GameObject:
@@ -2082,7 +2083,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armas:
-  - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   spawnPoints:
   - {fileID: 870233830}
