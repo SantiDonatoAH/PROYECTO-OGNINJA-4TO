@@ -19,6 +19,7 @@ public class NinjaController2 : MonoBehaviour
     bool isCrouching;
     public bool isHoldingWeapon = false;
     public bool derecha = true;
+    public string weaponName;
 
     void Start()
     {
@@ -133,15 +134,21 @@ public class NinjaController2 : MonoBehaviour
 
         if (collision.gameObject.CompareTag("Weapon"))
         {
-            string weaponName = collision.gameObject.name;
-            if (weaponName.EndsWith("(Clone)"))
+            if (isHoldingWeapon == true && isCrouching == true)
             {
-                weaponName = weaponName.Replace("(Clone)", "2").Trim();
+                anim.SetBool("IsHolding" + weaponName, false);
+                isHoldingWeapon = false;
             }
-            Debug.Log(weaponName);
-            collision.gameObject.transform.position = new Vector2(200, 0);
-            isHoldingWeapon = true;
-            anim.SetBool("IsHolding" + weaponName, true);
+            else if (isHoldingWeapon == false)
+            {
+                weaponName = collision.gameObject.name;
+                weaponName = weaponName.Replace("(Clone)", "2").Trim();
+
+                collision.gameObject.transform.position = new Vector2(200, 0);
+                isHoldingWeapon = true;
+                anim.SetBool("IsHolding" + weaponName, true);
+            }
+               
         }
     }
 

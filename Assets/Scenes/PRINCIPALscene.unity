@@ -1441,7 +1441,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 870233829}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2, y: 0.8736418, z: 0.01799265}
+  m_LocalPosition: {x: -2, y: 1, z: 0.01799265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1095287915}
@@ -2247,7 +2247,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armas:
   - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
-  - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   spawnPoints:
   - {fileID: 870233830}
   - {fileID: 1778200177}
@@ -2997,6 +2996,7 @@ MonoBehaviour:
   agachar: {fileID: 1412429948}
   isHoldingWeapon: 0
   derecha: 1
+  weaponName: 
 --- !u!114 &1412429947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3478,7 +3478,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1778200176}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.15292752, y: 0.9936418, z: 0.01799265}
+  m_LocalPosition: {x: -0.15292752, y: 1, z: 0.01799265}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1095287915}

@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 4741360178896574420}
   - component: {fileID: 123297613596716995}
   - component: {fileID: 61905842386328378}
-  - component: {fileID: 50353128983589256}
   - component: {fileID: 114522585842031312}
+  - component: {fileID: 50077224663986154}
   m_Layer: 0
   m_Name: Bombucha
   m_TagString: Weapon
@@ -108,27 +108,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.15, y: 0.1}
   m_EdgeRadius: 0
---- !u!50 &50353128983589256
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7371005533148593032}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!114 &114522585842031312
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -148,3 +127,24 @@ MonoBehaviour:
   multiplicador: 0
   multiplicador2: 0
   pausemanager: {fileID: 0}
+--- !u!50 &50077224663986154
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371005533148593032}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7

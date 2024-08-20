@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8071781096801706804}
   - component: {fileID: 61535140111996316}
   - component: {fileID: 114822019631866956}
+  - component: {fileID: 50490018926587522}
   m_Layer: 0
   m_Name: Manguera
   m_TagString: Weapon
@@ -127,3 +128,24 @@ MonoBehaviour:
   multiplicador2: 0
   pewSound: {fileID: 8300000, guid: a64c3ba8b5cfae141ae9d06288076ffa, type: 3}
   pausemanager: {fileID: 0}
+--- !u!50 &50490018926587522
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4026039771719922884}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 7
