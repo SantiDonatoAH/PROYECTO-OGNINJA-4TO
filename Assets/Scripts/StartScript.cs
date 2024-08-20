@@ -19,7 +19,9 @@ public class StartScript : MonoBehaviour
       if (Input.GetKeyDown(KeyCode.Space))
         {
             OnclickStart();
-        }   
+        }
+       Time.timeScale = 1;
+
     }
 
     public void OnclickStart()

@@ -125,5 +125,5 @@ MonoBehaviour:
   anim2: {fileID: 0}
   multiplicador: -1
   multiplicador2: 0
-  pewSound: {fileID: 8300000, guid: db5d82569e9b5d04fa5b70fa66c63635, type: 3}
+  pewSound: {fileID: 8300000, guid: a64c3ba8b5cfae141ae9d06288076ffa, type: 3}
   pausemanager: {fileID: 0}
