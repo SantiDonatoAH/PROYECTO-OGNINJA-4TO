@@ -137,19 +137,22 @@ public class NinjaController : MonoBehaviour
         if (collision.gameObject.tag == "Weapon")
         {
 
-            if (isHoldingWeapon == true)
+            if (isHoldingWeapon == true && isCrouching == true)
             {
                 anim.SetBool("IsHolding" + weaponName, false);
+                isHoldingWeapon = false;
             }
-            weaponName = collision.gameObject.name;
-            weaponName = weaponName.Replace("(Clone)", "").Trim();
 
-            collision.gameObject.transform.position = new Vector2(200, 0);
-            isHoldingWeapon = true;
-            anim.SetBool("IsHolding" + weaponName, true);
+            else if (isHoldingWeapon == false)
+            {
+                weaponName = collision.gameObject.name;
+                weaponName = weaponName.Replace("(Clone)", "").Trim();
+
+                collision.gameObject.transform.position = new Vector2(200, 0);
+                isHoldingWeapon = true;
+                anim.SetBool("IsHolding" + weaponName, true);
+            }
         }
-
-        
         
     }
 
