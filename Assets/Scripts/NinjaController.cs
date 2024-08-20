@@ -153,6 +153,11 @@ public class NinjaController : MonoBehaviour
                 anim.SetBool("IsHolding" + weaponName, true);
             }
         }
+
+        if (collision.gameObject.CompareTag("Dead"))
+        {
+            
+        }
         
     }
 
