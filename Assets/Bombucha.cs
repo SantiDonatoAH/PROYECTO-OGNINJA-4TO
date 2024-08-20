@@ -32,7 +32,7 @@ public class Bombucha : MonoBehaviour
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.L))
+        if (anim2.GetBool("IsHoldingBombucha2") == true && Input.GetKeyDown(KeyCode.L))
         {
             Fire2();
         }
