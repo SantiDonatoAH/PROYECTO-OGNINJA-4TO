@@ -11,6 +11,7 @@ public class playerBlink2 : MonoBehaviour
     Color normalColor;
     public float health = 10;
     public Text txt2;
+    public Text pts1;
  public Image healthBar;
     public float healthAmount = 10f;
 
@@ -38,7 +39,10 @@ public class playerBlink2 : MonoBehaviour
 
             if (health <= 0)
             {
-                Debug.Log("Gano el jugadort 1");
+                int number = int.Parse(pts1.text);
+                number ++ ;
+                pts1.text = number.ToString();
+                Debug.Log(pts1.text);
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 

@@ -19,6 +19,7 @@ public class NinjaController : MonoBehaviour
     bool isCrouching;
     public bool isHoldingWeapon = false;
     public bool derecha = true;
+    public string weaponName;
 
     public Manguera Manguera;
     void Start()
@@ -135,7 +136,8 @@ public class NinjaController : MonoBehaviour
 
         if (collision.gameObject.tag == "Weapon")
         {
-            string weaponName = collision.gameObject.name;
+            anim.SetBool("IsHolding" + weaponName, false);
+            weaponName = collision.gameObject.name;
             if (weaponName.EndsWith("(Clone)"))
             {
                 weaponName = weaponName.Replace("(Clone)", "").Trim();
