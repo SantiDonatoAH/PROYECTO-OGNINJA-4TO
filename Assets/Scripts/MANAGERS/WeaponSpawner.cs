@@ -19,9 +19,6 @@ public class WeaponSpawner : MonoBehaviour
     private void Update()
     {
         timer -= 0.01f;
-
-        Debug.Log(timer);
-
         if (timer <= 0)
         {
             SpawnWeapon();

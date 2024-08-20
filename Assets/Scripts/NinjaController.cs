@@ -136,16 +136,39 @@ public class NinjaController : MonoBehaviour
 
         if (collision.gameObject.tag == "Weapon")
         {
-            anim.SetBool("IsHolding" + weaponName, false);
-            weaponName = collision.gameObject.name;
-            if (weaponName.EndsWith("(Clone)"))
+            if (isHoldingWeapon == false)
             {
+                weaponName = collision.gameObject.name;
                 weaponName = weaponName.Replace("(Clone)", "").Trim();
-            }
-            collision.gameObject.transform.position = new Vector2(200, 0); 
-            isHoldingWeapon = true;
-            anim.SetBool("IsHolding"+weaponName, true);
 
+                collision.gameObject.transform.position = new Vector2(200, 0);
+                isHoldingWeapon = true;
+                anim.SetBool("IsHolding" + weaponName, true);
+            }
+
+            else if (isHoldingWeapon == true)
+            {
+                anim.SetBool("IsHolding" + weaponName, false);
+                GameObject[] allObjects = GameObject.FindGameObjectsWithTag("Weapon");
+                weaponName = weaponName.Replace("", "(Clone)").Trim();
+
+                foreach (GameObject obj in allObjects)
+                {
+                    if (obj.name == weaponName)
+                    {
+                        Destroy(obj); // Destruir el objeto si hay coincidencia
+                        break; // Salir del bucle si solo deseas destruir uno
+                    }
+                }
+
+                weaponName = collision.gameObject.name;
+                weaponName = weaponName.Replace("(Clone)", "").Trim();
+
+                collision.gameObject.transform.position = new Vector2(200, 0);
+                isHoldingWeapon = true;
+                anim.SetBool("IsHolding" + weaponName, true);
+
+            }
         }
     }
 

@@ -34,7 +34,7 @@ public class Manguera : MonoBehaviour
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingManguera") == true && Input.GetKeyDown(KeyCode.L))
+        if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKeyDown(KeyCode.L))
         {
             Fire2();
         }

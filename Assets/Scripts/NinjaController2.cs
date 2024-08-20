@@ -136,8 +136,9 @@ public class NinjaController2 : MonoBehaviour
             string weaponName = collision.gameObject.name;
             if (weaponName.EndsWith("(Clone)"))
             {
-                weaponName = weaponName.Replace("(Clone)", "").Trim();
+                weaponName = weaponName.Replace("(Clone)", "2").Trim();
             }
+            Debug.Log(weaponName);
             collision.gameObject.transform.position = new Vector2(200, 0);
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
