@@ -13,18 +13,8 @@ public class WeaponSpawner : MonoBehaviour
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObject armaSeleccionada = armas[Random.Range(0, armas.Length)];
         GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
-
-        if (objetoExistente != null)
-        {
-            // Si ya fue instanciado, mueve el objeto existente a x = 2
-            objetoExistente.transform.position = spawnPoint.position;
-        }
-        else
-        {
-            // Si no ha sido instanciado, instancia el objeto
-            Instantiate(armaSeleccionada, spawnPoint.position, spawnPoint.rotation);
-        }
-
+        
+        Instantiate(armaSeleccionada, spawnPoint.position, spawnPoint.rotation);
     }
 
     private void Update()
@@ -44,15 +34,12 @@ public class WeaponSpawner : MonoBehaviour
 
         if (objetoExistente != null)
         {
-            // Si ya fue instanciado, mueve el objeto existente a x = 2
-            objetoExistente.transform.position = spawnPoint.position;
+            objetoExistente.transform.position = new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0);
         }
         else
         {
-            // Si no ha sido instanciado, instancia el objeto
-            Instantiate(armaSeleccionada, new Vector3 (Random.Range(-6, 6), spawnPoint.position.y), spawnPoint.rotation);
+            Instantiate(armaSeleccionada, new Vector3 (Random.Range(-6, 6), spawnPoint.position.y,0), spawnPoint.rotation);
         }
         timer = 10;
-        Debug.Log(timer);
     }
 }
