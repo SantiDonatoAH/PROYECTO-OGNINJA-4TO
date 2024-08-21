@@ -50,7 +50,7 @@ public class WeaponSpawner : MonoBehaviour
         else
         {
             // Si no ha sido instanciado, instancia el objeto
-            Instantiate(armaSeleccionada, spawnPoint.position, spawnPoint.rotation);
+            Instantiate(armaSeleccionada, new Vector3 (Random.Range(-6, 6), spawnPoint.position.y), spawnPoint.rotation);
         }
         timer = 10;
         Debug.Log(timer);
