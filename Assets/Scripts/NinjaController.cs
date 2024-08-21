@@ -38,6 +38,7 @@ public class NinjaController : MonoBehaviour
         Jump();
         Crouch();
         CheckHoldingWeapon();
+        WallSlide();
     }
 
     void Move()
@@ -114,10 +115,16 @@ public class NinjaController : MonoBehaviour
 
     void WallSlide()
     {
-        /* if (isWallSliding)
-         {
-             rb.velocity = new Vector2(rb.velocity.x, -moveSpeed / 2);
-         }*/
+        if (isTouchingWall == true)
+        {
+            anim.SetBool("IsWallSliding", true);
+        }
+
+        else
+        {
+            anim.SetBool("IsWallSliding", false);
+        }
+
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -148,7 +155,7 @@ public class NinjaController : MonoBehaviour
                 weaponName = collision.gameObject.name;
                 weaponName = weaponName.Replace("(Clone)", "").Trim();
 
-                collision.gameObject.transform.position = new Vector2(200, 0);
+                collision.gameObject.transform.position = new Vector2(20, 0);
                 isHoldingWeapon = true;
                 anim.SetBool("IsHolding" + weaponName, true);
             }
