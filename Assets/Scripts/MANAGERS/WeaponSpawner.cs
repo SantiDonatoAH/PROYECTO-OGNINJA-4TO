@@ -4,42 +4,30 @@ using UnityEngine;
 
 public class WeaponSpawner : MonoBehaviour
 {
-    public GameObject[] armas;
-    public Transform[] spawnPoints;
-    public float timer = 10;
+    public GameObject[] armas;        // Array de armas que se pueden spawnear
+    public Transform[] spawnPoints;   // Puntos de spawn en el mapa
+    public float timer = 10f;         // Tiempo entre spawns
 
     void Start()
     {
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject armaSeleccionada = armas[Random.Range(0, armas.Length)];
-        GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
-        
-        Instantiate(armaSeleccionada, spawnPoint.position, spawnPoint.rotation);
+        SpawnWeapon();
     }
 
     private void Update()
     {
-        timer -= 0.01f;
+        timer -= Time.deltaTime;  // Restar el tiempo pasado desde el último frame
         if (timer <= 0)
         {
-            SpawnWeapon();
+            SpawnWeapon();        // Spawnear un arma cuando el tiempo llegue a 0
+            timer = 10f;          // Reiniciar el temporizador
         }
     }
 
     void SpawnWeapon()
     {
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject armaSeleccionada = armas[Random.Range(0, armas.Length)];
-        GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];  // Seleccionar un punto de spawn aleatorio
+        GameObject armaSeleccionada = armas[Random.Range(0, armas.Length)];      // Seleccionar un arma aleatoria
 
-        if (objetoExistente != null)
-        {
-            objetoExistente.transform.position = new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0);
-        }
-        else
-        {
-            Instantiate(armaSeleccionada, new Vector3 (Random.Range(-6, 6), spawnPoint.position.y,0), spawnPoint.rotation);
-        }
-        timer = 10;
+        Instantiate(armaSeleccionada, spawnPoint.position, spawnPoint.rotation);  // Crear una nueva instancia del arma en el punto de spawn
     }
 }

@@ -18,10 +18,8 @@ public class NinjaController : MonoBehaviour
     private bool isTouchingWall = false;
     bool isCrouching;
     public bool isHoldingWeapon = false;
-    public bool derecha = true;
     public string weaponName;
 
-    public Manguera Manguera;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -43,19 +41,16 @@ public class NinjaController : MonoBehaviour
 
     void Move()
     {
-
         move = Input.GetAxisRaw("Horizontal");
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (rb.velocity.x > 0)
         {
-            derecha = true;
             GetComponent<SpriteRenderer>().flipX = false;
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotación normal
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             anim.SetBool("Run", true);
         }
         else if (rb.velocity.x < 0)
         {
-            derecha = false;
             GetComponent<SpriteRenderer>().flipX = false;
             transform.rotation = Quaternion.Euler(0, 180, 0);
             anim.SetBool("Run", true);
@@ -65,11 +60,7 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-        if (isTouchingWall == true && Input.GetKey(KeyCode.D) && transform.rotation.y == 0)
-        {
-            moveSpeed = 0;
-        }
-        else if (isTouchingWall == true && Input.GetKey(KeyCode.A) && transform.rotation.y != 0)
+        if (isTouchingWall && ((Input.GetKey(KeyCode.D) && transform.rotation.y == 0) || (Input.GetKey(KeyCode.A) && transform.rotation.y != 0)))
         {
             moveSpeed = 0;
         }
@@ -77,13 +68,12 @@ public class NinjaController : MonoBehaviour
         {
             moveSpeed = 5;
         }
-
     }
 
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.W) && isCrouching == false && (isTouchingWall == true || isGrounded == true))
+        if (Input.GetKeyDown(KeyCode.W) && !isCrouching && (isTouchingWall || isGrounded))
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
@@ -115,16 +105,7 @@ public class NinjaController : MonoBehaviour
 
     void WallSlide()
     {
-        if (isTouchingWall == true)
-        {
-            anim.SetBool("IsWallSliding", true);
-        }
-
-        else
-        {
-            anim.SetBool("IsWallSliding", false);
-        }
-
+        anim.SetBool("IsWallSliding", isTouchingWall);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -143,29 +124,20 @@ public class NinjaController : MonoBehaviour
 
         if (collision.gameObject.tag == "Weapon")
         {
+            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
 
-            if (isHoldingWeapon == true && isCrouching == true)
+            if (isHoldingWeapon)
             {
+                // Cambiar el arma actual por la nueva
                 anim.SetBool("IsHolding" + weaponName, false);
-                isHoldingWeapon = false;
             }
 
-            else if (isHoldingWeapon == false)
-            {
-                weaponName = collision.gameObject.name;
-                weaponName = weaponName.Replace("(Clone)", "").Trim();
-
-                collision.gameObject.transform.position = new Vector2(35, 0);
-                isHoldingWeapon = true;
-                anim.SetBool("IsHolding" + weaponName, true);
-            }
+            // Agarrar la nueva arma
+            weaponName = newWeaponName;
+            collision.gameObject.transform.position = new Vector2(35, 0);  // Mover el arma agarrada fuera de la pantalla
+            isHoldingWeapon = true;
+            anim.SetBool("IsHolding" + weaponName, true);
         }
-
-        if (collision.gameObject.CompareTag("Dead"))
-        {
-            
-        }
-        
     }
 
     void OnCollisionExit2D(Collision2D collision)
