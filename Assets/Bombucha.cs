@@ -1,5 +1,4 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bombucha : MonoBehaviour
@@ -15,10 +14,13 @@ public class Bombucha : MonoBehaviour
 
     public ScreenController pausemanager;
 
+    private bool canFire = true;  // Controla el cooldown para el primer jugador
+    private bool canFire2 = true; // Controla el cooldown para el segundo jugador
+    public float cooldownTime = 1.5f; // Tiempo de cooldown en segundos
+
     void Start()
     {
         GameObject ninja1 = GameObject.FindWithTag("player1");
-
         GameObject ninja2 = GameObject.FindWithTag("player2");
 
         anim = ninja1.GetComponent<Animator>();
@@ -27,12 +29,12 @@ public class Bombucha : MonoBehaviour
 
     void Update()
     {
-        if (anim.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.LeftShift))
+        if (anim.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingBombucha2") == true && Input.GetKeyDown(KeyCode.L))
+        if (anim2.GetBool("IsHoldingBombucha2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
         {
             Fire2();
         }
@@ -47,7 +49,6 @@ public class Bombucha : MonoBehaviour
         {
             multiplicador = 1; // Dirección normal hacia la derecha
         }
-
         else if (firePoint.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
         {
             multiplicador = -1; // Cambia la dirección de disparo
@@ -57,6 +58,9 @@ public class Bombucha : MonoBehaviour
 
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed;
+
+        canFire = false; // Inicia el cooldown
+        StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
     }
 
     void Fire2()
@@ -77,5 +81,20 @@ public class Bombucha : MonoBehaviour
 
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint2.right * bulletSpeed;
+
+        canFire2 = false; // Inicia el cooldown para el segundo jugador
+        StartCoroutine(CooldownRoutine2()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
+    }
+
+    IEnumerator CooldownRoutine()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canFire = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
+
+    IEnumerator CooldownRoutine2()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
     }
 }
