@@ -122,7 +122,7 @@ public class NinjaController : MonoBehaviour
             isTouchingWall = true;
         }
 
-        if (collision.gameObject.tag == "Weapon")
+        if (collision.gameObject.tag == "Weapon" && Input.GetKey(KeyCode.S))
         {
             string newWeaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
 
