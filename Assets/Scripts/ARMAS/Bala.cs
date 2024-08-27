@@ -19,7 +19,7 @@ public class Bala : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        
+
         if (collision.gameObject.CompareTag("player2"))
         {
             Destroy(gameObject);
@@ -31,7 +31,7 @@ public class Bala : MonoBehaviour
             AudioManager.instance.PlaySound(ouchSound);
         }
 
-        if (collision.gameObject.CompareTag("player1"))
+        else if (collision.gameObject.CompareTag("player1"))
         {
             Destroy(gameObject);
 
@@ -41,6 +41,11 @@ public class Bala : MonoBehaviour
             ninjaBlink.Blink();
             AudioManager.instance.PlaySound(ouchSound);
         }
-        Destroy(gameObject);
+
+        else if (collision.gameObject.CompareTag("Weapon"))
+        {
+
+        }
+            else { Destroy(gameObject); }
     }
 }
