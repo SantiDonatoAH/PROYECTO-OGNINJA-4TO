@@ -6,15 +6,15 @@ public class WeaponSpawner : MonoBehaviour
 {
     public GameObject[] armas;        // Array de armas que se pueden spawnear
     public Transform[] spawnPoints;   // Puntos de spawn en el mapa
-    public float timer = 10f;         // Tiempo entre spawns
+    public float timer = 15f;         // Tiempo entre spawns
+    public float armasSpawneadas = 2;
 
     void Start()
     {
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject armaSeleccionada = armas[Random.Range(0, armas.Length)];
-        GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
-
-        Instantiate(armaSeleccionada, spawnPoint.position, spawnPoint.rotation);
+        for (int i = 0; i < armasSpawneadas; i++)
+        {
+            SpawnWeapon();
+        }
     }
 
     private void Update()
@@ -23,7 +23,7 @@ public class WeaponSpawner : MonoBehaviour
         if (timer <= 0)
         {
             SpawnWeapon();
-            timer = 10;
+            timer = 25;
         }
     }
     void SpawnWeapon()

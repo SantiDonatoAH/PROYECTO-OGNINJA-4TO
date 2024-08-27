@@ -2505,7 +2505,7 @@ MonoBehaviour:
   spawnPoints:
   - {fileID: 870233830}
   - {fileID: 1778200177}
-  timer: 10
+  timer: 25
 --- !u!1 &1100405865
 GameObject:
   m_ObjectHideFlags: 0
