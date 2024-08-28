@@ -23,7 +23,7 @@ public class WeaponSpawner : MonoBehaviour
         if (timer <= 0)
         {
             SpawnWeapon();
-            timer = 25;
+            timer = 23131231213123;
         }
     }
     void SpawnWeapon()

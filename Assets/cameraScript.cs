@@ -4,46 +4,53 @@ using UnityEngine;
 
 public class cameraScript : MonoBehaviour
 {
-    public GameObject ninja1;
-    public GameObject ninja2;
+    public Transform ninja1; // Transform del primer ninja
+    public Transform ninja2; // Transform del segundo ninja
 
-    private Rigidbody2D Ninja1rb;
-    private Rigidbody2D Ninja2rb;
+    public float smoothTime = 0.3f; // Tiempo de suavizado
+    private Vector3 velocity = Vector3.zero; // Velocidad para el suavizado
 
-    public int maxoffset = 12;
-    public int minoffset = -12;
-    public int offsety = -9;
-    // Start is called before the first frame update
+    public float minZoom = 5f; // Zoom mínimo de la cámara (cuando los ninjas están muy cerca)
+    public float maxZoom = 15f; // Zoom máximo de la cámara (cuando los ninjas están muy lejos)
+    public float zoomLimiter = 10f; // Limitador de zoom (ajusta este valor para controlar el comportamiento del zoom)
+
+    private Camera cam;
+
     void Start()
     {
-        Ninja1rb = ninja1.GetComponent<Rigidbody2D>();
-        Ninja1rb = ninja2.GetComponent<Rigidbody2D>();
+        cam = GetComponent<Camera>(); // Obtiene la cámara adjunta a este script
     }
 
-    // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        if (Ninja1rb.position.y < offsety)
+        if (ninja1 != null && ninja2 != null)
         {
-            transform.position = new Vector3(transform.position.x, Ninja1rb.position.y, transform.position.z);
+            MoveCamera();
+            ZoomCamera();
         }
-        else if (Ninja1rb.position.x > maxoffset || Ninja1rb.position.x < minoffset)
-        {
-            transform.position = new Vector3(Ninja1rb.position.x - Ninja2rb.position.x, transform.position.y, transform.position.z);
-        }
+    }
 
-        else if (Ninja2rb.position.y < offsety)
-        {
-            transform.position = new Vector3(transform.position.x, Ninja2rb.position.y, transform.position.z);
-        }
-        else if (Ninja2rb.position.x > maxoffset || Ninja2rb.position.x < minoffset)
-        {
-            transform.position = new Vector3(Ninja2rb.position.x - Ninja1rb.position.x, transform.position.y, transform.position.z);
-        }
+    void MoveCamera()
+    {
+        // Calcula la posición promedio entre los dos ninjas
+        Vector3 newPosition = (ninja1.position + ninja2.position) / 2f;
 
-        else
-        {
-            transform.position = new Vector3(0, 0, 10);
-        }
+        // Fija la posición en el eje Z a -10 para mantener la cámara en la posición correcta
+        newPosition.z = -10f;
+
+        // Actualiza la posición de la cámara suavemente
+        transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);
+    }
+
+    void ZoomCamera()
+    {
+        // Calcula la distancia entre los dos ninjas
+        float distance = Vector3.Distance(ninja1.position, ninja2.position);
+
+        // Invertimos el cálculo del zoom para que se acerque cuando los ninjas estén cerca y se aleje cuando estén lejos
+        float newZoom = Mathf.Lerp(minZoom, maxZoom, distance / zoomLimiter);
+
+        // Ajusta el tamaño de la cámara suavemente
+        cam.orthographicSize = Mathf.Lerp(cam.orthographicSize, newZoom, Time.deltaTime);
     }
 }
