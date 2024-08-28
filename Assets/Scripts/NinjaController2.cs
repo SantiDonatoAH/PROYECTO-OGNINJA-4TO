@@ -63,17 +63,17 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-        if (isTouchingWall == true && Input.GetKey(KeyCode.RightArrow) && transform.rotation.y == 0)
+        if (isTouchingWall == true && Input.GetKey(KeyCode.RightArrow) && transform.rotation.y == 0 || isTouchingWall == true && Input.GetKey(KeyCode.LeftArrow) && transform.rotation.y != 0)
         {
             moveSpeed = 0;
-        }
-        else if (isTouchingWall == true && Input.GetKey(KeyCode.LeftArrow) && transform.rotation.y != 0)
-        {
-            moveSpeed = 0;
+            anim.SetBool("IsWallSliding", true);
+
         }
         else
         {
             moveSpeed = 5;
+            anim.SetBool("IsWallSliding", false);
+
         }
 
     }
@@ -114,12 +114,10 @@ public class NinjaController2 : MonoBehaviour
     {
         if (isTouchingWall == true)
         {
-            anim.SetBool("IsWallSliding", true);
         }
 
         else
         {
-            anim.SetBool("IsWallSliding", false);
         }
     }
 
