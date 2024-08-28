@@ -1417,10 +1417,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mapas:
-  - {fileID: 2632068473232945823, guid: a1ee14897a3133447a74625faba5130f, type: 3}
-  - {fileID: 3143022954601958004, guid: d354130f118184b4683fb05de75f72d7, type: 3}
-  - {fileID: 6503746808736587440, guid: ab3053c0b900c44438a53c72124e0da2, type: 3}
-  - {fileID: 703627034124631135, guid: 7f68456b77992a94caa7e35c82150f4f, type: 3}
+  - {fileID: 5144073565443517617, guid: 02f6c4cee9b760148872bafc69987dc7, type: 3}
 --- !u!4 &728580641
 Transform:
   m_ObjectHideFlags: 0
@@ -2943,6 +2940,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
+  offset: 7
 --- !u!1 &1348051157
 GameObject:
   m_ObjectHideFlags: 0
