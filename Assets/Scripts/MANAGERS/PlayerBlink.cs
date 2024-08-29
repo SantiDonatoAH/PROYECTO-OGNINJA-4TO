@@ -6,12 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBlink : MonoBehaviour
 {
+    public Counter counter;
+
     SpriteRenderer renderer;
     Color damageColor = Color.red;
     Color normalColor;
     public float health = 10;
     public Text txt1;
-    public Text pts2;
     public Image healthBar;
     public float healthAmount = 10f;
     public float restar = 0.5f;
@@ -44,11 +45,7 @@ public class PlayerBlink : MonoBehaviour
 
             if (health <= 0)
             {
-                int number = int.Parse(pts2.text);
-                number++;
-                pts2.text = number.ToString();
-                Debug.Log("2");
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                counter.WIN2();
             }
         }
     }
