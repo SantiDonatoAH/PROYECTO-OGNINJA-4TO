@@ -15,6 +15,7 @@ public class playerBlink2 : MonoBehaviour
  public Image healthBar;
     public float healthAmount = 10f;
 
+    public float total;
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -24,6 +25,8 @@ public class playerBlink2 : MonoBehaviour
     {
         txt2.text = health.ToString();
         normalColor = renderer.color;
+
+        total = health;
     }
 
     public void Blink()
@@ -32,9 +35,8 @@ public class playerBlink2 : MonoBehaviour
         {
             health -= 0.5f;
             txt2.text = health.ToString();
-            healthAmount -= health;
-            healthBar.fillAmount = healthAmount / 100f;
-            EnableBlink();
+            healthAmount = health; // Ajustar esta línea para que refleje correctamente la salud restante
+            healthBar.fillAmount = healthAmount / total; // Cambia el divisor 
             Invoke("DisableBlink", 0.5f);
 
             if (health <= 0)
@@ -42,7 +44,7 @@ public class playerBlink2 : MonoBehaviour
                 int number = int.Parse(pts1.text);
                 number ++ ;
                 pts1.text = number.ToString();
-                Debug.Log(pts1.text);
+                Debug.Log("1");
                 SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
             }
 

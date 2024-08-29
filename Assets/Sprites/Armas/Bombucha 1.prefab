@@ -158,4 +158,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63af416887ff3a34c8559d0323292491, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  splashSound: {fileID: 8300000, guid: a63c3f18de64de3469e13972f2d218b9, type: 3}
+  splashSound: {fileID: 8300000, guid: a64c3ba8b5cfae141ae9d06288076ffa, type: 3}
+  radioExplosion: 2

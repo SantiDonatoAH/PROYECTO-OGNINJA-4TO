@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class NinjaController2 : MonoBehaviour
 {
-    public float moveSpeed = 5f;
-    public float jumpForce = 3f;
+    public float moveSpeed ;
+    public float jumpForce ;
     public float move;
     public float movey;
 
@@ -21,9 +21,12 @@ public class NinjaController2 : MonoBehaviour
     public bool derecha = true;
     public string weaponName;
 
+    public float kita;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        kita = moveSpeed;
     }
 
     void Awake()
@@ -71,7 +74,7 @@ public class NinjaController2 : MonoBehaviour
         }
         else
         {
-            moveSpeed = 5;
+            moveSpeed = kita;
             anim.SetBool("IsWallSliding", false);
 
         }
