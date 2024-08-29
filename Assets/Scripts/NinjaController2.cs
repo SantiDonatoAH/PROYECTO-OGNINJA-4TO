@@ -147,7 +147,7 @@ public class NinjaController2 : MonoBehaviour
 
             // Agarrar la nueva arma
             weaponName = newWeaponName;
-            collision.gameObject.transform.position = new Vector2(50, 0);  // Mover el arma agarrada fuera de la pantalla
+            collision.gameObject.transform.position = new Vector2(70, 0);  // Mover el arma agarrada fuera de la pantalla
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
         }
