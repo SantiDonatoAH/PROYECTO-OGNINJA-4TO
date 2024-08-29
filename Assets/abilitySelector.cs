@@ -41,6 +41,7 @@ public class abilitySelector : MonoBehaviour
 
         if (habilidad == "daño")
         {
+            playerblink2.restar = .75f;
         }
 
         if (habilidad == "velocidad")
@@ -67,6 +68,7 @@ public class abilitySelector : MonoBehaviour
 
         if (habilidad == "daño")
         {
+            playerblink.restar = .75f;
         }
 
         if (habilidad == "velocidad")

@@ -14,6 +14,7 @@ public class playerBlink2 : MonoBehaviour
     public Text pts1;
  public Image healthBar;
     public float healthAmount = 10f;
+    public float restar = 0.5f;
 
     public float total;
     private void Awake()
@@ -33,7 +34,7 @@ public class playerBlink2 : MonoBehaviour
     {
         if (health > 0)
         {
-            health -= 0.5f;
+            health -= restar;
             txt2.text = health.ToString();
             healthAmount = health; // Ajustar esta línea para que refleje correctamente la salud restante
             healthBar.fillAmount = healthAmount / total; // Cambia el divisor 
