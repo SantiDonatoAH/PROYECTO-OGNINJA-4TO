@@ -1715,9 +1715,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   abilities:
   - vida
-  - "da\xF1o"
-  - velocidad
   - salto
+  - velocidad
   ninjacontroller: {fileID: 1019354697}
   playerblink: {fileID: 1019354698}
   playerblink2: {fileID: 1412429947}
@@ -2470,6 +2469,7 @@ MonoBehaviour:
   parado: {fileID: 1019354696}
   isHoldingWeapon: 0
   weaponName: 
+  kita: 0
 --- !u!114 &1019354698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2487,6 +2487,7 @@ MonoBehaviour:
   pts2: {fileID: 1411027778}
   healthBar: {fileID: 2004384195}
   healthAmount: 100
+  total: 0
 --- !u!61 &1019354699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3521,6 +3522,7 @@ MonoBehaviour:
   isHoldingWeapon: 0
   derecha: 1
   weaponName: 
+  kita: 0
 --- !u!114 &1412429947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3538,6 +3540,7 @@ MonoBehaviour:
   pts1: {fileID: 999512866}
   healthBar: {fileID: 216285394}
   healthAmount: 100
+  total: 0
 --- !u!61 &1412429948
 BoxCollider2D:
   m_ObjectHideFlags: 0

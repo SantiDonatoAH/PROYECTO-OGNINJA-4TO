@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 123297613596716995}
   - component: {fileID: 61905842386328378}
   - component: {fileID: 114522585842031312}
-  - component: {fileID: 50077224663986154}
+  - component: {fileID: 50408758071355818}
   m_Layer: 0
   m_Name: Bombucha
   m_TagString: Weapon
@@ -128,7 +128,7 @@ MonoBehaviour:
   multiplicador2: 0
   pausemanager: {fileID: 0}
   cooldownTime: 1
---- !u!50 &50077224663986154
+--- !u!50 &50408758071355818
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
