@@ -62,12 +62,11 @@ public class NinjaController : MonoBehaviour
 
         if (isTouchingWall && ((Input.GetKey(KeyCode.D) && transform.rotation.y == 0) || (Input.GetKey(KeyCode.A) && transform.rotation.y != 0)))
         {
-            moveSpeed = 0;
+            rb.velocity = new Vector2(0,rb.velocity.y);
             anim.SetBool("IsWallSliding", true);
         }
         else
         {
-            moveSpeed = 5;
             anim.SetBool("IsWallSliding", false);
         }
     }
