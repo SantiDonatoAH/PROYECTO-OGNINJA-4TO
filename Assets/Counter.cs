@@ -9,12 +9,21 @@ public class Counter : MonoBehaviour
     public Text pts2;
     public Text pts1;
 
-
+    public static Counter instance;
     // Start is called before the first frame update
     private void Awake()
     {
 
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // No destruir al cargar una nueva escena
+        }
+        else
+        {
+            Destroy(gameObject);  // Destruir esta instancia si ya existe otra
+            return;  // Salir del Awake para evitar ejecutar el código en la instancia destruida
+        }
     }
 
     // Update is called once per frame

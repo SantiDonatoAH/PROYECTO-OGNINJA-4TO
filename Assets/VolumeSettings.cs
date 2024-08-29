@@ -10,7 +10,6 @@ public class VolumeSettings : MonoBehaviour
 
     private void Start()
     {
-        DontDestroyOnLoad(gameObject);
         
         if (PlayerPrefs.HasKey("musicVolume"))
         {
