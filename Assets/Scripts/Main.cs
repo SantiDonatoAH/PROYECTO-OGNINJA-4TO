@@ -20,7 +20,7 @@ public class Main : MonoBehaviour
         secondPanel.SetActive(false);
         PanelSettings.SetActive(false);
         PanelGame.SetActive(false);
-
+        Panel2.SetActive(false);
     }
 
     // Update is called once per frame
