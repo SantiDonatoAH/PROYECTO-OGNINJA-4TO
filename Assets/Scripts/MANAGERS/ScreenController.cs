@@ -12,6 +12,8 @@ public class ScreenController : MonoBehaviour
     public Button pauseButton;
     public bool ispaused = false;
 
+    public GameObject vida;
+
     void Start()
     {
         ispaused = false;
@@ -25,10 +27,12 @@ public class ScreenController : MonoBehaviour
             if (pausePanel.activeSelf)
             {
                 ContinuePanel();  // Cierra el panel si está abierto
+                vida.SetActive(true);
             }
             else
             {
                 PausePanel();  // Abre el panel si está cerrado
+                vida.SetActive(false);
             }
         }
     }
