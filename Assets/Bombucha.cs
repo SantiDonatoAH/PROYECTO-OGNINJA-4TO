@@ -16,7 +16,8 @@ public class Bombucha : MonoBehaviour
 
     private bool canFire = true;  // Controla el cooldown para el primer jugador
     private bool canFire2 = true; // Controla el cooldown para el segundo jugador
-    public float cooldownTime = 1f; // Tiempo de cooldown en segundos
+    public float cooldownTime = 1f;
+    public float cooldownTime2 = 1f;
 
     void Start()
     {
@@ -94,7 +95,7 @@ public class Bombucha : MonoBehaviour
 
     IEnumerator CooldownRoutine2()
     {
-        yield return new WaitForSeconds(cooldownTime);
+        yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
     }
 }

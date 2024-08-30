@@ -83,7 +83,7 @@ public class abilitySelector : MonoBehaviour
         }
         if (habilidad == "cooldown")
         {
-            bombucha.cooldownTime = .5f;
+            bombucha.cooldownTime2 = .5f;
         }
     }
 }
