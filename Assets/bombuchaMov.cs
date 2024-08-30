@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class mangueraMov : MonoBehaviour
+public class bombuchaMov : MonoBehaviour
 {
     public Rigidbody2D rb;
     public int poder = 0;
@@ -11,7 +11,7 @@ public class mangueraMov : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class mangueraMov : MonoBehaviour
         {
             rb.velocity = Vector2.zero; // Asegúrate de que no tenga velocidad
             rb.angularVelocity = 0f;
-            transform.position = new Vector2 (transform.position.x,pos.y);
+            transform.position = new Vector2(transform.position.x, pos.y);
         }
     }
 

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 61905842386328378}
   - component: {fileID: 114522585842031312}
   - component: {fileID: 50408758071355818}
+  - component: {fileID: 114461353756347636}
   m_Layer: 0
   m_Name: Bombucha
   m_TagString: Weapon
@@ -149,3 +150,15 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &114461353756347636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371005533148593032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4ccc86bf9a899449b54c4bbef571391, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
