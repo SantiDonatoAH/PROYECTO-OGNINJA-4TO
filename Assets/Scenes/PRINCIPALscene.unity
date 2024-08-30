@@ -4155,6 +4155,7 @@ MonoBehaviour:
   GAME_UI: {fileID: 931518903}
   pauseButton: {fileID: 432520451}
   ispaused: 1
+  vida: {fileID: 1944479994}
 --- !u!4 &1174501607
 Transform:
   m_ObjectHideFlags: 0
