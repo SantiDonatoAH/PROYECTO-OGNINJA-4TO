@@ -2542,8 +2542,10 @@ MonoBehaviour:
   - salto
   - velocidad
   - "da\xF1o"
+  - cooldown
   ninjacontroller: {fileID: 1019354697}
   playerblink: {fileID: 1019354698}
+  bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   playerblink2: {fileID: 1412429947}
   ninjacontroller2: {fileID: 1412429946}
 --- !u!4 &846295322

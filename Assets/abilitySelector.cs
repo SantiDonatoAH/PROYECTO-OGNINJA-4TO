@@ -8,6 +8,8 @@ public class abilitySelector : MonoBehaviour
 
     public NinjaController ninjacontroller;
     public PlayerBlink playerblink;
+
+    public Bombucha bombucha;
     
     public playerBlink2 playerblink2;
     public NinjaController2 ninjacontroller2;
@@ -48,6 +50,10 @@ public class abilitySelector : MonoBehaviour
         {
             ninjacontroller.moveSpeed = 6.5f;
         }
+        if(habilidad == "cooldown")
+        {
+            bombucha.cooldownTime = .5f;
+        }
 
     }
 
@@ -74,6 +80,10 @@ public class abilitySelector : MonoBehaviour
         if (habilidad == "velocidad")
         {
             ninjacontroller2.moveSpeed = 6.5f;
+        }
+        if (habilidad == "cooldown")
+        {
+            bombucha.cooldownTime = .5f;
         }
     }
 }
