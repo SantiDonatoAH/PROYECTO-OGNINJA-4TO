@@ -27,7 +27,7 @@ public class ScreenController : MonoBehaviour
             if (pausePanel.activeSelf)
             {
                 ContinuePanel();  // Cierra el panel si está abierto
-                
+                vida.SetActive(true);
             }
             else
             {
