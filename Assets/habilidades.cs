@@ -5,12 +5,25 @@ using UnityEngine.UI;
 
 public class habilidades : MonoBehaviour
 {
-    public Text habilidadesDropdown1;
-    public Text habilidadesDropdown2;
+
+
+    public static Text habilidadesDropdown1;
+    public static Text habilidadesDropdown2;
+    public static habilidades instance;
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        
+
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // No destruir al cargar una nueva escena
+        }
+        else
+        {
+            Destroy(gameObject);  // Destruir esta instancia si ya existe otra
+            return;  // Salir del Awake para evitar ejecutar el código en la instancia destruida
+        }
     }
 
     // Update is called once per frame

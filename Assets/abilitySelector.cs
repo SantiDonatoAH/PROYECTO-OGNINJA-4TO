@@ -14,7 +14,7 @@ public class abilitySelector : MonoBehaviour
     public playerBlink2 playerblink2;
     public NinjaController2 ninjacontroller2;
 
-    public habilidades habilidades;
+    private habilidades habilidades;
 
     public string h1;
     public string h2;
@@ -24,7 +24,7 @@ public class abilitySelector : MonoBehaviour
         Ninja1();
         Ninja2();
 
-        h1 = habilidades.habilidadesDropdown1.text;
+       
     }
 
     // Update is called once per frame
