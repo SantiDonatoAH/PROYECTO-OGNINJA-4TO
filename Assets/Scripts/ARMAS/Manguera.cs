@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Manguera : MonoBehaviour
 {
+
+    public Rigidbody2D rb;
+
     public GameObject bala;
     public float bulletSpeed = 10f;
 
@@ -29,6 +32,7 @@ public class Manguera : MonoBehaviour
 
     void Update()
     {
+
         if (anim.GetBool("IsHoldingManguera") == true && Input.GetKeyDown(KeyCode.LeftShift))
         {
             Fire();
@@ -38,6 +42,7 @@ public class Manguera : MonoBehaviour
         {
             Fire2();
         }
+
     }
 
     void Fire()
@@ -82,4 +87,8 @@ public class Manguera : MonoBehaviour
         rb.velocity = firePoint2.right * bulletSpeed;
         AudioManager.instance.PlaySound(pewSound);
     }
+
+    
+
+   
 }
