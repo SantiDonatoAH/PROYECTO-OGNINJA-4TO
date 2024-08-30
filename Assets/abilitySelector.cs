@@ -13,12 +13,18 @@ public class abilitySelector : MonoBehaviour
     
     public playerBlink2 playerblink2;
     public NinjaController2 ninjacontroller2;
+
+    public habilidades habilidades;
+
+    public string h1;
+    public string h2;
     // Start is called before the first frame update
     void Start()
     {
         Ninja1();
         Ninja2();
-        
+
+        h1 = habilidades.habilidadesDropdown1.text;
     }
 
     // Update is called once per frame
