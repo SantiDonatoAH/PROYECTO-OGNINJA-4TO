@@ -987,7 +987,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 618423558}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459773474}
+        m_MethodName: OnClickMasVida
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &618423558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1360,7 +1371,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 766635531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459773474}
+        m_MethodName: OnClickMasRounds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &766635531
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2728,7 +2750,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1281892564}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459773474}
+        m_MethodName: OnClickMenosVida
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1281892564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2872,6 +2905,8 @@ MonoBehaviour:
   PanelSettings: {fileID: 1090672984}
   Panel2: {fileID: 1844269008}
   PanelGame: {fileID: 694386544}
+  vidaText: {fileID: 1666139106}
+  RoundText: {fileID: 574240720}
 --- !u!4 &1459773475
 Transform:
   m_ObjectHideFlags: 0
@@ -3399,7 +3434,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1821926130}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1459773474}
+        m_MethodName: OnClickMenosRounds
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1821926130
 MonoBehaviour:
   m_ObjectHideFlags: 0
