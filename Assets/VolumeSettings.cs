@@ -1,44 +1,54 @@
 ﻿using UnityEngine;
-using UnityEngine.Audio;
 using UnityEngine.UI;
-
 
 public class VolumeSettings : MonoBehaviour
 {
+    public Slider musicSlider;
+    public AudioSource audioSource;
+    private float volume = 1.0f;
 
-    public  Slider musicSlider;
+    private static VolumeSettings instance;
 
-    public float volume = 0;
-    public AudioSource AudioSource;
-
-    private void Start()
+    private void Awake()
     {
-        
-        if (PlayerPrefs.HasKey("musicVolume"))
+        if (instance == null)
         {
-            LoadVolume();
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // No destruir al cargar una nueva escena
         }
         else
         {
-            SetMusicVolume();
+            Destroy(gameObject);  // Destruir esta instancia si ya existe otra
+            return;
         }
     }
 
-    private void Update()
+    private void Start()
     {
+        // Cargar el volumen guardado
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            volume = PlayerPrefs.GetFloat("musicVolume");
+            musicSlider.value = volume;
+        }
+        else
+        {
+            volume = musicSlider.value;
+        }
+
+        audioSource.volume = volume;
+
+        // Añadir listener para el slider
+        musicSlider.onValueChanged.AddListener(delegate { OnVolumeChange(); });
+    }
+
+    public void OnVolumeChange()
+    {
+        // Actualizar el volumen en base al slider
         volume = musicSlider.value;
-        AudioSource.volume = volume;
+        audioSource.volume = volume;
+
+        // Guardar el valor del volumen
+        PlayerPrefs.SetFloat("musicVolume", volume);
     }
-    public void SetMusicVolume(){
-       
-
-      
-    }
-
-    private void LoadVolume(){
-        AudioSource.volume=volume;
-
-        SetMusicVolume();
-    }
-
 }
