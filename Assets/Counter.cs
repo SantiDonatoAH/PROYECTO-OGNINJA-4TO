@@ -9,36 +9,32 @@ public class Counter : MonoBehaviour
     public Text pts2;
     public Text pts1;
 
-    public static Counter instance;
+    // Variables estáticas para mantener los valores
+    private static int score1 = 0;
+    private static int score2 = 0;
+
     // Start is called before the first frame update
-    void start()
+    void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-
-
-      
+        // Restaurar los valores después de que la escena se recargue
+        pts1.text = score1.ToString();
+        pts2.text = score2.ToString();
     }
 
     public void WIN1()
     {
-        int number = int.Parse(pts1.text);
-        number++;
-        pts1.text = number.ToString();
+        // Incrementar el valor y almacenarlo
+        score1++;
+        pts1.text = score1.ToString();
         Debug.Log("1");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
-    public void WIN2() 
+    public void WIN2()
     {
-        int number = int.Parse(pts2.text);
-        number++;
-        pts2.text = number.ToString();
+        // Incrementar el valor y almacenarlo
+        score2++;
+        pts2.text = score2.ToString();
         Debug.Log("2");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
