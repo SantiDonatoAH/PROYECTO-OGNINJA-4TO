@@ -4,15 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class Main : MonoBehaviour
-{
+
+
+{ 
     public GameObject secondPanel;
+    public GameObject panelhabilidad;
     public GameObject PanelSettings;
     public GameObject Panel2;
     public GameObject PanelGame;
 
     public Text vidaText;
     public Text RoundText;
-
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +24,7 @@ public class Main : MonoBehaviour
         PanelSettings.SetActive(false);
         PanelGame.SetActive(false);
         Panel2.SetActive(false);
+        panelhabilidad.SetActive(false);
     }
 
     // Update is called once per frame
@@ -39,7 +43,14 @@ public class Main : MonoBehaviour
         PanelSettings.SetActive(true);
         secondPanel.SetActive(false);
         PanelGame.SetActive(true);
+        panelhabilidad.SetActive(false);
 
+    }
+    public void OnClickHab()
+    {
+        Panel2.SetActive(false);
+        PanelGame.SetActive(false);
+        panelhabilidad.SetActive(true);
     }
 
     public void OnBack()
@@ -47,17 +58,23 @@ public class Main : MonoBehaviour
         PanelSettings.SetActive(false);
         Panel2.SetActive(false);
         secondPanel.SetActive(true);
+        panelhabilidad.SetActive(false);
+
     }
 
     public void OnButton2()
     {
         Panel2.SetActive(true);
         PanelGame.SetActive(false);
+        panelhabilidad.SetActive(true);
+
     }
     public void OnButtonGame()
     {
         Panel2.SetActive(false);
         PanelGame.SetActive(true);
+        panelhabilidad.SetActive(true);
+
     }
     public void OnClickMenosVida()
     {
