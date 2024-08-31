@@ -47,3 +47,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: ISLAS
+    uniqueID: 1026649595
+    locked: 0
+  - name: BACKROUND
+    uniqueID: 1040434833
+    locked: 0
