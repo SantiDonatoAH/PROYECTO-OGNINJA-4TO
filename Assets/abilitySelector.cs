@@ -24,7 +24,6 @@ public class abilitySelector : MonoBehaviour
         Ninja1();
         Ninja2();
 
-        h1 = habilidades.habilidadesDropdown1.text;
     }
 
     // Update is called once per frame
