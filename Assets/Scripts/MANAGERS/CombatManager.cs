@@ -18,14 +18,21 @@ public class CombatManager : MonoBehaviour
 
     public ScreenController pausemanager;
 
+    private KnockbackManager ninja1KnockbackManager;
+    private KnockbackManager ninja2KnockbackManager;
+
     void Start()
     {
-        // Obtiene los componentes PlayerBlink y playerBlink2 de los GameObjects asignados
+        
         ninja1Blink = ninja1.GetComponent<PlayerBlink>();
         ninja2Blink = ninja2.GetComponent<playerBlink2>();
 
         ninjaController = ninja1.GetComponent<NinjaController>();
         ninjaController2 = ninja2.GetComponent<NinjaController2>();
+
+        
+        ninja1KnockbackManager = ninja1.GetComponent<KnockbackManager>();
+        ninja2KnockbackManager = ninja2.GetComponent<KnockbackManager>();
     }
 
     void Update()
@@ -43,6 +50,9 @@ public class CombatManager : MonoBehaviour
                 if (IsInRange(ninja1, ninja2))
                 {
                     ninja2Blink.Blink();
+                    ninja2KnockbackManager.PlayFeedback(ninja1);
+                    anim2.SetBool("IsBlinking", true);
+                    StartCoroutine(ResetBlink(anim2));  
                 }
             }
 
@@ -52,25 +62,33 @@ public class CombatManager : MonoBehaviour
                 if (IsInRange(ninja2, ninja1))
                 {
                     ninja1Blink.Blink();
+                    ninja1KnockbackManager.PlayFeedback(ninja2);
+                    anim.SetBool("IsBlinking", true);  
+                    StartCoroutine(ResetBlink(anim));  
                 }
             }
         }
     }
 
-
     bool IsInRange(GameObject attacker, GameObject target)
     {
         float distance = Vector2.Distance(attacker.transform.position, target.transform.position);
-        return distance < 1.5f; // Ajusta este valor según el rango de ataque
+        return distance < 1.5f; 
     }
 
     void endAttack1()
     {
         anim.SetBool("IsPunching", false);
     }
+
     void endAttack2()
     {
         anim2.SetBool("IsPunching", false);
     }
-}
 
+    IEnumerator ResetBlink(Animator animator)
+    {
+        yield return new WaitForSeconds(0.1f);  
+        animator.SetBool("IsBlinking", false);  
+    }
+}
