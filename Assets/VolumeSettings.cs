@@ -5,11 +5,10 @@ using UnityEngine.UI;
 
 public class VolumeSettings : MonoBehaviour
 {
+    public float poder = 0;
 
-    public  Slider musicSlider;
-
-    public float volume = 0;
-    public AudioSource AudioSource;
+    [SerializeField] private AudioMixer myMixer;
+    [SerializeField] private Slider musicSlider;
 
     private void Start()
     {
@@ -24,19 +23,14 @@ public class VolumeSettings : MonoBehaviour
         }
     }
 
-    private void Update()
-    {
-        volume = musicSlider.value;
-        AudioSource.volume = volume;
-    }
     public void SetMusicVolume(){
-       
-
-      
+        float volume = musicSlider.value;
+        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
+        PlayerPrefs.SetFloat("musicVolume", volume);
     }
 
     private void LoadVolume(){
-        AudioSource.volume=volume;
+        musicSlider.value=PlayerPrefs.GetFloat("musicVolume");
 
         SetMusicVolume();
     }
