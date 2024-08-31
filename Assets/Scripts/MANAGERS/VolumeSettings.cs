@@ -6,24 +6,33 @@ using UnityEngine.SceneManagement;
 public class VolumeSettings : MonoBehaviour
 {
     [SerializeField] private AudioMixer myMixer;
-    [SerializeField] private AudioSource audio;
     [SerializeField] private Slider musicSlider;
-    public Slider Slider;
 
     private void Start()
     {
-        Slider = musicSlider.GetComponent<Slider>();
+        if (PlayerPrefs.HasKey("musicVolume"))
+        {
+            loadVolume();
+        }
+        else
+        {
+            SetMusicVolume();
+
+        }
+
     }
 
-    private void Update()
+    public void SetMusicVolume()
     {
-        audio.volume = musicSlider.value;
-        PlayerPrefs.SetFloat("MusicVolume", musicSlider.value);
+        float volume = musicSlider.value;
+        myMixer.SetFloat("music", Mathf.Log10(volume)*20);
+        PlayerPrefs.SetFloat("musicVolume", volume);
     }
 
-    private void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    public void loadVolume()
     {
-
-       musicSlider.value = audio.volume;
+        musicSlider.value = PlayerPrefs.GetFloat("musicVolume");
+        SetMusicVolume();
     }
+   
 }
