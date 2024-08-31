@@ -2929,7 +2929,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1459773474}
-        m_MethodName: OnButton2
+        m_MethodName: OnButtonMusic
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3500,7 +3500,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: <------
+  m_Text: 
 --- !u!222 &1011084340
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5117,7 +5117,7 @@ MonoBehaviour:
   secondPanel: {fileID: 1319016430}
   panelhabilidad: {fileID: 1337083941}
   PanelSettings: {fileID: 1090672984}
-  Panel2: {fileID: 1844269008}
+  PanelMusic: {fileID: 1844269008}
   PanelGame: {fileID: 694386544}
   vidaText: {fileID: 1666139106}
   RoundText: {fileID: 574240720}

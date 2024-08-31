@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,7 +10,7 @@ public class Main : MonoBehaviour
     public GameObject secondPanel;
     public GameObject panelhabilidad;
     public GameObject PanelSettings;
-    public GameObject Panel2;
+    public GameObject PanelMusic;
     public GameObject PanelGame;
 
     public Text vidaText;
@@ -23,7 +23,7 @@ public class Main : MonoBehaviour
         secondPanel.SetActive(false);
         PanelSettings.SetActive(false);
         PanelGame.SetActive(false);
-        Panel2.SetActive(false);
+        PanelMusic.SetActive(false);
         panelhabilidad.SetActive(false);
     }
 
@@ -48,7 +48,7 @@ public class Main : MonoBehaviour
     }
     public void OnClickHab()
     {
-        Panel2.SetActive(false);
+        PanelMusic.SetActive(false);
         PanelGame.SetActive(false);
         panelhabilidad.SetActive(true);
     }
@@ -56,24 +56,24 @@ public class Main : MonoBehaviour
     public void OnBack()
     {
         PanelSettings.SetActive(false);
-        Panel2.SetActive(false);
+        PanelMusic.SetActive(false);
         secondPanel.SetActive(true);
         panelhabilidad.SetActive(false);
 
     }
 
-    public void OnButton2()
+    public void OnButtonMusic()
     {
-        Panel2.SetActive(true);
+        PanelMusic.SetActive(true);
         PanelGame.SetActive(false);
-        panelhabilidad.SetActive(true);
+        panelhabilidad.SetActive(false);
 
     }
     public void OnButtonGame()
     {
-        Panel2.SetActive(false);
+        PanelMusic.SetActive(false);
         PanelGame.SetActive(true);
-        panelhabilidad.SetActive(true);
+        panelhabilidad.SetActive(false);
 
     }
     public void OnClickMenosVida()
