@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Main : MonoBehaviour
 
 
-{ 
+{
     public GameObject secondPanel;
     public GameObject panelhabilidad;
     public GameObject PanelSettings;
@@ -15,7 +15,7 @@ public class Main : MonoBehaviour
 
     public Text vidaText;
     public Text RoundText;
-    
+
 
     // Start is called before the first frame update
     void Start()
