@@ -5973,6 +5973,7 @@ MonoBehaviour:
   myMixer: {fileID: 24100000, guid: b4b152f9e4d25bd4cbb46a768c3108c9, type: 2}
   audio: {fileID: 1676285884}
   musicSlider: {fileID: 2076957268}
+  Slider: {fileID: 0}
 --- !u!1 &728580639
 GameObject:
   m_ObjectHideFlags: 0
@@ -9254,6 +9255,8 @@ MonoBehaviour:
   pauseButton: {fileID: 432520451}
   ispaused: 1
   vida: {fileID: 1944479994}
+  image1: {fileID: 1976501098}
+  image2: {fileID: 1050538838}
 --- !u!4 &1174501607
 Transform:
   m_ObjectHideFlags: 0

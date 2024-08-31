@@ -14,6 +14,9 @@ public class ScreenController : MonoBehaviour
 
     public GameObject vida;
 
+    public GameObject image1;
+    public GameObject image2;
+
     void Start()
     {
         ispaused = false;
@@ -43,6 +46,10 @@ public class ScreenController : MonoBehaviour
         Time.timeScale = 0;
         pauseButton.gameObject.SetActive(false);
         ispaused = true;
+        vida.SetActive(false);
+        image1.SetActive(false);
+        image2.SetActive(false);
+
     }
 
     public void ContinuePanel()
@@ -52,7 +59,9 @@ public class ScreenController : MonoBehaviour
         pauseButton.gameObject.SetActive(true);
         ispaused = false;
         settingsPanel.SetActive(false);
-
+        vida.SetActive(true);
+        image1.SetActive(true);
+        image2.SetActive(true);
     }
 
     public void OnMainMenu()
