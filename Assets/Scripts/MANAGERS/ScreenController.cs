@@ -51,6 +51,8 @@ public class ScreenController : MonoBehaviour
         Time.timeScale = 1;
         pauseButton.gameObject.SetActive(true);
         ispaused = false;
+        settingsPanel.SetActive(false);
+
     }
 
     public void OnMainMenu()

@@ -2330,8 +2330,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 63b19d63c4e234548a5021d0a543c891, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  poder: 0
   myMixer: {fileID: 24100000, guid: b4b152f9e4d25bd4cbb46a768c3108c9, type: 2}
+  audio: {fileID: 1676285884}
   musicSlider: {fileID: 2076957268}
 --- !u!1 &728580639
 GameObject:
@@ -2779,6 +2779,9 @@ MonoBehaviour:
   bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   playerblink2: {fileID: 1412429947}
   ninjacontroller2: {fileID: 1412429946}
+  habilidades: {fileID: 0}
+  h1: 
+  h2: 
 --- !u!4 &846295322
 Transform:
   m_ObjectHideFlags: 0
@@ -7196,7 +7199,7 @@ GameObject:
   - component: {fileID: 2076957267}
   - component: {fileID: 2076957268}
   m_Layer: 5
-  m_Name: Music Slider
+  m_Name: MusicSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
