@@ -19,14 +19,17 @@ public class Bala : MonoBehaviour
     void Start()
     {
 
-        GameObject ninja2 = GameObject.FindWithTag("player2");
+         ninja2 = GameObject.FindWithTag("player2");
         ninja2Blink = ninja2.GetComponent<playerBlink2>();
 
-        GameObject ninja1 = GameObject.FindWithTag("player1");
+         ninja1 = GameObject.FindWithTag("player1");
         ninjaBlink = ninja1.GetComponent<PlayerBlink>();
 
         ninja1KnockbackManager = ninja1.GetComponent<KnockbackManager>();
         ninja2KnockbackManager = ninja2.GetComponent<KnockbackManager>();
+
+        anim = ninja1.GetComponent<Animator>();
+        anim2 = ninja2.GetComponent<Animator>();
     }
 
     void OnCollisionEnter2D(Collision2D collision)
