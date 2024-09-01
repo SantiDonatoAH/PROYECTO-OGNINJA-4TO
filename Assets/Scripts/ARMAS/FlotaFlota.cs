@@ -19,9 +19,9 @@ public class Flotaflota : MonoBehaviour
 
     public ScreenController pausemanager;
 
-
     private bool canFire = true;  
     private bool canFire2 = true;
+
     public float cooldownTime = 1f;
     public float cooldownTime2 = 1f;
     // Start is called before the first frame update
@@ -59,7 +59,7 @@ public class Flotaflota : MonoBehaviour
             StartCoroutine(CooldownRoutine()); 
         }
 
-        if (Input.GetKeyDown(KeyCode.L) && anim.GetBool("IsHoldingFlotaflota2") == true && canFire2)
+        if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingFlotaflota2") == true && canFire2)
         {
             anim2.SetBool("IsAttacking", true);
             if (IsInRange(ninja2, ninja1))
@@ -92,12 +92,12 @@ public class Flotaflota : MonoBehaviour
     IEnumerator CooldownRoutine()
     {
         yield return new WaitForSeconds(cooldownTime);
-        canFire = true; // Habilita el disparo nuevamente después de 1.5 segundos
+        canFire = true; 
     }
 
     IEnumerator CooldownRoutine2()
     {
         yield return new WaitForSeconds(cooldownTime2);
-        canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
+        canFire2 = true; 
     }
 }
