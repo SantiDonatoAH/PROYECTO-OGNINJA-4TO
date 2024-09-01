@@ -14,6 +14,9 @@ public class cameraScript : MonoBehaviour
     public float maxZoom = 15f; // Zoom máximo de la cámara (cuando los ninjas están muy lejos)
     public float zoomLimiter = 10f; // Limitador de zoom (ajusta este valor para controlar el comportamiento del zoom)
 
+    public float maxHeight = 10; // Altura máxima a la que puede subir la cámara
+    public float minHeight = -10; // Altura mínima a la que puede bajar la cámara
+
     private Camera cam;
 
     void Start()
@@ -37,6 +40,9 @@ public class cameraScript : MonoBehaviour
 
         // Fija la posición en el eje Z a -10 para mantener la cámara en la posición correcta
         newPosition.z = -10f;
+
+        // Asegura que la posición en Y de la cámara esté dentro de los límites
+        newPosition.y = Mathf.Clamp(newPosition.y, minHeight, maxHeight);
 
         // Actualiza la posición de la cámara suavemente
         transform.position = Vector3.SmoothDamp(transform.position, newPosition, ref velocity, smoothTime);

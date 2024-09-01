@@ -10057,6 +10057,8 @@ MonoBehaviour:
   minZoom: 5
   maxZoom: 15
   zoomLimiter: 50
+  maxHeight: 3
+  minHeight: -3
 --- !u!1 &1348051157
 GameObject:
   m_ObjectHideFlags: 0
