@@ -39,34 +39,35 @@ public class abilitySelector : MonoBehaviour
     }
    void Ninja1()
 {
-    string habilidad = abilities[Random.Range(0, abilities.Length)];
-    Debug.Log(habilidad);
+    string h1 = abilities[Random.Range(0, abilities.Length)];
 
-    if (habilidad == "salto")
+        Debug.Log(h1);
+
+    if (h1 == "salto")
     {
         image1.sprite = Resources.Load<Sprite>("Salto");
         ninjacontroller.jumpForce = 10;
     }
 
-    if (habilidad == "vida")
+    if (h1 == "vida")
     {
         image1.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
         playerblink.health = 15;
     }
 
-    if (habilidad == "daño")
+    if (h1 == "daño")
     {
         image1.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
         playerblink2.restar = .75f;
     }
 
-    if (habilidad == "velocidad")
+    if (h1 == "velocidad")
     {
         image1.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
         ninjacontroller.moveSpeed = 6.5f;
     }
     
-    if (habilidad == "cooldown")
+    if (h1 == "cooldown")
     {
         image1.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
         bombucha.cooldownTime = .5f;
@@ -75,34 +76,34 @@ public class abilitySelector : MonoBehaviour
 
 void Ninja2()
 {
-    string habilidad = abilities[Random.Range(0, abilities.Length)];
-    Debug.Log(habilidad);
+    h2 = abilities[Random.Range(0, abilities.Length)];
+    Debug.Log(h2);
 
-    if (habilidad == "salto")
+    if (h2 == "salto")
     {
         image2.sprite = Resources.Load<Sprite>("Salto");
         ninjacontroller2.jumpForce = 10;
     }
 
-    if (habilidad == "vida")
+    if (h2 == "vida")
     {
         image2.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
         playerblink2.health = 15;
     }
 
-    if (habilidad == "daño")
+    if (h2 == "daño")
     {
         image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
         playerblink.restar = .75f;
     }
 
-    if (habilidad == "velocidad")
+    if (h2 == "velocidad")
     {
         image2.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
         ninjacontroller2.moveSpeed = 6.5f;
     }
 
-    if (habilidad == "cooldown")
+    if (h2 == "cooldown")
     {
         image2.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
         bombucha.cooldownTime2 = .5f;
