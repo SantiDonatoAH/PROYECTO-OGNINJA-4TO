@@ -20,17 +20,23 @@ public class Flotaflota : MonoBehaviour
     public ScreenController pausemanager;
 
 
+    private bool canFire = true;  
+    private bool canFire2 = true;
+    public float cooldownTime = 1f;
+    public float cooldownTime2 = 1f;
     // Start is called before the first frame update
     void Start()
     {
          ninja1 = GameObject.FindWithTag("player1");
-
          ninja2 = GameObject.FindWithTag("player2");
+
+
         ninja1Blink = ninja1.GetComponent<PlayerBlink>();
         ninja2Blink = ninja2.GetComponent<playerBlink2>();
 
         ninjaController = ninja1.GetComponent<NinjaController>();
         ninjaController2 = ninja2.GetComponent<NinjaController2>();
+
          anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
     }
@@ -38,7 +44,7 @@ public class Flotaflota : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingFlotaflota") == true)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingFlotaflota") == true && canFire)
         {
             anim.SetBool("IsAttacking", true);
             if (IsInRange(ninja1, ninja2))
@@ -47,11 +53,13 @@ public class Flotaflota : MonoBehaviour
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
-                ninja2Blink.Blink();
+
             }
+            canFire = false; 
+            StartCoroutine(CooldownRoutine()); 
         }
 
-        if (Input.GetKeyDown(KeyCode.L) && anim.GetBool("IsHoldingFlotaflota2") == true)
+        if (Input.GetKeyDown(KeyCode.L) && anim.GetBool("IsHoldingFlotaflota2") == true && canFire2)
         {
             anim2.SetBool("IsAttacking", true);
             if (IsInRange(ninja2, ninja1))
@@ -60,8 +68,9 @@ public class Flotaflota : MonoBehaviour
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
-                ninja1Blink.Blink();
             }
+            canFire2 = false; // Inicia el cooldown para el segundo jugador
+            StartCoroutine(CooldownRoutine2()); 
         }
     }
 
@@ -78,5 +87,17 @@ public class Flotaflota : MonoBehaviour
     void endAttack2()
     {
         anim2.SetBool("IsAttacking", false);
+    }
+
+    IEnumerator CooldownRoutine()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canFire = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
+
+    IEnumerator CooldownRoutine2()
+    {
+        yield return new WaitForSeconds(cooldownTime2);
+        canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
     }
 }

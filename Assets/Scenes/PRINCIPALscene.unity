@@ -6574,7 +6574,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   abilities:
-  - salto
+  - cooldown
   - "da\xF1o"
   - vida
   - salto
@@ -6582,6 +6582,8 @@ MonoBehaviour:
   ninjacontroller: {fileID: 1019354697}
   playerblink: {fileID: 1019354698}
   bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
+  flotaflota: {fileID: 114921968765343414, guid: e26d39f62ec44704b8e1c118dd4bfa15,
+    type: 3}
   playerblink2: {fileID: 1412429947}
   ninjacontroller2: {fileID: 1412429946}
   habilidades: {fileID: 0}
@@ -8865,8 +8867,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armas:
-  - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
-  - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   - {fileID: 2857495050582825017, guid: e26d39f62ec44704b8e1c118dd4bfa15, type: 3}
   spawnPoints:
   - {fileID: 870233830}

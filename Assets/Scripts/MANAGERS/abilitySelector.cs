@@ -11,6 +11,7 @@ public class abilitySelector : MonoBehaviour
     public PlayerBlink playerblink;
 
     public Bombucha bombucha;
+    public Flotaflota flotaflota;
     
     public playerBlink2 playerblink2;
     public NinjaController2 ninjacontroller2;
@@ -39,7 +40,7 @@ public class abilitySelector : MonoBehaviour
     }
    void Ninja1()
 {
-    string h1 = abilities[Random.Range(0, abilities.Length)];
+     h1 = abilities[Random.Range(0, abilities.Length)];
 
         Debug.Log(h1);
 
@@ -71,6 +72,7 @@ public class abilitySelector : MonoBehaviour
     {
         image1.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
         bombucha.cooldownTime = .5f;
+        flotaflota.cooldownTime = .5f;
     }
 }
 
@@ -107,6 +109,7 @@ void Ninja2()
     {
         image2.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
         bombucha.cooldownTime2 = .5f;
+        flotaflota.cooldownTime2 = .5f;
     }
 }
 
