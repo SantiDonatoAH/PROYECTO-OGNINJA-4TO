@@ -6040,6 +6040,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapas:
   - {fileID: 8995880355843126661, guid: 980ead9b90d74f54e837b5766c3973a1, type: 3}
+  - {fileID: 5144073565443517617, guid: 02f6c4cee9b760148872bafc69987dc7, type: 3}
 --- !u!4 &728580641
 Transform:
   m_ObjectHideFlags: 0
