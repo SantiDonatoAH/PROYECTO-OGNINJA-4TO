@@ -53,7 +53,7 @@ public class Flotaflota : MonoBehaviour
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
-
+                ninja2Blink.Blink();
             }
             canFire = false; 
             StartCoroutine(CooldownRoutine()); 
@@ -64,6 +64,7 @@ public class Flotaflota : MonoBehaviour
             anim2.SetBool("IsAttacking", true);
             if (IsInRange(ninja2, ninja1))
             {
+                ninja1Blink.Blink();
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();

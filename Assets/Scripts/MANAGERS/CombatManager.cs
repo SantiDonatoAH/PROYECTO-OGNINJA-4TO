@@ -19,8 +19,8 @@ public class CombatManager : MonoBehaviour
 
     public ScreenController pausemanager;
 
-    private KnockbackManager ninja1KnockbackManager;
-    private KnockbackManager ninja2KnockbackManager;
+    public KnockbackManager KnockbackManager;
+  
 
     public float cooldownTime = .5f;
     public float cooldownTime2 = .5f;
@@ -42,8 +42,7 @@ public class CombatManager : MonoBehaviour
         ninjaController2 = ninja2.GetComponent<NinjaController2>();
 
         
-        ninja1KnockbackManager = ninja1.GetComponent<KnockbackManager>();
-        ninja2KnockbackManager = ninja2.GetComponent<KnockbackManager>();
+       
     }
 
     void Update()
@@ -63,7 +62,7 @@ public class CombatManager : MonoBehaviour
                 (ninja2.transform.position.x > ninja1.transform.position.x && ninja1.transform.rotation.eulerAngles.y < 100)))
                 {
                     ninja2Blink.Blink();
-                    ninja2KnockbackManager.PlayFeedback(ninja1);
+                    KnockbackManager.Ninja2();
                     anim2.SetBool("IsBlinking", true);
                     StartCoroutine(ResetBlink(anim2));
                     StartCoroutine(CooldownRoutine());
@@ -80,7 +79,7 @@ public class CombatManager : MonoBehaviour
                      (ninja1.transform.position.x > ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y < 100)))
                 {
                     ninja1Blink.Blink();
-                    ninja1KnockbackManager.PlayFeedback(ninja2);
+                    KnockbackManager.Ninja1();
                     anim.SetBool("IsBlinking", true);
                     StartCoroutine(ResetBlink(anim));
                     StartCoroutine(CooldownRoutine2());

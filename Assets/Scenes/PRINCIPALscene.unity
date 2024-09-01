@@ -4914,9 +4914,10 @@ GameObject:
   m_Component:
   - component: {fileID: 556487313}
   - component: {fileID: 556487312}
+  - component: {fileID: 556487314}
   m_Layer: 0
   m_Name: combatManager
-  m_TagString: Untagged
+  m_TagString: combat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4938,6 +4939,7 @@ MonoBehaviour:
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
+  KnockbackManager: {fileID: 556487314}
   cooldownTime: 0.5
   cooldownTime2: 0.5
   endAttack: {fileID: 1019354701}
@@ -4956,6 +4958,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &556487314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556487311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b3b013bcc679044fbdd619ac3c32274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Ninja: {fileID: 1019354693}
+  Ninja22: {fileID: 1412429942}
+  ninja1: {fileID: 1019354692}
+  ninja2: {fileID: 1412429941}
+  strength: 2312312
+  delay: 0.25
 --- !u!1 &579910083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,
@@ -8078,7 +8098,6 @@ GameObject:
   - component: {fileID: 1019354699}
   - component: {fileID: 1019354700}
   - component: {fileID: 1019354698}
-  - component: {fileID: 1019354702}
   - component: {fileID: 1019354701}
   m_Layer: 0
   m_Name: ninja1
@@ -8295,21 +8314,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim: {fileID: 1019354700}
---- !u!114 &1019354702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019354692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b3b013bcc679044fbdd619ac3c32274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb2d: {fileID: 1019354693}
-  strength: 32
-  delay: 0.15
 --- !u!4 &1024903562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1909155585478895358, guid: c8226f065d421ba498ea97e7ba1dbd4e,
@@ -10846,7 +10850,6 @@ GameObject:
   - component: {fileID: 1412429948}
   - component: {fileID: 1412429949}
   - component: {fileID: 1412429947}
-  - component: {fileID: 1412429951}
   - component: {fileID: 1412429950}
   m_Layer: 0
   m_Name: ninja2
@@ -11064,21 +11067,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   anim2: {fileID: 1412429949}
---- !u!114 &1412429951
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412429941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b3b013bcc679044fbdd619ac3c32274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb2d: {fileID: 1412429942}
-  strength: 32
-  delay: 0.15
 --- !u!1 &1433158445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,

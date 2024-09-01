@@ -107,7 +107,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32, y: 0.32}
+  m_Size: {x: 0.32, y: 0.2}
   m_EdgeRadius: 0
 --- !u!114 &114822019631866956
 MonoBehaviour:
@@ -126,6 +126,8 @@ MonoBehaviour:
   bulletSpeed: 10
   anim: {fileID: 0}
   anim2: {fileID: 0}
+  ninja1: {fileID: 0}
+  ninja2: {fileID: 0}
   multiplicador: -1
   multiplicador2: 0
   pewSound: {fileID: 8300000, guid: a64c3ba8b5cfae141ae9d06288076ffa, type: 3}
@@ -164,3 +166,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rb: {fileID: 50362958548670008}
+  poder: 0
+  pos: {x: 0, y: 0}

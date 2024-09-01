@@ -13,9 +13,9 @@ public class Bala : MonoBehaviour
 
     public GameObject ninja1;
     public GameObject ninja2;
+    public GameObject combatManager;
 
-    private KnockbackManager ninja1KnockbackManager;
-    private KnockbackManager ninja2KnockbackManager;
+    public KnockbackManager KnockbackManager;
     void Start()
     {
 
@@ -25,8 +25,9 @@ public class Bala : MonoBehaviour
          ninja1 = GameObject.FindWithTag("player1");
         ninjaBlink = ninja1.GetComponent<PlayerBlink>();
 
-        ninja1KnockbackManager = ninja1.GetComponent<KnockbackManager>();
-        ninja2KnockbackManager = ninja2.GetComponent<KnockbackManager>();
+        combatManager = GameObject.FindWithTag("combat");
+        KnockbackManager = combatManager.GetComponent<KnockbackManager>();
+
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
@@ -43,7 +44,7 @@ public class Bala : MonoBehaviour
             ninja2Blink.Blink();
             ninja2Blink.Blink();
             ninja2Blink.Blink();
-            ninja2KnockbackManager.PlayFeedback(ninja1);
+            KnockbackManager.Ninja2();
             anim2.SetBool("IsBlinking", true);
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
@@ -57,7 +58,7 @@ public class Bala : MonoBehaviour
             ninjaBlink.Blink();
             ninjaBlink.Blink();
             ninjaBlink.Blink();
-            ninja1KnockbackManager.PlayFeedback(ninja2);
+            KnockbackManager.Ninja1();
             anim.SetBool("IsBlinking", true);
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
