@@ -4974,7 +4974,7 @@ MonoBehaviour:
   Ninja22: {fileID: 1412429942}
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
-  strength: 2312312
+  strength: 16
   delay: 0.25
 --- !u!1 &579910083 stripped
 GameObject:
