@@ -21,6 +21,12 @@ public class CombatManager : MonoBehaviour
     private KnockbackManager ninja1KnockbackManager;
     private KnockbackManager ninja2KnockbackManager;
 
+    public float cooldownTime = .5f;
+    public float cooldownTime2 = .5f;
+
+    private bool canFire = true; 
+    private bool canFire2 = true;
+
     void Start()
     {
         
@@ -44,32 +50,38 @@ public class CombatManager : MonoBehaviour
     {
         if (pausemanager.ispaused == false)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && ninjaController.isHoldingWeapon == false)
+            if (Input.GetKeyDown(KeyCode.LeftShift) && ninjaController.isHoldingWeapon == false && canFire)
             {
                 anim.SetBool("IsPunching", true);
                 if (IsInRange(ninja1, ninja2) &&
-    ((ninja2.transform.position.x < ninja1.transform.position.x && ninja1.transform.rotation.eulerAngles.y > 0) ||
-     (ninja2.transform.position.x > ninja1.transform.position.x && ninja1.transform.rotation.eulerAngles.y < 100)))
+                 ((ninja2.transform.position.x < ninja1.transform.position.x && ninja1.transform.rotation.eulerAngles.y > 0) ||
+                (ninja2.transform.position.x > ninja1.transform.position.x && ninja1.transform.rotation.eulerAngles.y < 100)))
                 {
                     ninja2Blink.Blink();
                     ninja2KnockbackManager.PlayFeedback(ninja1);
                     anim2.SetBool("IsBlinking", true);
                     StartCoroutine(ResetBlink(anim2));
+                    StartCoroutine(CooldownRoutine());
+                    
                 }
+                StartCoroutine(endAttack1());
             }
 
-            if (Input.GetKeyDown(KeyCode.L) && ninjaController2.isHoldingWeapon == false)
+            if (Input.GetKeyDown(KeyCode.L) && ninjaController2.isHoldingWeapon == false && canFire2)
             {
                 anim2.SetBool("IsPunching", true);
                 if (IsInRange(ninja2, ninja1) &&
-    ((ninja1.transform.position.x < ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y > 0) ||
-     (ninja1.transform.position.x > ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y < 100)))
+                     ((ninja1.transform.position.x < ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y > 0) ||
+                     (ninja1.transform.position.x > ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y < 100)))
                 {
                     ninja1Blink.Blink();
                     ninja1KnockbackManager.PlayFeedback(ninja2);
                     anim.SetBool("IsBlinking", true);
                     StartCoroutine(ResetBlink(anim));
+                    StartCoroutine(CooldownRoutine2());
                 }
+                StartCoroutine(endAttack2());
+
             }
         }
     }
@@ -80,13 +92,15 @@ public class CombatManager : MonoBehaviour
         return distance < 1.5f; 
     }
 
-    void endAttack1()
+    IEnumerator endAttack1()
     {
+        yield return new WaitForSeconds(0.1f);
         anim.SetBool("IsPunching", false);
     }
 
-    void endAttack2()
+    IEnumerator endAttack2( )
     {
+        yield return new WaitForSeconds(0.1f);
         anim2.SetBool("IsPunching", false);
     }
 
@@ -94,5 +108,17 @@ public class CombatManager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);  
         animator.SetBool("IsBlinking", false);  
+    }
+
+    IEnumerator CooldownRoutine()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canFire = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
+
+    IEnumerator CooldownRoutine2()
+    {
+        yield return new WaitForSeconds(cooldownTime2);
+        canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
     }
 }
