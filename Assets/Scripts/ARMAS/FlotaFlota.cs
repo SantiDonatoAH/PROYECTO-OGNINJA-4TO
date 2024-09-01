@@ -22,8 +22,8 @@ public class Flotaflota : MonoBehaviour
     private bool canFire = true;  
     private bool canFire2 = true;
 
-    public float cooldownTime = 1f;
-    public float cooldownTime2 = 1f;
+    public float cooldownTime = .75f;
+    public float cooldownTime2 = .75f;
     // Start is called before the first frame update
     void Start()
     {

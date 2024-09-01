@@ -73,13 +73,13 @@ public class abilitySelector : MonoBehaviour
     {
         image1.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
         bombucha.cooldownTime = .5f;
-        flotaflota.cooldownTime = .5f;
+        flotaflota.cooldownTime = .375f;
             combatmanager.cooldownTime = .25f;
     }
     else if (h1 != "cooldown")
         {
             bombucha.cooldownTime = 1f;
-            flotaflota.cooldownTime = 1f;
+            flotaflota.cooldownTime = .75f;
             combatmanager.cooldownTime = .5f;
         }
 }
@@ -117,13 +117,13 @@ void Ninja2()
     {
         image2.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
         bombucha.cooldownTime2 = .5f;
-        flotaflota.cooldownTime2 = .5f;
+        flotaflota.cooldownTime2 = .375f;
             combatmanager.cooldownTime2 = .25f;
     }
         else if (h2 != "cooldown")
         {
             bombucha.cooldownTime2 = 1f;
-            flotaflota.cooldownTime2 = 1f;
+            flotaflota.cooldownTime2 = .75f;
             combatmanager.cooldownTime2 = .5f;
         }
     }
