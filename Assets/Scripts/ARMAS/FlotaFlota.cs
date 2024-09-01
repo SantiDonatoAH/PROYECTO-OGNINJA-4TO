@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlotaFlota : MonoBehaviour
+public class Flotaflota : MonoBehaviour
 {
 
     public GameObject ninja1;
@@ -23,11 +23,16 @@ public class FlotaFlota : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+         ninja1 = GameObject.FindWithTag("player1");
+
+         ninja2 = GameObject.FindWithTag("player2");
         ninja1Blink = ninja1.GetComponent<PlayerBlink>();
         ninja2Blink = ninja2.GetComponent<playerBlink2>();
 
         ninjaController = ninja1.GetComponent<NinjaController>();
         ninjaController2 = ninja2.GetComponent<NinjaController2>();
+         anim = ninja1.GetComponent<Animator>();
+        anim2 = ninja2.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -39,6 +44,10 @@ public class FlotaFlota : MonoBehaviour
             if (IsInRange(ninja1, ninja2))
             {
                 ninja2Blink.Blink();
+                ninja2Blink.Blink();
+                ninja2Blink.Blink();
+                ninja2Blink.Blink();
+                ninja2Blink.Blink();
             }
         }
 
@@ -48,6 +57,10 @@ public class FlotaFlota : MonoBehaviour
             if (IsInRange(ninja2, ninja1))
             {
                 ninja1Blink.Blink();
+                ninja1Blink.Blink();
+                ninja1Blink.Blink();
+                ninja1Blink.Blink();
+                ninja1Blink.Blink();
             }
         }
     }
@@ -55,7 +68,7 @@ public class FlotaFlota : MonoBehaviour
     bool IsInRange(GameObject attacker, GameObject target)
     {
         float distance = Vector2.Distance(attacker.transform.position, target.transform.position);
-        return distance < 3f; 
+        return distance < 2.5f; 
     }
 
     void endAttack1()

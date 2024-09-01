@@ -12,6 +12,8 @@ public class Manguera : MonoBehaviour
 
     public Animator anim;
     public Animator anim2;
+    public GameObject ninja1;
+    public GameObject ninja2;
 
     public int multiplicador = 0;
     public int multiplicador2 = 0;
@@ -22,9 +24,9 @@ public class Manguera : MonoBehaviour
 
     void Start()
     {
-        GameObject ninja1 = GameObject.FindWithTag("player1");
+         ninja1 = GameObject.FindWithTag("player1");
 
-        GameObject ninja2 = GameObject.FindWithTag("player2");
+         ninja2 = GameObject.FindWithTag("player2");
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
