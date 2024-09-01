@@ -16297,6 +16297,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOX_DER
       objectReference: {fileID: 0}
+    - target: {fileID: 1816448855597545841, guid: 85a6b8cc1bde8964ca66b1100ec4d6ce,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 4926312430379563781, guid: 85a6b8cc1bde8964ca66b1100ec4d6ce,
         type: 3}
       propertyPath: m_SortingLayerID
