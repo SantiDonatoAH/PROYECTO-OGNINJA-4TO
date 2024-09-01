@@ -11,8 +11,8 @@ public class KnockbackManager : MonoBehaviour
     public GameObject ninja2;
 
     [SerializeField]
-    public float strength = 40; 
-    public float delay = 0.25f;
+    private float strength = 16, delay = 0.25f;
+
 
     private IEnumerator Reset1()
     {
@@ -29,8 +29,7 @@ public class KnockbackManager : MonoBehaviour
     public void Ninja1()
     {
         StopAllCoroutines();
-        // Calcula la dirección en el eje X y ajusta el valor en Y a cero
-        Vector2 direction = new Vector2(transform.position.x - ninja2.transform.position.x, 0);
+        Vector2 direction = (transform.position - ninja2.transform.position).normalized;
         Ninja.AddForce(direction * strength, ForceMode2D.Impulse);
         StartCoroutine(Reset1());
     }
@@ -38,9 +37,9 @@ public class KnockbackManager : MonoBehaviour
     public void Ninja2()
     {
         StopAllCoroutines();
-        // Calcula la dirección en el eje X y ajusta el valor en Y a cero
-        Vector2 direction = new Vector2(transform.position.x - ninja1.transform.position.x, 0);
+        Vector2 direction = (transform.position - ninja1.transform.position).normalized;
         Ninja22.AddForce(direction * strength, ForceMode2D.Impulse);
         StartCoroutine(Reset2());
+
     }
 }
