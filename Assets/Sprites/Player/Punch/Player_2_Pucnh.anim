@@ -22,7 +22,7 @@ AnimationClip:
     - time: 0
       value: {fileID: 21300000, guid: 6d9d1f9bc2a8c8d4a89c64ddfe2072f0, type: 3}
     - time: 0.04
-      value: {fileID: 21300000, guid: 4ca966ec27f5c21438bdb63df65c6b3e, type: 3}
+      value: {fileID: 21300000, guid: 6d9d1f9bc2a8c8d4a89c64ddfe2072f0, type: 3}
     - time: 0.08
       value: {fileID: 21300000, guid: ead9f1962ad6e5141afd43d6ce6d160a, type: 3}
     - time: 0.12
@@ -47,7 +47,7 @@ AnimationClip:
       isPPtrCurve: 1
     pptrCurveMapping:
     - {fileID: 21300000, guid: 6d9d1f9bc2a8c8d4a89c64ddfe2072f0, type: 3}
-    - {fileID: 21300000, guid: 4ca966ec27f5c21438bdb63df65c6b3e, type: 3}
+    - {fileID: 21300000, guid: 6d9d1f9bc2a8c8d4a89c64ddfe2072f0, type: 3}
     - {fileID: 21300000, guid: ead9f1962ad6e5141afd43d6ce6d160a, type: 3}
     - {fileID: 21300000, guid: 6d9d1f9bc2a8c8d4a89c64ddfe2072f0, type: 3}
   m_AnimationClipSettings:
@@ -76,9 +76,10 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.12
-    functionName: endAttack2
+    functionName: endAttack
     data: 
-    objectReferenceParameter: {fileID: 0}
+    objectReferenceParameter: {fileID: 4958888508651501320, guid: 08524c20c4caddc40bf7a003270f3559,
+      type: 3}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0

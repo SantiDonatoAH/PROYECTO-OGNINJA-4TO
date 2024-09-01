@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -26,6 +27,10 @@ public class CombatManager : MonoBehaviour
 
     private bool canFire = true; 
     private bool canFire2 = true;
+
+    public endAttack endAttack;
+    public endAttack2 endAttack2;
+
 
     void Start()
     {
@@ -64,7 +69,7 @@ public class CombatManager : MonoBehaviour
                     StartCoroutine(CooldownRoutine());
                     
                 }
-                StartCoroutine(endAttack1());
+                StartCoroutine(endAttack.endAttack1());
             }
 
             if (Input.GetKeyDown(KeyCode.L) && ninjaController2.isHoldingWeapon == false && canFire2)
@@ -80,11 +85,13 @@ public class CombatManager : MonoBehaviour
                     StartCoroutine(ResetBlink(anim));
                     StartCoroutine(CooldownRoutine2());
                 }
-                StartCoroutine(endAttack2());
+                StartCoroutine(endAttack2.endAttack());
 
             }
         }
     }
+
+  
 
     bool IsInRange(GameObject attacker, GameObject target)
     {
@@ -92,17 +99,6 @@ public class CombatManager : MonoBehaviour
         return distance < 1.5f; 
     }
 
-    IEnumerator endAttack1()
-    {
-        yield return new WaitForSeconds(0.1f);
-        anim.SetBool("IsPunching", false);
-    }
-
-    IEnumerator endAttack2( )
-    {
-        yield return new WaitForSeconds(0.1f);
-        anim2.SetBool("IsPunching", false);
-    }
 
     IEnumerator ResetBlink(Animator animator)
     {

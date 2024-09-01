@@ -1889,56 +1889,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 633983503}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &195941161
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 195941163}
-  - component: {fileID: 195941162}
-  m_Layer: 0
-  m_Name: combatManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &195941162
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195941161}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 96c8a34ac9eef5c43a51963247992a97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ninja1: {fileID: 1019354692}
-  ninja2: {fileID: 1412429941}
-  anim: {fileID: 1019354700}
-  anim2: {fileID: 1412429949}
-  pausemanager: {fileID: 1174501606}
-  cooldownTime: 0.5
-  cooldownTime2: 0.5
---- !u!4 &195941163
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195941161}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.8754838, y: 0.025303662, z: 0.003991465}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 14
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &198856213 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8018601223822516940, guid: cd00da32c14f3104f82cb9c78a2cab58,
@@ -4954,6 +4904,58 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 506699987}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &556487311
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 556487313}
+  - component: {fileID: 556487312}
+  m_Layer: 0
+  m_Name: combatManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &556487312
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556487311}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c8a34ac9eef5c43a51963247992a97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ninja1: {fileID: 1019354692}
+  ninja2: {fileID: 1412429941}
+  anim: {fileID: 1019354700}
+  anim2: {fileID: 1412429949}
+  pausemanager: {fileID: 1174501606}
+  cooldownTime: 0.5
+  cooldownTime2: 0.5
+  endAttack: {fileID: 1019354701}
+  endAttack2: {fileID: 1412429950}
+--- !u!4 &556487313
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 556487311}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.5389493, y: -0.27235094, z: 0.1404098}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &579910083 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,
@@ -6634,7 +6636,7 @@ MonoBehaviour:
   bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   flotaflota: {fileID: 114921968765343414, guid: e26d39f62ec44704b8e1c118dd4bfa15,
     type: 3}
-  combatmanager: {fileID: 195941162}
+  combatmanager: {fileID: 556487312}
   playerblink2: {fileID: 1412429947}
   ninjacontroller2: {fileID: 1412429946}
   habilidades: {fileID: 0}
@@ -8076,6 +8078,7 @@ GameObject:
   - component: {fileID: 1019354700}
   - component: {fileID: 1019354698}
   - component: {fileID: 1019354702}
+  - component: {fileID: 1019354701}
   m_Layer: 0
   m_Name: ninja1
   m_TagString: player1
@@ -8278,6 +8281,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1019354701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019354692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2323e2f68e77e394b995906ea78887be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim: {fileID: 1019354700}
 --- !u!114 &1019354702
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10826,6 +10842,7 @@ GameObject:
   - component: {fileID: 1412429949}
   - component: {fileID: 1412429947}
   - component: {fileID: 1412429951}
+  - component: {fileID: 1412429950}
   m_Layer: 0
   m_Name: ninja2
   m_TagString: player2
@@ -11029,6 +11046,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1412429950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412429941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52d37988ce5ffbb4b85c04d7cd467264, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  anim2: {fileID: 1412429949}
 --- !u!114 &1412429951
 MonoBehaviour:
   m_ObjectHideFlags: 0
