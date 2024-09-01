@@ -47,24 +47,28 @@ public class CombatManager : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftShift) && ninjaController.isHoldingWeapon == false)
             {
                 anim.SetBool("IsPunching", true);
-                if (IsInRange(ninja1, ninja2))
+                if (IsInRange(ninja1, ninja2) &&
+    ((ninja2.transform.position.x < ninja1.transform.position.x && ninja1.transform.rotation.eulerAngles.y > 0) ||
+     (ninja2.transform.position.x > ninja1.transform.position.x && ninja1.transform.rotation.eulerAngles.y < 100)))
                 {
                     ninja2Blink.Blink();
                     ninja2KnockbackManager.PlayFeedback(ninja1);
                     anim2.SetBool("IsBlinking", true);
-                    StartCoroutine(ResetBlink(anim2));  
+                    StartCoroutine(ResetBlink(anim2));
                 }
             }
 
             if (Input.GetKeyDown(KeyCode.L) && ninjaController2.isHoldingWeapon == false)
             {
                 anim2.SetBool("IsPunching", true);
-                if (IsInRange(ninja2, ninja1))
+                if (IsInRange(ninja2, ninja1) &&
+    ((ninja1.transform.position.x < ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y > 0) ||
+     (ninja1.transform.position.x > ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y < 100)))
                 {
                     ninja1Blink.Blink();
                     ninja1KnockbackManager.PlayFeedback(ninja2);
-                    anim.SetBool("IsBlinking", true);  
-                    StartCoroutine(ResetBlink(anim));  
+                    anim.SetBool("IsBlinking", true);
+                    StartCoroutine(ResetBlink(anim));
                 }
             }
         }
