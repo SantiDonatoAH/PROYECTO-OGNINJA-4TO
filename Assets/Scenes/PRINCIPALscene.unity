@@ -228,6 +228,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOX_DER
       objectReference: {fileID: 0}
+    - target: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 4049393769384726413, guid: f433e1b0a1c2fca44a78df0cf85cbd54,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8189,7 +8194,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019354692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.99, y: -1.26, z: 0}
+  m_LocalPosition: {x: -3.53, y: -0.89, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8931,6 +8936,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   armas:
   - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
+  - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
+  - {fileID: 2857495050582825017, guid: e26d39f62ec44704b8e1c118dd4bfa15, type: 3}
+  - {fileID: 7457272888433717637, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
   spawnPoints:
   - {fileID: 870233830}
   - {fileID: 1778200177}
@@ -10941,13 +10949,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1412429941}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
   m_LocalPosition: {x: -1.58, y: -1.02, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
 --- !u!61 &1412429945
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10993,6 +11001,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   parar: {fileID: 1412429945}
   agachar: {fileID: 1412429948}
+  pared: {fileID: 1433158445}
+  paredT: {fileID: 1433158446}
   isHoldingWeapon: 0
   derecha: 1
   weaponName: 

@@ -14,6 +14,9 @@ public class NinjaController2 : MonoBehaviour
     public BoxCollider2D parar;
     public BoxCollider2D agachar;
 
+    public GameObject pared;
+    public Transform paredT;
+
     private bool isGrounded = false;
     private bool isTouchingWall = false;
     bool isCrouching;
@@ -66,7 +69,8 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-        if (isTouchingWall == true && Input.GetKey(KeyCode.RightArrow) && transform.rotation.y == 0 || isTouchingWall == true && Input.GetKey(KeyCode.LeftArrow) && transform.rotation.y != 0)
+        if ((Input.GetKey(KeyCode.D) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
+                (Input.GetKey(KeyCode.A) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
         {
             moveSpeed = 0;
             anim.SetBool("IsWallSliding", true);
@@ -136,6 +140,8 @@ public class NinjaController2 : MonoBehaviour
         {
             anim.SetBool("IsJumping", false);
             isTouchingWall = true;
+            pared = collision.gameObject;
+            paredT = pared.GetComponent<Transform>();
         }
 
         if (collision.gameObject.CompareTag("Weapon") && Input.GetKey(KeyCode.DownArrow))
@@ -161,6 +167,7 @@ public class NinjaController2 : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingWall = false;
+            anim.SetBool("IsWallSliding", false);
         }
     }
 

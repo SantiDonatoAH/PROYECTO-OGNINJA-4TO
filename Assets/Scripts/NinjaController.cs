@@ -156,7 +156,7 @@ public class NinjaController : MonoBehaviour
         if (collision.gameObject.CompareTag("Wall"))
         {
             isTouchingWall = false;
-           
+            anim.SetBool("IsWallSliding", false);
         }
     }
 
