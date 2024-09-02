@@ -25,8 +25,8 @@ public class Manguera : MonoBehaviour
 
     public bool canFire = true;  // Controla el cooldown para el primer jugador
     public bool canFire2 = true; // Controla el cooldown para el segundo jugador
-    public float cooldownTime ;
-    public float cooldownTime2 ;
+    public float cooldownTime = 0.085f;
+    public float cooldownTime2 = 0.085f;
 
     public float poder = 0f;
     public float poder2 = 0f;
