@@ -6662,6 +6662,7 @@ MonoBehaviour:
   bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   flotaflota: {fileID: 114921968765343414, guid: e26d39f62ec44704b8e1c118dd4bfa15,
     type: 3}
+  manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   combatmanager: {fileID: 556487312}
   playerblink2: {fileID: 1412429947}
   ninjacontroller2: {fileID: 1412429946}

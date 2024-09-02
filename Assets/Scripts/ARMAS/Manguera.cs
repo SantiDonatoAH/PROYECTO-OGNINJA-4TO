@@ -28,6 +28,9 @@ public class Manguera : MonoBehaviour
     public float cooldownTime = 0.085f;
     public float cooldownTime2 = 0.085f;
 
+    public float sumador = 0.02f;
+    public float sumador2 = 0.02f;
+
     public float poder = 0f;
     public float poder2 = 0f;
 
@@ -46,7 +49,7 @@ public class Manguera : MonoBehaviour
 
         if (anim.GetBool("IsHoldingManguera") == true && Input.GetKey(KeyCode.LeftShift) && canFire)
         {
-            poder += 0.02f;
+            poder += sumador;
             if(poder >= 8) 
             {
                 poder = 8;
@@ -59,7 +62,7 @@ public class Manguera : MonoBehaviour
 
         if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKey(KeyCode.L) && canFire2)
         {
-            poder2 += 0.02f;
+            poder2 += sumador2;
             if (poder2 >= 8)
             {
                 poder2 = 8;
@@ -135,7 +138,7 @@ public class Manguera : MonoBehaviour
 
             yield return new WaitForSeconds(cooldownTime2);
         }
-        poder = 0;
+        poder2 = 0;
         AudioManager.instance.PlaySound(pewSound);
 
     }

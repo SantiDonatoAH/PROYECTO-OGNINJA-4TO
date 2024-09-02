@@ -26,6 +26,17 @@ public class abilitySelector : MonoBehaviour
     public Image image1;
     public Image image2;
 
+    private float bombuchaC = .5f;
+    private float bombuchaN = 1f;
+
+    private float flotaflotaC = .375f;
+    private float flotaflotaN = .75f;
+
+    private float mangueraC = 0.04f;
+    private float mangueraN = 0.02f;
+
+    private float combatmanagerC = .25f;
+    private float combatmanagerN = .5f;
     // Start is called before the first frame update
     void Start()
     {
@@ -73,17 +84,17 @@ public class abilitySelector : MonoBehaviour
     if (h1 == "cooldown")
     {
         image1.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
-        bombucha.cooldownTime = .5f;
-        flotaflota.cooldownTime = .375f;
-        combatmanager.cooldownTime = .25f;
-        manguera.cooldownTime = 0.05f;
+        bombucha.cooldownTime = bombuchaC;
+        flotaflota.cooldownTime = flotaflotaC;
+        combatmanager.cooldownTime = combatmanagerC;
+        manguera.sumador = mangueraC;
         }
     else if (h1 != "cooldown")
         {
-            bombucha.cooldownTime = 1f;
-            flotaflota.cooldownTime = .75f;
-            combatmanager.cooldownTime = .5f;
-            manguera.cooldownTime = 0.085f;
+            bombucha.cooldownTime = bombuchaN;
+            flotaflota.cooldownTime = flotaflotaN;
+            combatmanager.cooldownTime = combatmanagerN;
+            manguera.sumador = mangueraN;
         }
 }
 
@@ -119,17 +130,17 @@ void Ninja2()
     if (h2 == "cooldown")
     {
         image2.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
-        bombucha.cooldownTime2 = .5f;
-        flotaflota.cooldownTime2 = .375f;
-        combatmanager.cooldownTime2 = .25f;
-        manguera.cooldownTime2 = 0.05f;
+        bombucha.cooldownTime2 = bombuchaC;
+        flotaflota.cooldownTime2 = flotaflotaC;
+        combatmanager.cooldownTime2 = combatmanagerC;
+        manguera.sumador2 = mangueraC;
         }
         else if (h2 != "cooldown")
         {
-            bombucha.cooldownTime2 = 1f;
-            flotaflota.cooldownTime2 = .75f;
-            combatmanager.cooldownTime2 = .5f;
-            manguera.cooldownTime2 = 0.085f; ;
+            bombucha.cooldownTime2 = bombuchaN;
+            flotaflota.cooldownTime2 = flotaflotaN;
+            combatmanager.cooldownTime2 = combatmanagerN;
+            manguera.sumador2 = mangueraN; 
         }
     }
 
