@@ -17,29 +17,29 @@ public class KnockbackManager : MonoBehaviour
     private IEnumerator Reset1()
     {
         yield return new WaitForSeconds(delay);
-        Ninja.velocity = Vector2.zero;
+        //  Ninja.velocity = Vector2.zero;
     }
 
     private IEnumerator Reset2()
     {
         yield return new WaitForSeconds(delay);
-        Ninja22.velocity = Vector2.zero;
+        // Ninja22.velocity = Vector2.zero;
     }
 
     public void Ninja1()
     {
-        StopAllCoroutines();
+       /* StopAllCoroutines();
         Vector2 direction = (transform.position - ninja2.transform.position).normalized;
         Ninja.AddForce(direction * strength, ForceMode2D.Impulse);
-        StartCoroutine(Reset1());
+        StartCoroutine(Reset1());  */
     }
 
     public void Ninja2()
     {
-        StopAllCoroutines();
+       /* StopAllCoroutines();
         Vector2 direction = (transform.position - ninja1.transform.position).normalized;
         Ninja22.AddForce(direction * strength, ForceMode2D.Impulse);
-        StartCoroutine(Reset2());
+        StartCoroutine(Reset2()); */
 
     }
 }

@@ -11,6 +11,7 @@ TagManager:
   - player2
   - Dead
   - combat
+  - agua
   layers:
   - Default
   - TransparentFX

@@ -645,6 +645,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: BOX_ABA
       objectReference: {fileID: 0}
+    - target: {fileID: 4478068999000311788, guid: 4d97a67717f4ff94b82c5108006f0f3f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     - target: {fileID: 7079495605328460310, guid: 4d97a67717f4ff94b82c5108006f0f3f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8921,8 +8926,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armas:
-  - {fileID: 2857495050582825017, guid: e26d39f62ec44704b8e1c118dd4bfa15, type: 3}
-  - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   spawnPoints:
   - {fileID: 870233830}
@@ -11692,6 +11695,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BOX_ABA
+      objectReference: {fileID: 0}
+    - target: {fileID: 1414249601780922191, guid: 77cc5bb51304acc439f747f16a9dbdc5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 7653813520478830933, guid: 77cc5bb51304acc439f747f16a9dbdc5,
         type: 3}

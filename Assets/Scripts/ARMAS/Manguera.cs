@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Experimental.UIElements.GraphView;
 using UnityEngine;
 
 public class Manguera : MonoBehaviour
@@ -7,7 +8,7 @@ public class Manguera : MonoBehaviour
 
     public Rigidbody2D rb;
 
-    public GameObject bala;
+    public GameObject agua;
     public float bulletSpeed = 10f;
 
     public Animator anim;
@@ -22,11 +23,19 @@ public class Manguera : MonoBehaviour
 
     public ScreenController pausemanager;
 
+    public bool canFire = true;  // Controla el cooldown para el primer jugador
+    public bool canFire2 = true; // Controla el cooldown para el segundo jugador
+    public float cooldownTime ;
+    public float cooldownTime2 ;
+
+    public float poder = 0f;
+    public float poder2 = 0f;
+
     void Start()
     {
-         ninja1 = GameObject.FindWithTag("player1");
+        ninja1 = GameObject.FindWithTag("player1");
 
-         ninja2 = GameObject.FindWithTag("player2");
+        ninja2 = GameObject.FindWithTag("player2");
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
@@ -35,62 +44,111 @@ public class Manguera : MonoBehaviour
     void Update()
     {
 
-        if (anim.GetBool("IsHoldingManguera") == true && Input.GetKeyDown(KeyCode.LeftShift))
+        if (anim.GetBool("IsHoldingManguera") == true && Input.GetKey(KeyCode.LeftShift) && canFire)
+        {
+            poder += 0.02f;
+            if(poder >= 8) 
+            {
+                poder = 8;
+            }
+        }
+        else if (anim.GetBool("IsHoldingManguera") == true && Input.GetKeyUp(KeyCode.LeftShift))
         {
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKeyDown(KeyCode.L))
+        if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKey(KeyCode.L) && canFire2)
+        {
+            poder2 += 0.02f;
+            if (poder2 >= 8)
+            {
+                poder2 = 8;
+            }
+
+        }
+        else if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKeyUp(KeyCode.L))
         {
             Fire2();
         }
 
-    }
-
-    void Fire()
-    {
-        GameObject ninja1 = GameObject.FindWithTag("player1");
-        Transform firePoint = ninja1.GetComponent<Transform>();
-        
-        if (firePoint.rotation.y == 0)
-        {
-            multiplicador = 1; // Dirección normal hacia la derecha
-        }
-        
-        else if (firePoint.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
-        {
-            multiplicador = -1; // Cambia la dirección de disparo
-        }
-
-        GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
-
-        Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
-        rb.velocity = firePoint.right * bulletSpeed;
-        AudioManager.instance.PlaySound(pewSound);
-    }
-
-    void Fire2()
-    {
-        GameObject ninja2 = GameObject.FindWithTag("player2");
-        Transform firePoint2 = ninja2.GetComponent<Transform>();
-
-        if (firePoint2.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
-        {
-            multiplicador2 = -1; // Cambia la dirección de disparo
-        }
-        else if (firePoint2.rotation.y == 0)
-        {
-            multiplicador2 = 1; // Dirección normal hacia la derecha
-        }
-
-        GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
-
-        Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
-        rb.velocity = firePoint2.right * bulletSpeed;
-        AudioManager.instance.PlaySound(pewSound);
-    }
+    } 
 
     
+    void Fire()
+{
+        StartCoroutine(FireWithCooldown());
+    }
 
-   
+    IEnumerator FireWithCooldown()
+    {
+        for (int i = 0; i < poder; i++)
+        {
+            Transform firePoint = ninja1.GetComponent<Transform>();
+
+            if (firePoint.rotation.y == 0)
+            {
+                multiplicador = 1; // Dirección normal hacia la derecha
+            }
+            else if (firePoint.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
+            {
+                multiplicador = -1; // Cambia la dirección de disparo
+            }
+
+            GameObject nuevaBala = Instantiate(agua, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
+
+            rb = nuevaBala.GetComponent<Rigidbody2D>();
+            rb.velocity = firePoint.right * bulletSpeed;
+
+            yield return new WaitForSeconds(cooldownTime);
+        }
+
+        poder = 0;
+        AudioManager.instance.PlaySound(pewSound);
+
+    }
+    void Fire2()
+    {
+
+        StartCoroutine(FireWithCooldown2());
+    }
+
+
+    IEnumerator FireWithCooldown2()
+    {
+        for (int i = 0; i < poder2; i++)
+        {
+            Transform firePoint = ninja2.GetComponent<Transform>();
+
+            if (firePoint.rotation.y == 0)
+            {
+                multiplicador = 1; // Dirección normal hacia la derecha
+            }
+            else if (firePoint.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
+            {
+                multiplicador = -1; // Cambia la dirección de disparo
+            }
+
+            GameObject nuevaBala = Instantiate(agua, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
+
+            rb = nuevaBala.GetComponent<Rigidbody2D>();
+            rb.velocity = firePoint.right * bulletSpeed;
+
+            yield return new WaitForSeconds(cooldownTime2);
+        }
+        poder = 0;
+        AudioManager.instance.PlaySound(pewSound);
+
+    }
+
+    IEnumerator CooldownRoutine()
+        {
+            yield return new WaitForSeconds(cooldownTime);
+        }
+
+        IEnumerator CooldownRoutine2()
+        {
+            yield return new WaitForSeconds(cooldownTime2);
+
+        }
+    
 }

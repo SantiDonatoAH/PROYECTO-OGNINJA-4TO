@@ -6,7 +6,7 @@ public class WeaponSpawner : MonoBehaviour
 {
     public GameObject[] armas;        // Array de armas que se pueden spawnear
     public Transform[] spawnPoints;   // Puntos de spawn en el mapa
-    public float timer = 15f;         // Tiempo entre spawns
+    public float timer = 20f;         // Tiempo entre spawns
     public float armasSpawneadas = 2;
 
     void Start()
@@ -23,7 +23,7 @@ public class WeaponSpawner : MonoBehaviour
         if (timer <= 0)
         {
             SpawnWeapon();
-            timer = 23131231213123;
+            timer = 30;
         }
     }
     void SpawnWeapon()

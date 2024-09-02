@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bala : MonoBehaviour
+public class agua : MonoBehaviour
 {
     private playerBlink2 ninja2Blink;
     private PlayerBlink ninjaBlink;
@@ -19,10 +19,10 @@ public class Bala : MonoBehaviour
     void Start()
     {
 
-         ninja2 = GameObject.FindWithTag("player2");
+        ninja2 = GameObject.FindWithTag("player2");
         ninja2Blink = ninja2.GetComponent<playerBlink2>();
 
-         ninja1 = GameObject.FindWithTag("player1");
+        ninja1 = GameObject.FindWithTag("player1");
         ninjaBlink = ninja1.GetComponent<PlayerBlink>();
 
         combatManager = GameObject.FindWithTag("combat");
@@ -41,9 +41,6 @@ public class Bala : MonoBehaviour
             Destroy(gameObject);
 
             ninja2Blink.Blink();
-            ninja2Blink.Blink();
-            ninja2Blink.Blink();
-            ninja2Blink.Blink();
             KnockbackManager.Ninja2();
             anim2.SetBool("IsBlinking", true);
             StartCoroutine(ResetBlink(anim2));
@@ -55,22 +52,18 @@ public class Bala : MonoBehaviour
             Destroy(gameObject);
 
             ninjaBlink.Blink();
-            ninjaBlink.Blink();
-            ninjaBlink.Blink();
-            ninjaBlink.Blink();
+
             KnockbackManager.Ninja1();
             anim.SetBool("IsBlinking", true);
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }
 
-        else if (collision.gameObject.CompareTag("Weapon"))
+      
+        else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground"))
         {
-
+            Destroy(gameObject);
         }
-        else {
-            Debug.Log("jsd");
-            Destroy(gameObject); }
     }
 
     IEnumerator ResetBlink(Animator animator)
