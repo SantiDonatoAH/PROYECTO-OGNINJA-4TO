@@ -8189,7 +8189,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1019354692}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.85, y: -1.53, z: 0}
+  m_LocalPosition: {x: -5.99, y: -1.26, z: 0}
   m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8240,6 +8240,9 @@ MonoBehaviour:
   anim: {fileID: 0}
   agachar: {fileID: 1019354699}
   parado: {fileID: 1019354696}
+  pared: {fileID: 1666659486}
+  paredT: {fileID: 1666659487}
+  isTouchingWall: 0
   isHoldingWeapon: 0
   weaponName: 
   kita: 0
@@ -9572,7 +9575,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.2940588, y: 4.2141047}
+  m_Size: {x: 0.2940588, y: 4}
   m_EdgeRadius: 0
 --- !u!1001 &1235570856
 PrefabInstance:
