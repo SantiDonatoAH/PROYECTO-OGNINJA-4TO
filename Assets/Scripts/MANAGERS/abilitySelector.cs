@@ -14,6 +14,7 @@ public class abilitySelector : MonoBehaviour
     public Flotaflota flotaflota;
     public Manguera manguera;
     public CombatManager combatmanager;
+    public Pistola pistola;
     
     public playerBlink2 playerblink2;
     public NinjaController2 ninjacontroller2;
@@ -32,11 +33,15 @@ public class abilitySelector : MonoBehaviour
     private float flotaflotaC = .375f;
     private float flotaflotaN = .75f;
 
-    private float mangueraC = 0.04f;
-    private float mangueraN = 0.02f;
+    private float mangueraC = 0.05f;
+    private float mangueraN = 0.03f;
 
     private float combatmanagerC = .25f;
     private float combatmanagerN = .5f;
+
+    private float pistolaC = .175f;
+    private float pistolaN = .3f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -88,6 +93,7 @@ public class abilitySelector : MonoBehaviour
         flotaflota.cooldownTime = flotaflotaC;
         combatmanager.cooldownTime = combatmanagerC;
         manguera.sumador = mangueraC;
+        pistola.cooldownTime = pistolaC;
         }
     else if (h1 != "cooldown")
         {
@@ -95,6 +101,7 @@ public class abilitySelector : MonoBehaviour
             flotaflota.cooldownTime = flotaflotaN;
             combatmanager.cooldownTime = combatmanagerN;
             manguera.sumador = mangueraN;
+            pistola.cooldownTime = pistolaN;
         }
 }
 
@@ -134,13 +141,15 @@ void Ninja2()
         flotaflota.cooldownTime2 = flotaflotaC;
         combatmanager.cooldownTime2 = combatmanagerC;
         manguera.sumador2 = mangueraC;
+        pistola.cooldownTime2 = pistolaC;
         }
         else if (h2 != "cooldown")
         {
             bombucha.cooldownTime2 = bombuchaN;
             flotaflota.cooldownTime2 = flotaflotaN;
             combatmanager.cooldownTime2 = combatmanagerN;
-            manguera.sumador2 = mangueraN; 
+            manguera.sumador2 = mangueraN;
+            pistola.cooldownTime2 = pistolaN;
         }
     }
 

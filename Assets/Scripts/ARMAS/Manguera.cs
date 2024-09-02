@@ -50,9 +50,9 @@ public class Manguera : MonoBehaviour
         if (anim.GetBool("IsHoldingManguera") == true && Input.GetKey(KeyCode.LeftShift) && canFire)
         {
             poder += sumador;
-            if(poder >= 8) 
+            if(poder >= 8.1f) 
             {
-                poder = 8;
+                poder = 8.1f;
             }
         }
         else if (anim.GetBool("IsHoldingManguera") == true && Input.GetKeyUp(KeyCode.LeftShift))
@@ -63,9 +63,9 @@ public class Manguera : MonoBehaviour
         if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKey(KeyCode.L) && canFire2)
         {
             poder2 += sumador2;
-            if (poder2 >= 8)
+            if (poder2 >= 8.1f)
             {
-                poder2 = 8;
+                poder2 = 8.1f;
             }
 
         }
@@ -84,6 +84,8 @@ public class Manguera : MonoBehaviour
 
     IEnumerator FireWithCooldown()
     {
+        AudioManager.instance.PlaySound(pewSound);
+
         for (int i = 0; i < poder; i++)
         {
             Transform firePoint = ninja1.GetComponent<Transform>();
@@ -106,7 +108,6 @@ public class Manguera : MonoBehaviour
         }
 
         poder = 0;
-        AudioManager.instance.PlaySound(pewSound);
 
     }
     void Fire2()
@@ -118,6 +119,8 @@ public class Manguera : MonoBehaviour
 
     IEnumerator FireWithCooldown2()
     {
+        AudioManager.instance.PlaySound(pewSound);
+
         for (int i = 0; i < poder2; i++)
         {
             Transform firePoint = ninja2.GetComponent<Transform>();
@@ -139,7 +142,6 @@ public class Manguera : MonoBehaviour
             yield return new WaitForSeconds(cooldownTime2);
         }
         poder2 = 0;
-        AudioManager.instance.PlaySound(pewSound);
 
     }
 

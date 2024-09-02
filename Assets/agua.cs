@@ -68,7 +68,10 @@ public class agua : MonoBehaviour
             AudioManager.instance.PlaySound(ouchSound);
         }
 
+        else if (collision.gameObject.CompareTag("Weapon"))
+        {
 
+        }
         else
         {
             Destroy(gameObject);

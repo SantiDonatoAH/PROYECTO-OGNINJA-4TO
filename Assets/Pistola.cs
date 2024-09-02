@@ -20,6 +20,11 @@ public class Pistola : MonoBehaviour
 
     [SerializeField] private AudioClip pewSound;
 
+    private bool canFire = true;  // Controla el cooldown para el primer jugador
+    private bool canFire2 = true; // Controla el cooldown para el segundo jugador
+    public float cooldownTime = .3f;
+    public float cooldownTime2 = .3f;
+
     public ScreenController pausemanager;
 
     void Start()
@@ -35,12 +40,12 @@ public class Pistola : MonoBehaviour
     void Update()
     {
 
-        if (anim.GetBool("IsHoldingPistola") == true && Input.GetKeyDown(KeyCode.LeftShift))
+        if (anim.GetBool("IsHoldingPistola") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingPistola2") == true && Input.GetKeyDown(KeyCode.L))
+        if (anim2.GetBool("IsHoldingPistola2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
         {
             Fire2();
         }
@@ -66,6 +71,9 @@ public class Pistola : MonoBehaviour
          rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed;
         AudioManager.instance.PlaySound(pewSound);
+
+        canFire = false; // Inicia el cooldown
+        StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
     }
 
     void Fire2()
@@ -86,9 +94,21 @@ public class Pistola : MonoBehaviour
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint2.right * bulletSpeed;
         AudioManager.instance.PlaySound(pewSound);
+
+        canFire2 = false; // Inicia el cooldown para el segundo jugador
+        StartCoroutine(CooldownRoutine2()); // Inic
     }
 
+    IEnumerator CooldownRoutine()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canFire = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
 
-
+    IEnumerator CooldownRoutine2()
+    {
+        yield return new WaitForSeconds(cooldownTime2);
+        canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
 
 }

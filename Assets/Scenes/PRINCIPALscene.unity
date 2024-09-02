@@ -6669,6 +6669,7 @@ MonoBehaviour:
     type: 3}
   manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   combatmanager: {fileID: 556487312}
+  pistola: {fileID: 114592013395552490, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
   playerblink2: {fileID: 1412429947}
   ninjacontroller2: {fileID: 1412429946}
   habilidades: {fileID: 0}
@@ -14397,6 +14398,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: BOX_ABA
+      objectReference: {fileID: 0}
+    - target: {fileID: 7927530777646793754, guid: 3c404c7d4e99432439bcfa55fbc60cad,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c404c7d4e99432439bcfa55fbc60cad, type: 3}
