@@ -68,8 +68,8 @@ public class agua : MonoBehaviour
             AudioManager.instance.PlaySound(ouchSound);
         }
 
-      
-        else if (collision.gameObject.CompareTag("Wall") || collision.gameObject.CompareTag("Ground"))
+
+        else
         {
             Destroy(gameObject);
         }
