@@ -16,6 +16,9 @@ public class agua : MonoBehaviour
     public GameObject combatManager;
 
     public KnockbackManager KnockbackManager;
+
+    public Vector3 savedVelocity;
+
     void Start()
     {
 
@@ -31,8 +34,14 @@ public class agua : MonoBehaviour
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
-    }
 
+        savedVelocity = GetComponent<Rigidbody2D>().velocity;
+    }
+    void Update()
+    {
+        GetComponent<Rigidbody2D>().velocity = savedVelocity;
+
+    }
     void OnCollisionEnter2D(Collision2D collision)
     {
 
