@@ -44,7 +44,7 @@ public class PlayerBlink : MonoBehaviour
             healthBar.fillAmount = healthAmount / total; // Cambia el divisor si la salud máxima no es 10
 
             EnableBlink();
-            Invoke("DisableBlink", 0.35f);
+            Invoke("DisableBlink", 0.25f);
 
             if (health <= 0)
             {

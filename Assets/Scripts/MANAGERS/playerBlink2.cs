@@ -43,7 +43,7 @@ public class playerBlink2 : MonoBehaviour
             healthAmount = health; // Ajustar esta línea para que refleje correctamente la salud restante
             healthBar.fillAmount = healthAmount / total; // Cambia el divisor 
             EnableBlink();
-            Invoke("DisableBlink", 0.35f);
+            Invoke("DisableBlink", 0.25f);
 
             if (health <= 0)
             {
