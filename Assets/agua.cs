@@ -51,7 +51,6 @@ public class agua : MonoBehaviour
 
             ninja2Blink.Blink();
             KnockbackManager.Ninja2();
-            anim2.SetBool("IsBlinking", true);
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }
@@ -63,7 +62,6 @@ public class agua : MonoBehaviour
             ninjaBlink.Blink();
 
             KnockbackManager.Ninja1();
-            anim.SetBool("IsBlinking", true);
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }

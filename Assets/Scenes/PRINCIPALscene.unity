@@ -8270,6 +8270,7 @@ MonoBehaviour:
   healthBar: {fileID: 2004384195}
   healthAmount: 100
   restar: 0.5
+  anim: {fileID: 1019354700}
   total: 0
 --- !u!61 &1019354699
 BoxCollider2D:
@@ -11026,6 +11027,7 @@ MonoBehaviour:
   healthBar: {fileID: 216285394}
   healthAmount: 100
   restar: 0.5
+  anim: {fileID: 1412429949}
   total: 0
 --- !u!61 &1412429948
 BoxCollider2D:

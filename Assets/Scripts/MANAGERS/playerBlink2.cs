@@ -17,6 +17,8 @@ public class playerBlink2 : MonoBehaviour
     public float healthAmount = 10f;
     public float restar = 0.5f;
 
+    public Animator anim;
+
     public float total;
     private void Awake()
     {
@@ -35,12 +37,13 @@ public class playerBlink2 : MonoBehaviour
     {
         if (health > 0)
         {
+            anim.SetBool("IsBlinking", true);
             health -= restar;
             txt2.text = health.ToString();
             healthAmount = health; // Ajustar esta línea para que refleje correctamente la salud restante
             healthBar.fillAmount = healthAmount / total; // Cambia el divisor 
             EnableBlink();
-            Invoke("DisableBlink", 0.5f);
+            Invoke("DisableBlink", 0.35f);
 
             if (health <= 0)
             {
@@ -58,5 +61,7 @@ public class playerBlink2 : MonoBehaviour
     void DisableBlink()
     {
         renderer.color = normalColor;
+        anim.SetBool("IsBlinking", false);
+
     }
 }

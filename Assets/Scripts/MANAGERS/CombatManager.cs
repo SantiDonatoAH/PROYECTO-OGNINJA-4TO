@@ -63,8 +63,6 @@ public class CombatManager : MonoBehaviour
                 {
                     ninja2Blink.Blink();
                     KnockbackManager.Ninja2();
-                    anim2.SetBool("IsBlinking", true);
-                    StartCoroutine(ResetBlink(anim2));
                     StartCoroutine(CooldownRoutine());
                     
                 }
@@ -80,8 +78,6 @@ public class CombatManager : MonoBehaviour
                 {
                     ninja1Blink.Blink();
                     KnockbackManager.Ninja1();
-                    anim.SetBool("IsBlinking", true);
-                    StartCoroutine(ResetBlink(anim));
                     StartCoroutine(CooldownRoutine2());
                 }
                 StartCoroutine(endAttack2.endAttack());
@@ -99,11 +95,7 @@ public class CombatManager : MonoBehaviour
     }
 
 
-    IEnumerator ResetBlink(Animator animator)
-    {
-        yield return new WaitForSeconds(0.1f);  
-        animator.SetBool("IsBlinking", false);  
-    }
+  
 
     IEnumerator CooldownRoutine()
     {
