@@ -905,7 +905,7 @@ RectTransform:
   m_LocalScale: {x: 1.1549999, y: 1.1549999, z: 1.1549999}
   m_Children: []
   m_Father: {fileID: 1944479995}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1076,78 +1076,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3b9bc3ddcdef94bbaa092def9304f8, type: 3}
---- !u!1 &155715124
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 155715125}
-  - component: {fileID: 155715127}
-  - component: {fileID: 155715126}
-  m_Layer: 5
-  m_Name: Border (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &155715125
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155715124}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.21565138}
-  m_LocalScale: {x: 1.1549999, y: 1.1549999, z: 1.1549999}
-  m_Children: []
-  m_Father: {fileID: 1944479995}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 645.1814, y: 483.8234}
-  m_SizeDelta: {x: 339.66815, y: 44.238976}
-  m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &155715126
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155715124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -765806418, guid: f70555f144d8491a825f0804e09c671c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 053a07e1db9819f40963e12b697f4632, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
---- !u!222 &155715127
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 155715124}
-  m_CullTransparentMesh: 0
 --- !u!1 &158832686
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,8 +1502,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 260.56638, y: 483.93893}
-  m_SizeDelta: {x: 339.63257, y: 44.238976}
+  m_AnchoredPosition: {x: 451.5, y: 483.93893}
+  m_SizeDelta: {x: 670.16925, y: 44.238976}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181107778
 MonoBehaviour:
@@ -2135,7 +2063,7 @@ RectTransform:
   m_LocalScale: {x: 1.1549999, y: 1.1549999, z: 1.1549999}
   m_Children: []
   m_Father: {fileID: 1944479995}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -8252,6 +8180,8 @@ MonoBehaviour:
   isHoldingWeapon: 0
   weaponName: 
   kita: 0
+  kitaJ: 0
+  saltoDoble: 0
 --- !u!114 &1019354698
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11009,6 +10939,8 @@ MonoBehaviour:
   derecha: 1
   weaponName: 
   kita: 0
+  kitaJ: 0
+  saltoDoble: 0
 --- !u!114 &1412429947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13244,7 +13176,7 @@ RectTransform:
   m_LocalScale: {x: 1.1549999, y: 1.1549999, z: 1.1549999}
   m_Children: []
   m_Father: {fileID: 1944479995}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14439,7 +14371,6 @@ Transform:
   - {fileID: 925256457}
   - {fileID: 2004384194}
   - {fileID: 1789834487}
-  - {fileID: 155715125}
   - {fileID: 1792653458}
   - {fileID: 216285393}
   - {fileID: 107064040}
