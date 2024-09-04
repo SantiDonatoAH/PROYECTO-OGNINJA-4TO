@@ -24,11 +24,15 @@ public class NinjaController : MonoBehaviour
     public string weaponName;
 
     public float kita;
+    public float kitaJ;
+    public float saltoDoble;
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
 
         kita = moveSpeed;
+        kitaJ = jumpForce;
+        saltoDoble = kitaJ * 2;
     }
 
     void Awake()
@@ -43,6 +47,15 @@ public class NinjaController : MonoBehaviour
         Crouch();
         CheckHoldingWeapon();
         WallSlide();
+
+        if (isTouchingWall &&  Input.GetKey(KeyCode.A))
+        {
+            jumpForce = saltoDoble;
+        }
+        else
+        {
+            jumpForce = kitaJ;
+        }
     }
 
     void Move()
@@ -71,6 +84,7 @@ public class NinjaController : MonoBehaviour
                 (Input.GetKey(KeyCode.A) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
         {
             moveSpeed = 0;
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 1.5f);
             anim.SetBool("IsWallSliding", true);
         }
         else
@@ -89,6 +103,8 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("IsJumping", true);
             isGrounded = false;
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
+
+            
         }
     }
 
