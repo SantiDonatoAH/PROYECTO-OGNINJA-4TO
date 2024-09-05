@@ -1502,8 +1502,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 259.5, y: 459.74}
-  m_SizeDelta: {x: 337.6767, y: 113.1276}
+  m_AnchoredPosition: {x: 259.67, y: 459.74}
+  m_SizeDelta: {x: 337.97382, y: 113.1276}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &181107778
 MonoBehaviour:
@@ -2067,8 +2067,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 621.2, y: 467.88}
-  m_SizeDelta: {x: 291.4618, y: 32.24205}
+  m_AnchoredPosition: {x: 622.57, y: 467.88}
+  m_SizeDelta: {x: 289.08527, y: 32.24205}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &216285394
 MonoBehaviour:
@@ -6665,7 +6665,7 @@ MonoBehaviour:
   ninjacontroller: {fileID: 1019354697}
   playerblink: {fileID: 1019354698}
   bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
-  flotaflota: {fileID: 114921968765343414, guid: e26d39f62ec44704b8e1c118dd4bfa15,
+  flotaflota: {fileID: 114658582262538862, guid: e26d39f62ec44704b8e1c118dd4bfa15,
     type: 3}
   manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   combatmanager: {fileID: 556487312}

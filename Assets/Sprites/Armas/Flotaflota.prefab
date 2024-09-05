@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 6102558537848769231}
   - component: {fileID: 6078316746329285250}
   - component: {fileID: 50499804345041238}
-  - component: {fileID: 114921968765343414}
   - component: {fileID: 114759510298099832}
   - component: {fileID: 61172281148838706}
+  - component: {fileID: 114658582262538862}
   m_Layer: 0
   m_Name: Flotaflota
   m_TagString: Weapon
@@ -104,25 +104,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!114 &114921968765343414
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2857495050582825017}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24576a6ac99823f4eaaabf28042e54d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
-  pausemanager: {fileID: 0}
-  cooldownTime: 1
-  cooldownTime2: 1
 --- !u!114 &114759510298099832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,3 +145,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6081923, y: 0.7535403}
   m_EdgeRadius: 0
+--- !u!114 &114658582262538862
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2857495050582825017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 24576a6ac99823f4eaaabf28042e54d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ninja1: {fileID: 0}
+  ninja2: {fileID: 0}
+  anim: {fileID: 0}
+  anim2: {fileID: 0}
+  pausemanager: {fileID: 0}
+  cooldownTime: 0.75
+  cooldownTime2: 0.75
