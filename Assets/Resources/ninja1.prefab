@@ -160,8 +160,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   agachar: {fileID: 5244374281112257540}
   parado: {fileID: 5244374281112257543}
-  pared: {fileID: 0}
-  paredT: {fileID: 0}
+  pared: {fileID: 5244374281112257547}
+  paredT: {fileID: 5244374281112257544}
   isTouchingWall: 0
   isHoldingWeapon: 0
   weaponName: 
@@ -267,6 +267,7 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: -7877559922949339848}
+  - {fileID: -1447177921477650796}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
@@ -317,5 +318,43 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ShowLayerWeightsInspector: 1
   ShowParameterInspector: 1
-  m_SynchronizeParameters: []
-  m_SynchronizeLayers: []
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsCrouching
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsJumping
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsPunching
+  - Type: 4
+    SynchronizeType: 0
+    Name: Run
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsHoldingManguera
+  - Type: 9
+    SynchronizeType: 0
+    Name: attack
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsWallSliding
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsBlinking
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsHoldingFlotaflota
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsHoldingBombucha
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsAttacking
+  - Type: 4
+    SynchronizeType: 0
+    Name: IsHoldingPistola
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
