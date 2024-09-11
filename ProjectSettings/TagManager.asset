@@ -11,6 +11,8 @@ TagManager:
   - player2
   - Dead
   - combat
+  - Bullet
+  - hab
   layers:
   - Default
   - TransparentFX

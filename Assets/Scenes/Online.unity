@@ -6757,7 +6757,7 @@ GameObject:
   - component: {fileID: 846295321}
   m_Layer: 0
   m_Name: Selector de Habilidades
-  m_TagString: Untagged
+  m_TagString: hab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
