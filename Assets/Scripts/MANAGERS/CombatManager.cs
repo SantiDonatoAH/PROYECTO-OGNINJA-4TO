@@ -34,15 +34,15 @@ public class CombatManager : MonoBehaviour
 
     void Start()
     {
-        
+
+        ninja1 = GameObject.FindGameObjectWithTag("player1");
+        ninja2 = GameObject.FindGameObjectWithTag("player2");
+
         ninja1Blink = ninja1.GetComponent<PlayerBlink>();
         ninja2Blink = ninja2.GetComponent<playerBlink2>();
 
         ninjaController = ninja1.GetComponent<NinjaController>();
         ninjaController2 = ninja2.GetComponent<NinjaController2>();
-
-        
-       
     }
 
     void Update()

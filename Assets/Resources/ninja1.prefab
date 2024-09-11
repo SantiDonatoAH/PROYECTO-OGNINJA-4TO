@@ -157,6 +157,7 @@ MonoBehaviour:
   jumpForce: 8
   move: 0
   movey: 0
+  rb: {fileID: 0}
   anim: {fileID: 0}
   agachar: {fileID: 5244374281112257540}
   parado: {fileID: 5244374281112257543}

@@ -19,11 +19,11 @@ public class WeaponSpawner : MonoBehaviour
 
     private void Update()
     {
-        timer -= 0.01f;
+        timer -= Time.deltaTime;
         if (timer <= 0)
         {
             SpawnWeapon();
-            timer = 30;
+            timer = 20;
         }
     }
     void SpawnWeapon()

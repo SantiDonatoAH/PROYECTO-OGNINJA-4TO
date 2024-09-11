@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class NinjaController : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class NinjaController : MonoBehaviour
     public float move;
     public float movey;
 
-    private Rigidbody2D rb;
+    public Rigidbody2D rb;
     [SerializeField] Animator anim;
     public BoxCollider2D agachar;
     public BoxCollider2D parado;
@@ -26,9 +27,15 @@ public class NinjaController : MonoBehaviour
     public float kita;
     public float kitaJ;
     public float saltoDoble;
+
+    PhotonView view;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+
+        view = GetComponent<PhotonView>();
+
 
         kita = moveSpeed;
         kitaJ = jumpForce;
@@ -42,20 +49,25 @@ public class NinjaController : MonoBehaviour
 
     void Update()
     {
-        Move();
-        Jump();
-        Crouch();
-        CheckHoldingWeapon();
-        WallSlide();
 
-        if (isTouchingWall &&  Input.GetKey(KeyCode.A))
+        if (view.IsMine)
         {
-            jumpForce = saltoDoble;
+            Move();
+            Jump();
+            Crouch();
+            CheckHoldingWeapon();
+            WallSlide();
+
+            if (isTouchingWall && Input.GetKey(KeyCode.A))
+            {
+                jumpForce = saltoDoble;
+            }
+            else
+            {
+                jumpForce = kitaJ;
+            }
         }
-        else
-        {
-            jumpForce = kitaJ;
-        }
+
     }
 
     void Move()
@@ -79,7 +91,7 @@ public class NinjaController : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-        if 
+        if
             ((Input.GetKey(KeyCode.D) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
                 (Input.GetKey(KeyCode.A) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
         {
@@ -104,7 +116,7 @@ public class NinjaController : MonoBehaviour
             isGrounded = false;
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
 
-            
+
         }
     }
 

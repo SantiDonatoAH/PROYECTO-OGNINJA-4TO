@@ -13,6 +13,11 @@ public class Spawner : MonoBehaviour
     public Transform ninja1;
     public Transform ninja2;
 
+    public CombatManager combat;
+    public abilitySelector ability;
+    public deathBarrier death;
+    public WeaponSpawner weapon;
+
     void Start()
     {
         // Verifica si el jugador es el creador de la sala (primer jugador en la lista)
@@ -21,10 +26,14 @@ public class Spawner : MonoBehaviour
             // Si es el primer jugador, spawnea el playerPrefab en la posición del primer ninja
             PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
         }
-        else
+        else if (PhotonNetwork.PlayerList.Length > 1) 
         {
-            // Si no, spawnea el playerPrefab2 en la posición del segundo ninja
             PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
+
+            weapon.enabled = true;
+            death.enabled = true;
+            ability.enabled = true;
+            combat.enabled = true;
         }
     }
 }

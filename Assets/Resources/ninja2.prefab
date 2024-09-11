@@ -160,8 +160,8 @@ MonoBehaviour:
   anim: {fileID: 0}
   parar: {fileID: 2950675939776314573}
   agachar: {fileID: 2950675939776314568}
-  pared: {fileID: 0}
-  paredT: {fileID: 0}
+  pared: {fileID: 2950675939776314561}
+  paredT: {fileID: 2950675939776314572}
   isHoldingWeapon: 0
   derecha: 1
   weaponName: 
@@ -349,7 +349,9 @@ MonoBehaviour:
   Synchronization: 3
   OwnershipTransfer: 0
   observableSearch: 2
-  ObservedComponents: []
+  ObservedComponents:
+  - {fileID: 4021457285473894249}
+  - {fileID: 1300543995364512339}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0

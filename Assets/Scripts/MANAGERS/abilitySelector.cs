@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using JetBrains.Annotations;
 
 public class abilitySelector : MonoBehaviour
 {
     public string[] abilities;
+
+    public GameObject ninja1;
+    public GameObject ninja2;
 
     public NinjaController ninjacontroller;
     public PlayerBlink playerblink;
@@ -48,6 +52,14 @@ public class abilitySelector : MonoBehaviour
         Ninja1();
         Ninja2();
 
+        ninja1 = GameObject.FindGameObjectWithTag("player1");
+        ninja1 = GameObject.FindGameObjectWithTag("player1");
+
+        ninjacontroller = ninja1.GetComponent<NinjaController>();
+        playerblink = ninja1.GetComponent<PlayerBlink>();
+
+        ninjacontroller2 = ninja2.GetComponent<NinjaController2>();
+        playerblink2 = ninja2.GetComponent<playerBlink2>();
         // h1 = habilidades.habilidadesDropdown1.text;
     }
 
