@@ -13,6 +13,8 @@ public class Spawner : MonoBehaviour
     public Transform ninja1;
     public Transform ninja2;
 
+    public GameObject kita;
+
     public CombatManager combat;
     public abilitySelector ability;
     public deathBarrier death;
@@ -30,6 +32,15 @@ public class Spawner : MonoBehaviour
         {
             PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
 
+            
+        }
+    }
+
+    void Update()
+    {
+         kita = GameObject.FindWithTag("player2");
+        if (kita != null)
+        {
             weapon.enabled = true;
             death.enabled = true;
             ability.enabled = true;

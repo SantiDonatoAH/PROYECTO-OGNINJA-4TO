@@ -1,6 +1,7 @@
 ﻿ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class WeaponSpawner : MonoBehaviour
 {
@@ -35,7 +36,8 @@ public class WeaponSpawner : MonoBehaviour
         if (objetoExistente != null)
         {
             // Instanciar el arma en el punto de spawn
-            GameObject nuevaArma = Instantiate(armaSeleccionada, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+            GameObject nuevaArma = PhotonNetwork.Instantiate(armaSeleccionada, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+
 
             // Obtener el script del objeto clonado y deshabilitarlo
             var tipoDelScript = System.Type.GetType(armaSeleccionada.name);
@@ -45,8 +47,8 @@ public class WeaponSpawner : MonoBehaviour
         }
         else
         {
-            // Si no existe un clon, simplemente instanciar el arma
-            Instantiate(armaSeleccionada, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+            PhotonNetwork.Instantiate(armaSeleccionada, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+
         }
     }
 }
