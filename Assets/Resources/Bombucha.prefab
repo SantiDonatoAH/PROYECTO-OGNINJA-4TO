@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 114522585842031312}
   - component: {fileID: 50408758071355818}
   - component: {fileID: 114461353756347636}
+  - component: {fileID: 3394238210223329121}
+  - component: {fileID: 6251735554118726091}
   m_Layer: 0
   m_Name: Bombucha
   m_TagString: Weapon
@@ -133,7 +135,7 @@ MonoBehaviour:
   multiplicador: 0
   multiplicador2: 0
   pausemanager: {fileID: 0}
-  cooldownTime: 1
+  cooldownTime: 0.5
   cooldownTime2: 1
 --- !u!50 &50408758071355818
 Rigidbody2D:
@@ -171,3 +173,59 @@ MonoBehaviour:
   rb: {fileID: 50408758071355818}
   poder: 0
   pos: {x: 0, y: 0}
+--- !u!114 &3394238210223329121
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371005533148593032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
+--- !u!114 &6251735554118726091
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371005533148593032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 3394238210223329121}
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

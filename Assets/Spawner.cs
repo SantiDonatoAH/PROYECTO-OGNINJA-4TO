@@ -2,7 +2,7 @@ using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class Spawner : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -20,6 +20,8 @@ public class Spawner : MonoBehaviour
     public deathBarrier death;
     public WeaponSpawner weapon;
 
+    public GameObject panelInicio;
+
     void Start()
     {
         // Verifica si el jugador es el creador de la sala (primer jugador en la lista)
@@ -33,6 +35,10 @@ public class Spawner : MonoBehaviour
             PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
 
             
+        }
+        else if (PhotonNetwork.PlayerList.Length == 0)
+        {
+            panelInicio.SetActive  (true); 
         }
     }
 
@@ -49,5 +55,10 @@ public class Spawner : MonoBehaviour
 
             combat.enabled = true;
         }
+    }
+
+    public void Volver()
+    {
+        SceneManager.LoadScene("INICIO");
     }
 }

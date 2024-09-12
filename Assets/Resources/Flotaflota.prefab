@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 61172281148838706}
   - component: {fileID: -6004299822204894197}
   - component: {fileID: 976404481383536054}
-  - component: {fileID: -8621083921381147777}
+  - component: {fileID: 1500745841454471355}
   m_Layer: 0
   m_Name: Flotaflota
   m_TagString: Weapon
@@ -208,7 +208,7 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &-8621083921381147777
+--- !u!114 &1500745841454471355
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2857495050582825017}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24576a6ac99823f4eaaabf28042e54d3, type: 3}
+  m_Script: {fileID: 11500000, guid: 29febe397b7bb2d4eb80eb2753321a6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ninja1: {fileID: 0}
