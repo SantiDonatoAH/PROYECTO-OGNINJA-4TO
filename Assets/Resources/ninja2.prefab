@@ -227,6 +227,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: {fileID: 0}
+  Counter: {fileID: 0}
   health: 10
   txt2: {fileID: 0}
   healthI: {fileID: 0}

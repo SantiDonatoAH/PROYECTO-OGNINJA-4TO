@@ -17,6 +17,7 @@ TagManager:
   - Vida2
   - txtV1
   - txtV2
+  - counter
   layers:
   - Default
   - TransparentFX

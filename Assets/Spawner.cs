@@ -29,12 +29,13 @@ public class Spawner : MonoBehaviour
         {
             // Si es el primer jugador, spawnea el playerPrefab en la posición del primer ninja
             PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
+
         }
         else if (PhotonNetwork.PlayerList.Length > 1) 
         {
             PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
 
-            
+            playerPrefab.transform.position = ninja1.position;
         }
         else if (PhotonNetwork.PlayerList.Length == 0)
         {

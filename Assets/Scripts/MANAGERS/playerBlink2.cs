@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class playerBlink2 : MonoBehaviour
 {
     public Counter counter;
+    public GameObject Counter;
 
     SpriteRenderer renderer;
     Color damageColor = Color.red;
@@ -33,9 +34,11 @@ public class playerBlink2 : MonoBehaviour
     {
         healthI = GameObject.FindGameObjectWithTag("Vida2");
         healthT = GameObject.FindGameObjectWithTag("txtV2");
+        Counter = GameObject.FindGameObjectWithTag("counter");
 
         healthBar = healthI.GetComponent<Image>();
         txt2 = healthT.GetComponent<Text>();
+        counter = Counter.GetComponent<Counter>();
 
         txt2.text = health.ToString();
         normalColor = renderer.color;
