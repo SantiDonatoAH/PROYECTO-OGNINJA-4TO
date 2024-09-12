@@ -901,7 +901,7 @@ GameObject:
   - component: {fileID: 107064041}
   m_Layer: 5
   m_Name: Vida2
-  m_TagString: Untagged
+  m_TagString: txtV2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2071,7 +2071,7 @@ GameObject:
   - component: {fileID: 216285394}
   m_Layer: 5
   m_Name: Health (2)
-  m_TagString: Untagged
+  m_TagString: Vida2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3756,6 +3756,7 @@ MonoBehaviour:
     type: 3}
   ninja1: {fileID: 5244374281112257544, guid: b8f605e01ccc6ed45b27f10159ee418d, type: 3}
   ninja2: {fileID: 2950675939776314572, guid: aa1fe6ece13fb15439887c3c7adf3ed2, type: 3}
+  kita: {fileID: 0}
   combat: {fileID: 556487312}
   ability: {fileID: 846295321}
   death: {fileID: 158832691}
@@ -6784,10 +6785,12 @@ MonoBehaviour:
   - vida
   - salto
   - velocidad
+  ninja1: {fileID: 0}
+  ninja2: {fileID: 0}
   ninjacontroller: {fileID: 0}
   playerblink: {fileID: 0}
   bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
-  flotaflota: {fileID: 114658582262538862, guid: e26d39f62ec44704b8e1c118dd4bfa15,
+  flotaflota: {fileID: -8621083921381147777, guid: e26d39f62ec44704b8e1c118dd4bfa15,
     type: 3}
   manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   combatmanager: {fileID: 556487312}
@@ -12944,7 +12947,7 @@ GameObject:
   - component: {fileID: 1789834488}
   m_Layer: 5
   m_Name: Vida1
-  m_TagString: Untagged
+  m_TagString: txtV1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14772,7 +14775,7 @@ GameObject:
   - component: {fileID: 2004384195}
   m_Layer: 5
   m_Name: Health
-  m_TagString: Untagged
+  m_TagString: Vida1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

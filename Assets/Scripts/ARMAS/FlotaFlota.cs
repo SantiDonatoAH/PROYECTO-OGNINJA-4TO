@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -19,7 +19,7 @@ public class Flotaflota : MonoBehaviour
 
     public ScreenController pausemanager;
 
-    private bool canFire = true;  
+    private bool canFire = true;
     private bool canFire2 = true;
 
     public float cooldownTime = .75f;
@@ -27,8 +27,8 @@ public class Flotaflota : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-         ninja1 = GameObject.FindWithTag("player1");
-         ninja2 = GameObject.FindWithTag("player2");
+        ninja1 = GameObject.FindWithTag("player1");
+        ninja2 = GameObject.FindWithTag("player2");
 
 
         ninja1Blink = ninja1.GetComponent<PlayerBlink>();
@@ -37,7 +37,7 @@ public class Flotaflota : MonoBehaviour
         ninjaController = ninja1.GetComponent<NinjaController>();
         ninjaController2 = ninja2.GetComponent<NinjaController2>();
 
-         anim = ninja1.GetComponent<Animator>();
+        anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
     }
 
@@ -55,8 +55,8 @@ public class Flotaflota : MonoBehaviour
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
             }
-            canFire = false; 
-            StartCoroutine(CooldownRoutine()); 
+            canFire = false;
+            StartCoroutine(CooldownRoutine());
         }
 
         if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingFlotaflota2") == true && canFire2)
@@ -71,14 +71,14 @@ public class Flotaflota : MonoBehaviour
                 ninja1Blink.Blink();
             }
             canFire2 = false; // Inicia el cooldown para el segundo jugador
-            StartCoroutine(CooldownRoutine2()); 
+            StartCoroutine(CooldownRoutine2());
         }
     }
 
     bool IsInRange(GameObject attacker, GameObject target)
     {
         float distance = Vector2.Distance(attacker.transform.position, target.transform.position);
-        return distance < 2.5f; 
+        return distance < 2.5f;
     }
 
     void endAttack1()
@@ -93,12 +93,12 @@ public class Flotaflota : MonoBehaviour
     IEnumerator CooldownRoutine()
     {
         yield return new WaitForSeconds(cooldownTime);
-        canFire = true; 
+        canFire = true;
     }
 
     IEnumerator CooldownRoutine2()
     {
         yield return new WaitForSeconds(cooldownTime2);
-        canFire2 = true; 
+        canFire2 = true;
     }
 }

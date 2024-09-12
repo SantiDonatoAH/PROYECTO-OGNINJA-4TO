@@ -8,7 +8,7 @@ public class WeaponSpawner : MonoBehaviour
     public GameObject[] armas;        // Array de armas que se pueden spawnear
     public Transform[] spawnPoints;   // Puntos de spawn en el mapa
     public float timer = 20f;         // Tiempo entre spawns
-    public float armasSpawneadas = 2;
+    public float armasSpawneadas = 1;
 
     void Start()
     {
@@ -31,12 +31,13 @@ public class WeaponSpawner : MonoBehaviour
     {
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
         GameObject armaSeleccionada = armas[Random.Range(0, armas.Length)];
+        string prefabName = armaSeleccionada.name;
         GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
 
         if (objetoExistente != null)
         {
-            // Instanciar el arma en el punto de spawn
-            GameObject nuevaArma = PhotonNetwork.Instantiate(armaSeleccionada, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+            GameObject nuevaArma = PhotonNetwork.Instantiate(prefabName, new Vector3(Random.Range(-6f, 6f), spawnPoint.position.y, 0f), spawnPoint.rotation);
+
 
 
             // Obtener el script del objeto clonado y deshabilitarlo
@@ -47,7 +48,7 @@ public class WeaponSpawner : MonoBehaviour
         }
         else
         {
-            PhotonNetwork.Instantiate(armaSeleccionada, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+            PhotonNetwork.Instantiate(prefabName, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
 
         }
     }

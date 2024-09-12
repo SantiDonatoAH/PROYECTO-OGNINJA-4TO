@@ -13,7 +13,11 @@ public class playerBlink2 : MonoBehaviour
     Color normalColor;
     public float health = 10;
     public Text txt2;
- public Image healthBar;
+
+    public GameObject healthI;
+    public GameObject healthT;
+
+    public Image healthBar;
     public float healthAmount = 10f;
     public float restar = 0.5f;
 
@@ -27,6 +31,12 @@ public class playerBlink2 : MonoBehaviour
 
     void Start()
     {
+        healthI = GameObject.FindGameObjectWithTag("Vida2");
+        healthT = GameObject.FindGameObjectWithTag("txtV2");
+
+        healthBar = healthI.GetComponent<Image>();
+        txt2 = healthT.GetComponent<Text>();
+
         txt2.text = health.ToString();
         normalColor = renderer.color;
 

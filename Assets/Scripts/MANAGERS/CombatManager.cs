@@ -43,6 +43,13 @@ public class CombatManager : MonoBehaviour
 
         ninjaController = ninja1.GetComponent<NinjaController>();
         ninjaController2 = ninja2.GetComponent<NinjaController2>();
+
+        anim = ninja1.GetComponent<Animator>();
+        anim2 = ninja2.GetComponent<Animator>();
+
+        endAttack = ninja1.GetComponent<endAttack>();
+        endAttack2 = ninja2.GetComponent<endAttack2>();
+
     }
 
     void Update()

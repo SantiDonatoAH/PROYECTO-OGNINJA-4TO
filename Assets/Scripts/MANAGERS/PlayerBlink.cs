@@ -12,6 +12,10 @@ public class PlayerBlink : MonoBehaviour
     Color damageColor = Color.red;
     Color normalColor;
     public float health = 10;
+
+    public GameObject healthI;
+    public GameObject healthT;
+
     public Text txt1;
     public Image healthBar;
     public float healthAmount = 10f;
@@ -27,6 +31,12 @@ public class PlayerBlink : MonoBehaviour
 
     void Start()
     {
+        healthI = GameObject.FindGameObjectWithTag("Vida1");
+         healthT = GameObject.FindGameObjectWithTag("txtV1");
+
+        healthBar = healthI.GetComponent<Image>();
+        txt1 = healthT.GetComponent<Text>();
+
         txt1.text = health.ToString();
         normalColor = renderer.color;
 

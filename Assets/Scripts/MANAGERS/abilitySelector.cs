@@ -49,17 +49,19 @@ public class abilitySelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Ninja1();
-        Ninja2();
-
         ninja1 = GameObject.FindGameObjectWithTag("player1");
-        ninja1 = GameObject.FindGameObjectWithTag("player1");
+        ninja2 = GameObject.FindGameObjectWithTag("player2");
 
         ninjacontroller = ninja1.GetComponent<NinjaController>();
         playerblink = ninja1.GetComponent<PlayerBlink>();
 
         ninjacontroller2 = ninja2.GetComponent<NinjaController2>();
         playerblink2 = ninja2.GetComponent<playerBlink2>();
+
+        Ninja1();
+        Ninja2();
+
+       
         // h1 = habilidades.habilidadesDropdown1.text;
     }
 

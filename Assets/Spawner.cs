@@ -42,8 +42,11 @@ public class Spawner : MonoBehaviour
         if (kita != null)
         {
             weapon.enabled = true;
+
             death.enabled = true;
+
             ability.enabled = true;
+
             combat.enabled = true;
         }
     }
