@@ -51,6 +51,7 @@ public class Counter : MonoBehaviour
         pts2.text = score2.ToString();
         Debug.Log("2");
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
         if (score2 == Rondas)
         {
             PanelVictoria.SetActive(true);

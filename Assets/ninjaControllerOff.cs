@@ -28,6 +28,8 @@ public class ninjaControllerOff : MonoBehaviour
     public float kitaJ;
     public float saltoDoble;
 
+    
+
     PhotonView view;
 
     void Start()

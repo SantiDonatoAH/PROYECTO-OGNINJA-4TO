@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Spawner : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject Respawn;
 
     public GameObject playerPrefab;
     public GameObject playerPrefab2;
@@ -35,7 +35,10 @@ public class Spawner : MonoBehaviour
         {
             PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
 
-            playerPrefab.transform.position = ninja1.position;
+            if (Respawn == null)
+            {
+                PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
+            }
         }
         else if (PhotonNetwork.PlayerList.Length == 0)
         {
@@ -45,7 +48,9 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-         kita = GameObject.FindWithTag("player2");
+        Respawn = GameObject.FindWithTag("player1");
+
+        kita = GameObject.FindWithTag("player2");
         if (kita != null)
         {
             weapon.enabled = true;
@@ -62,4 +67,6 @@ public class Spawner : MonoBehaviour
     {
         SceneManager.LoadScene("INICIO");
     }
+
+ 
 }

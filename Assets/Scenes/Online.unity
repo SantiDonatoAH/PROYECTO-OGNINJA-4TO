@@ -2069,6 +2069,8 @@ GameObject:
   - component: {fileID: 216285393}
   - component: {fileID: 216285395}
   - component: {fileID: 216285394}
+  - component: {fileID: 216285397}
+  - component: {fileID: 216285396}
   m_Layer: 5
   m_Name: Health (2)
   m_TagString: Vida2
@@ -2134,6 +2136,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 216285392}
   m_CullTransparentMesh: 0
+--- !u!114 &216285396
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216285392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 216285397}
+  sceneViewId: 2
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &216285397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 216285392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
 --- !u!4 &217785107 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3577983498906363473, guid: 8a3b9bc3ddcdef94bbaa092def9304f8,
@@ -3750,13 +3808,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc772a5793da74142a49b4340eaedce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Respawn: []
   playerPrefab: {fileID: 5244374281112257547, guid: b8f605e01ccc6ed45b27f10159ee418d,
     type: 3}
   playerPrefab2: {fileID: 2950675939776314561, guid: aa1fe6ece13fb15439887c3c7adf3ed2,
     type: 3}
   ninja1: {fileID: 5244374281112257544, guid: b8f605e01ccc6ed45b27f10159ee418d, type: 3}
   ninja2: {fileID: 2950675939776314572, guid: aa1fe6ece13fb15439887c3c7adf3ed2, type: 3}
-  skibidi: {fileID: 0}
   kita: {fileID: 0}
   combat: {fileID: 556487312}
   ability: {fileID: 846295321}
@@ -15036,10 +15094,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pts2: {fileID: 1411027778}
   pts1: {fileID: 999512866}
-  Rondas: 0
+  Rondas: 3
   PanelVictoria: {fileID: 1310946625}
   Texto1: {fileID: 2145044359}
   Texto2: {fileID: 1376164206}
+  spawner: {fileID: 450971890}
 --- !u!1 &1976501098
 GameObject:
   m_ObjectHideFlags: 0
@@ -15258,6 +15317,8 @@ GameObject:
   - component: {fileID: 2004384194}
   - component: {fileID: 2004384196}
   - component: {fileID: 2004384195}
+  - component: {fileID: 2004384198}
+  - component: {fileID: 2004384197}
   m_Layer: 5
   m_Name: Health
   m_TagString: Vida1
@@ -15323,6 +15384,62 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2004384193}
   m_CullTransparentMesh: 0
+--- !u!114 &2004384197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004384193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
+--- !u!114 &2004384198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004384193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 2004384197}
+  sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &2007362257
 GameObject:
   m_ObjectHideFlags: 0
