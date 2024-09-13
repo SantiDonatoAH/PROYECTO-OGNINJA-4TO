@@ -8427,6 +8427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: {fileID: 1974706322}
+  Counter: {fileID: 0}
   health: 10
   healthI: {fileID: 0}
   healthT: {fileID: 0}
@@ -9136,18 +9137,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1095287914}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b01caff6013a4ad4585d8ad4aed3fe3b, type: 3}
+  m_Script: {fileID: 11500000, guid: 82da89a91ba6da04482ad438125bd671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   armas:
   - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
-  - {fileID: 2857495050582825017, guid: e26d39f62ec44704b8e1c118dd4bfa15, type: 3}
   - {fileID: 7457272888433717637, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
+  - {fileID: 2857495050582825017, guid: e26d39f62ec44704b8e1c118dd4bfa15, type: 3}
   - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   spawnPoints:
   - {fileID: 870233830}
   - {fileID: 1778200177}
-  timer: 25
+  timer: 20
   armasSpawneadas: 2
 --- !u!4 &1099944094 stripped
 Transform:
@@ -11234,6 +11235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   counter: {fileID: 1974706322}
+  Counter: {fileID: 0}
   health: 10
   txt2: {fileID: 107064041}
   healthI: {fileID: 0}
@@ -15009,7 +15011,7 @@ GameObject:
   - component: {fileID: 1974706322}
   m_Layer: 5
   m_Name: Contador
-  m_TagString: Untagged
+  m_TagString: counter
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
