@@ -68,7 +68,7 @@ public class ScreenController : MonoBehaviour
     {
         Time.timeScale = 1;
         ispaused = false;
-        SceneManager.LoadScene("INICIO");
+        SceneManager.LoadScene("Lobby");
         settingsPanel.SetActive(false);
         pausePanel.SetActive(false);
         Destroy(this.GAME_UI);   

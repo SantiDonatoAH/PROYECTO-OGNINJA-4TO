@@ -899,6 +899,7 @@ GameObject:
   - component: {fileID: 107064040}
   - component: {fileID: 107064042}
   - component: {fileID: 107064041}
+  - component: {fileID: 107064043}
   m_Layer: 5
   m_Name: Vida2
   m_TagString: txtV2
@@ -970,6 +971,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 107064039}
   m_CullTransparentMesh: 0
+--- !u!114 &107064043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107064039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 6
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &137895134 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6302189812766111855, guid: 8190d5a53653c1143aca6b023a82e859,
@@ -3789,6 +3812,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450971891}
   - component: {fileID: 450971890}
+  - component: {fileID: 450971892}
   m_Layer: 0
   m_Name: Spawn
   m_TagString: Untagged
@@ -3808,7 +3832,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc772a5793da74142a49b4340eaedce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Respawn: {fileID: 0}
   playerPrefab: {fileID: 5244374281112257547, guid: b8f605e01ccc6ed45b27f10159ee418d,
     type: 3}
   playerPrefab2: {fileID: 2950675939776314561, guid: aa1fe6ece13fb15439887c3c7adf3ed2,
@@ -3821,6 +3844,7 @@ MonoBehaviour:
   death: {fileID: 158832691}
   weapon: {fileID: 1095287916}
   panelInicio: {fileID: 1691482497}
+  teleporter: {fileID: 450971892}
 --- !u!4 &450971891
 Transform:
   m_ObjectHideFlags: 0
@@ -3829,13 +3853,26 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450971889}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.0750866, y: -3.8502061, z: -0.12896068}
+  m_LocalPosition: {x: -11.33365, y: 3.363642, z: -0.12896068}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &450971892
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450971889}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d95bf80cf41134691e9b0a04bfc6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Respawn: {fileID: 0}
 --- !u!4 &460710849 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3577983498906363473, guid: 8a3b9bc3ddcdef94bbaa092def9304f8,
@@ -8572,6 +8609,7 @@ GameObject:
   - component: {fileID: 1050538841}
   - component: {fileID: 1050538840}
   - component: {fileID: 1050538839}
+  - component: {fileID: 1050538842}
   m_Layer: 5
   m_Name: Hab_Rojo
   m_TagString: Untagged
@@ -8637,6 +8675,28 @@ RectTransform:
   m_AnchoredPosition: {x: 714.3, y: 417.9}
   m_SizeDelta: {x: 33.52894, y: 28.39079}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1050538842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1050538838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 7
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1001 &1051292437
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13353,6 +13413,7 @@ GameObject:
   - component: {fileID: 1789834487}
   - component: {fileID: 1789834489}
   - component: {fileID: 1789834488}
+  - component: {fileID: 1789834490}
   m_Layer: 5
   m_Name: Vida1
   m_TagString: txtV1
@@ -13424,6 +13485,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1789834486}
   m_CullTransparentMesh: 0
+--- !u!114 &1789834490
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1789834486}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 5
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!1 &1792653457
 GameObject:
   m_ObjectHideFlags: 0
@@ -15109,6 +15192,7 @@ GameObject:
   - component: {fileID: 1976501099}
   - component: {fileID: 1976501100}
   - component: {fileID: 1976501101}
+  - component: {fileID: 1976501102}
   m_Layer: 5
   m_Name: Hab_Blanco
   m_TagString: Untagged
@@ -15174,6 +15258,28 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1976501102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1976501098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 3
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!4 &1977305487 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3577983498906363473, guid: 8a3b9bc3ddcdef94bbaa092def9304f8,
@@ -15318,6 +15424,8 @@ GameObject:
   - component: {fileID: 2004384195}
   - component: {fileID: 2004384198}
   - component: {fileID: 2004384197}
+  - component: {fileID: 2004384200}
+  - component: {fileID: 2004384199}
   m_Layer: 5
   m_Name: Health
   m_TagString: Vida1
@@ -15436,7 +15544,65 @@ MonoBehaviour:
   observableSearch: 2
   ObservedComponents:
   - {fileID: 2004384197}
+  - {fileID: 2004384199}
   sceneViewId: 1
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &2004384199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004384193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_PositionModel:
+    SynchronizeEnabled: 0
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0
+--- !u!114 &2004384200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2004384193}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  observableSearch: 2
+  ObservedComponents:
+  - {fileID: 2004384197}
+  - {fileID: 2004384199}
+  sceneViewId: 4
   InstantiationId: 0
   isRuntimeInstantiated: 0
 --- !u!1 &2007362257

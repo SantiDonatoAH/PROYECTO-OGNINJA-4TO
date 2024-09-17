@@ -5,7 +5,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class Spawner : MonoBehaviour
 {
-    public GameObject Respawn;
 
     public GameObject playerPrefab;
     public GameObject playerPrefab2;
@@ -22,6 +21,8 @@ public class Spawner : MonoBehaviour
 
     public GameObject panelInicio;
 
+    public Teleporter teleporter;
+
     void Start()
     {
         // Verifica si el jugador es el creador de la sala (primer jugador en la lista)
@@ -29,16 +30,14 @@ public class Spawner : MonoBehaviour
         {
             // Si es el primer jugador, spawnea el playerPrefab en la posición del primer ninja
             PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
+            teleporter.enabled = true;
 
         }
         else if (PhotonNetwork.PlayerList.Length > 1) 
         {
             PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
 
-            if (Respawn == null)
-            {
-                PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
-            }
+            
         }
         else if (PhotonNetwork.PlayerList.Length == 0)
         {
@@ -48,7 +47,6 @@ public class Spawner : MonoBehaviour
 
     void Update()
     {
-        Respawn = GameObject.FindWithTag("player1");
 
         kita = GameObject.FindWithTag("player2");
         if (kita != null)
@@ -60,6 +58,8 @@ public class Spawner : MonoBehaviour
             ability.enabled = true;
 
             combat.enabled = true;
+
+            teleporter.enabled = false;
         }
     }
 
