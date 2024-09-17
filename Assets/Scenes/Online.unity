@@ -3517,6 +3517,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc772a5793da74142a49b4340eaedce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  txt1: {fileID: 999512866}
+  txt2: {fileID: 1411027778}
+  pts1: 0
+  pts2: 0
   playerPrefab: {fileID: 5244374281112257547, guid: b8f605e01ccc6ed45b27f10159ee418d,
     type: 3}
   playerPrefab2: {fileID: 2950675939776314561, guid: aa1fe6ece13fb15439887c3c7adf3ed2,
@@ -6509,6 +6513,8 @@ MonoBehaviour:
   habilidades: {fileID: 0}
   h1: 
   h2: 
+  im1: {fileID: 0}
+  im2: {fileID: 0}
   image1: {fileID: 0}
   image2: {fileID: 0}
 --- !u!4 &846295322
