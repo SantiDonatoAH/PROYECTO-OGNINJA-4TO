@@ -48,8 +48,6 @@ public class Spawner : MonoBehaviour
         }
         else if (PhotonNetwork.PlayerList.Length > 1) 
         {
-            PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
-
             if (pts1 > 0 && pts2 > 0)
             {
                 GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
@@ -57,6 +55,10 @@ public class Spawner : MonoBehaviour
 
                 PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
             }
+
+            PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
+
+            
             
         }
         else if (PhotonNetwork.PlayerList.Length == 0)
