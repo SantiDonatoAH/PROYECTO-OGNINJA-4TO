@@ -23,15 +23,19 @@ public class Spawner : MonoBehaviour
 
     public Teleporter teleporter;
 
+    public GameObject vida;
+    public Transform vidaT;
     void Start()
     {
         // Verifica si el jugador es el creador de la sala (primer jugador en la lista)
         if (PhotonNetwork.PlayerList.Length == 1)
         {
-            // Si es el primer jugador, spawnea el playerPrefab en la posición del primer ninja
+            GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
+            vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false); 
+            
             PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
             teleporter.enabled = true;
-
+            
         }
         else if (PhotonNetwork.PlayerList.Length > 1) 
         {

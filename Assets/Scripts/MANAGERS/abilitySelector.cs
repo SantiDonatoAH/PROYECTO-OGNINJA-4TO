@@ -28,6 +28,9 @@ public class abilitySelector : MonoBehaviour
     public string h1;
     public string h2;
 
+    public GameObject im1;
+    public GameObject im2;
+
     public Image image1;
     public Image image2;
 
@@ -49,8 +52,14 @@ public class abilitySelector : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        im1 = GameObject.FindGameObjectWithTag("hab1");
+        im2 = GameObject.FindGameObjectWithTag("hab2");
+
         ninja1 = GameObject.FindGameObjectWithTag("player1");
         ninja2 = GameObject.FindGameObjectWithTag("player2");
+
+        image1 = im1.GetComponent<Image>();
+        image2 = im2.GetComponent<Image>();
 
         ninjacontroller = ninja1.GetComponent<NinjaController>();
         playerblink = ninja1.GetComponent<PlayerBlink>();

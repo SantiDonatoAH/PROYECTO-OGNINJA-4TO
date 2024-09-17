@@ -18,6 +18,8 @@ TagManager:
   - txtV1
   - txtV2
   - counter
+  - hab1
+  - hab2
   layers:
   - Default
   - TransparentFX
