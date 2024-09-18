@@ -1,7 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Photon.Pun;
+using UnityEngine;
 
 public class ninjaControllerOff : MonoBehaviour
 {
@@ -28,16 +26,16 @@ public class ninjaControllerOff : MonoBehaviour
     public float kitaJ;
     public float saltoDoble;
 
-    
+    // Variable para el Particle System de los pasos
+    public ParticleSystem footstepParticles;
+    public ParticleSystem jumpParticles;
 
     PhotonView view;
 
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         view = GetComponent<PhotonView>();
-
 
         kita = moveSpeed;
         kitaJ = jumpForce;
@@ -51,24 +49,32 @@ public class ninjaControllerOff : MonoBehaviour
 
     void Update()
     {
+        Move();
+        Jump();
+        Crouch();
+        CheckHoldingWeapon();
+        WallSlide();
 
-       
-            Move();
-            Jump();
-            Crouch();
-            CheckHoldingWeapon();
-            WallSlide();
+        if (isTouchingWall && Input.GetKey(KeyCode.A))
+        {
+            jumpForce = saltoDoble;
+        }
+        else
+        {
+            jumpForce = kitaJ;
+        }
 
-            if (isTouchingWall && Input.GetKey(KeyCode.A))
-            {
-                jumpForce = saltoDoble;
-            }
-            else
-            {
-                jumpForce = kitaJ;
-            }
-        
-
+        // Control de las partículas al caminar
+        if (move != 0 && isGrounded)
+        {
+            if (!footstepParticles.isPlaying)
+                footstepParticles.Play();
+        }
+        else
+        {
+            if (footstepParticles.isPlaying)
+                footstepParticles.Stop();
+        }
     }
 
     void Move()
@@ -91,9 +97,8 @@ public class ninjaControllerOff : MonoBehaviour
         {
             anim.SetBool("Run", false);
         }
-
         if
-            ((Input.GetKey(KeyCode.D) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
+        ((Input.GetKey(KeyCode.D) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
                 (Input.GetKey(KeyCode.A) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
         {
             moveSpeed = 0;
@@ -110,18 +115,27 @@ public class ninjaControllerOff : MonoBehaviour
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.W) && !isCrouching && (isTouchingWall || isGrounded))
+        if (Input.GetKeyDown(KeyCode.W) && !isCrouching && (isTouchingWall || isGrounded) && !jumpParticles.isPlaying)
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
-
-
+            jumpParticles.Play();
+        }
+        else if (Input.GetKeyDown(KeyCode.W) && !isCrouching && (isTouchingWall || isGrounded) && jumpParticles.isPlaying)
+        {
+            anim.SetBool("IsPunching", false);
+            anim.SetBool("IsJumping", true);
+            isGrounded = false;
+            rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
+            jumpParticles.Stop();
         }
     }
+    
+ 
 
-    void Crouch()
+void Crouch()
     {
         isCrouching = Input.GetKey(KeyCode.S);
         if (isCrouching)
@@ -132,7 +146,6 @@ public class ninjaControllerOff : MonoBehaviour
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
             parado.enabled = false;
-
         }
         else
         {
