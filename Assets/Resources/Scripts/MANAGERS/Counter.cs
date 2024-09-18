@@ -3,9 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class Counter : MonoBehaviour
 {
+    public GameObject[] ninja1;
+    public GameObject[] ninja2;
+    public GameObject[] armas;
+
     public Text pts2;
     public Text pts1;
     public int Rondas = 3;
@@ -20,7 +25,11 @@ public class Counter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Restaurar los valores después de que la escena se recargue
+        ninja1 = GameObject.FindGameObjectsWithTag("player1");
+        ninja2 = GameObject.FindGameObjectsWithTag("player2");
+        armas = GameObject.FindGameObjectsWithTag("Weapon");
+
+
         pts1.text = score1.ToString();
         pts2.text = score2.ToString();
 
@@ -31,11 +40,14 @@ public class Counter : MonoBehaviour
 
     public void WIN1()
     {
+        OnBorrar();
+
+
         // Incrementar el valor y almacenarlo
         score1++;
         pts1.text = score1.ToString();
         Debug.Log("1");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
 
         if (score1 == Rondas)
         {
@@ -46,11 +58,13 @@ public class Counter : MonoBehaviour
 
     public void WIN2()
     {
+      OnBorrar();
+
         // Incrementar el valor y almacenarlo
         score2++;
         pts2.text = score2.ToString();
         Debug.Log("2");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
 
         if (score2 == Rondas)
         {
@@ -58,5 +72,26 @@ public class Counter : MonoBehaviour
             Texto2.SetActive(true);
         }
 
+    }
+
+    public void OnBorrar()
+    {
+        foreach (GameObject obj in ninja1)
+        {
+            PhotonNetwork.Destroy(obj);
+            Destroy(obj);
+        }
+
+        foreach (GameObject obj in ninja2)
+        {
+            PhotonNetwork.Destroy(obj);
+            Destroy(obj);
+        }
+
+        foreach (GameObject obj in armas)
+        {
+            PhotonNetwork.Destroy(obj);
+            Destroy(obj);
+        }
     }
 }

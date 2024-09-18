@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class CombatManager : MonoBehaviour
 {
     public GameObject ninja1;
@@ -54,10 +55,10 @@ public class CombatManager : MonoBehaviour
 
     void Update()
     {
-        HandleCombat();
+       
     }
 
-    void HandleCombat()
+    public void HandleCombat()
     {
         if (pausemanager.ispaused == false)
         {

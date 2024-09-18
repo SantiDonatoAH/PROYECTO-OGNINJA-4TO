@@ -169,6 +169,8 @@ MonoBehaviour:
   kita: 0
   kitaJ: 0
   saltoDoble: 0
+  combatG: {fileID: 0}
+  combat: {fileID: 0}
 --- !u!61 &5244374281112257540
 BoxCollider2D:
   m_ObjectHideFlags: 0

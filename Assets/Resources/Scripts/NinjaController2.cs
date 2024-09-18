@@ -29,6 +29,10 @@ public class NinjaController2 : MonoBehaviour
     public float kita;
     public float kitaJ;
     public float saltoDoble;
+
+    public GameObject combatG;
+    public CombatManager combat;
+
     PhotonView view;
 
     void Start()
@@ -37,6 +41,8 @@ public class NinjaController2 : MonoBehaviour
 
         view = GetComponent<PhotonView>();
 
+        combatG = GameObject.FindGameObjectWithTag("combat");
+        combat = combatG.GetComponent<CombatManager>();
 
         kita = moveSpeed;
         kitaJ = jumpForce;
@@ -57,6 +63,7 @@ public class NinjaController2 : MonoBehaviour
             Crouch();
             CheckHoldingWeapon();
             WallSlide();
+            combat.HandleCombat();
 
             if (isTouchingWall && Input.GetKey(KeyCode.A))
             {
