@@ -3300,7 +3300,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -371, y: 194}
+  m_AnchoredPosition: {x: -500.7, y: 269.5}
   m_SizeDelta: {x: 45, y: 45}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &432520451
@@ -3517,10 +3517,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cc772a5793da74142a49b4340eaedce7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txt1: {fileID: 999512866}
-  txt2: {fileID: 1411027778}
-  pts1: 0
-  pts2: 0
   playerPrefab: {fileID: 5244374281112257547, guid: b8f605e01ccc6ed45b27f10159ee418d,
     type: 3}
   playerPrefab2: {fileID: 2950675939776314561, guid: aa1fe6ece13fb15439887c3c7adf3ed2,
@@ -7486,7 +7482,7 @@ MonoBehaviour:
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
-  m_ScreenMatchMode: 0
+  m_ScreenMatchMode: 1
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
@@ -7954,7 +7950,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 83.6, y: 220.4}
+  m_AnchoredPosition: {x: 83.6, y: 230}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &999512866
@@ -10579,7 +10575,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 114.2, y: 220.4}
+  m_AnchoredPosition: {x: 114.2, y: 230}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1411027778
@@ -14331,6 +14327,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ce582622bf27164aa3940c2f26c1aca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ninja1: []
+  ninja2: []
+  armas: []
   pts2: {fileID: 1411027778}
   pts1: {fileID: 999512866}
   Rondas: 3

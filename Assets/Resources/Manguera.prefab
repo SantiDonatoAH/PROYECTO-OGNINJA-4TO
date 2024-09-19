@@ -143,7 +143,7 @@ MonoBehaviour:
   canFire2: 1
   cooldownTime: 0.085
   cooldownTime2: 0.085
-  sumador: 0.05
+  sumador: 0.03
   sumador2: 0.03
   poder: 0
   poder2: 0
