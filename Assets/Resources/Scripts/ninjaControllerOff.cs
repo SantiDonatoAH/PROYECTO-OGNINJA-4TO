@@ -29,6 +29,7 @@ public class ninjaControllerOff : MonoBehaviour
     // Variable para el Particle System de los pasos
     public ParticleSystem footstepParticles;
     public ParticleSystem jumpParticles;
+    public ParticleSystem landParticles;
 
     PhotonView view;
 
@@ -65,7 +66,7 @@ public class ninjaControllerOff : MonoBehaviour
         }
 
         // Control de las partículas al caminar
-        if (move != 0 && isGrounded)
+        if (move != 0 && isGrounded && !isTouchingWall && !isCrouching)
         {
             if (!footstepParticles.isPlaying)
                 footstepParticles.Play();
@@ -132,10 +133,10 @@ public class ninjaControllerOff : MonoBehaviour
             jumpParticles.Stop();
         }
     }
-    
- 
 
-void Crouch()
+
+
+    void Crouch()
     {
         isCrouching = Input.GetKey(KeyCode.S);
         if (isCrouching)
@@ -165,7 +166,9 @@ void Crouch()
         {
             anim.SetBool("IsJumping", false);
             isGrounded = true;
+            jumpParticles.Play();
         }
+      
 
         if (collision.gameObject.CompareTag("Wall"))
         {

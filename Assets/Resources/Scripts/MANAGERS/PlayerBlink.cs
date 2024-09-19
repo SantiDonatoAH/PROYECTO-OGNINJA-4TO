@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerBlink : MonoBehaviour
 {
-    public Counter counter;
+    public CounterOff counter;
     public GameObject Counter;
 
     SpriteRenderer renderer;
@@ -39,7 +39,7 @@ public class PlayerBlink : MonoBehaviour
 
         healthBar = healthI.GetComponent<Image>();
         txt1 = healthT.GetComponent<Text>();
-        counter = Counter.GetComponent<Counter>();
+        counter = Counter.GetComponent<CounterOff>();
 
         txt1.text = health.ToString();
         normalColor = renderer.color;
