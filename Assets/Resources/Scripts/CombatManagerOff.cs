@@ -8,8 +8,8 @@ public class CombatManagerOff : MonoBehaviour
     public GameObject ninja1;
     public GameObject ninja2;
 
-    private PlayerBlink ninja1Blink;
-    private playerBlink2 ninja2Blink;
+    private PlayerBlinkOff ninja1Blink;
+    private playerBlink2Off ninja2Blink;
 
     private ninjaControllerOff ninjaController;
     private ninjaController2Off ninjaController2;
@@ -38,8 +38,8 @@ public class CombatManagerOff : MonoBehaviour
         ninja1 = GameObject.FindGameObjectWithTag("player1");
         ninja2 = GameObject.FindGameObjectWithTag("player2");
 
-        ninja1Blink = ninja1.GetComponent<PlayerBlink>();
-        ninja2Blink = ninja2.GetComponent<playerBlink2>();
+        ninja1Blink = ninja1.GetComponent<PlayerBlinkOff>();
+        ninja2Blink = ninja2.GetComponent<playerBlink2Off>();
 
         ninjaController = ninja1.GetComponent<ninjaControllerOff>();
         ninjaController2 = ninja2.GetComponent<ninjaController2Off>();

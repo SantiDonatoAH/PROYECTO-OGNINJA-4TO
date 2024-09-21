@@ -12,7 +12,7 @@ public class abilitySelectorOff : MonoBehaviour
     public GameObject ninja2;
 
     public ninjaControllerOff ninjacontroller;
-    public PlayerBlink playerblink;
+    public PlayerBlinkOff playerblink;
 
     public Bombucha bombucha;
     public Flotaflota flotaflota;
@@ -20,7 +20,7 @@ public class abilitySelectorOff : MonoBehaviour
     public CombatManagerOff combatmanager;
     public Pistola pistola;
 
-    public playerBlink2 playerblink2;
+    public playerBlink2Off playerblink2;
     public ninjaController2Off ninjacontroller2;
 
     public habilidades habilidades;
@@ -53,10 +53,10 @@ public class abilitySelectorOff : MonoBehaviour
         ninja2 = GameObject.FindGameObjectWithTag("player2");
 
         ninjacontroller = ninja1.GetComponent<ninjaControllerOff>();
-        playerblink = ninja1.GetComponent<PlayerBlink>();
+        playerblink = ninja1.GetComponent<PlayerBlinkOff>();
 
         ninjacontroller2 = ninja2.GetComponent<ninjaController2Off>();
-        playerblink2 = ninja2.GetComponent<playerBlink2>();
+        playerblink2 = ninja2.GetComponent<playerBlink2Off>();
 
         Ninja1();
         Ninja2();

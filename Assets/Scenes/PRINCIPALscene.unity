@@ -636,7 +636,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 1
-      minScalar: 0.5
+      minScalar: 0.3
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -689,7 +689,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: 6
-      minScalar: 3
+      minScalar: 2
       maxCurve:
         serializedVersion: 2
         m_Curve:
@@ -1120,14 +1120,14 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 1000
+    maxNumParticles: 50
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
     rotation3D: 0
     gravityModifier:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.1
+      scalar: 1
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -1496,7 +1496,7 @@ ParticleSystem:
       countCurve:
         serializedVersion: 2
         minMaxState: 3
-        scalar: 25
+        scalar: 20
         minScalar: 15
         maxCurve:
           serializedVersion: 2
@@ -15844,7 +15844,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 158832686}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7624a32650a739b43bf5be7a21d85f64, type: 3}
+  m_Script: {fileID: 11500000, guid: 549636e37251f7c488d4ddc1834091f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   blinks: 50
@@ -38929,9 +38929,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ninja1: {fileID: 1019354692}
-  ninja2: {fileID: 0}
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
+  ninja2: {fileID: 1412429941}
+  anim: {fileID: 1019354700}
+  anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
   KnockbackManager: {fileID: 556487314}
   cooldownTime: 0.5
@@ -39208,7 +39208,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.23584908, g: 0.21697037, b: 0.20618252, a: 1}
+      maxColor: {r: 0.4627451, g: 0.4627451, b: 0.4627451, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
@@ -52178,16 +52178,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ca1d9096ff9af54090de089d680ce91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: 0}
+  counter: {fileID: 1974706322}
   Counter: {fileID: 0}
   health: 10
   healthI: {fileID: 0}
   healthT: {fileID: 0}
   txt1: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2004384195}
   healthAmount: 10
   restar: 0.5
-  anim: {fileID: 0}
+  anim: {fileID: 1019354700}
   total: 0
   bloodParticles: {fileID: 122371024}
 --- !u!4 &1024903562 stripped
@@ -54979,6 +54979,10 @@ MonoBehaviour:
   kita: 0
   kitaJ: 0
   saltoDoble: 0
+  footstepParticles2: {fileID: 438872428}
+  jumpParticles2: {fileID: 194094031}
+  landParticles2: {fileID: 92344012}
+  wallSlideParticles2: {fileID: 1654772350}
 --- !u!114 &1412429952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -54997,11 +55001,12 @@ MonoBehaviour:
   txt2: {fileID: 0}
   healthI: {fileID: 0}
   healthT: {fileID: 0}
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 216285394}
   healthAmount: 10
   restar: 0.5
-  anim: {fileID: 0}
+  anim: {fileID: 1412429949}
   total: 0
+  bloodParticles2: {fileID: 699864039}
 --- !u!1 &1433158445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,
@@ -56338,7 +56343,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.23529412, g: 0.21568628, b: 0.20784314, a: 1}
+      maxColor: {r: 0.46226418, g: 0.46226418, b: 0.46226418, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

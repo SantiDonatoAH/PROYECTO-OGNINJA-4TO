@@ -31,6 +31,11 @@ public class ninjaController2Off : MonoBehaviour
     public float saltoDoble;
     PhotonView view;
 
+    public ParticleSystem footstepParticles2;
+    public ParticleSystem jumpParticles2;
+    public ParticleSystem landParticles2;
+    public ParticleSystem wallSlideParticles2;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -50,22 +55,32 @@ public class ninjaController2Off : MonoBehaviour
 
     void Update()
     {
-       
-            Move();
-            Jump();
-            Crouch();
-            CheckHoldingWeapon();
-            WallSlide();
 
-            if (isTouchingWall && Input.GetKey(KeyCode.A))
-            {
-                jumpForce = saltoDoble;
-            }
-            else
-            {
-                jumpForce = kitaJ;
-            }
-        
+        Move();
+        Jump();
+        Crouch();
+        CheckHoldingWeapon();
+        WallSlide();
+
+        if (isTouchingWall && Input.GetKey(KeyCode.A))
+        {
+            jumpForce = saltoDoble;
+        }
+        else
+        {
+            jumpForce = kitaJ;
+        }
+
+        if (move != 0 && isGrounded && !isTouchingWall && !isCrouching)
+        {
+            if (!footstepParticles2.isPlaying)
+                footstepParticles2.Play();
+        }
+        else
+        {
+            if (footstepParticles2.isPlaying)
+                footstepParticles2.Stop();
+        }
     }
 
     void Move()
@@ -111,12 +126,19 @@ public class ninjaController2Off : MonoBehaviour
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical2");
+
+        // Si el jugador está en el suelo o tocando la pared y presiona W, salta
         if (Input.GetKeyDown(KeyCode.UpArrow) && !isCrouching && (isTouchingWall || isGrounded))
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
+
+            // Aplica la fuerza de salto
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
+
+            // Reproducir las partículas de salto
+            jumpParticles2.Play();
         }
     }
 
@@ -142,12 +164,23 @@ public class ninjaController2Off : MonoBehaviour
 
     void WallSlide()
     {
-        if (isTouchingWall == true)
+        if (anim.GetBool("IsWallSliding"))
         {
-        }
+            if (!wallSlideParticles2.isPlaying)
+            {
+                wallSlideParticles2.Play();
+            }
 
+            // Actualizamos la posición de las partículas para que sigan al jugador
+            wallSlideParticles2.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles2.transform.position.z);
+        }
         else
         {
+            // Si la animación no está activa, detenemos las partículas
+            if (wallSlideParticles2.isPlaying)
+            {
+                wallSlideParticles2.Stop();
+            }
         }
     }
 
@@ -157,6 +190,19 @@ public class ninjaController2Off : MonoBehaviour
         {
             anim.SetBool("IsJumping", false);
             isGrounded = true;
+
+            // Detener las partículas de salto si siguen activas
+            if (jumpParticles2.isPlaying)
+            {
+                jumpParticles2.Stop();
+            }
+
+            // Activar las partículas de aterrizaje
+            if (!landParticles2.isPlaying)
+            {
+
+                landParticles2.Play();
+            }
         }
 
         if (collision.gameObject.CompareTag("Wall"))
@@ -167,9 +213,9 @@ public class ninjaController2Off : MonoBehaviour
             paredT = pared.GetComponent<Transform>();
         }
 
-        if (collision.gameObject.CompareTag("Weapon") && Input.GetKey(KeyCode.DownArrow))
+        if (collision.gameObject.tag == "Weapon" && Input.GetKey(KeyCode.S))
         {
-            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "2").Trim();
+            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
 
             if (isHoldingWeapon)
             {

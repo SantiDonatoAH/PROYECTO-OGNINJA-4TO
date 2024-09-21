@@ -117,21 +117,19 @@ public class ninjaControllerOff : MonoBehaviour
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.W) && !isCrouching && (isTouchingWall || isGrounded) && !jumpParticles.isPlaying)
+
+        // Si el jugador está en el suelo o tocando la pared y presiona W, salta
+        if (Input.GetKeyDown(KeyCode.W) && !isCrouching && (isTouchingWall || isGrounded))
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
+
+            // Aplica la fuerza de salto
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
+
+            // Reproducir las partículas de salto
             jumpParticles.Play();
-        }
-        else if (Input.GetKeyDown(KeyCode.W) && !isCrouching && (isTouchingWall || isGrounded) && jumpParticles.isPlaying)
-        {
-            anim.SetBool("IsPunching", false);
-            anim.SetBool("IsJumping", true);
-            isGrounded = false;
-            rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
-            jumpParticles.Stop();
         }
     }
 
@@ -184,11 +182,22 @@ public class ninjaControllerOff : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            
             anim.SetBool("IsJumping", false);
             isGrounded = true;
-            jumpParticles.Play();
-        }
 
+            // Detener las partículas de salto si siguen activas
+            if (jumpParticles.isPlaying)
+            {
+                jumpParticles.Stop();
+            }
+
+            if (!landParticles.isPlaying)
+            {
+               
+                landParticles.Play();
+            }
+        }
 
         if (collision.gameObject.CompareTag("Wall"))
         {
@@ -215,6 +224,7 @@ public class ninjaControllerOff : MonoBehaviour
             anim.SetBool("IsHolding" + weaponName, true);
         }
     }
+
 
     void OnCollisionExit2D(Collision2D collision)
     {

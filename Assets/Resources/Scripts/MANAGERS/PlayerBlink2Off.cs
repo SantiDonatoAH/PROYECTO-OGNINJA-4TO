@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class playerBlink2Off : MonoBehaviour
 {
-    public Counter counter;
+    public CounterOff counter;
     public GameObject Counter;
 
     SpriteRenderer renderer;
@@ -24,6 +24,8 @@ public class playerBlink2Off : MonoBehaviour
 
     public float total;
 
+    public ParticleSystem bloodParticles2;
+
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -37,7 +39,7 @@ public class playerBlink2Off : MonoBehaviour
 
         healthBar = healthI.GetComponent<Image>();
         txt2 = healthT.GetComponent<Text>();
-        counter = Counter.GetComponent<Counter>();
+        counter = Counter.GetComponent<CounterOff>();
 
         txt2.text = health.ToString();
         normalColor = renderer.color;
@@ -47,6 +49,9 @@ public class playerBlink2Off : MonoBehaviour
 
     public void Blink()
     {
+
+        TriggerBloodParticles();
+
         if (health > 0)
         {
             anim.SetBool("IsBlinking", true);
@@ -79,5 +84,13 @@ public class playerBlink2Off : MonoBehaviour
     {
         renderer.color = normalColor;
         anim.SetBool("IsBlinking", false);
+    }
+
+    void TriggerBloodParticles()
+    {
+        if (bloodParticles2 != null)
+        {
+            bloodParticles2.Play();
+        }
     }
 }
