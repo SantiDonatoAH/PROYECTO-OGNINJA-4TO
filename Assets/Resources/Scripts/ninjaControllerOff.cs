@@ -30,6 +30,7 @@ public class ninjaControllerOff : MonoBehaviour
     public ParticleSystem footstepParticles;
     public ParticleSystem jumpParticles;
     public ParticleSystem landParticles;
+    public ParticleSystem wallSlideParticles;
 
     PhotonView view;
 
@@ -158,6 +159,25 @@ public class ninjaControllerOff : MonoBehaviour
 
     void WallSlide()
     {
+        // Si la animación de "IsWallSliding" está activa, activamos las partículas
+        if (anim.GetBool("IsWallSliding"))
+        {
+            if (!wallSlideParticles.isPlaying)
+            {
+                wallSlideParticles.Play();
+            }
+
+            // Actualizamos la posición de las partículas para que sigan al jugador
+            wallSlideParticles.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles.transform.position.z);
+        }
+        else
+        {
+            // Si la animación no está activa, detenemos las partículas
+            if (wallSlideParticles.isPlaying)
+            {
+                wallSlideParticles.Stop();
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -168,7 +188,7 @@ public class ninjaControllerOff : MonoBehaviour
             isGrounded = true;
             jumpParticles.Play();
         }
-      
+
 
         if (collision.gameObject.CompareTag("Wall"))
         {
