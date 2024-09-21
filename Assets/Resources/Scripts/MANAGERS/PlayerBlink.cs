@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class PlayerBlink : MonoBehaviour
 {
@@ -26,7 +24,6 @@ public class PlayerBlink : MonoBehaviour
 
     public float total;
 
-    // Variable para las partículas de sangre
     public ParticleSystem bloodParticles;
 
     private void Awake()
@@ -52,16 +49,13 @@ public class PlayerBlink : MonoBehaviour
 
     public void Blink()
     {
+        TriggerBloodParticles();
+
         if (health > 0)
         {
             anim.SetBool("IsBlinking", true);
             health -= restar;
-            txt1.text = health.ToString();
-            healthAmount = health;
-            healthBar.fillAmount = healthAmount / total;
-
-            // Activar partículas de sangre
-            TriggerBloodParticles();
+            UpdateHealthBar();
 
             EnableBlink();
             Invoke("DisableBlink", 0.25f);
@@ -71,6 +65,14 @@ public class PlayerBlink : MonoBehaviour
                 counter.WIN2();
             }
         }
+    }
+
+    public void UpdateHealthBar()
+    {
+
+        txt1.text = health.ToString();
+        healthAmount = health;
+        healthBar.fillAmount = healthAmount / total; // Actualizar la barra de vida
     }
 
     void EnableBlink()
@@ -84,7 +86,6 @@ public class PlayerBlink : MonoBehaviour
         anim.SetBool("IsBlinking", false);
     }
 
-    // Método para activar las partículas de sangre
     void TriggerBloodParticles()
     {
         if (bloodParticles != null)

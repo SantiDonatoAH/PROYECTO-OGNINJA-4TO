@@ -1,8 +1,6 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class playerBlink2 : MonoBehaviour
 {
@@ -25,6 +23,7 @@ public class playerBlink2 : MonoBehaviour
     public Animator anim;
 
     public float total;
+
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -52,9 +51,8 @@ public class playerBlink2 : MonoBehaviour
         {
             anim.SetBool("IsBlinking", true);
             health -= restar;
-            txt2.text = health.ToString();
-            healthAmount = health; // Ajustar esta línea para que refleje correctamente la salud restante
-            healthBar.fillAmount = healthAmount / total; // Cambia el divisor 
+            UpdateHealthBar();
+
             EnableBlink();
             Invoke("DisableBlink", 0.25f);
 
@@ -62,8 +60,14 @@ public class playerBlink2 : MonoBehaviour
             {
                 counter.WIN1();
             }
-
         }
+    }
+
+    public void UpdateHealthBar()
+    {
+        txt2.text = health.ToString();
+        healthAmount = health;
+        healthBar.fillAmount = healthAmount / total; // Actualizar la barra de vida
     }
 
     void EnableBlink()
@@ -75,6 +79,5 @@ public class playerBlink2 : MonoBehaviour
     {
         renderer.color = normalColor;
         anim.SetBool("IsBlinking", false);
-
     }
 }
