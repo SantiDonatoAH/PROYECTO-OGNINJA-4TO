@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -24,9 +25,15 @@ public class playerBlink2 : MonoBehaviour
 
     public float total;
 
+    public GameObject vida; // Prefab del HUD de vida
+    public Transform vidaT; // Posición donde se colocará el HUD de vida
+
+    public Spawner spawner;
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
+        GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
+        vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
     }
 
     void Start()
@@ -62,6 +69,7 @@ public class playerBlink2 : MonoBehaviour
             }
         }
     }
+    [PunRPC]
 
     public void UpdateHealthBar()
     {
@@ -80,4 +88,7 @@ public class playerBlink2 : MonoBehaviour
         renderer.color = normalColor;
         anim.SetBool("IsBlinking", false);
     }
+
+
+   
 }

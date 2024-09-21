@@ -239,6 +239,9 @@ MonoBehaviour:
   restar: 0.5
   anim: {fileID: 2950675939776314569}
   total: 0
+  vida: {fileID: 5741697232292175458, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
+  vidaT: {fileID: 5741697232292175459, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
+  spawner: {fileID: 0}
 --- !u!114 &2950675939776314570
 MonoBehaviour:
   m_ObjectHideFlags: 0

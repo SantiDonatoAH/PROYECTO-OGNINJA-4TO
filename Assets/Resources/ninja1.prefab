@@ -240,6 +240,10 @@ MonoBehaviour:
   restar: 0.5
   anim: {fileID: 5244374281112257539}
   total: 0
+  bloodParticles: {fileID: 0}
+  spawner: {fileID: 0}
+  vida: {fileID: 5741697232292175458, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
+  vidaT: {fileID: 5741697232292175459, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
 --- !u!114 &5244374281112257538
 MonoBehaviour:
   m_ObjectHideFlags: 0

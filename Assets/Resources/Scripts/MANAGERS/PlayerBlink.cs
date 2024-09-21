@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,9 +27,16 @@ public class PlayerBlink : MonoBehaviour
 
     public ParticleSystem bloodParticles;
 
+    public Spawner spawner;
+
+    public GameObject vida; // Prefab del HUD de vida
+    public Transform vidaT; // Posición donde se colocará el HUD de vida
+
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
+        GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
+        vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
     }
 
     void Start()
@@ -59,21 +67,20 @@ public class PlayerBlink : MonoBehaviour
 
             EnableBlink();
             Invoke("DisableBlink", 0.25f);
-
             if (health <= 0)
             {
                 counter.WIN2();
             }
         }
     }
-
+    [PunRPC]
     public void UpdateHealthBar()
     {
-
         txt1.text = health.ToString();
         healthAmount = health;
         healthBar.fillAmount = healthAmount / total; // Actualizar la barra de vida
     }
+    
 
     void EnableBlink()
     {
@@ -93,4 +100,6 @@ public class PlayerBlink : MonoBehaviour
             bloodParticles.Play();
         }
     }
+
+    
 }

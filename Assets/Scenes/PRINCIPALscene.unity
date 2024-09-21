@@ -51946,9 +51946,9 @@ GameObject:
   - component: {fileID: 1019354696}
   - component: {fileID: 1019354699}
   - component: {fileID: 1019354700}
-  - component: {fileID: 1019354698}
   - component: {fileID: 1019354701}
   - component: {fileID: 1019354702}
+  - component: {fileID: 1019354703}
   m_Layer: 0
   m_Name: ninja1
   m_TagString: player1
@@ -52075,30 +52075,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.4}
   m_EdgeRadius: 0
---- !u!114 &1019354698
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1019354692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddf56606c8802964382c78e504d28bda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counter: {fileID: 0}
-  Counter: {fileID: 1974706320}
-  health: 10
-  healthI: {fileID: 0}
-  healthT: {fileID: 0}
-  txt1: {fileID: 1789834488}
-  healthBar: {fileID: 2004384195}
-  healthAmount: 100
-  restar: 0.5
-  anim: {fileID: 1019354700}
-  total: 0
-  bloodParticles: {fileID: 122371024}
 --- !u!61 &1019354699
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52190,6 +52166,30 @@ MonoBehaviour:
   jumpParticles: {fileID: 200220765}
   landParticles: {fileID: 61142125}
   wallSlideParticles: {fileID: 568032208}
+--- !u!114 &1019354703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019354692}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9ca1d9096ff9af54090de089d680ce91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: {fileID: 0}
+  Counter: {fileID: 0}
+  health: 10
+  healthI: {fileID: 0}
+  healthT: {fileID: 0}
+  txt1: {fileID: 0}
+  healthBar: {fileID: 0}
+  healthAmount: 10
+  restar: 0.5
+  anim: {fileID: 0}
+  total: 0
+  bloodParticles: {fileID: 122371024}
 --- !u!4 &1024903562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1909155585478895358, guid: c8226f065d421ba498ea97e7ba1dbd4e,
@@ -54764,9 +54764,9 @@ GameObject:
   - component: {fileID: 1412429945}
   - component: {fileID: 1412429948}
   - component: {fileID: 1412429949}
-  - component: {fileID: 1412429947}
   - component: {fileID: 1412429950}
   - component: {fileID: 1412429951}
+  - component: {fileID: 1412429952}
   m_Layer: 0
   m_Name: ninja2
   m_TagString: player2
@@ -54893,29 +54893,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.1, y: 0.4}
   m_EdgeRadius: 0
---- !u!114 &1412429947
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412429941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: efa090b5759229642b981b4095e03c7c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counter: {fileID: 0}
-  Counter: {fileID: 1974706320}
-  health: 10
-  txt2: {fileID: 107064041}
-  healthI: {fileID: 0}
-  healthT: {fileID: 0}
-  healthBar: {fileID: 216285394}
-  healthAmount: 100
-  restar: 0.5
-  anim: {fileID: 1412429949}
-  total: 0
 --- !u!61 &1412429948
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -55002,6 +54979,29 @@ MonoBehaviour:
   kita: 0
   kitaJ: 0
   saltoDoble: 0
+--- !u!114 &1412429952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412429941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8c3b99ebe40a8d40b192253b7a11a14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: {fileID: 0}
+  Counter: {fileID: 0}
+  health: 10
+  txt2: {fileID: 0}
+  healthI: {fileID: 0}
+  healthT: {fileID: 0}
+  healthBar: {fileID: 0}
+  healthAmount: 10
+  restar: 0.5
+  anim: {fileID: 0}
+  total: 0
 --- !u!1 &1433158445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,
