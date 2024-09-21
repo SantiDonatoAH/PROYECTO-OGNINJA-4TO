@@ -25,6 +25,10 @@ public class PlayerBlink : MonoBehaviour
     public Animator anim;
 
     public float total;
+
+    // Variable para las partículas de sangre
+    public ParticleSystem bloodParticles;
+
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -32,10 +36,9 @@ public class PlayerBlink : MonoBehaviour
 
     void Start()
     {
-    
-    Counter = GameObject.FindGameObjectWithTag("counter");
+        Counter = GameObject.FindGameObjectWithTag("counter");
         healthI = GameObject.FindGameObjectWithTag("Vida1");
-         healthT = GameObject.FindGameObjectWithTag("txtV1");
+        healthT = GameObject.FindGameObjectWithTag("txtV1");
 
         healthBar = healthI.GetComponent<Image>();
         txt1 = healthT.GetComponent<Text>();
@@ -54,8 +57,11 @@ public class PlayerBlink : MonoBehaviour
             anim.SetBool("IsBlinking", true);
             health -= restar;
             txt1.text = health.ToString();
-            healthAmount = health; // Ajustar esta línea para que refleje correctamente la salud restante
-            healthBar.fillAmount = healthAmount / total; // Cambia el divisor si la salud máxima no es 10
+            healthAmount = health;
+            healthBar.fillAmount = healthAmount / total;
+
+            // Activar partículas de sangre
+            TriggerBloodParticles();
 
             EnableBlink();
             Invoke("DisableBlink", 0.25f);
@@ -76,6 +82,14 @@ public class PlayerBlink : MonoBehaviour
     {
         renderer.color = normalColor;
         anim.SetBool("IsBlinking", false);
+    }
 
+    // Método para activar las partículas de sangre
+    void TriggerBloodParticles()
+    {
+        if (bloodParticles != null)
+        {
+            bloodParticles.Play();
+        }
     }
 }
