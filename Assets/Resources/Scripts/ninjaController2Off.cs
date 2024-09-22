@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-
 public class ninjaController2Off : MonoBehaviour
 {
     public float moveSpeed = 5f;
@@ -36,16 +35,23 @@ public class ninjaController2Off : MonoBehaviour
     public ParticleSystem landParticles2;
     public ParticleSystem wallSlideParticles2;
 
+    [SerializeField] private AudioClip grassStepSound2;
+    [SerializeField] private AudioClip grassJumpSound2;
+    [SerializeField] private AudioClip crouchSound2;
+    [SerializeField] private AudioClip wallSlideSound2;
+
+    private AudioSource audioSource2;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-
         view = GetComponent<PhotonView>();
-
 
         kita = moveSpeed;
         kitaJ = jumpForce;
         saltoDoble = kitaJ * 2;
+
+        audioSource2 = GetComponent<AudioSource>();
     }
 
     void Awake()
@@ -55,7 +61,6 @@ public class ninjaController2Off : MonoBehaviour
 
     void Update()
     {
-
         Move();
         Jump();
         Crouch();
@@ -75,6 +80,7 @@ public class ninjaController2Off : MonoBehaviour
         {
             if (!footstepParticles2.isPlaying)
                 footstepParticles2.Play();
+            PlayGrassStepSound2();
         }
         else
         {
@@ -91,7 +97,7 @@ public class ninjaController2Off : MonoBehaviour
         {
             derecha = true;
             GetComponent<SpriteRenderer>().flipX = false;
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotación normal
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             anim.SetBool("Run", true);
         }
         else if (rb.velocity.x < 0)
@@ -107,38 +113,32 @@ public class ninjaController2Off : MonoBehaviour
         }
 
         if ((Input.GetKey(KeyCode.RightArrow) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
-                (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
+            (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
         {
             moveSpeed = 0;
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 1.5f);
             anim.SetBool("IsWallSliding", true);
-
         }
         else
         {
             moveSpeed = kita;
             anim.SetBool("IsWallSliding", false);
-
         }
-
     }
 
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical2");
 
-        // Si el jugador está en el suelo o tocando la pared y presiona W, salta
         if (Input.GetKeyDown(KeyCode.UpArrow) && !isCrouching && (isTouchingWall || isGrounded))
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
-
-            // Aplica la fuerza de salto
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
 
-            // Reproducir las partículas de salto
             jumpParticles2.Play();
+            PlayGrassJumpSound2();
         }
     }
 
@@ -153,6 +153,7 @@ public class ninjaController2Off : MonoBehaviour
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
             parar.enabled = false;
+            PlayCrouchSound2();
         }
         else
         {
@@ -171,72 +172,19 @@ public class ninjaController2Off : MonoBehaviour
                 wallSlideParticles2.Play();
             }
 
-            // Actualizamos la posición de las partículas para que sigan al jugador
+            if (!audioSource2.isPlaying)
+            {
+                audioSource2.PlayOneShot(wallSlideSound2);
+            }
+
             wallSlideParticles2.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles2.transform.position.z);
         }
         else
         {
-            // Si la animación no está activa, detenemos las partículas
             if (wallSlideParticles2.isPlaying)
             {
                 wallSlideParticles2.Stop();
             }
-        }
-    }
-
-    void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            anim.SetBool("IsJumping", false);
-            isGrounded = true;
-
-            // Detener las partículas de salto si siguen activas
-            if (jumpParticles2.isPlaying)
-            {
-                jumpParticles2.Stop();
-            }
-
-            // Activar las partículas de aterrizaje
-            if (!landParticles2.isPlaying)
-            {
-
-                landParticles2.Play();
-            }
-        }
-
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            anim.SetBool("IsJumping", false);
-            isTouchingWall = true;
-            pared = collision.gameObject;
-            paredT = pared.GetComponent<Transform>();
-        }
-
-        if (collision.gameObject.tag == "Weapon" && Input.GetKey(KeyCode.S))
-        {
-            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
-
-            if (isHoldingWeapon)
-            {
-                // Cambiar el arma actual por la nueva
-                anim.SetBool("IsHolding" + weaponName, false);
-            }
-
-            // Agarrar la nueva arma
-            weaponName = newWeaponName;
-            collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma agarrada fuera de la pantalla
-            isHoldingWeapon = true;
-            anim.SetBool("IsHolding" + weaponName, true);
-        }
-    }
-
-    void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Wall"))
-        {
-            isTouchingWall = false;
-            anim.SetBool("IsWallSliding", false);
         }
     }
 
@@ -246,5 +194,23 @@ public class ninjaController2Off : MonoBehaviour
         {
             anim.SetBool("IsPunching", false);
         }
+    }
+
+    private void PlayGrassStepSound2()
+    {
+        if (!audioSource2.isPlaying)
+        {
+            audioSource2.PlayOneShot(grassStepSound2);
+        }
+    }
+
+    private void PlayGrassJumpSound2()
+    {
+        audioSource2.PlayOneShot(grassJumpSound2);
+    }
+
+    private void PlayCrouchSound2()
+    {
+        audioSource2.PlayOneShot(crouchSound2);
     }
 }

@@ -32,6 +32,13 @@ public class ninjaControllerOff : MonoBehaviour
     public ParticleSystem landParticles;
     public ParticleSystem wallSlideParticles;
 
+    [SerializeField] private AudioClip grassStepSound;
+    [SerializeField] private AudioClip grassJumpSound;
+    [SerializeField] private AudioClip crouchSound;
+    [SerializeField] private AudioClip wallSlideSound;
+
+    private AudioSource audioSource;
+
     PhotonView view;
 
     void Start()
@@ -42,6 +49,8 @@ public class ninjaControllerOff : MonoBehaviour
         kita = moveSpeed;
         kitaJ = jumpForce;
         saltoDoble = kitaJ * 2;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Awake()
@@ -71,6 +80,7 @@ public class ninjaControllerOff : MonoBehaviour
         {
             if (!footstepParticles.isPlaying)
                 footstepParticles.Play();
+            PlayGrassStepSound();
         }
         else
         {
@@ -130,6 +140,8 @@ public class ninjaControllerOff : MonoBehaviour
 
             // Reproducir las partículas de salto
             jumpParticles.Play();
+
+            PlayGrassJumpSound();
         }
     }
 
@@ -146,6 +158,7 @@ public class ninjaControllerOff : MonoBehaviour
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
             parado.enabled = false;
+            PlayCrouchSound();
         }
         else
         {
@@ -163,6 +176,10 @@ public class ninjaControllerOff : MonoBehaviour
             if (!wallSlideParticles.isPlaying)
             {
                 wallSlideParticles.Play();
+            }
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(wallSlideSound);
             }
 
             // Actualizamos la posición de las partículas para que sigan al jugador
@@ -182,7 +199,7 @@ public class ninjaControllerOff : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            
+
             anim.SetBool("IsJumping", false);
             isGrounded = true;
 
@@ -194,7 +211,7 @@ public class ninjaControllerOff : MonoBehaviour
 
             if (!landParticles.isPlaying)
             {
-               
+
                 landParticles.Play();
             }
         }
@@ -242,4 +259,22 @@ public class ninjaControllerOff : MonoBehaviour
             anim.SetBool("IsPunching", false);
         }
     }
+    private void PlayGrassStepSound()
+    {
+        if (!audioSource.isPlaying)
+        {
+            audioSource.PlayOneShot(grassStepSound);
+        }
+    }
+
+    // Método para reproducir el sonido al saltar
+    private void PlayGrassJumpSound()
+    {
+        audioSource.PlayOneShot(grassJumpSound);
+    }
+    private void PlayCrouchSound()
+    {
+        audioSource.PlayOneShot(crouchSound);
+    }
+
 }
