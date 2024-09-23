@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PlayerBlink : MonoBehaviour
 {
-    public CounterOff counter;
+    public Counter counter;
     public GameObject Counter;
 
     SpriteRenderer renderer;
@@ -47,13 +47,14 @@ public class PlayerBlink : MonoBehaviour
 
         healthBar = healthI.GetComponent<Image>();
         txt1 = healthT.GetComponent<Text>();
-        counter = Counter.GetComponent<CounterOff>();
+        counter = Counter.GetComponent<Counter>();
 
         txt1.text = health.ToString();
         normalColor = renderer.color;
 
         total = health;
     }
+    [PunRPC]
 
     public void Blink()
     {

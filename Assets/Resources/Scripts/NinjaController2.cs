@@ -159,6 +159,19 @@ public class NinjaController2 : MonoBehaviour
         }
     }
 
+    [PunRPC]
+    void SyncWeaponPickup(string weaponName, Vector2 weaponPosition)
+    {
+        this.weaponName = weaponName;
+        isHoldingWeapon = true;
+        anim.SetBool("IsHolding" + weaponName, true);
+        GameObject weapon = GameObject.Find(weaponName);
+        if (weapon != null)
+        {
+            weapon.transform.position = weaponPosition; // Desaparecer el arma de la pantalla
+        }
+    }
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -190,6 +203,8 @@ public class NinjaController2 : MonoBehaviour
             collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma agarrada fuera de la pantalla
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
+            view.RPC("SyncWeaponPickup", RpcTarget.AllBuffered, newWeaponName, new Vector2(100, 0));
+
         }
     }
 

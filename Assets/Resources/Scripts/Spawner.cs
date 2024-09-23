@@ -22,10 +22,10 @@ public class Spawner : MonoBehaviourPunCallbacks
 
     public Teleporter teleporter;
 
-    
+
 
     private PhotonView photonView;
-   
+
 
     public float sharedLife = 10f; // Vida compartida entre ambos jugadores
 
@@ -46,7 +46,7 @@ public class Spawner : MonoBehaviourPunCallbacks
             // Instanciar los jugadores en las posiciones correspondientes
             GameObject player2Obj = PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
 
-           
+
 
             // Instanciar la barra de vida y sincronizarla
         }
@@ -71,13 +71,13 @@ public class Spawner : MonoBehaviourPunCallbacks
     }
 
     // Método para instanciar el HUD de vida y sincronizar su estado
-   
+
 
     // Método llamado para reducir la vida de manera sincronizada
-    
+
 
     // Actualizar la barra de vida visualmente para todos los jugadores
-    
+
 
     public void Volver()
     {

@@ -51,6 +51,7 @@ public class playerBlink2 : MonoBehaviour
 
         total = health;
     }
+    [PunRPC]
 
     public void Blink()
     {

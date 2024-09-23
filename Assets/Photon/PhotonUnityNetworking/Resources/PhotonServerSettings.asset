@@ -42,6 +42,9 @@ MonoBehaviour:
   - ActualizarVida
   - ReducirVida
   - UpdateHealthBar
+  - SyncWeaponPickup
+  - Blink
+  - SyncDamageToPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
