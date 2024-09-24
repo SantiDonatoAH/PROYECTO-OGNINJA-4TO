@@ -1,7 +1,9 @@
 ﻿using Photon.Pun;
 using UnityEngine;
+using System.Collections;
 
-public class CombatManager : MonoBehaviourPunCallbacks
+
+public class CombatManager : MonoBehaviour
 {
     public GameObject ninja1;
     public GameObject ninja2;
@@ -27,8 +29,8 @@ public class CombatManager : MonoBehaviourPunCallbacks
     public endAttack endAttack;
     public endAttack2 endAttack2;
 
-    PhotonView ninja1View;  // PhotonView de ninja1
-    PhotonView ninja2View;  // PhotonView de ninja2
+    public PhotonView ninja1View;  // PhotonView de ninja1
+    public PhotonView ninja2View;  // PhotonView de ninja2
 
     void Start()
     {
@@ -65,18 +67,7 @@ public class CombatManager : MonoBehaviourPunCallbacks
         HandleCombat();
     }
 
-    [PunRPC]
-    public void SyncDamageToPlayer(int playerID)
-    {
-        if (playerID == 1)
-        {
-            ninja1Blink.Blink();
-        }
-        else if (playerID == 2)
-        {
-            ninja2Blink.Blink();
-        }
-    }
+   
 
     public void HandleCombat()
     {
@@ -94,7 +85,7 @@ public class CombatManager : MonoBehaviourPunCallbacks
                     StartCoroutine(CooldownRoutine());
 
                     // Llamar al RPC usando el PhotonView del ninja2 para sincronizar el daño
-                    ninja2View.RPC("SyncDamageToPlayer", RpcTarget.AllBuffered, 2);
+                    ninja2Blink.Blink();
                 }
                 StartCoroutine(endAttack.endAttack1());
             }
@@ -111,7 +102,7 @@ public class CombatManager : MonoBehaviourPunCallbacks
                     StartCoroutine(CooldownRoutine2());
 
                     // Llamar al RPC usando el PhotonView del ninja1 para sincronizar el daño
-                    ninja1View.RPC("SyncDamageToPlayer", RpcTarget.AllBuffered, 1);
+                    ninja1Blink.Blink();
                 }
                 StartCoroutine(endAttack2.endAttack());
             }
