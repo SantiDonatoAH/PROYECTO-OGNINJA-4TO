@@ -72,6 +72,7 @@ public class PlayerBlink : MonoBehaviour
             {
                 counter.WIN2();
             }
+            UpdateHealthBar();
         }
     }
     [PunRPC]
