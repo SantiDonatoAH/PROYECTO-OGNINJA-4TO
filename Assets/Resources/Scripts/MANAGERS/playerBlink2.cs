@@ -1,5 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -28,7 +27,6 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject vida; // Prefab del HUD de vida
     public Transform vidaT; // Posición donde se colocará el HUD de vida
 
-    public Spawner spawner;
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
@@ -54,13 +52,14 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
 
         total = health;
     }
-    [PunRPC]
 
+    [PunRPC]
     public void Blink()
     {
         if (health > 0)
         {
             anim.SetBool("IsBlinking", true);
+
             health -= restar;
             UpdateHealthBar();
 
@@ -71,11 +70,15 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
             {
                 counter.WIN1();
             }
-            UpdateHealthBar();
         }
     }
-    [PunRPC]
 
+    public void ApplyDamage()
+    {
+        photonView.RPC("Blink", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
+    }
+
+    [PunRPC]
     public void UpdateHealthBar()
     {
         txt2.text = health.ToString();
@@ -106,5 +109,4 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
             UpdateHealthBar(); // Actualiza la barra de vida para los jugadores remotos
         }
     }
-
 }

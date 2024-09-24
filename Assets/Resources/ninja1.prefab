@@ -241,7 +241,6 @@ MonoBehaviour:
   anim: {fileID: 5244374281112257539}
   total: 0
   bloodParticles: {fileID: 0}
-  spawner: {fileID: 0}
   vida: {fileID: 5741697232292175458, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
   vidaT: {fileID: 5741697232292175459, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
 --- !u!114 &5244374281112257538
@@ -276,6 +275,7 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
+  - {fileID: 5244374281112257541}
   - {fileID: -7877559922949339848}
   - {fileID: -1447177921477650796}
   sceneViewId: 0

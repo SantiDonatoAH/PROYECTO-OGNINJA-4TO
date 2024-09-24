@@ -3,18 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-
 public class NinjaController2 : MonoBehaviour
 {
-    public float moveSpeed ;
-    public float jumpForce ;
+    public float moveSpeed = 5f;
+    public float jumpForce = 3f;
     public float move;
     public float movey;
 
     private Rigidbody2D rb;
     [SerializeField] Animator anim;
-    public BoxCollider2D parar;
     public BoxCollider2D agachar;
+    public BoxCollider2D parado;
 
     public GameObject pared;
     public Transform paredT;
@@ -23,7 +22,6 @@ public class NinjaController2 : MonoBehaviour
     private bool isTouchingWall = false;
     bool isCrouching;
     public bool isHoldingWeapon = false;
-    public bool derecha = true;
     public string weaponName;
 
     public float kita;
@@ -37,12 +35,12 @@ public class NinjaController2 : MonoBehaviour
 
     void Start()
     {
+        combatG = GameObject.FindGameObjectWithTag("combat");
+        combat = combatG.GetComponent<CombatManager>();
+
         rb = GetComponent<Rigidbody2D>();
 
         view = GetComponent<PhotonView>();
-
-        combatG = GameObject.FindGameObjectWithTag("combat");
-        combat = combatG.GetComponent<CombatManager>();
 
         kita = moveSpeed;
         kitaJ = jumpForce;
@@ -56,6 +54,7 @@ public class NinjaController2 : MonoBehaviour
 
     void Update()
     {
+
         if (view.IsMine)
         {
             Move();
@@ -65,7 +64,7 @@ public class NinjaController2 : MonoBehaviour
             WallSlide();
             combat.HandleCombat();
 
-            if (isTouchingWall && Input.GetKey(KeyCode.A))
+            if (isTouchingWall && Input.GetKey(KeyCode.LeftArrow))
             {
                 jumpForce = saltoDoble;
             }
@@ -74,6 +73,7 @@ public class NinjaController2 : MonoBehaviour
                 jumpForce = kitaJ;
             }
         }
+
     }
 
     void Move()
@@ -82,14 +82,12 @@ public class NinjaController2 : MonoBehaviour
         rb.velocity = new Vector2(move * moveSpeed, rb.velocity.y);
         if (rb.velocity.x > 0)
         {
-            derecha = true;
             GetComponent<SpriteRenderer>().flipX = false;
-            transform.rotation = Quaternion.Euler(0, 0, 0); // Rotación normal
+            transform.rotation = Quaternion.Euler(0, 0, 0);
             anim.SetBool("Run", true);
         }
         else if (rb.velocity.x < 0)
         {
-            derecha = false;
             GetComponent<SpriteRenderer>().flipX = false;
             transform.rotation = Quaternion.Euler(0, 180, 0);
             anim.SetBool("Run", true);
@@ -99,21 +97,19 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("Run", false);
         }
 
-        if ((Input.GetKey(KeyCode.RightArrow) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
+        if
+            ((Input.GetKey(KeyCode.RightArrow) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
                 (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
         {
             moveSpeed = 0;
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 1.5f);
             anim.SetBool("IsWallSliding", true);
-
         }
         else
         {
             moveSpeed = kita;
             anim.SetBool("IsWallSliding", false);
-
         }
-
     }
 
     void Jump()
@@ -138,25 +134,18 @@ public class NinjaController2 : MonoBehaviour
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
-            parar.enabled = false;
+            parado.enabled = false;
         }
         else
         {
             anim.SetBool("IsCrouching", false);
             agachar.enabled = false;
-            parar.enabled = true;
+            parado.enabled = true;
         }
     }
 
     void WallSlide()
     {
-        if (isTouchingWall == true)
-        {
-        }
-
-        else
-        {
-        }
     }
 
     [PunRPC]
@@ -188,9 +177,9 @@ public class NinjaController2 : MonoBehaviour
             paredT = pared.GetComponent<Transform>();
         }
 
-        if (collision.gameObject.CompareTag("Weapon") && Input.GetKey(KeyCode.DownArrow))
+        if (collision.gameObject.tag == "Weapon" && Input.GetKey(KeyCode.DownArrow))
         {
-            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "2").Trim();
+            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
 
             if (isHoldingWeapon)
             {
@@ -204,7 +193,6 @@ public class NinjaController2 : MonoBehaviour
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
             view.RPC("SyncWeaponPickup", RpcTarget.AllBuffered, newWeaponName, new Vector2(100, 0));
-
         }
     }
 

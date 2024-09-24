@@ -1,5 +1,4 @@
 ﻿using Photon.Pun;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -26,8 +25,6 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
     public float total;
 
     public ParticleSystem bloodParticles;
-
-    public Spawner spawner;
 
     public GameObject vida; // Prefab del HUD de vida
     public Transform vidaT; // Posición donde se colocará el HUD de vida
@@ -57,27 +54,33 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
 
         total = health;
     }
-    [PunRPC]
 
+    [PunRPC]
     public void Blink()
     {
-        TriggerBloodParticles();
-
         if (health > 0)
         {
+            TriggerBloodParticles();
             anim.SetBool("IsBlinking", true);
+
             health -= restar;
             UpdateHealthBar();
 
             EnableBlink();
             Invoke("DisableBlink", 0.25f);
+
             if (health <= 0)
             {
                 counter.WIN2();
             }
-            UpdateHealthBar();
         }
     }
+
+    public void ApplyDamage()
+    {
+        photonView.RPC("Blink", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
+    }
+
     [PunRPC]
     public void UpdateHealthBar()
     {
@@ -85,7 +88,6 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
         healthAmount = health;
         healthBar.fillAmount = healthAmount / total;
     }
-    
 
     void EnableBlink()
     {
@@ -105,6 +107,7 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
             bloodParticles.Play();
         }
     }
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting) // Envía los datos del jugador local
@@ -117,5 +120,4 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
             UpdateHealthBar(); // Actualiza la barra de vida para los jugadores remotos
         }
     }
-
 }

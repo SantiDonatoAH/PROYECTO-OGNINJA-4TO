@@ -180,7 +180,7 @@ public class NinjaController : MonoBehaviour
             paredT = pared.GetComponent<Transform>();
         }
 
-        if (collision.gameObject.tag == "Weapon" && Input.GetKey(KeyCode.S))
+        if (collision.gameObject.CompareTag("Weapon") && Input.GetKey(KeyCode.S))
         {
             string newWeaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
 
@@ -192,11 +192,12 @@ public class NinjaController : MonoBehaviour
 
             // Agarrar la nueva arma
             weaponName = newWeaponName;
-            collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma agarrada fuera de la pantalla
+            collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma fuera de la pantalla
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
-            view.RPC("SyncWeaponPickup", RpcTarget.AllBuffered, newWeaponName, new Vector2(100, 0));
 
+            // Sincronizar con todos los jugadores
+            view.RPC("SyncWeaponPickup", RpcTarget.AllBuffered, newWeaponName, new Vector2(100, 0));
         }
     }
 
