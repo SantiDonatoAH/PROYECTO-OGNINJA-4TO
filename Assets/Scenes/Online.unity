@@ -3530,8 +3530,7 @@ MonoBehaviour:
   weapon: {fileID: 1095287916}
   panelInicio: {fileID: 1691482497}
   teleporter: {fileID: 450971892}
-  vida: {fileID: 5741697232292175458, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
-  vidaT: {fileID: 5741697232292175459, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
+  sharedLife: 10
 --- !u!4 &450971891
 Transform:
   m_ObjectHideFlags: 0
@@ -4772,6 +4771,8 @@ MonoBehaviour:
   cooldownTime2: 0.5
   endAttack: {fileID: 0}
   endAttack2: {fileID: 0}
+  ninja1View: {fileID: 0}
+  ninja2View: {fileID: 0}
 --- !u!4 &556487313
 Transform:
   m_ObjectHideFlags: 0

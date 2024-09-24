@@ -80,7 +80,7 @@ public class ninjaController2Off : MonoBehaviour
         {
             if (!footstepParticles2.isPlaying)
                 footstepParticles2.Play();
-            PlayGrassStepSound2();
+            //PlayGrassStepSound2();
         }
         else
         {
@@ -138,7 +138,7 @@ public class ninjaController2Off : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
 
             jumpParticles2.Play();
-            PlayGrassJumpSound2();
+            //PlayGrassJumpSound2();
         }
     }
 
@@ -153,7 +153,7 @@ public class ninjaController2Off : MonoBehaviour
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
             parar.enabled = false;
-            PlayCrouchSound2();
+            //PlayCrouchSound2();
         }
         else
         {
@@ -172,10 +172,10 @@ public class ninjaController2Off : MonoBehaviour
                 wallSlideParticles2.Play();
             }
 
-            if (!audioSource2.isPlaying)
-            {
-                audioSource2.PlayOneShot(wallSlideSound2);
-            }
+            //if (!audioSource2.isPlaying)
+            //{
+              //  audioSource2.PlayOneShot(wallSlideSound2);
+            //}
 
             wallSlideParticles2.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles2.transform.position.z);
         }
@@ -187,8 +187,61 @@ public class ninjaController2Off : MonoBehaviour
             }
         }
     }
+    void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            anim.SetBool("IsJumping", false);
+            isGrounded = true;
 
-    void CheckHoldingWeapon()
+            if (jumpParticles2.isPlaying)
+            {
+                jumpParticles2.Stop();
+            }
+
+            if (!landParticles2.isPlaying)
+            {
+
+                landParticles2.Play();
+            }
+        }
+
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            anim.SetBool("IsJumping", false);
+            isTouchingWall = true;
+            pared = collision.gameObject;
+            paredT = pared.GetComponent<Transform>();
+        }
+
+        if (collision.gameObject.tag == "Weapon" && Input.GetKey(KeyCode.DownArrow))
+        {
+            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "2").Trim();
+
+            if (isHoldingWeapon)
+            {
+                // Cambiar el arma actual por la nueva
+                anim.SetBool("IsHolding" + weaponName, false);
+            }
+
+            // Agarrar la nueva arma
+            weaponName = newWeaponName;
+            collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma agarrada fuera de la pantalla
+            isHoldingWeapon = true;
+            anim.SetBool("IsHolding" + weaponName + "2", true);
+        }
+    }
+
+    void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isTouchingWall = false;
+            anim.SetBool("IsWallSliding", false);
+        }
+    }
+
+        void CheckHoldingWeapon()
     {
         if (isHoldingWeapon)
         {
@@ -196,7 +249,7 @@ public class ninjaController2Off : MonoBehaviour
         }
     }
 
-    private void PlayGrassStepSound2()
+  /*  private void PlayGrassStepSound2()
     {
         if (!audioSource2.isPlaying)
         {
@@ -213,4 +266,4 @@ public class ninjaController2Off : MonoBehaviour
     {
         audioSource2.PlayOneShot(crouchSound2);
     }
-}
+*/}

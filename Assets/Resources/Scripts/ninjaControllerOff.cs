@@ -261,20 +261,20 @@ public class ninjaControllerOff : MonoBehaviour
     }
     private void PlayGrassStepSound()
     {
-        if (!audioSource.isPlaying)
-        {
-            audioSource.PlayOneShot(grassStepSound);
-        }
+        //if (!audioSource.isPlaying)
+       // {
+         //   audioSource.PlayOneShot(grassStepSound);
+        //}
     }
 
     // Método para reproducir el sonido al saltar
     private void PlayGrassJumpSound()
     {
-        audioSource.PlayOneShot(grassJumpSound);
+       // audioSource.PlayOneShot(grassJumpSound);
     }
     private void PlayCrouchSound()
     {
-        audioSource.PlayOneShot(crouchSound);
+       // audioSource.PlayOneShot(crouchSound);
     }
 
 }
