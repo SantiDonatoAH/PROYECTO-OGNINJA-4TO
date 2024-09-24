@@ -216,7 +216,7 @@ public class ninjaController2Off : MonoBehaviour
 
         if (collision.gameObject.tag == "Weapon" && Input.GetKey(KeyCode.DownArrow))
         {
-            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "2").Trim();
+            string newWeaponName = collision.gameObject.name.Replace(" off(Clone)", "2").Trim();
 
             if (isHoldingWeapon)
             {
@@ -228,7 +228,7 @@ public class ninjaController2Off : MonoBehaviour
             weaponName = newWeaponName;
             collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma agarrada fuera de la pantalla
             isHoldingWeapon = true;
-            anim.SetBool("IsHolding" + weaponName + "2", true);
+            anim.SetBool("IsHolding" + weaponName, true);
         }
     }
 

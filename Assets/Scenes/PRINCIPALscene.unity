@@ -51949,6 +51949,7 @@ GameObject:
   - component: {fileID: 1019354701}
   - component: {fileID: 1019354702}
   - component: {fileID: 1019354703}
+  - component: {fileID: 1019354704}
   m_Layer: 0
   m_Name: ninja1
   m_TagString: player1
@@ -52166,6 +52167,10 @@ MonoBehaviour:
   jumpParticles: {fileID: 200220765}
   landParticles: {fileID: 61142125}
   wallSlideParticles: {fileID: 568032208}
+  grassStepSound: {fileID: 0}
+  grassJumpSound: {fileID: 0}
+  crouchSound: {fileID: 0}
+  wallSlideSound: {fileID: 0}
 --- !u!114 &1019354703
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -52190,6 +52195,102 @@ MonoBehaviour:
   anim: {fileID: 1019354700}
   total: 0
   bloodParticles: {fileID: 122371024}
+--- !u!82 &1019354704
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1019354692}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!4 &1024903562 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1909155585478895358, guid: c8226f065d421ba498ea97e7ba1dbd4e,
@@ -52807,10 +52908,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   armas:
-  - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
-  - {fileID: 7457272888433717637, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
-  - {fileID: 2857495050582825017, guid: e26d39f62ec44704b8e1c118dd4bfa15, type: 3}
-  - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
+  - {fileID: 4026039771719922884, guid: 7721531946a412d4ab38f8841323f47f, type: 3}
+  - {fileID: 7457272888433717637, guid: a6fe9b58889bcfd4eba71e482e1889c9, type: 3}
+  - {fileID: 2857495050582825017, guid: ea83413b4e22bab47a56228315d25ef8, type: 3}
+  - {fileID: 7371005533148593032, guid: e54260a1f903a6647a1dafd5712519dd, type: 3}
   spawnPoints:
   - {fileID: 870233830}
   - {fileID: 1778200177}
@@ -54983,6 +55084,10 @@ MonoBehaviour:
   jumpParticles2: {fileID: 194094031}
   landParticles2: {fileID: 92344012}
   wallSlideParticles2: {fileID: 1654772350}
+  grassStepSound2: {fileID: 0}
+  grassJumpSound2: {fileID: 0}
+  crouchSound2: {fileID: 0}
+  wallSlideSound2: {fileID: 0}
 --- !u!114 &1412429952
 MonoBehaviour:
   m_ObjectHideFlags: 0
