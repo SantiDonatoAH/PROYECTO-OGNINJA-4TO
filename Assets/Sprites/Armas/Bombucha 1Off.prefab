@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 58085008896022230}
   - component: {fileID: 3492325823810812960}
   m_Layer: 0
-  m_Name: Bombucha 1 off
+  m_Name: Bombucha 1Off
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

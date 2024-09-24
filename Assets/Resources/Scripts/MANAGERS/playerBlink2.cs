@@ -3,7 +3,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class playerBlink2 : MonoBehaviour
+public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
 {
     public Counter counter;
     public GameObject Counter;
@@ -32,8 +32,11 @@ public class playerBlink2 : MonoBehaviour
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
-        GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
-        vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
+        if (photonView.IsMine) // Solo instanciar la barra de vida para el jugador local
+        {
+            GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
+            vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
+        }
     }
 
     void Start()
@@ -77,7 +80,7 @@ public class playerBlink2 : MonoBehaviour
     {
         txt2.text = health.ToString();
         healthAmount = health;
-        healthBar.fillAmount = healthAmount / total; // Actualizar la barra de vida
+        healthBar.fillAmount = healthAmount / total;
     }
 
     void EnableBlink()
@@ -91,6 +94,17 @@ public class playerBlink2 : MonoBehaviour
         anim.SetBool("IsBlinking", false);
     }
 
+    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+    {
+        if (stream.IsWriting) // Envía los datos del jugador local
+        {
+            stream.SendNext(health);
+        }
+        else // Recibe los datos del jugador remoto
+        {
+            health = (float)stream.ReceiveNext();
+            UpdateHealthBar(); // Actualiza la barra de vida para los jugadores remotos
+        }
+    }
 
-   
 }

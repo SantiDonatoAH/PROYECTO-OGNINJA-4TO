@@ -226,7 +226,7 @@ public class ninjaControllerOff : MonoBehaviour
 
         if (collision.gameObject.tag == "Weapon" && Input.GetKey(KeyCode.S))
         {
-            string newWeaponName = collision.gameObject.name.Replace(" off(Clone)", "").Trim();
+            string newWeaponName = collision.gameObject.name.Replace("Off(Clone)", "").Trim();
 
             if (isHoldingWeapon)
             {
