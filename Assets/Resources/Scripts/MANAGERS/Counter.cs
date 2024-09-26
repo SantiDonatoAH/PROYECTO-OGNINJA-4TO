@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Photon.Pun;
 
-public class Counter : MonoBehaviour
+public class Counter : MonoBehaviourPunCallbacks
 {
     public GameObject[] ninja1;
     public GameObject[] ninja2;
@@ -47,7 +47,7 @@ public class Counter : MonoBehaviour
         score1++;
         pts1.text = score1.ToString();
         Debug.Log("1");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
 
         if (score1 == Rondas)
@@ -65,7 +65,7 @@ public class Counter : MonoBehaviour
         score2++;
         pts2.text = score2.ToString();
         Debug.Log("2");
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+//        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
 
         if (score2 == Rondas)
@@ -75,7 +75,7 @@ public class Counter : MonoBehaviour
         }
 
     }
-
+    [PunRPC]
     public void OnBorrar()
     {
         foreach (GameObject obj in ninja1)
