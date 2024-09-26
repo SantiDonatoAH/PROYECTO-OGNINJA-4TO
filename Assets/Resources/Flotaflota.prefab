@@ -225,5 +225,5 @@ MonoBehaviour:
   anim: {fileID: 0}
   anim2: {fileID: 0}
   pausemanager: {fileID: 0}
-  cooldownTime: 0.75
+  cooldownTime: 0.375
   cooldownTime2: 0.375

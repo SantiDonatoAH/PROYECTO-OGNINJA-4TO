@@ -58,6 +58,14 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     public void Blink()
     {
+        photonView.RPC("ApplyDamage", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
+
+        
+    }
+
+    [PunRPC]
+    public void ApplyDamage()
+    {
         if (health > 0)
         {
             TriggerBloodParticles();
@@ -74,11 +82,6 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
                 counter.WIN2();
             }
         }
-    }
-
-    public void ApplyDamage()
-    {
-        photonView.RPC("Blink", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
     }
 
     [PunRPC]

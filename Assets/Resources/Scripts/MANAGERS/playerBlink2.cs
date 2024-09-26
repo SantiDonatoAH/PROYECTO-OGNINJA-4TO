@@ -56,6 +56,12 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     public void Blink()
     {
+        photonView.RPC("ApplyDamage", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
+
+    }
+    [PunRPC]
+    public void ApplyDamage()
+    {
         if (health > 0)
         {
             anim.SetBool("IsBlinking", true);
@@ -71,11 +77,6 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
                 counter.WIN1();
             }
         }
-    }
-
-    public void ApplyDamage()
-    {
-        photonView.RPC("Blink", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
     }
 
     [PunRPC]
