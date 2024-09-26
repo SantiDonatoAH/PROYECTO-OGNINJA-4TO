@@ -75,7 +75,7 @@ public class ninjaControllerOff : MonoBehaviour
             jumpForce = kitaJ;
         }
 
-        // Control de las partículas al caminar
+        
         if (move != 0 && isGrounded && !isTouchingWall && !isCrouching)
         {
             if (!footstepParticles.isPlaying)
@@ -84,7 +84,7 @@ public class ninjaControllerOff : MonoBehaviour
         }
         else
         {
-            if (footstepParticles.isPlaying)
+            if (footstepParticles.isPlaying || !isGrounded)
                 footstepParticles.Stop();
         }
     }

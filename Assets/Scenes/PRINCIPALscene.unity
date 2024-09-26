@@ -28177,7 +28177,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 438872425}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -34079,7 +34079,7 @@ ParticleSystem:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 550902365}
   serializedVersion: 8
-  lengthInSec: 5
+  lengthInSec: 2.5
   simulationSpeed: 1
   stopAction: 0
   cullingMode: 0
@@ -55100,18 +55100,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8c3b99ebe40a8d40b192253b7a11a14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter: {fileID: 0}
-  Counter: {fileID: 0}
-  health: 10
-  txt2: {fileID: 0}
-  healthI: {fileID: 0}
-  healthT: {fileID: 0}
-  healthBar: {fileID: 216285394}
-  healthAmount: 10
-  restar: 0.5
-  anim: {fileID: 1412429949}
-  total: 0
-  bloodParticles2: {fileID: 699864039}
 --- !u!1 &1433158445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,
