@@ -835,7 +835,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2036334625}
         m_TargetAssemblyTypeName: OnlineUOffline, Assembly-CSharp
-        m_MethodName: On
+        m_MethodName: off
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2770,7 +2770,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2036334625}
         m_TargetAssemblyTypeName: OnlineUOffline, Assembly-CSharp
-        m_MethodName: off
+        m_MethodName: On
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

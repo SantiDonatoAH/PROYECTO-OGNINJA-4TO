@@ -51,9 +51,10 @@ public class CounterOff : MonoBehaviour
             PanelVictoria.SetActive(true);
             Texto1.SetActive(true);
         }
-
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
     public void WIN2()
@@ -69,8 +70,10 @@ public class CounterOff : MonoBehaviour
             PanelVictoria.SetActive(true);
             Texto2.SetActive(true);
         }
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
 

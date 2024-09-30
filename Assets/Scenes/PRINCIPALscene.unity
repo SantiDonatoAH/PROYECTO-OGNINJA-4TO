@@ -39015,7 +39015,7 @@ MonoBehaviour:
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
   ninja1Blink: {fileID: 1019354703}
-  ninja2Blink: {fileID: 0}
+  ninja2Blink: {fileID: 1412429952}
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
@@ -50548,18 +50548,18 @@ MonoBehaviour:
   - cooldown
   - salto
   - velocidad
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
-  ninjacontroller: {fileID: 0}
-  playerblink: {fileID: 0}
+  ninja1: {fileID: 1019354692}
+  ninja2: {fileID: 1412429941}
+  ninjacontroller: {fileID: 1019354702}
+  playerblink: {fileID: 1019354703}
   bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   flotaflota: {fileID: 1500745841454471355, guid: e26d39f62ec44704b8e1c118dd4bfa15,
     type: 3}
   manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   combatmanager: {fileID: 556487315}
   pistola: {fileID: 114592013395552490, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
-  playerblink2: {fileID: 0}
-  ninjacontroller2: {fileID: 0}
+  playerblink2: {fileID: 1412429952}
+  ninjacontroller2: {fileID: 1412429951}
   habilidades: {fileID: 0}
   h1: 
   h2: 
@@ -53943,6 +53943,7 @@ RectTransform:
   - {fileID: 1904365842}
   - {fileID: 2145044360}
   - {fileID: 1376164207}
+  - {fileID: 1947750681}
   m_Father: {fileID: 931518907}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -54463,13 +54464,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Gano el jugador 2
 --- !u!222 &1376164209
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -54953,6 +54954,7 @@ GameObject:
   - component: {fileID: 1412429949}
   - component: {fileID: 1412429950}
   - component: {fileID: 1412429951}
+  - component: {fileID: 1412429952}
   m_Layer: 0
   m_Name: ninja2
   m_TagString: player2
@@ -55154,25 +55156,129 @@ MonoBehaviour:
   jumpForce: 7.5
   move: 0
   movey: 0
-  anim: {fileID: 0}
-  parar: {fileID: 0}
-  agachar: {fileID: 0}
-  pared: {fileID: 0}
-  paredT: {fileID: 0}
+  anim: {fileID: 1412429949}
+  parar: {fileID: 1412429945}
+  agachar: {fileID: 1412429948}
+  pared: {fileID: 220439456}
+  paredT: {fileID: 220439457}
   isHoldingWeapon: 0
   derecha: 1
   weaponName: 
   kita: 0
   kitaJ: 0
   saltoDoble: 0
-  footstepParticles2: {fileID: 0}
-  jumpParticles2: {fileID: 0}
-  landParticles2: {fileID: 0}
-  wallSlideParticles2: {fileID: 0}
+  footstepParticles2: {fileID: 438872428}
+  jumpParticles2: {fileID: 194094031}
+  landParticles2: {fileID: 92344012}
+  wallSlideParticles2: {fileID: 1654772350}
   grassStepSound2: {fileID: 0}
   grassJumpSound2: {fileID: 0}
   crouchSound2: {fileID: 0}
   wallSlideSound2: {fileID: 0}
+--- !u!114 &1412429952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1412429941}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10a4b111b227fce42b494f4f8212289a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: {fileID: 1974706322}
+  Counter: {fileID: 0}
+  health: 10
+  txt2: {fileID: 0}
+  healthI: {fileID: 0}
+  healthT: {fileID: 0}
+  healthBar: {fileID: 216285394}
+  healthAmount: 10
+  restar: 0.5
+  anim: {fileID: 1412429949}
+  total: 0
+  bloodParticles2: {fileID: 699864039}
+--- !u!1 &1419210753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1419210754}
+  - component: {fileID: 1419210756}
+  - component: {fileID: 1419210755}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1419210754
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419210753}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1947750681}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1419210755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419210753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 21
+    m_FontStyle: 1
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Volver a jugar
+--- !u!222 &1419210756
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1419210753}
+  m_CullTransparentMesh: 0
 --- !u!1 &1433158445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,
@@ -63426,6 +63532,140 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 207315618}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1947750680
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1947750681}
+  - component: {fileID: 1947750684}
+  - component: {fileID: 1947750683}
+  - component: {fileID: 1947750682}
+  m_Layer: 5
+  m_Name: Btn Replay
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1947750681
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947750680}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1419210754}
+  m_Father: {fileID: 1310946626}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.000011452, y: -181.8}
+  m_SizeDelta: {x: 160, y: 43.98282}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1947750682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947750680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 1
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Highlighted
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 1947750683}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1174501606}
+        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
+        m_MethodName: OnReplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &1947750683
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947750680}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1947750684
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1947750680}
+  m_CullTransparentMesh: 0
 --- !u!1 &1948169826
 GameObject:
   m_ObjectHideFlags: 0
@@ -65527,13 +65767,13 @@ MonoBehaviour:
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 0
+    m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Gano el jugador 1
 --- !u!222 &2145044362
 CanvasRenderer:
   m_ObjectHideFlags: 0

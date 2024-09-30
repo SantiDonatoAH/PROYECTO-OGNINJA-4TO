@@ -52,11 +52,7 @@ public class abilitySelectorOff : MonoBehaviour
         ninja1 = GameObject.FindGameObjectWithTag("player1");
         ninja2 = GameObject.FindGameObjectWithTag("player2");
 
-        ninjacontroller = ninja1.GetComponent<ninjaControllerOff>();
-        playerblink = ninja1.GetComponent<PlayerBlinkOff>();
-
-        ninjacontroller2 = ninja2.GetComponent<ninjaController2Off>();
-        playerblink2 = ninja2.GetComponent<playerBlink2Off>();
+       
 
         Ninja1();
         Ninja2();
