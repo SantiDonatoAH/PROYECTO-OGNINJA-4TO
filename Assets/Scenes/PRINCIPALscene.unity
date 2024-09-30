@@ -39014,6 +39014,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
+  ninja1Blink: {fileID: 1019354703}
+  ninja2Blink: {fileID: 0}
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
@@ -54951,7 +54953,6 @@ GameObject:
   - component: {fileID: 1412429949}
   - component: {fileID: 1412429950}
   - component: {fileID: 1412429951}
-  - component: {fileID: 1412429952}
   m_Layer: 0
   m_Name: ninja2
   m_TagString: player2
@@ -55146,44 +55147,32 @@ MonoBehaviour:
   m_GameObject: {fileID: 1412429941}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 04ebc4aa10496664ba915d453f68e672, type: 3}
+  m_Script: {fileID: 11500000, guid: 9bcc215a38edac145b1942ebe56d57d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
   jumpForce: 7.5
   move: 0
   movey: 0
-  anim: {fileID: 1412429949}
-  parar: {fileID: 1412429945}
-  agachar: {fileID: 1412429948}
-  pared: {fileID: 408244573}
-  paredT: {fileID: 408244575}
+  anim: {fileID: 0}
+  parar: {fileID: 0}
+  agachar: {fileID: 0}
+  pared: {fileID: 0}
+  paredT: {fileID: 0}
   isHoldingWeapon: 0
   derecha: 1
   weaponName: 
   kita: 0
   kitaJ: 0
   saltoDoble: 0
-  footstepParticles2: {fileID: 438872428}
-  jumpParticles2: {fileID: 194094031}
-  landParticles2: {fileID: 92344012}
-  wallSlideParticles2: {fileID: 1654772350}
+  footstepParticles2: {fileID: 0}
+  jumpParticles2: {fileID: 0}
+  landParticles2: {fileID: 0}
+  wallSlideParticles2: {fileID: 0}
   grassStepSound2: {fileID: 0}
   grassJumpSound2: {fileID: 0}
   crouchSound2: {fileID: 0}
   wallSlideSound2: {fileID: 0}
---- !u!114 &1412429952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412429941}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8c3b99ebe40a8d40b192253b7a11a14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1433158445 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1442633159099152253, guid: f433e1b0a1c2fca44a78df0cf85cbd54,

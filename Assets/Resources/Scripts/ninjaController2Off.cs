@@ -174,7 +174,7 @@ public class ninjaController2Off : MonoBehaviour
 
             //if (!audioSource2.isPlaying)
             //{
-              //  audioSource2.PlayOneShot(wallSlideSound2);
+            //  audioSource2.PlayOneShot(wallSlideSound2);
             //}
 
             wallSlideParticles2.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles2.transform.position.z);
@@ -241,7 +241,7 @@ public class ninjaController2Off : MonoBehaviour
         }
     }
 
-        void CheckHoldingWeapon()
+    void CheckHoldingWeapon()
     {
         if (isHoldingWeapon)
         {
@@ -249,21 +249,22 @@ public class ninjaController2Off : MonoBehaviour
         }
     }
 
-  /*  private void PlayGrassStepSound2()
-    {
-        if (!audioSource2.isPlaying)
-        {
-            audioSource2.PlayOneShot(grassStepSound2);
-        }
-    }
+    /*  private void PlayGrassStepSound2()
+      {
+          if (!audioSource2.isPlaying)
+          {
+              audioSource2.PlayOneShot(grassStepSound2);
+          }
+      }
 
-    private void PlayGrassJumpSound2()
-    {
-        audioSource2.PlayOneShot(grassJumpSound2);
-    }
+      private void PlayGrassJumpSound2()
+      {
+          audioSource2.PlayOneShot(grassJumpSound2);
+      }
 
-    private void PlayCrouchSound2()
-    {
-        audioSource2.PlayOneShot(crouchSound2);
-    }
-*/}
+      private void PlayCrouchSound2()
+      {
+          audioSource2.PlayOneShot(crouchSound2);
+      }
+  */
+}
