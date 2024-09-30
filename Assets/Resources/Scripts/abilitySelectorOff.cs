@@ -49,10 +49,6 @@ public class abilitySelectorOff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ninja1 = GameObject.FindGameObjectWithTag("player1");
-        ninja2 = GameObject.FindGameObjectWithTag("player2");
-
-       
 
         Ninja1();
         Ninja2();
