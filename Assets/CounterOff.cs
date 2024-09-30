@@ -75,6 +75,15 @@ public class CounterOff : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
+    public void OnReplay()
+    {
+        score1 = 0;
+        score2 = 0;
 
+        pts1.text = score1.ToString();
+        pts2.text = score2.ToString();
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
 
 }

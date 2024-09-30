@@ -84,8 +84,5 @@ public class ScreenController : MonoBehaviour
         settingsPanel.SetActive(false);
     }
 
-    public void OnReplay()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-    }
+    
 }

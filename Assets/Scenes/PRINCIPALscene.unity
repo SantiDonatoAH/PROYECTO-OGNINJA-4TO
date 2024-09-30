@@ -63616,8 +63616,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1174501606}
-        m_TargetAssemblyTypeName: ScreenController, Assembly-CSharp
+      - m_Target: {fileID: 1974706322}
+        m_TargetAssemblyTypeName: CounterOff, Assembly-CSharp
         m_MethodName: OnReplay
         m_Mode: 1
         m_Arguments:
