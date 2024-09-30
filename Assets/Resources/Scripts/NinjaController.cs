@@ -28,6 +28,18 @@ public class NinjaController : MonoBehaviour
     public float kitaJ;
     public float saltoDoble;
 
+    public ParticleSystem footstepParticles;
+    public ParticleSystem jumpParticles;
+    public ParticleSystem landParticles;
+    public ParticleSystem wallSlideParticles;
+
+    [SerializeField] private AudioClip grassStepSound;
+    [SerializeField] private AudioClip grassJumpSound;
+    [SerializeField] private AudioClip crouchSound;
+    [SerializeField] private AudioClip wallSlideSound;
+
+    private AudioSource audioSource;
+
     public GameObject combatG;
     public CombatManager combat;
 
@@ -46,6 +58,8 @@ public class NinjaController : MonoBehaviour
         kita = moveSpeed;
         kitaJ = jumpForce;
         saltoDoble = kitaJ * 2;
+
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Awake()
@@ -73,7 +87,20 @@ public class NinjaController : MonoBehaviour
             {
                 jumpForce = kitaJ;
             }
+
+            if (move != 0 && isGrounded && !isTouchingWall && !isCrouching)
+            {
+                if (!footstepParticles.isPlaying)
+                    footstepParticles.Play();
+                PlayGrassStepSound();
+            }
+            else
+            {
+                if (footstepParticles.isPlaying || !isGrounded)
+                    footstepParticles.Stop();
+            }
         }
+
 
     }
 
@@ -123,6 +150,9 @@ public class NinjaController : MonoBehaviour
             isGrounded = false;
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
 
+            jumpParticles.Play();
+
+            PlayGrassJumpSound();
 
         }
     }
@@ -138,6 +168,7 @@ public class NinjaController : MonoBehaviour
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
             parado.enabled = false;
+            PlayCrouchSound();
 
         }
         else
@@ -150,6 +181,29 @@ public class NinjaController : MonoBehaviour
 
     void WallSlide()
     {
+        // Si la animación de "IsWallSliding" está activa, activamos las partículas
+        if (anim.GetBool("IsWallSliding"))
+        {
+            if (!wallSlideParticles.isPlaying)
+            {
+                wallSlideParticles.Play();
+            }
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(wallSlideSound);
+            }
+
+            // Actualizamos la posición de las partículas para que sigan al jugador
+            wallSlideParticles.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles.transform.position.z);
+        }
+        else
+        {
+            // Si la animación no está activa, detenemos las partículas
+            if (wallSlideParticles.isPlaying)
+            {
+                wallSlideParticles.Stop();
+            }
+        }
     }
 
     [PunRPC]
@@ -168,8 +222,21 @@ public class NinjaController : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+
             anim.SetBool("IsJumping", false);
             isGrounded = true;
+
+            // Detener las partículas de salto si siguen activas
+            if (jumpParticles.isPlaying)
+            {
+                jumpParticles.Stop();
+            }
+
+            if (!landParticles.isPlaying)
+            {
+
+                landParticles.Play();
+            }
         }
 
         if (collision.gameObject.CompareTag("Wall"))
@@ -216,5 +283,22 @@ public class NinjaController : MonoBehaviour
         {
             anim.SetBool("IsPunching", false);
         }
+    }
+    private void PlayGrassStepSound()
+    {
+        //if (!audioSource.isPlaying)
+        // {
+        //   audioSource.PlayOneShot(grassStepSound);
+        //}
+    }
+
+    // Método para reproducir el sonido al saltar
+    private void PlayGrassJumpSound()
+    {
+        // audioSource.PlayOneShot(grassJumpSound);
+    }
+    private void PlayCrouchSound()
+    {
+        // audioSource.PlayOneShot(crouchSound);
     }
 }

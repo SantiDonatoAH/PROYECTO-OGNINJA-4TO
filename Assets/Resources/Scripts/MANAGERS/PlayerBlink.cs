@@ -60,15 +60,17 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
     {
         photonView.RPC("ApplyDamage", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
 
-        
+
     }
 
     [PunRPC]
     public void ApplyDamage()
     {
+
+        TriggerBloodParticles();
         if (health > 0)
         {
-            TriggerBloodParticles();
+
             anim.SetBool("IsBlinking", true);
 
             health -= restar;
@@ -123,4 +125,6 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
             UpdateHealthBar(); // Actualiza la barra de vida para los jugadores remotos
         }
     }
+
+
 }

@@ -24,6 +24,8 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
 
     public float total;
 
+    public ParticleSystem bloodParticles2;
+
     public GameObject vida; // Prefab del HUD de vida
     public Transform vidaT; // Posición donde se colocará el HUD de vida
 
@@ -62,6 +64,7 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
     [PunRPC]
     public void ApplyDamage()
     {
+        TriggerBloodParticles();
         if (health > 0)
         {
             anim.SetBool("IsBlinking", true);
@@ -108,6 +111,14 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
         {
             health = (float)stream.ReceiveNext();
             UpdateHealthBar(); // Actualiza la barra de vida para los jugadores remotos
+        }
+    }
+
+    void TriggerBloodParticles()
+    {
+        if (bloodParticles2 != null)
+        {
+            bloodParticles2.Play();
         }
     }
 }
