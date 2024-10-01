@@ -10,15 +10,15 @@ public class playerBlink2Off : MonoBehaviour
     SpriteRenderer renderer;
     Color damageColor = Color.red;
     Color normalColor;
-    public float health = 100;
+    public float health = 10;
     public Text txt2;
 
     public GameObject healthI;
     public GameObject healthT;
 
     public Image healthBar;
-    public float healthAmount = 100f;
-    public float restar = 5f;
+    public float healthAmount = 10f;
+    public float restar = 0.5f;
 
     public Animator anim;
 

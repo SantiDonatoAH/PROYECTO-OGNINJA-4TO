@@ -57,7 +57,7 @@ public class ajustes : MonoBehaviour
 
     public void OnHide() {
         playerb.enabled = true;
-        playerb2.enabled = true ;
+        playerb2.enabled = true;
         abilty.enabled = true;
 
         playerb.health = Vida;

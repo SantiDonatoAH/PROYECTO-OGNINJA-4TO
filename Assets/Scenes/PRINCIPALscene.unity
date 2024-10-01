@@ -39830,7 +39830,7 @@ MonoBehaviour:
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
   ninja1Blink: {fileID: 1019354703}
-  ninja2Blink: {fileID: 1412429952}
+  ninja2Blink: {fileID: 0}
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
@@ -51986,7 +51986,7 @@ MonoBehaviour:
   manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
   combatmanager: {fileID: 556487315}
   pistola: {fileID: 114592013395552490, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
-  playerblink2: {fileID: 1412429952}
+  playerblink2: {fileID: 0}
   ninjacontroller2: {fileID: 1412429951}
   habilidades: {fileID: 0}
   h1: 
@@ -56851,7 +56851,6 @@ GameObject:
   - component: {fileID: 1412429949}
   - component: {fileID: 1412429950}
   - component: {fileID: 1412429951}
-  - component: {fileID: 1412429952}
   m_Layer: 0
   m_Name: ninja2
   m_TagString: player2
@@ -57072,30 +57071,6 @@ MonoBehaviour:
   grassJumpSound2: {fileID: 0}
   crouchSound2: {fileID: 0}
   wallSlideSound2: {fileID: 0}
---- !u!114 &1412429952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1412429941}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10a4b111b227fce42b494f4f8212289a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  counter: {fileID: 1974706322}
-  Counter: {fileID: 0}
-  health: 10
-  txt2: {fileID: 0}
-  healthI: {fileID: 0}
-  healthT: {fileID: 0}
-  healthBar: {fileID: 0}
-  healthAmount: 10
-  restar: 0.5
-  anim: {fileID: 1412429949}
-  total: 0
-  bloodParticles2: {fileID: 699864039}
 --- !u!1 &1419210753
 GameObject:
   m_ObjectHideFlags: 0
@@ -65679,7 +65654,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   counter: {fileID: 1974706322}
   playerb: {fileID: 1019354703}
-  playerb2: {fileID: 1412429952}
+  playerb2: {fileID: 0}
   abilty: {fileID: 846295323}
   inputVida: {fileID: 1850510333}
   inputRondas: {fileID: 80534127}
