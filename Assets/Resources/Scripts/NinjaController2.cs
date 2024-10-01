@@ -76,7 +76,6 @@ public class NinjaController2 : MonoBehaviour
             Crouch();
             CheckHoldingWeapon();
             WallSlide();
-            combat.HandleCombat();
 
             if (isTouchingWall && Input.GetKey(KeyCode.LeftArrow))
             {
@@ -97,6 +96,10 @@ public class NinjaController2 : MonoBehaviour
             {
                 if (footstepParticles2.isPlaying)
                     footstepParticles2.Stop();
+            }
+            if (Input.GetKeyDown(KeyCode.L))
+            {
+                combat.HandleCombat2();
             }
         }
 

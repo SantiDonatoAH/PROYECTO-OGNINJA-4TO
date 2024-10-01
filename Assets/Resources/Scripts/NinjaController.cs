@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class NinjaController : MonoBehaviour
+public class NinjaController : MonoBehaviourPunCallbacks
 {
     public float moveSpeed = 5f;
     public float jumpForce = 3f;
@@ -47,6 +47,7 @@ public class NinjaController : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         combatG = GameObject.FindGameObjectWithTag("combat");
         combat = combatG.GetComponent<CombatManager>();
 
@@ -77,7 +78,6 @@ public class NinjaController : MonoBehaviour
             Crouch();
             CheckHoldingWeapon();
             WallSlide();
-            combat.HandleCombat();
 
             if (isTouchingWall && Input.GetKey(KeyCode.A))
             {
@@ -98,6 +98,10 @@ public class NinjaController : MonoBehaviour
             {
                 if (footstepParticles.isPlaying || !isGrounded)
                     footstepParticles.Stop();
+            }
+            if (Input.GetKeyDown(KeyCode.LeftShift))
+            {
+                combat.HandleCombat();
             }
         }
 

@@ -64,7 +64,6 @@ public class CombatManager : MonoBehaviour
 
     void Update()
     {
-        HandleCombat();
     }
 
    
@@ -73,7 +72,7 @@ public class CombatManager : MonoBehaviour
     {
         if (pausemanager.ispaused == false)
         {
-            if (Input.GetKeyDown(KeyCode.LeftShift) && ninjaController.isHoldingWeapon == false && canFire)
+            if (ninjaController.isHoldingWeapon == false && canFire)
             {
                 anim.SetBool("IsPunching", true);
 
@@ -90,22 +89,27 @@ public class CombatManager : MonoBehaviour
                 StartCoroutine(endAttack.endAttack1());
             }
 
-            if (Input.GetKeyDown(KeyCode.L) && ninjaController2.isHoldingWeapon == false && canFire2)
+            
+        }
+    }
+
+    public void HandleCombat2()
+    {
+        if (ninjaController2.isHoldingWeapon == false && canFire2)
+        {
+            anim2.SetBool("IsPunching", true);
+
+            if (IsInRange(ninja2, ninja1) &&
+                ((ninja1.transform.position.x < ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y > 0) ||
+                (ninja1.transform.position.x > ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y < 100)))
             {
-                anim2.SetBool("IsPunching", true);
+                KnockbackManager.Ninja1();
+                StartCoroutine(CooldownRoutine2());
 
-                if (IsInRange(ninja2, ninja1) &&
-                    ((ninja1.transform.position.x < ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y > 0) ||
-                    (ninja1.transform.position.x > ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y < 100)))
-                {
-                    KnockbackManager.Ninja1();
-                    StartCoroutine(CooldownRoutine2());
-
-                    // Llamar al RPC usando el PhotonView del ninja1 para sincronizar el daño
-                    ninja1Blink.Blink();
-                }
-                StartCoroutine(endAttack2.endAttack());
+                // Llamar al RPC usando el PhotonView del ninja1 para sincronizar el daño
+                ninja1Blink.Blink();
             }
+            StartCoroutine(endAttack2.endAttack());
         }
     }
 
