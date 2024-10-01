@@ -11,11 +11,11 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
     Color damageColor = Color.red;
     Color normalColor;
     public float health = 10;
-    public Text txt2;
 
     public GameObject healthI;
     public GameObject healthT;
 
+    public Text txt2;
     public Image healthBar;
     public float healthAmount = 10f;
     public float restar = 0.5f;
@@ -101,6 +101,14 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
         anim.SetBool("IsBlinking", false);
     }
 
+    void TriggerBloodParticles()
+    {
+        if (bloodParticles2 != null)
+        {
+            bloodParticles2.Play();
+        }
+    }
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting) // Envía los datos del jugador local
@@ -114,11 +122,5 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
         }
     }
 
-    void TriggerBloodParticles()
-    {
-        if (bloodParticles2 != null)
-        {
-            bloodParticles2.Play();
-        }
-    }
+
 }

@@ -6,8 +6,11 @@ using UnityEngine.UI;
 
 public class CounterOff : MonoBehaviour
 {
-    public GameObject[] ninja1;
-    public GameObject[] ninja2;
+    public ninjaController2Off ninjaOff2;
+    public ninjaControllerOff ninjaOff;
+
+    public GameObject ninja1;
+    public GameObject ninja2;
     public GameObject[] armas;
 
     public Text pts2;
@@ -24,10 +27,12 @@ public class CounterOff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ninja1 = GameObject.FindGameObjectsWithTag("player1");
-        ninja2 = GameObject.FindGameObjectsWithTag("player2");
+        ninja1 = GameObject.FindGameObjectWithTag("player1");
+        ninja2 = GameObject.FindGameObjectWithTag("player2");
         armas = GameObject.FindGameObjectsWithTag("Weapon");
 
+        ninjaOff = ninja1.GetComponent<ninjaControllerOff>();
+        ninjaOff2 = ninja2.GetComponent<ninjaController2Off>();
 
         pts1.text = score1.ToString();
         pts2.text = score2.ToString();
@@ -40,8 +45,9 @@ public class CounterOff : MonoBehaviour
     public void WIN1()
     {
 
+        ninjaOff.enabled = false;
+        ninjaOff2.enabled = false;
 
-        // Incrementar el valor y almacenarlo
         score1++;
         pts1.text = score1.ToString();
         Debug.Log("1");
@@ -60,6 +66,8 @@ public class CounterOff : MonoBehaviour
     public void WIN2()
     {
 
+        ninjaOff.enabled = false;
+        ninjaOff2.enabled = false;
         // Incrementar el valor y almacenarlo
         score2++;
         pts2.text = score2.ToString();

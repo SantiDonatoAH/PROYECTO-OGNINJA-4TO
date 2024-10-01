@@ -47,6 +47,8 @@ MonoBehaviour:
   - SyncDamageToPlayer
   - OnBorrar
   - ApplyDamage
+  - Ninja1
+  - Ninja2
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
