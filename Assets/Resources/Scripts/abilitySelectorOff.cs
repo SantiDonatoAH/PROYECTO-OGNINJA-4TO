@@ -46,6 +46,9 @@ public class abilitySelectorOff : MonoBehaviour
     private float pistolaC = .175f;
     private float pistolaN = .3f;
 
+    public float Vida1 = 15;
+    public float Vida2 = 15;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -77,7 +80,7 @@ public class abilitySelectorOff : MonoBehaviour
         if (h1 == "vida")
         {
             image1.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
-            playerblink.health = 15;
+            playerblink.health = Vida1;
         }
 
         if (h1 == "daño")
@@ -125,7 +128,7 @@ public class abilitySelectorOff : MonoBehaviour
         if (h2 == "vida")
         {
             image2.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
-            playerblink2.health = 15;
+            playerblink2.health = Vida2;
         }
 
         if (h2 == "daño")

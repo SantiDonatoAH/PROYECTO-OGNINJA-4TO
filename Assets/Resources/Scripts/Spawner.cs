@@ -33,29 +33,27 @@ public class Spawner : MonoBehaviourPunCallbacks
     {
         photonView = GetComponent<PhotonView>();
 
-        if (PhotonNetwork.PlayerList.Length == 1)
+        if (PhotonNetwork.IsConnected)
         {
-            // Instanciar el jugador 1 en la posición de ninja1
-
-            GameObject player1Obj = PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
-
-            // Instanciar la barra de vida y sincronizarla
+            if (PhotonNetwork.LocalPlayer.ActorNumber == 1)
+            {
+                // Instanciar el jugador 1
+                PhotonNetwork.Instantiate(playerPrefab.name, ninja1.position, ninja1.rotation);
+            }
+            else if (PhotonNetwork.LocalPlayer.ActorNumber == 2)
+            {
+                // Instanciar el jugador 2
+                PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
+            }
         }
-        else if (PhotonNetwork.PlayerList.Length > 1)
+        else
         {
-            // Instanciar los jugadores en las posiciones correspondientes
-            GameObject player2Obj = PhotonNetwork.Instantiate(playerPrefab2.name, ninja2.position, ninja2.rotation);
-
-
-
-            // Instanciar la barra de vida y sincronizarla
-        }
-        else if (PhotonNetwork.PlayerList.Length == 0)
-        {
-            // Mostrar el panel de inicio si no hay jugadores conectados
+            // Si no hay jugadores, mostrar el panel de inicio
             panelInicio.SetActive(true);
         }
     }
+
+
 
     void Update()
     {
