@@ -99,7 +99,7 @@ public class NinjaController2 : MonoBehaviour
             }
             if (Input.GetKeyDown(KeyCode.L))
             {
-                combat.HandleCombat2();
+                combat.HandleCombat(false);
             }
         }
 

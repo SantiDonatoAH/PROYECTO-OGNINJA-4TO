@@ -5034,7 +5034,7 @@ MonoBehaviour:
   movey: 0
   anim: {fileID: 0}
   agachar: {fileID: 2950675939776314568}
-  parado: {fileID: 0}
+  parado: {fileID: 2950675939776314573}
   pared: {fileID: 2950675939776314561}
   paredT: {fileID: 2950675939776314572}
   isHoldingWeapon: 0

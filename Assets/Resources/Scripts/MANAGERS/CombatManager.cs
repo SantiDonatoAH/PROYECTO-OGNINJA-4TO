@@ -68,11 +68,11 @@ public class CombatManager : MonoBehaviour
 
    
 
-    public void HandleCombat()
+    public void HandleCombat(bool ranzo)
     {
         if (pausemanager.ispaused == false)
         {
-            if (ninjaController.isHoldingWeapon == false && canFire)
+            if (ranzo ==true && ninjaController.isHoldingWeapon == false && canFire)
             {
                 anim.SetBool("IsPunching", true);
 
@@ -89,27 +89,22 @@ public class CombatManager : MonoBehaviour
                 StartCoroutine(endAttack.endAttack1());
             }
 
-            
-        }
-    }
-
-    public void HandleCombat2()
-    {
-        if (ninjaController2.isHoldingWeapon == false && canFire2)
-        {
-            anim2.SetBool("IsPunching", true);
-
-            if (IsInRange(ninja2, ninja1) &&
-                ((ninja1.transform.position.x < ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y > 0) ||
-                (ninja1.transform.position.x > ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y < 100)))
+            if (ranzo == false&& ninjaController2.isHoldingWeapon == false && canFire2)
             {
-                KnockbackManager.Ninja1();
-                StartCoroutine(CooldownRoutine2());
+                anim2.SetBool("IsPunching", true);
 
-                // Llamar al RPC usando el PhotonView del ninja1 para sincronizar el daño
-                ninja1Blink.Blink();
+                if (IsInRange(ninja2, ninja1) &&
+                    ((ninja1.transform.position.x < ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y > 0) ||
+                    (ninja1.transform.position.x > ninja2.transform.position.x && ninja2.transform.rotation.eulerAngles.y < 100)))
+                {
+                    KnockbackManager.Ninja1();
+                    StartCoroutine(CooldownRoutine2());
+
+                    // Llamar al RPC usando el PhotonView del ninja1 para sincronizar el daño
+                    ninja1Blink.Blink();
+                }
+                StartCoroutine(endAttack2.endAttack());
             }
-            StartCoroutine(endAttack2.endAttack());
         }
     }
 

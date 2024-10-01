@@ -101,7 +101,7 @@ public class NinjaController : MonoBehaviourPunCallbacks
             }
             if (Input.GetKeyDown(KeyCode.LeftShift))
             {
-                combat.HandleCombat();
+                combat.HandleCombat(true);
             }
         }
 
