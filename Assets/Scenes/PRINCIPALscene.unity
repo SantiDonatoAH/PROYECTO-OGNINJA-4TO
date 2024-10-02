@@ -38969,7 +38969,7 @@ MonoBehaviour:
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
   ninja1Blink: {fileID: 1019354703}
-  ninja2Blink: {fileID: 0}
+  ninja2Blink: {fileID: 1412429952}
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
@@ -63900,8 +63900,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c1c53967c547e8418d7323331a68a89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ninjaOff2: {fileID: 0}
-  ninjaOff: {fileID: 0}
+  CombatManagerOff: {fileID: 556487315}
   ninja1: {fileID: 0}
   ninja2: {fileID: 0}
   armas: []

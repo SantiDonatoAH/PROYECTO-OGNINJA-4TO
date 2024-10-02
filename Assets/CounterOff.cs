@@ -1,13 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CounterOff : MonoBehaviour
 {
-    public ninjaController2Off ninjaOff2;
-    public ninjaControllerOff ninjaOff;
+ public CombatManagerOff CombatManagerOff;
 
     public GameObject ninja1;
     public GameObject ninja2;
@@ -31,9 +31,6 @@ public class CounterOff : MonoBehaviour
         ninja2 = GameObject.FindGameObjectWithTag("player2");
         armas = GameObject.FindGameObjectsWithTag("Weapon");
 
-        ninjaOff = ninja1.GetComponent<ninjaControllerOff>();
-        ninjaOff2 = ninja2.GetComponent<ninjaController2Off>();
-
         pts1.text = score1.ToString();
         pts2.text = score2.ToString();
 
@@ -45,8 +42,6 @@ public class CounterOff : MonoBehaviour
     public void WIN1()
     {
 
-        ninjaOff.enabled = false;
-        ninjaOff2.enabled = false;
 
         score1++;
         pts1.text = score1.ToString();
@@ -54,6 +49,8 @@ public class CounterOff : MonoBehaviour
 
         if (score1 == Rondas)
         {
+            CombatManagerOff.enabled = false;
+            Time.timeScale = 0;
             PanelVictoria.SetActive(true);
             Texto1.SetActive(true);
         }
@@ -66,15 +63,14 @@ public class CounterOff : MonoBehaviour
     public void WIN2()
     {
 
-        ninjaOff.enabled = false;
-        ninjaOff2.enabled = false;
-        // Incrementar el valor y almacenarlo
         score2++;
         pts2.text = score2.ToString();
         Debug.Log("2");
 
         if (score2 == Rondas)
         {
+            CombatManagerOff.enabled = false;
+            Time.timeScale = 0;
             PanelVictoria.SetActive(true);
             Texto2.SetActive(true);
         }
@@ -90,6 +86,8 @@ public class CounterOff : MonoBehaviour
 
         pts1.text = score1.ToString();
         pts2.text = score2.ToString();
+
+        Time.timeScale = 1;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
