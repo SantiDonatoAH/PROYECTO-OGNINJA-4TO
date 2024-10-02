@@ -7,6 +7,8 @@ using Photon.Pun;
 
 public class Counter : MonoBehaviourPunCallbacks
 {
+    public CombatManager combatManagerOff;
+
     public GameObject[] ninja1;
     public GameObject[] ninja2;
     public GameObject[] armas;
@@ -47,14 +49,19 @@ public class Counter : MonoBehaviourPunCallbacks
         score1++;
         pts1.text = score1.ToString();
         Debug.Log("1");
-       // SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
-
         if (score1 == Rondas)
         {
+            combatManagerOff.enabled = false;
+            Time.timeScale = 0;
             PanelVictoria.SetActive(true);
             Texto1.SetActive(true);
         }
+        else
+        {
+            PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        }
+
+       
     }
 
     public void WIN2()
@@ -65,19 +72,27 @@ public class Counter : MonoBehaviourPunCallbacks
         score2++;
         pts2.text = score2.ToString();
         Debug.Log("2");
-//        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
 
         if (score2 == Rondas)
         {
+            combatManagerOff.enabled = false;
+            Time.timeScale = 0;
             PanelVictoria.SetActive(true);
             Texto2.SetActive(true);
         }
-
+        else
+        {
+            PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
+        }
     }
     [PunRPC]
     public void OnBorrar()
     {
+        foreach (GameObject obj in armas)
+        {
+            PhotonNetwork.Destroy(obj);
+            Destroy(obj);
+        }
         foreach (GameObject obj in ninja1)
         {
             PhotonNetwork.Destroy(obj);
@@ -90,10 +105,19 @@ public class Counter : MonoBehaviourPunCallbacks
             Destroy(obj);
         }
 
-        foreach (GameObject obj in armas)
-        {
-            PhotonNetwork.Destroy(obj);
-            Destroy(obj);
-        }
+       
+    }
+    [PunRPC]
+    public void OnReplay()
+    {
+        score1 = 0;
+        score2 = 0;
+
+        pts1.text = score1.ToString();
+        pts2.text = score2.ToString();
+
+        Time.timeScale = 1;
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

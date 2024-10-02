@@ -53883,7 +53883,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1310946626
 RectTransform:
   m_ObjectHideFlags: 0
@@ -63903,7 +63903,6 @@ MonoBehaviour:
   CombatManagerOff: {fileID: 556487315}
   ninja1: {fileID: 0}
   ninja2: {fileID: 0}
-  armas: []
   pts2: {fileID: 1411027778}
   pts1: {fileID: 999512866}
   Rondas: 3

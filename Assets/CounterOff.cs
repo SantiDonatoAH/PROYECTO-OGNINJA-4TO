@@ -11,7 +11,6 @@ public class CounterOff : MonoBehaviour
 
     public GameObject ninja1;
     public GameObject ninja2;
-    public GameObject[] armas;
 
     public Text pts2;
     public Text pts1;
@@ -29,7 +28,6 @@ public class CounterOff : MonoBehaviour
     {
         ninja1 = GameObject.FindGameObjectWithTag("player1");
         ninja2 = GameObject.FindGameObjectWithTag("player2");
-        armas = GameObject.FindGameObjectsWithTag("Weapon");
 
         pts1.text = score1.ToString();
         pts2.text = score2.ToString();

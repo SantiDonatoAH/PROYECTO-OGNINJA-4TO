@@ -49,6 +49,7 @@ MonoBehaviour:
   - ApplyDamage
   - Ninja1
   - Ninja2
+  - OnReplay
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

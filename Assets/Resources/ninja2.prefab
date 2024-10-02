@@ -5113,9 +5113,9 @@ MonoBehaviour:
   counter: {fileID: 0}
   Counter: {fileID: 0}
   health: 10
-  txt2: {fileID: 0}
   healthI: {fileID: 0}
   healthT: {fileID: 0}
+  txt2: {fileID: 0}
   healthBar: {fileID: 0}
   healthAmount: 100
   restar: 0.5
