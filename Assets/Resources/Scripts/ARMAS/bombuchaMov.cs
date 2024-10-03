@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class bombuchaMov : MonoBehaviour
+public class bombuchaMov : MonoBehaviourPunCallbacks
 {
     public Rigidbody2D rb;
     public int poder = 0;
 
     public Vector2 pos;
+    PhotonView view;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,4 +37,6 @@ public class bombuchaMov : MonoBehaviour
         }
 
     }
+
+   
 }

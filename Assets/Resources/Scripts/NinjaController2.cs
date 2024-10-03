@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using System;
 
-public class NinjaController2 : MonoBehaviour
+public class NinjaController2 : MonoBehaviourPunCallbacks
 {
     public float moveSpeed = 5f;
     public float jumpForce = 3f;
@@ -202,19 +203,8 @@ public class NinjaController2 : MonoBehaviour
         }
     }
 
+    
     [PunRPC]
-    void SyncWeaponPickup(string weaponName, Vector2 weaponPosition)
-    {
-        this.weaponName = weaponName;
-        isHoldingWeapon = true;
-        anim.SetBool("IsHolding" + weaponName, true);
-        GameObject weapon = GameObject.Find(weaponName);
-        if (weapon != null)
-        {
-            weapon.transform.position = weaponPosition; // Desaparecer el arma de la pantalla
-        }
-    }
-
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -254,10 +244,13 @@ public class NinjaController2 : MonoBehaviour
 
             // Agarrar la nueva arma
             weaponName = newWeaponName;
-            collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma agarrada fuera de la pantalla
+            collision.gameObject.transform.position = new Vector2(100, 0);
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
-            view.RPC("SyncWeaponPickup", RpcTarget.AllBuffered, newWeaponName, new Vector2(100, 0));
+
+            var script = collision.gameObject.GetComponent(newWeaponName + "100") as MonoBehaviourPunCallbacks;
+
+            script.enabled = true;
         }
     }
 

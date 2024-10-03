@@ -50,6 +50,8 @@ MonoBehaviour:
   - Ninja1
   - Ninja2
   - OnReplay
+  - OnCollisionEnter2D
+  - Mover
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

@@ -43,6 +43,8 @@ public class NinjaController : MonoBehaviourPunCallbacks
     public GameObject combatG;
     public CombatManager combat;
 
+    public string newWeaponName;
+
     PhotonView view;
 
     void Start()
@@ -211,17 +213,8 @@ public class NinjaController : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void SyncWeaponPickup(string weaponName, Vector2 weaponPosition)
-    {
-        this.weaponName = weaponName;
-        isHoldingWeapon = true;
-        anim.SetBool("IsHolding" + weaponName, true);
-        GameObject weapon = GameObject.Find(weaponName);
-        if (weapon != null)
-        {
-            weapon.transform.position = weaponPosition; // Desaparecer el arma de la pantalla
-        }
-    }
+   
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
@@ -253,7 +246,7 @@ public class NinjaController : MonoBehaviourPunCallbacks
 
         if (collision.gameObject.CompareTag("Weapon") && Input.GetKey(KeyCode.S))
         {
-            string newWeaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
+            newWeaponName = collision.gameObject.name.Replace("(Clone)", "").Trim();
 
             if (isHoldingWeapon)
             {
@@ -268,7 +261,9 @@ public class NinjaController : MonoBehaviourPunCallbacks
             anim.SetBool("IsHolding" + weaponName, true);
 
             // Sincronizar con todos los jugadores
-            view.RPC("SyncWeaponPickup", RpcTarget.AllBuffered, newWeaponName, new Vector2(100, 0));
+            var script = collision.gameObject.GetComponent(newWeaponName + "100") as MonoBehaviourPunCallbacks;
+
+            script.enabled = true;
         }
     }
 

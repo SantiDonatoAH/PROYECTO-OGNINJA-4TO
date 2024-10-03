@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 114461353756347636}
   - component: {fileID: 3394238210223329121}
   - component: {fileID: 6251735554118726091}
+  - component: {fileID: 257815384360065509}
   m_Layer: 0
   m_Name: Bombucha
   m_TagString: Weapon
@@ -136,7 +137,7 @@ MonoBehaviour:
   multiplicador2: 0
   pausemanager: {fileID: 0}
   cooldownTime: 1
-  cooldownTime2: 1
+  cooldownTime2: 0.5
 --- !u!50 &50408758071355818
 Rigidbody2D:
   serializedVersion: 4
@@ -229,3 +230,15 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &257815384360065509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7371005533148593032}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 719bf7da02b749f4281b3dd9f60f32ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -19549,6 +19549,7 @@ MonoBehaviour:
   wallSlideSound: {fileID: 0}
   combatG: {fileID: 0}
   combat: {fileID: 0}
+  newWeaponName: 
 --- !u!61 &5244374281112257540
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -482,7 +482,7 @@ GameObject:
   - component: {fileID: 5741697232208164429}
   - component: {fileID: 5741697232208164428}
   m_Layer: 5
-  m_Name: Health (2)
+  m_Name: Health2
   m_TagString: Vida2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
