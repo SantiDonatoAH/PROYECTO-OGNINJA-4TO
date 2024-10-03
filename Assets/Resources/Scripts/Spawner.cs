@@ -22,8 +22,6 @@ public class Spawner : MonoBehaviourPunCallbacks
 
     public Teleporter teleporter;
 
-
-
     private PhotonView photonView;
 
 

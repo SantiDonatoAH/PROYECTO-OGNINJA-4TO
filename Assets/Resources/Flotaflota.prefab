@@ -227,7 +227,7 @@ MonoBehaviour:
   anim2: {fileID: 0}
   pausemanager: {fileID: 0}
   cooldownTime: 0.75
-  cooldownTime2: 0.375
+  cooldownTime2: 0.75
 --- !u!114 &-595491629124864154
 MonoBehaviour:
   m_ObjectHideFlags: 0
