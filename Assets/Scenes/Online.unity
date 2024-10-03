@@ -3906,7 +3906,6 @@ MonoBehaviour:
   weapon: {fileID: 1095287916}
   panelInicio: {fileID: 1691482497}
   teleporter: {fileID: 450971892}
-  reload: {fileID: 1215280763}
   sharedLife: 10
 --- !u!4 &450971891
 Transform:
@@ -9615,7 +9614,7 @@ GameObject:
   - component: {fileID: 1215280764}
   - component: {fileID: 1215280763}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: RecargadordeEscenas
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9633,6 +9632,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f66ec2885cb2be4db951d1cd7c4896f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  kita: {fileID: 0}
 --- !u!4 &1215280764
 Transform:
   m_ObjectHideFlags: 0
