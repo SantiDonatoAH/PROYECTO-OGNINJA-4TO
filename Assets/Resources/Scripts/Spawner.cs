@@ -20,8 +20,6 @@ public class Spawner : MonoBehaviourPunCallbacks
 
     public GameObject panelInicio;
 
-    public Teleporter teleporter;
-
     private PhotonView photonView;
 
 
@@ -62,7 +60,6 @@ public class Spawner : MonoBehaviourPunCallbacks
             death.enabled = true;
             ability.enabled = true;
             combat.enabled = true;
-            teleporter.enabled = false;
         }
     }
 
