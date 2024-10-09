@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class WeaponSpawner : MonoBehaviour
+public class WeaponSpawner : MonoBehaviourPunCallbacks
 {
     public GameObject[] armas;        // Array de armas que se pueden spawnear
     public Transform[] spawnPoints;   // Puntos de spawn en el mapa
@@ -37,7 +37,7 @@ public class WeaponSpawner : MonoBehaviour
 
             // Obtener el script del objeto clonado y deshabilitarlo
             var tipoDelScript = System.Type.GetType(armaSeleccionada.name);
-            var script = nuevaArma.GetComponent(tipoDelScript) as MonoBehaviour;    
+            var script = nuevaArma.GetComponent(tipoDelScript) as MonoBehaviourPunCallbacks;    
             script.enabled = false;
             
         }

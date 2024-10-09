@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using UnityEngine;
+using Photon.Pun;
 
-public class Bombucha : MonoBehaviour
+public class Bombucha : MonoBehaviourPunCallbacks
 {
     public GameObject bala;
     public float bulletSpeed = 10f;
@@ -30,6 +31,8 @@ public class Bombucha : MonoBehaviour
 
     void Update()
     {
+        
+
         if (anim.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
             Fire();

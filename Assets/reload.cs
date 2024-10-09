@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class reload : MonoBehaviourPunCallbacks
+public class reload : MonoBehaviour
 {
     public static reload instance;
     public GameObject kita;
@@ -22,7 +22,6 @@ public class reload : MonoBehaviourPunCallbacks
         }
     }
 
-    [PunRPC]
     private void Update()
     {
         kita = GameObject.FindWithTag("player2");
