@@ -38969,7 +38969,7 @@ MonoBehaviour:
   ninja1: {fileID: 1019354692}
   ninja2: {fileID: 1412429941}
   ninja1Blink: {fileID: 1019354703}
-  ninja2Blink: {fileID: 1412429952}
+  ninja2Blink: {fileID: 0}
   anim: {fileID: 1019354700}
   anim2: {fileID: 1412429949}
   pausemanager: {fileID: 1174501606}
