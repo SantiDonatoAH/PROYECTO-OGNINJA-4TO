@@ -239,14 +239,14 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
             if (isHoldingWeapon)
             {
                 // Cambiar el arma actual por la nueva
-                anim.SetBool("IsHolding" + weaponName, false);
+                anim.SetBool("IsHolding" + weaponName + "2", false);
             }
 
             // Agarrar la nueva arma
             weaponName = newWeaponName;
             collision.gameObject.transform.position = new Vector2(100, 0);
             isHoldingWeapon = true;
-            anim.SetBool("IsHolding" + weaponName, true);
+            anim.SetBool("IsHolding" + newWeaponName + "2", true);
 
             var script = collision.gameObject.GetComponent(newWeaponName + "100") as MonoBehaviourPunCallbacks;
 

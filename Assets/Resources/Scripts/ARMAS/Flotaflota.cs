@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Flotaflota : MonoBehaviour
+public class Flotaflota : MonoBehaviourPunCallbacks
 {
 
     public GameObject ninja1;
@@ -42,7 +42,7 @@ public class Flotaflota : MonoBehaviour
         anim2 = ninja2.GetComponent<Animator>();
     }
 
-    // Update is called once per frame
+[PunRPC]
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingFlotaflota") == true && canFire)

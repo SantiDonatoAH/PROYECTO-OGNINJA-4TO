@@ -137,7 +137,7 @@ MonoBehaviour:
   multiplicador2: 0
   pausemanager: {fileID: 0}
   cooldownTime: 1
-  cooldownTime2: 0.5
+  cooldownTime2: 1
 --- !u!50 &50408758071355818
 Rigidbody2D:
   serializedVersion: 4
