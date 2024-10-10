@@ -4,50 +4,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class reload : MonoBehaviour
+public class reload : MonoBehaviourPunCallbacks
 {
     public static reload instance;
     public GameObject kita;
+    bool ranzo = true;
 
     private void Awake()
     {
-        // Implementar el patrón Singleton
-        if (instance != null && instance != this)
+        if (instance == null)
         {
-            Destroy(gameObject);  // Destruir esta instancia si ya existe otra
+            instance = this;
+            DontDestroyOnLoad(gameObject);  // No destruir al cargar una nueva escena
         }
         else
         {
-            instance = this;
+            Destroy(gameObject);  // Destruir esta instancia si ya existe otra
+            return;  // Salir del Awake para evitar ejecutar el código en la instancia destruida
         }
     }
 
+    [PunRPC]
     private void Update()
     {
-        kita = GameObject.FindWithTag("player2");
 
-        if (kita != null )
+        if (ranzo == true )
         {
+            ranzo = false;
             PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
         }
     }
-    void OnEnable()
-    {
-        // Suscribirse al evento de recarga de escena
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    void OnDisable()
-    {
-        // Cancelar la suscripción al evento de recarga de escena
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
-
-    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        // Destruir todos los objetos al recargar la escena
-        Destroy(gameObject);
-    }
-
+    
     
 }

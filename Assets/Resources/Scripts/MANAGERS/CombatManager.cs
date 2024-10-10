@@ -37,19 +37,6 @@ public class CombatManager : MonoBehaviour
         // Asignar a ninja1 y ninja2 los objetos correspondientes
         ninja1 = GameObject.FindGameObjectWithTag("player1");
         ninja2 = GameObject.FindGameObjectWithTag("player2");
-
-        // Obtener los PhotonView de los ninjas
-      
-
-        // Verificar si los PhotonView están asignados correctamente
-        
-
-        ninja1View = ninja1.GetComponent<PhotonView>();
-        ninja2View = ninja2.GetComponent<PhotonView>();
-        if (ninja1View == null || ninja2View == null)
-        {
-            Debug.LogError("PhotonView no encontrado en uno de los ninjas.");
-        }
         ninja1Blink = ninja1.GetComponent<PlayerBlink>();
         ninja2Blink = ninja2.GetComponent<playerBlink2>();
 

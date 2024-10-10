@@ -17,6 +17,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     public abilitySelector ability;
     public deathBarrier death;
     public WeaponSpawner weapon;
+    public GameObject reload;
 
     public GameObject panelInicio;
 
@@ -60,6 +61,7 @@ public class Spawner : MonoBehaviourPunCallbacks
             death.enabled = true;
             ability.enabled = true;
             combat.enabled = true;
+            PhotonNetwork.Instantiate(reload.name, ninja2.position, ninja2.rotation);
         }
     }
 

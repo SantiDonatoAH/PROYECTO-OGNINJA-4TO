@@ -3904,8 +3904,8 @@ MonoBehaviour:
   ability: {fileID: 846295321}
   death: {fileID: 158832691}
   weapon: {fileID: 1095287916}
+  reload: {fileID: 7411334746377018311, guid: 360d6f5990a3ea640a2af9957892879c, type: 3}
   panelInicio: {fileID: 1691482497}
-  teleporter: {fileID: 1215280763}
   sharedLife: 10
 --- !u!4 &450971891
 Transform:
@@ -9603,51 +9603,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a3b9bc3ddcdef94bbaa092def9304f8, type: 3}
---- !u!1 &1215280762
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1215280764}
-  - component: {fileID: 1215280763}
-  m_Layer: 0
-  m_Name: RecargadordeEscenas
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1215280763
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215280762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f66ec2885cb2be4db951d1cd7c4896f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  kita: {fileID: 0}
---- !u!4 &1215280764
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1215280762}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 53.045197, y: 83.76972, z: -0.54095864}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1234958799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8036625343224441316, guid: cd00da32c14f3104f82cb9c78a2cab58,
