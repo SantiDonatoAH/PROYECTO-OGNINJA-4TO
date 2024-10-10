@@ -12,6 +12,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     public Transform ninja2;
 
     public GameObject kita;
+    public GameObject kita2;
 
     public CombatManager combat;
     public abilitySelector ability;
@@ -55,7 +56,8 @@ public class Spawner : MonoBehaviourPunCallbacks
     void Update()
     {
         kita = GameObject.FindWithTag("player2");
-        if (kita != null)
+        kita2 = GameObject.FindWithTag("player1");
+        if (kita != null && kita2 !=null)
         {
             weapon.enabled = true;
             death.enabled = true;
