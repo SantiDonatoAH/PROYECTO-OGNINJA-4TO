@@ -26,11 +26,8 @@ public class Spawner : MonoBehaviourPunCallbacks
 
     public bool spawn = true;
 
-    public GameObject vida; // Prefab del HUD de vida
-    public Transform vidaT; // Posición donde se colocará el HUD de vida
 
-    public playerBlink2 blink2;
-    public PlayerBlink blink;
+    public float sharedLife = 10f; // Vida compartida entre ambos jugadores
 
     void Start()
     {
@@ -62,22 +59,11 @@ public class Spawner : MonoBehaviourPunCallbacks
     {
         kita = GameObject.FindWithTag("player2");
         kita2 = GameObject.FindWithTag("player1");
-
-      
-
         if (kita != null && kita2 !=null && spawn == true)
         {
-            blink = kita2.GetComponent<PlayerBlink>();
-            blink2 = kita.GetComponent<playerBlink2>();
-
-            GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
-            vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
-
-            blink.enabled = true;
-            blink2.enabled = true;
-
             PhotonNetwork.Instantiate(weapon.name, ninja2.position, ninja2.rotation);
             death.enabled = true;
+            ability.enabled = true;
             combat.enabled = true;
             PhotonNetwork.Instantiate(reload.name, ninja2.position, ninja2.rotation);
             spawn = false;

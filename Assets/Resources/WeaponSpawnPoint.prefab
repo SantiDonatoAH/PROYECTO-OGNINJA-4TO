@@ -42,7 +42,6 @@ GameObject:
   - component: {fileID: 4490161352725759309}
   - component: {fileID: 4490161352725759306}
   - component: {fileID: 4490161352725759307}
-  - component: {fileID: 1649552886155170814}
   m_Layer: 0
   m_Name: WeaponSpawnPoint
   m_TagString: Untagged
@@ -82,8 +81,6 @@ MonoBehaviour:
   armas:
   - {fileID: 7457272888433717637, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
   - {fileID: 2857495050582825017, guid: e26d39f62ec44704b8e1c118dd4bfa15, type: 3}
-  - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
-  - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   spawnPoints:
   - {fileID: 4490161351963867072}
   - {fileID: 4490161353136140119}
@@ -111,44 +108,6 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &1649552886155170814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4490161352725759308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd198072e43c824fa1d7901f293a02f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilities:
-  - "Da\xF1o"
-  - Salto
-  - Velocidad
-  - Vida
-  - Cooldown
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
-  ninjacontroller: {fileID: 0}
-  playerblink: {fileID: 0}
-  bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
-  flotaflota: {fileID: 1500745841454471355, guid: e26d39f62ec44704b8e1c118dd4bfa15,
-    type: 3}
-  manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
-  combatmanager: {fileID: 0}
-  pistola: {fileID: 114592013395552490, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
-  playerblink2: {fileID: 0}
-  ninjacontroller2: {fileID: 0}
-  habilidades: {fileID: 0}
-  h1: 
-  h2: 
-  im1: {fileID: 0}
-  im2: {fileID: 0}
-  image1: {fileID: 0}
-  image2: {fileID: 0}
-  combat: {fileID: 0}
 --- !u!1 &4490161353136140118
 GameObject:
   m_ObjectHideFlags: 0

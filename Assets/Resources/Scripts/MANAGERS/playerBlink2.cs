@@ -26,37 +26,33 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
 
     public ParticleSystem bloodParticles2;
 
- 
+    public GameObject vida; // Prefab del HUD de vida
+    public Transform vidaT; // Posición donde se colocará el HUD de vida
+
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
-       
+        if (photonView.IsMine) // Solo instanciar la barra de vida para el jugador local
+        {
+            GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
+            vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
+        }
     }
 
     void Start()
     {
-     
-        Counter = GameObject.FindGameObjectWithTag("counter");
-
-       
-        counter = Counter.GetComponent<Counter>();
-
-       
-        normalColor = renderer.color;
-
-        total = health;
-    }
-
-    void Update()
-    {
         healthI = GameObject.FindGameObjectWithTag("Vida2");
         healthT = GameObject.FindGameObjectWithTag("txtV2");
+        Counter = GameObject.FindGameObjectWithTag("counter");
 
         healthBar = healthI.GetComponent<Image>();
         txt2 = healthT.GetComponent<Text>();
+        counter = Counter.GetComponent<Counter>();
 
         txt2.text = health.ToString();
+        normalColor = renderer.color;
 
+        total = health;
     }
 
     [PunRPC]
@@ -112,7 +108,7 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
             bloodParticles2.Play();
         }
     }
-    [PunRPC]
+
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
         if (stream.IsWriting) // Envía los datos del jugador local
