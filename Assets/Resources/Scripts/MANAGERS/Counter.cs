@@ -42,7 +42,7 @@ public class Counter : MonoBehaviourPunCallbacks
 
     public void WIN1()
     {
-        OnBorrar();
+       // OnBorrar();
 
 
         // Incrementar el valor y almacenarlo
@@ -66,7 +66,7 @@ public class Counter : MonoBehaviourPunCallbacks
 
     public void WIN2()
     {
-      OnBorrar();
+      //OnBorrar();
 
         // Incrementar el valor y almacenarlo
         score2++;
