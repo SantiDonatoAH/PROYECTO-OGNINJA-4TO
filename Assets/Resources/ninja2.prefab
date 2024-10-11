@@ -5105,7 +5105,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2950675939776314561}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: efa090b5759229642b981b4095e03c7c, type: 3}
   m_Name: 
@@ -5122,8 +5122,6 @@ MonoBehaviour:
   anim: {fileID: 2950675939776314569}
   total: 0
   bloodParticles2: {fileID: 1458996423935238118}
-  vida: {fileID: 5741697232292175458, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
-  vidaT: {fileID: 5741697232292175459, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
 --- !u!114 &2950675939776314570
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -49,9 +49,14 @@ public class abilitySelector : MonoBehaviour
     private float pistolaC = .175f;
     private float pistolaN = .3f;
 
+    public GameObject combat;
+
     // Start is called before the first frame update
     void Start()
     {
+        combat = GameObject.FindGameObjectWithTag("combat");
+        combatmanager = combat.GetComponent<CombatManager>();
+
         im1 = GameObject.FindGameObjectWithTag("hab1");
         im2 = GameObject.FindGameObjectWithTag("hab2");
 
@@ -67,8 +72,8 @@ public class abilitySelector : MonoBehaviour
         ninjacontroller2 = ninja2.GetComponent<NinjaController2>();
         playerblink2 = ninja2.GetComponent<playerBlink2>();
 
-        //Ninja1();
-       // Ninja2();
+        Ninja1();
+        Ninja2();
 
        
         // h1 = habilidades.habilidadesDropdown1.text;
