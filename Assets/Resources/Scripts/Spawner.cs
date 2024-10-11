@@ -17,12 +17,14 @@ public class Spawner : MonoBehaviourPunCallbacks
     public CombatManager combat;
     public abilitySelector ability;
     public deathBarrier death;
-    public WeaponSpawner weapon;
+    public GameObject weapon;
     public GameObject reload;
 
     public GameObject panelInicio;
 
     private PhotonView photonView;
+
+    public bool spawn = true;
 
 
     public float sharedLife = 10f; // Vida compartida entre ambos jugadores
@@ -57,13 +59,14 @@ public class Spawner : MonoBehaviourPunCallbacks
     {
         kita = GameObject.FindWithTag("player2");
         kita2 = GameObject.FindWithTag("player1");
-        if (kita != null && kita2 !=null)
+        if (kita != null && kita2 !=null && spawn == true)
         {
-            weapon.enabled = true;
+            PhotonNetwork.Instantiate(weapon.name, ninja2.position, ninja2.rotation);
             death.enabled = true;
             ability.enabled = true;
             combat.enabled = true;
             PhotonNetwork.Instantiate(reload.name, ninja2.position, ninja2.rotation);
+            spawn = false;
         }
     }
 
