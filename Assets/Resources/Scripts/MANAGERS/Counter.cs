@@ -90,8 +90,8 @@ public class Counter : MonoBehaviourPunCallbacks
     {
         foreach (GameObject obj in armas)
         {
-            PhotonNetwork.Destroy(obj);
             Destroy(obj);
+            PhotonNetwork.Destroy(obj);
         }
         foreach (GameObject obj in ninja1)
         {

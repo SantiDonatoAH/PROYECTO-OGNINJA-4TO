@@ -67,8 +67,8 @@ public class abilitySelector : MonoBehaviour
         ninjacontroller2 = ninja2.GetComponent<NinjaController2>();
         playerblink2 = ninja2.GetComponent<playerBlink2>();
 
-        Ninja1();
-        Ninja2();
+        //Ninja1();
+       // Ninja2();
 
        
         // h1 = habilidades.habilidadesDropdown1.text;

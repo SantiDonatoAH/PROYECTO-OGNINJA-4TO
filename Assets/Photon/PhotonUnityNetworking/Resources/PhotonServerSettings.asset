@@ -53,6 +53,7 @@ MonoBehaviour:
   - OnCollisionEnter2D
   - Mover
   - Update
+  - SpawnWeapon
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1
