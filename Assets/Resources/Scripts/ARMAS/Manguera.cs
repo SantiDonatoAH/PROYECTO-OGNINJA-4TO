@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
+using Photon.Pun;
 
-public class Manguera : MonoBehaviour
+public class Manguera : MonoBehaviourPunCallbacks
 {
 
     public Rigidbody2D rb;

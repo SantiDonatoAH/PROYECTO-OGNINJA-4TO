@@ -22,7 +22,7 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
     {
       
     }
-    [PunRPC]
+
     void SpawnWeapon()
     {
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
