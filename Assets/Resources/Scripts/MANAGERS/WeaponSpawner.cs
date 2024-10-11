@@ -18,8 +18,21 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
         
     }
 
-   
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+           
+        }
+        else
+        {
+            Destroy(gameObject);  // Destruir esta instancia si ya existe otra
+            return;  // Salir del Awake para evitar ejecutar el código en la instancia destruida
+        }
+    }
 
+    [PunRPC]
     void SpawnWeapon()
     {
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
