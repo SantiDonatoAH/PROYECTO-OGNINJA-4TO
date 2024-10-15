@@ -114,7 +114,7 @@ MonoBehaviour:
   multiplicador2: 0
   pewSound: {fileID: 8300000, guid: a64c3ba8b5cfae141ae9d06288076ffa, type: 3}
   cooldownTime: 0.3
-  cooldownTime2: 0.3
+  cooldownTime2: 0.175
   pausemanager: {fileID: 0}
 --- !u!114 &114638597010732228
 MonoBehaviour:
@@ -214,7 +214,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_PositionModel:
-    SynchronizeEnabled: 0
+    SynchronizeEnabled: 1
     TeleportEnabled: 1
     TeleportIfDistanceGreaterThan: 3
     InterpolateOption: 2
