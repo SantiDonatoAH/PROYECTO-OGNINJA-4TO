@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -85,6 +86,6 @@ public class BalaBombucha : MonoBehaviour
         }
 
         // Destruye la bala después de la explosión
-        Destroy(gameObject);
+        PhotonNetwork.Destroy(gameObject);
     }
 }

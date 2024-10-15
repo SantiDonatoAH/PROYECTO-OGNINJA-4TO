@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
-public class Bala : MonoBehaviour
+public class Bala : MonoBehaviourPunCallbacks
 {
     private playerBlink2 ninja2Blink;
     private PlayerBlink ninjaBlink;
@@ -38,7 +39,7 @@ public class Bala : MonoBehaviour
 
         if (collision.gameObject.CompareTag("player2"))
         {
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
 
             ninja2Blink.Blink();
             ninja2Blink.Blink();
@@ -51,7 +52,7 @@ public class Bala : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("player1"))
         {
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
 
             ninjaBlink.Blink();
             ninjaBlink.Blink();
@@ -66,12 +67,13 @@ public class Bala : MonoBehaviour
         {
 
         }
-        else {
+        else
+        {
             Debug.Log("jsd");
-            Destroy(gameObject); }
-    }
+            PhotonNetwork.Destroy(gameObject);
+        }        }
 
-    IEnumerator ResetBlink(Animator animator)
+        IEnumerator ResetBlink(Animator animator)
     {
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("IsBlinking", false);

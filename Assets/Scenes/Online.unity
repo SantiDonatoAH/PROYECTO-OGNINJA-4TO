@@ -3906,6 +3906,8 @@ MonoBehaviour:
   weapon: {fileID: 4490161352725759308, guid: bed54ddcd4b4c0d4e88e7d5a02cd619b, type: 3}
   ability: {fileID: 8791931676933238518, guid: b2436766bf97e6f45bd4350bc2e4c6e5, type: 3}
   reload: {fileID: 7411334746377018311, guid: 360d6f5990a3ea640a2af9957892879c, type: 3}
+  pb: {fileID: 0}
+  pb2: {fileID: 0}
   vida: {fileID: 5741697232292175458, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
   vidaT: {fileID: 5741697232292175459, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
   panelInicio: {fileID: 1691482497}

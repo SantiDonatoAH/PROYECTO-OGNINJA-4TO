@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using Photon.Pun;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -47,7 +48,7 @@ public class agua : MonoBehaviour
 
         if (collision.gameObject.CompareTag("player2"))
         {
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
 
             ninja2Blink.Blink();
             KnockbackManager.Ninja2();
@@ -57,7 +58,7 @@ public class agua : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("player1"))
         {
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
 
             ninjaBlink.Blink();
 
@@ -72,7 +73,7 @@ public class agua : MonoBehaviour
         }
         else
         {
-            Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 

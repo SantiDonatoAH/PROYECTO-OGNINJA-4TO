@@ -100,7 +100,7 @@ public class Manguera : MonoBehaviourPunCallbacks
                 multiplicador = -1; // Cambia la dirección de disparo
             }
 
-            GameObject nuevaBala = Instantiate(agua, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
+            GameObject nuevaBala = PhotonNetwork.Instantiate(agua.name, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
 
             rb = nuevaBala.GetComponent<Rigidbody2D>();
             rb.velocity = firePoint.right * bulletSpeed;
@@ -135,7 +135,7 @@ public class Manguera : MonoBehaviourPunCallbacks
                 multiplicador = -1; // Cambia la dirección de disparo
             }
 
-            GameObject nuevaBala = Instantiate(agua, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
+            GameObject nuevaBala = PhotonNetwork.Instantiate(agua.name, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
 
             rb = nuevaBala.GetComponent<Rigidbody2D>();
             rb.velocity = firePoint.right * bulletSpeed;

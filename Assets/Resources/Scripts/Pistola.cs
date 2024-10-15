@@ -67,7 +67,7 @@ public class Pistola : MonoBehaviourPunCallbacks
             multiplicador = -1; // Cambia la dirección de disparo
         }
 
-        GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
+        GameObject nuevaBala = PhotonNetwork.Instantiate(bala.name, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
 
          rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed;
@@ -90,7 +90,7 @@ public class Pistola : MonoBehaviourPunCallbacks
             multiplicador2 = 1; // Dirección normal hacia la derecha
         }
 
-        GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
+        GameObject nuevaBala = PhotonNetwork.Instantiate(bala.name, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
 
         Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint2.right * bulletSpeed;
