@@ -29,14 +29,17 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject vida; // Prefab del HUD de vida
     public Transform vidaT; // Posición donde se colocará el HUD de vida
 
+    public bool ranzo = false;
+
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
     }
 
-    void Update()
+    [PunRPC]
+     void Update()
     {
-        if (healthI == null)
+        if (healthI == null || ranzo == true)
         {
             Counter = GameObject.FindGameObjectWithTag("counter");
             healthI = GameObject.FindGameObjectWithTag("Vida1");
@@ -50,6 +53,8 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
             normalColor = renderer.color;
 
             total = health;
+            ranzo = false;
+
         }
     }
 

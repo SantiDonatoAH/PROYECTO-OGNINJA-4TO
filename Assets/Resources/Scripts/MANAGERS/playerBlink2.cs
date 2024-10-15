@@ -29,15 +29,18 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
     public GameObject vida; // Prefab del HUD de vida
     public Transform vidaT; // Posición donde se colocará el HUD de vida
 
+    public bool ranzo = false;
+
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
        
     }
 
-    void Update()
+    [PunRPC]
+     void Update()
     {
-        if (healthI == null)
+        if (healthI == null || ranzo == true)
         {
             healthI = GameObject.FindGameObjectWithTag("Vida2");
             healthT = GameObject.FindGameObjectWithTag("txtV2");
@@ -51,6 +54,7 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
             normalColor = renderer.color;
 
             total = health;
+            ranzo = false;
         }
     }
     [PunRPC]
@@ -68,7 +72,7 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
             anim.SetBool("IsBlinking", true);
 
             health -= restar;
-            UpdateHealthBar();
+            photonView.RPC("UpdateHealthBar", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
 
             EnableBlink();
             Invoke("DisableBlink", 0.25f);

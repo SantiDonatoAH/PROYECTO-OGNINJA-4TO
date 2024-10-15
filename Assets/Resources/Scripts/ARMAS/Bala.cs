@@ -46,7 +46,6 @@ public class Bala : MonoBehaviourPunCallbacks
             ninja2Blink.Blink();
             ninja2Blink.Blink();
             KnockbackManager.Ninja2();
-            StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }
 
@@ -59,7 +58,6 @@ public class Bala : MonoBehaviourPunCallbacks
             ninjaBlink.Blink();
             ninjaBlink.Blink();
             KnockbackManager.Ninja1();
-            StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }
 
@@ -73,9 +71,5 @@ public class Bala : MonoBehaviourPunCallbacks
             PhotonNetwork.Destroy(gameObject);
         }        }
 
-        IEnumerator ResetBlink(Animator animator)
-    {
-        yield return new WaitForSeconds(0.1f);
-        animator.SetBool("IsBlinking", false);
-    }
+   
 }

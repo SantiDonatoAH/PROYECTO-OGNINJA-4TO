@@ -52,6 +52,8 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     private float pistolaC = .175f;
     private float pistolaN = .3f;
 
+    public bool ranzo = true;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -76,6 +78,7 @@ public class abilitySelector : MonoBehaviourPunCallbacks
         Ninja1();
         Ninja2();
 
+        
        
         // h1 = habilidades.habilidadesDropdown1.text;
     }
@@ -102,6 +105,7 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     {
         image1.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
         playerblink.health = 15;
+            playerblink.ranzo = true;
     }
 
     if (h1 == "daño")
@@ -151,9 +155,11 @@ void Ninja2()
     {
         image2.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
         playerblink2.health = 15;
-    }
+            playerblink2.ranzo = true;
 
-    if (h2 == "daño")
+        }
+
+        if (h2 == "daño")
     {
         image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
         playerblink.restar = .75f;
