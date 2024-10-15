@@ -15,10 +15,13 @@ public class Spawner : MonoBehaviourPunCallbacks
     public GameObject kita2;
 
     public CombatManager combat;
-    public abilitySelector ability;
     public deathBarrier death;
     public GameObject weapon;
+    public GameObject ability;
     public GameObject reload;
+
+    public GameObject vida;
+    public Transform vidaT;
 
     public GameObject panelInicio;
 
@@ -61,12 +64,16 @@ public class Spawner : MonoBehaviourPunCallbacks
         kita2 = GameObject.FindWithTag("player1");
         if (kita != null && kita2 !=null && spawn == true)
         {
+            GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
+            vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
             if (PhotonNetwork.IsMasterClient)
             {
+               
+
                 Instantiate(weapon, ninja2.position, ninja2.rotation);
+                Instantiate(ability, ninja2.position, ninja2.rotation);
             }
             death.enabled = true;
-            ability.enabled = true;
             combat.enabled = true;
             PhotonNetwork.Instantiate(reload.name, ninja2.position, ninja2.rotation);
             spawn = false;

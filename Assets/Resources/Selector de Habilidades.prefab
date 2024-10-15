@@ -1,0 +1,94 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8791931676933238518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8791931676933238516}
+  - component: {fileID: 8791931676933238519}
+  - component: {fileID: 8791931676933238517}
+  m_Layer: 0
+  m_Name: Selector de Habilidades
+  m_TagString: hab
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8791931676933238516
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791931676933238518}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.11622607, y: -3.3863406, z: -0.045541342}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8791931676933238519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791931676933238518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd198072e43c824fa1d7901f293a02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abilities:
+  - cooldown
+  - "da\xF1o"
+  - vida
+  - salto
+  - velocidad
+  ninja1: {fileID: 0}
+  ninja2: {fileID: 0}
+  ninjacontroller: {fileID: 0}
+  playerblink: {fileID: 0}
+  bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
+  flotaflota: {fileID: 1500745841454471355, guid: e26d39f62ec44704b8e1c118dd4bfa15,
+    type: 3}
+  manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
+  combatmanager: {fileID: 0}
+  pistola: {fileID: 114592013395552490, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
+  playerblink2: {fileID: 0}
+  ninjacontroller2: {fileID: 0}
+  habilidades: {fileID: 0}
+  h1: 
+  h2: 
+  im1: {fileID: 0}
+  im2: {fileID: 0}
+  image1: {fileID: 0}
+  image2: {fileID: 0}
+--- !u!114 &8791931676933238517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8791931676933238518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 1
+  observableSearch: 2
+  ObservedComponents: []
+  sceneViewId: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0

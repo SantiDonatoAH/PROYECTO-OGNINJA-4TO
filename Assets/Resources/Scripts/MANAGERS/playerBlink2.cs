@@ -34,27 +34,28 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
         renderer = GetComponent<SpriteRenderer>();
         if (photonView.IsMine) // Solo instanciar la barra de vida para el jugador local
         {
-            GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
-            vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
+            
         }
     }
 
-    void Start()
+    void Update()
     {
-        healthI = GameObject.FindGameObjectWithTag("Vida2");
-        healthT = GameObject.FindGameObjectWithTag("txtV2");
-        Counter = GameObject.FindGameObjectWithTag("counter");
+        if (healthI == null)
+        {
+            healthI = GameObject.FindGameObjectWithTag("Vida2");
+            healthT = GameObject.FindGameObjectWithTag("txtV2");
+            Counter = GameObject.FindGameObjectWithTag("counter");
 
-        healthBar = healthI.GetComponent<Image>();
-        txt2 = healthT.GetComponent<Text>();
-        counter = Counter.GetComponent<Counter>();
+            healthBar = healthI.GetComponent<Image>();
+            txt2 = healthT.GetComponent<Text>();
+            counter = Counter.GetComponent<Counter>();
 
-        txt2.text = health.ToString();
-        normalColor = renderer.color;
+            txt2.text = health.ToString();
+            normalColor = renderer.color;
 
-        total = health;
+            total = health;
+        }
     }
-
     [PunRPC]
     public void Blink()
     {

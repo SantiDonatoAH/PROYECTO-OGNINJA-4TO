@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using JetBrains.Annotations;
+using Photon.Pun;
 
-public class abilitySelector : MonoBehaviour
+public class abilitySelector : MonoBehaviourPunCallbacks
 {
     public string[] abilities;
 
@@ -34,6 +35,8 @@ public class abilitySelector : MonoBehaviour
     public Image image1;
     public Image image2;
 
+    public GameObject combat;
+
     private float bombuchaC = .5f;
     private float bombuchaN = 1f;
 
@@ -61,14 +64,17 @@ public class abilitySelector : MonoBehaviour
         image1 = im1.GetComponent<Image>();
         image2 = im2.GetComponent<Image>();
 
+        combat = GameObject.FindGameObjectWithTag("combat");
+        combatmanager = combat.GetComponent<CombatManager>();
+
         ninjacontroller = ninja1.GetComponent<NinjaController>();
         playerblink = ninja1.GetComponent<PlayerBlink>();
 
         ninjacontroller2 = ninja2.GetComponent<NinjaController2>();
         playerblink2 = ninja2.GetComponent<playerBlink2>();
 
-        //Ninja1();
-       // Ninja2();
+        Ninja1();
+        Ninja2();
 
        
         // h1 = habilidades.habilidadesDropdown1.text;
@@ -79,6 +85,7 @@ public class abilitySelector : MonoBehaviour
     {
         
     }
+    [PunRPC]
    void Ninja1()
 {
      h1 = abilities[Random.Range(0, abilities.Length)];
@@ -128,6 +135,7 @@ public class abilitySelector : MonoBehaviour
         }
 }
 
+    [PunRPC]
 void Ninja2()
 {
     h2 = abilities[Random.Range(0, abilities.Length)];

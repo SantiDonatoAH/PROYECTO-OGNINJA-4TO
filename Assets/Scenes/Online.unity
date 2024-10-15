@@ -3902,11 +3902,14 @@ MonoBehaviour:
   kita: {fileID: 0}
   kita2: {fileID: 0}
   combat: {fileID: 556487312}
-  ability: {fileID: 846295321}
   death: {fileID: 158832691}
   weapon: {fileID: 4490161352725759308, guid: bed54ddcd4b4c0d4e88e7d5a02cd619b, type: 3}
+  ability: {fileID: 8791931676933238518, guid: b2436766bf97e6f45bd4350bc2e4c6e5, type: 3}
   reload: {fileID: 7411334746377018311, guid: 360d6f5990a3ea640a2af9957892879c, type: 3}
+  vida: {fileID: 5741697232292175458, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
+  vidaT: {fileID: 5741697232292175459, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
   panelInicio: {fileID: 1691482497}
+  spawn: 1
   sharedLife: 10
 --- !u!4 &450971891
 Transform:
@@ -3921,7 +3924,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 11
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &450971892
 MonoBehaviour:
@@ -5117,7 +5120,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &556487314
 MonoBehaviour:
@@ -6791,75 +6794,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1664707876}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &846295320
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 846295322}
-  - component: {fileID: 846295321}
-  m_Layer: 0
-  m_Name: Selector de Habilidades
-  m_TagString: hab
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &846295321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846295320}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fbd198072e43c824fa1d7901f293a02f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  abilities:
-  - cooldown
-  - "da\xF1o"
-  - vida
-  - salto
-  - velocidad
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
-  ninjacontroller: {fileID: 0}
-  playerblink: {fileID: 0}
-  bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
-  flotaflota: {fileID: 1500745841454471355, guid: e26d39f62ec44704b8e1c118dd4bfa15,
-    type: 3}
-  manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
-  combatmanager: {fileID: 556487312}
-  pistola: {fileID: 114592013395552490, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
-  playerblink2: {fileID: 0}
-  ninjacontroller2: {fileID: 0}
-  habilidades: {fileID: 0}
-  h1: 
-  h2: 
-  im1: {fileID: 0}
-  im2: {fileID: 0}
-  image1: {fileID: 0}
-  image2: {fileID: 0}
---- !u!4 &846295322
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 846295320}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.11622607, y: -3.3863406, z: -0.045541342}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 9
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &862796041
 PrefabInstance:
   m_ObjectHideFlags: 0
