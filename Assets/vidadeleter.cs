@@ -16,6 +16,7 @@ public class vidadeleter : MonoBehaviourPunCallbacks
         {
             // Si no es hijo, destruir el objeto
             Destroy(gameObject);
+            PhotonNetwork.Destroy(gameObject);
         }
     }
 

@@ -32,10 +32,7 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
     private void Awake()
     {
         renderer = GetComponent<SpriteRenderer>();
-        if (photonView.IsMine) // Solo instanciar la barra de vida para el jugador local
-        {
-            
-        }
+       
     }
 
     void Update()
