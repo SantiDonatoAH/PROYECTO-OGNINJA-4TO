@@ -81,6 +81,8 @@ MonoBehaviour:
   armas:
   - {fileID: 7457272888433717637, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
   - {fileID: 2857495050582825017, guid: e26d39f62ec44704b8e1c118dd4bfa15, type: 3}
+  - {fileID: 4026039771719922884, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
+  - {fileID: 7371005533148593032, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
   spawnPoints:
   - {fileID: 4490161351963867072}
   - {fileID: 4490161353136140119}
@@ -102,7 +104,7 @@ MonoBehaviour:
   Group: 0
   prefixField: -1
   Synchronization: 3
-  OwnershipTransfer: 0
+  OwnershipTransfer: 1
   observableSearch: 2
   ObservedComponents: []
   sceneViewId: 0

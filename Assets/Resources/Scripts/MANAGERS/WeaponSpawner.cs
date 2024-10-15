@@ -13,17 +13,15 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
 
     void Start()
     {
-       
-            SpawnWeapon();
-        
-    }
+        SpawnWeapon(); 
+        SpawnWeapon();
+}
 
     private void Awake()
     {
         if (instance == null)
         {
             instance = this;
-           
         }
         else
         {
@@ -35,33 +33,29 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
     [PunRPC]
     void SpawnWeapon()
     {
+        if (armas.Length == 0) return; // Si no hay armas, salir de la función
+
+        // Convertir el array armas en una lista
+        List<GameObject> listaArmas = new List<GameObject>(armas);
+
+        // Seleccionar un arma y un punto de spawn aleatorio
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject armaSeleccionada = armas[Random.Range(0, armas.Length)];
+        GameObject armaSeleccionada = listaArmas[Random.Range(0, listaArmas.Count)];
         string prefabName = armaSeleccionada.name;
+
+        // Comprobar si ya existe un objeto del mismo tipo
         GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
 
-        if (objetoExistente != null)
-        {
-            GameObject nuevaArma = PhotonNetwork.Instantiate(prefabName, new Vector3(Random.Range(-6f, 6f), spawnPoint.position.y, 0f), spawnPoint.rotation);
-
-            // Llama a un RPC para desactivar el script en todos los clientes
-            photonView.RPC("DisableScriptRPC", RpcTarget.All, nuevaArma.GetPhotonView().ViewID, armaSeleccionada.name);
-        }
-        else
+        // Instanciar el arma si no existe
+        if (objetoExistente == null)
         {
             PhotonNetwork.Instantiate(prefabName, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
-        }
-    }
 
-    [PunRPC]
-    void DisableScriptRPC(int viewID, string scriptName)
-    {
-        GameObject arma = PhotonView.Find(viewID).gameObject;
-        var tipoDelScript = System.Type.GetType(scriptName);
-        var script = arma.GetComponent(tipoDelScript) as MonoBehaviourPunCallbacks;
-        if (script != null)
-        {
-            script.enabled = false;
+            // Eliminar el arma seleccionada de la lista
+            listaArmas.Remove(armaSeleccionada);
+
+            // Convertir la lista de vuelta a un array si es necesario
+            armas = listaArmas.ToArray();
         }
     }
 }

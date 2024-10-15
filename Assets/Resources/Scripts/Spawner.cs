@@ -61,7 +61,10 @@ public class Spawner : MonoBehaviourPunCallbacks
         kita2 = GameObject.FindWithTag("player1");
         if (kita != null && kita2 !=null && spawn == true)
         {
-            PhotonNetwork.Instantiate(weapon.name, ninja2.position, ninja2.rotation);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                Instantiate(weapon, ninja2.position, ninja2.rotation);
+            }
             death.enabled = true;
             ability.enabled = true;
             combat.enabled = true;
