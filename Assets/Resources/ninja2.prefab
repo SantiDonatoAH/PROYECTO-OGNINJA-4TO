@@ -5166,16 +5166,16 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: IsPunching
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsHoldingManguera2
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsHoldingBombucha2
   - Type: 4
     SynchronizeType: 0
     Name: IsWallSliding
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsHoldingFlotaflota2
   - Type: 4
     SynchronizeType: 0
@@ -5184,7 +5184,7 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: IsBlinking
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsHoldingPistola2
   m_SynchronizeLayers:
   - SynchronizeType: 1

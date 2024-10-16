@@ -19722,7 +19722,7 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: Run
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsHoldingManguera
   - Type: 9
     SynchronizeType: 0
@@ -19734,16 +19734,16 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: IsBlinking
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsHoldingFlotaflota
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsHoldingBombucha
   - Type: 4
     SynchronizeType: 0
     Name: IsAttacking
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsHoldingPistola
   m_SynchronizeLayers:
   - SynchronizeType: 2
