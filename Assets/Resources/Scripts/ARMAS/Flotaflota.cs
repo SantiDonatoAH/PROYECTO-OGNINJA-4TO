@@ -25,6 +25,9 @@ public class Flotaflota : MonoBehaviourPunCallbacks
 
     public float cooldownTime = .75f;
     public float cooldownTime2 = .75f;
+
+    PhotonView view;
+    PhotonView view2;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,12 +43,15 @@ public class Flotaflota : MonoBehaviourPunCallbacks
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
+
+        view = ninja1.GetComponent<PhotonView>();
+        view2 = ninja2.GetComponent<PhotonView>();
     }
 
 [PunRPC]
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingFlotaflota") == true && canFire)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingFlotaflota") == true && canFire && view.IsMine)
         {
             anim.SetBool("IsAttacking", true);
             if (IsInRange(ninja1, ninja2))
@@ -60,7 +66,7 @@ public class Flotaflota : MonoBehaviourPunCallbacks
             StartCoroutine(CooldownRoutine());
         }
 
-        if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingFlotaflota2") == true && canFire2)
+        if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingFlotaflota2") == true && canFire2 && view2.IsMine)
         {
             anim2.SetBool("IsAttacking", true);
             if (IsInRange(ninja2, ninja1))

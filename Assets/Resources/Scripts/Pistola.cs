@@ -28,25 +28,30 @@ public class Pistola : MonoBehaviourPunCallbacks
 
     public ScreenController pausemanager;
 
+    PhotonView view;
+    PhotonView view2;
+
     void Start()
     {
         ninja1 = GameObject.FindWithTag("player1");
-
         ninja2 = GameObject.FindWithTag("player2");
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
+
+        view = ninja1.GetComponent<PhotonView>();
+        view2 = ninja2.GetComponent<PhotonView>();
     }
 
     void Update()
     {
 
-        if (anim.GetBool("IsHoldingPistola") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
+        if (anim.GetBool("IsHoldingPistola") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire && view.IsMine)
         {
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingPistola2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
+        if (anim2.GetBool("IsHoldingPistola2") == true && Input.GetKeyDown(KeyCode.L) && canFire2 && view2.IsMine)
         {
             Fire2();
         }

@@ -35,6 +35,8 @@ public class Manguera : MonoBehaviourPunCallbacks
     public float poder = 0f;
     public float poder2 = 0f;
 
+    PhotonView view;
+    PhotonView view2;
     void Start()
     {
         ninja1 = GameObject.FindWithTag("player1");
@@ -43,12 +45,15 @@ public class Manguera : MonoBehaviourPunCallbacks
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
+
+        view = ninja1.GetComponent<PhotonView>();
+        view2 = ninja2.GetComponent<PhotonView>();
     }
 
     void Update()
     {
 
-        if (anim.GetBool("IsHoldingManguera") == true && Input.GetKey(KeyCode.LeftShift) && canFire)
+        if (anim.GetBool("IsHoldingManguera") == true && Input.GetKey(KeyCode.LeftShift) && canFire && view.IsMine)
         {
             poder += sumador;
             if(poder >= 8.1f) 
@@ -56,12 +61,12 @@ public class Manguera : MonoBehaviourPunCallbacks
                 poder = 8.1f;
             }
         }
-        else if (anim.GetBool("IsHoldingManguera") == true && Input.GetKeyUp(KeyCode.LeftShift))
+        else if (anim.GetBool("IsHoldingManguera") == true && Input.GetKeyUp(KeyCode.LeftShift) && view.IsMine)
         {
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKey(KeyCode.L) && canFire2)
+        if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKey(KeyCode.L) && canFire2 && view2.IsMine)
         {
             poder2 += sumador2;
             if (poder2 >= 8.1f)
@@ -70,7 +75,7 @@ public class Manguera : MonoBehaviourPunCallbacks
             }
 
         }
-        else if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKeyUp(KeyCode.L))
+        else if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKeyUp(KeyCode.L) && view2.IsMine)
         {
             Fire2();
         }

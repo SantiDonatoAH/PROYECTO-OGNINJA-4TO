@@ -20,6 +20,9 @@ public class Bombucha : MonoBehaviourPunCallbacks
     public float cooldownTime = 1f;
     public float cooldownTime2 = 1f;
 
+    PhotonView view;
+    PhotonView view2;
+
     void Start()
     {
         GameObject ninja1 = GameObject.FindWithTag("player1");
@@ -27,18 +30,20 @@ public class Bombucha : MonoBehaviourPunCallbacks
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
+        view = ninja1.GetComponent<PhotonView>();
+        view2 = ninja2.GetComponent<PhotonView>();
     }
 
     void Update()
     {
         
 
-        if (anim.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
+        if (anim.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire && view.IsMine)
         {
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingBombucha2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
+        if (anim2.GetBool("IsHoldingBombucha2") == true && Input.GetKeyDown(KeyCode.L) && canFire2 && view2.IsMine)
         {
             Fire2();
         }

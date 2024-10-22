@@ -26,6 +26,7 @@ public class Pistola100 : MonoBehaviourPunCallbacks
 
     }
 
+    [PunRPC]
     public void SyncWeaponPickup()
     {
         transform.position = new Vector2(100, 0);
