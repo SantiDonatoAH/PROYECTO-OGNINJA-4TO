@@ -21,7 +21,7 @@ public class Pistola100 : MonoBehaviourPunCallbacks
     [PunRPC]
     public void Mover()
     {
-        view.RPC("SyncWeaponPickup", RpcTarget.AllBuffered);
+       SyncWeaponPickup();
 
 
     }

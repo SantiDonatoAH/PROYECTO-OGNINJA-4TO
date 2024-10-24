@@ -249,8 +249,7 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
             anim.SetBool("IsHolding" + newWeaponName + "2", true);
 
             var script = collision.gameObject.GetComponent(newWeaponName + "100") as MonoBehaviourPunCallbacks;
-
-            script.enabled = true;
+            script.photonView.RPC("Mover", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
         }
     }
 

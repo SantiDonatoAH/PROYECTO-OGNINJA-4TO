@@ -32,9 +32,6 @@ public class Spawner : MonoBehaviourPunCallbacks
 
     public bool spawn = true;
 
-
-    public float sharedLife = 10f; // Vida compartida entre ambos jugadores
-
     void Start()
     {
         photonView = GetComponent<PhotonView>();
