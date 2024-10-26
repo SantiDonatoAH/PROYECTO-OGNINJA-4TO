@@ -78,6 +78,7 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
 
             health -= restar;
             UpdateHealthBar();
+            photonView.RPC("UpdateHealthBar", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
 
             EnableBlink();
             Invoke("DisableBlink", 0.25f);
@@ -125,7 +126,7 @@ public class PlayerBlink : MonoBehaviourPunCallbacks, IPunObservable
         else // Recibe los datos del jugador remoto
         {
             health = (float)stream.ReceiveNext();
-            photonView.RPC("UpdateHealthBar", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
+            photonView.RPC("UpdateHealthBar", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
         }
     }
 
