@@ -20,7 +20,7 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     public Manguera manguera;
     public CombatManager combatmanager;
     public Pistola pistola;
-    
+
     public playerBlink2 playerblink2;
     public NinjaController2 ninjacontroller2;
 
@@ -37,20 +37,13 @@ public class abilitySelector : MonoBehaviourPunCallbacks
 
     public GameObject combat;
 
-    private float bombuchaC = .5f;
-    private float bombuchaN = 1f;
+    private float BombuchaC = .5f;
 
-    private float flotaflotaC = .375f;
-    private float flotaflotaN = .75f;
+    private float FlotaflotaC = .375f;
 
-    private float mangueraC = 0.05f;
-    private float mangueraN = 0.03f;
+    private float MangueraC = 0.05f;
 
-    private float combatmanagerC = .25f;
-    private float combatmanagerN = .5f;
-
-    private float pistolaC = .175f;
-    private float pistolaN = .3f;
+    private float PistolaC = .175f;
 
     public bool ranzo = true;
 
@@ -78,116 +71,148 @@ public class abilitySelector : MonoBehaviourPunCallbacks
         Ninja1();
         Ninja2();
 
-        
-       
+
+
         // h1 = habilidades.habilidadesDropdown1.text;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
     [PunRPC]
-   void Ninja1()
-{
-     h1 = abilities[Random.Range(0, abilities.Length)];
+    void Ninja1()
+    {
+        h1 = abilities[Random.Range(0, abilities.Length)];
 
         Debug.Log(h1);
 
-    if (h1 == "salto")
-    {
-        image1.sprite = Resources.Load<Sprite>("Salto");
-        ninjacontroller.jumpForce = 10;
-    }
-
-    if (h1 == "vida")
-    {
-        image1.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
-        playerblink.health = 15;
-            playerblink.ranzo = true;
-    }
-
-    if (h1 == "daño")
-    {
-        image1.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
-            playerblink2.photonView.RPC("Restar", RpcTarget.All, 0.75f); // Llamada RPC para sincronizar el daño entre todas las sesiones
-    }
-
-    if (h1 == "velocidad")
-    {
-        image1.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
-        ninjacontroller.moveSpeed = 6.5f;
-    }
-    
-    if (h1 == "cooldown")
-    {
-        image1.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
-        bombucha.cooldownTime = bombuchaC;
-        flotaflota.cooldownTime = flotaflotaC;
-        combatmanager.cooldownTime = combatmanagerC;
-        manguera.sumador = mangueraC;
-        pistola.cooldownTime = pistolaC;
-        }
-    else if (h1 != "cooldown")
+        if (h1 == "salto")
         {
-            bombucha.cooldownTime = bombuchaN;
-            flotaflota.cooldownTime = flotaflotaN;
-            combatmanager.cooldownTime = combatmanagerN;
-            manguera.sumador = mangueraN;
-            pistola.cooldownTime = pistolaN;
+            image1.sprite = Resources.Load<Sprite>("Salto");
+            ninjacontroller.jumpForce = 10;
         }
-}
+
+        if (h1 == "vida")
+        {
+            image1.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
+            playerblink.health = 15;
+            playerblink.ranzo = true;
+        }
+
+        if (h1 == "daño")
+        {
+            image1.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
+            playerblink2.photonView.RPC("Restar", RpcTarget.All, 0.75f); // Llamada RPC para sincronizar el daño entre todas las sesiones
+        }
+
+        if (h1 == "velocidad")
+        {
+            image1.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
+            ninjacontroller.moveSpeed = 6.5f;
+        }
+
+        if (h1 == "cooldown")
+        {
+            image1.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
+
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Weapon"))
+            {
+                PhotonView photonView = obj.GetComponent<PhotonView>();
+                string weaponName = obj.name.Replace("(Clone)", "").Trim();
+                float weaponValue = 0f;
+
+                // Comparar el nombre y asignar el valor correspondiente
+                switch (weaponName)
+                {
+                    case "Bombucha":
+                        weaponValue = BombuchaC;
+                        break;
+                    case "Flotaflota":
+                        weaponValue = FlotaflotaC;
+                        break;
+                    case "Manguera":
+                        weaponValue = MangueraC;
+                        break;
+                    case "Pistola":
+                        weaponValue = PistolaC;
+                        break;
+                   
+                }
+
+               
+                    photonView.RPC("cd1", RpcTarget.AllBuffered, weaponValue);
+                
+            }
+
+        }
+    }
 
     [PunRPC]
-void Ninja2()
-{
-    h2 = abilities[Random.Range(0, abilities.Length)];
-    Debug.Log(h2);
-
-    if (h2 == "salto")
+    void Ninja2()
     {
-        image2.sprite = Resources.Load<Sprite>("Salto");
-        ninjacontroller2.photonView.RPC("salto", RpcTarget.AllBuffered, 10); // Llamada
+        h2 = abilities[Random.Range(0, abilities.Length)];
+        Debug.Log(h2);
+
+        if (h2 == "salto")
+        {
+            image2.sprite = Resources.Load<Sprite>("Salto");
+            ninjacontroller2.photonView.RPC("salto", RpcTarget.AllBuffered, 10); // Llamada
         }
 
-    if (h2 == "vida")
-    {
-        image2.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
-           playerblink2. photonView.RPC("Vida", RpcTarget.AllBuffered, 15f); // Llamada RPC para sincronizar el daño entre todas las sesiones
+        if (h2 == "vida")
+        {
+            image2.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
+            playerblink2.photonView.RPC("Vida", RpcTarget.AllBuffered, 15f); // Llamada RPC para sincronizar el daño entre todas las sesiones
 
 
         }
 
         if (h2 == "daño")
-    {
-        image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
-        playerblink.restar = .75f;
-    }
-
-    if (h2 == "velocidad")
-    {
-        image2.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
-            ninjacontroller2.photonView.RPC("vel", RpcTarget.AllBuffered, 6.5f); // Llamada
-    }
-
-    if (h2 == "cooldown")
-    {
-        image2.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
-        bombucha.cooldownTime2 = bombuchaC;
-        flotaflota.cooldownTime2 = flotaflotaC;
-        combatmanager.cooldownTime2 = combatmanagerC;
-        manguera.sumador2 = mangueraC;
-        pistola.cooldownTime2 = pistolaC;
-        }
-        else if (h2 != "cooldown")
         {
-            bombucha.cooldownTime2 = bombuchaN;
-            flotaflota.cooldownTime2 = flotaflotaN;
-            combatmanager.cooldownTime2 = combatmanagerN;
-            manguera.sumador2 = mangueraN;
-            pistola.cooldownTime2 = pistolaN;
+            image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
+            playerblink.restar = .75f;
         }
-    }
 
+        if (h2 == "velocidad")
+        {
+            image2.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
+            ninjacontroller2.photonView.RPC("vel", RpcTarget.AllBuffered, 6.5f); // Llamada
+        }
+
+        if (h2 == "cooldown")
+        {
+            foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Weapon"))
+            {
+                PhotonView photonView = obj.GetComponent<PhotonView>();
+                string weaponName = obj.name.Replace("(Clone)", "").Trim();
+                float weaponValue = 0f;
+
+                // Comparar el nombre y asignar el valor correspondiente
+                switch (weaponName)
+                {
+                    case "Bombucha":
+                        weaponValue = BombuchaC;
+                        break;
+                    case "Flotaflota":
+                        weaponValue = FlotaflotaC;
+                        break;
+                    case "Manguera":
+                        weaponValue = MangueraC;
+                        break;
+                    case "Pistola":
+                        weaponValue = PistolaC;
+                        break;
+
+                }
+
+
+                photonView.RPC("cd2", RpcTarget.AllBuffered, weaponValue);
+
+            }
+
+        }
+
+    }
 }

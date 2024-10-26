@@ -60,6 +60,8 @@ MonoBehaviour:
   - salto
   - vel
   - Vida
+  - cd1
+  - cd2
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

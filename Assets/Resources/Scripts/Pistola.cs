@@ -31,6 +31,17 @@ public class Pistola : MonoBehaviourPunCallbacks
     PhotonView view;
     PhotonView view2;
 
+    [PunRPC]
+    public void cd1(float cd)
+    {
+        cooldownTime = cd;
+    }
+    [PunRPC]
+    public void cd2(float cd)
+    {
+        cooldownTime2 = cd;
+    }
+
     void Start()
     {
         ninja1 = GameObject.FindWithTag("player1");

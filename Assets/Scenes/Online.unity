@@ -3904,7 +3904,7 @@ MonoBehaviour:
   combat: {fileID: 556487312}
   death: {fileID: 158832691}
   weapon: {fileID: 4490161352725759308, guid: bed54ddcd4b4c0d4e88e7d5a02cd619b, type: 3}
-  ability: {fileID: 8791931676933238518, guid: b2436766bf97e6f45bd4350bc2e4c6e5, type: 3}
+  ability: {fileID: 1472741752}
   reload: {fileID: 7411334746377018311, guid: 360d6f5990a3ea640a2af9957892879c, type: 3}
   pb: {fileID: 0}
   pb2: {fileID: 0}
@@ -3912,7 +3912,6 @@ MonoBehaviour:
   vidaT: {fileID: 5741697232292175459, guid: 6443caf5b8bc01540a35a5c92aa5b47f, type: 3}
   panelInicio: {fileID: 1691482497}
   spawn: 1
-  sharedLife: 10
 --- !u!4 &450971891
 Transform:
   m_ObjectHideFlags: 0
@@ -10992,6 +10991,18 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 884403175}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1472741752 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8791931676933238519, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+    type: 3}
+  m_PrefabInstance: {fileID: 1948427901}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fbd198072e43c824fa1d7901f293a02f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1474067865 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4012788944105399205, guid: 0d63dbbafd55d94449044e793831f84e,
@@ -14333,6 +14344,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1948427901
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.11622607
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.3863406
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.045541342
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238516, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238517, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: sceneViewId
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238518, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_Name
+      value: Selector de Habilidades
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238519, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8791931676933238519, guid: b2436766bf97e6f45bd4350bc2e4c6e5,
+        type: 3}
+      propertyPath: combatmanager
+      value: 
+      objectReference: {fileID: 556487312}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b2436766bf97e6f45bd4350bc2e4c6e5, type: 3}
 --- !u!1001 &1951942510
 PrefabInstance:
   m_ObjectHideFlags: 0

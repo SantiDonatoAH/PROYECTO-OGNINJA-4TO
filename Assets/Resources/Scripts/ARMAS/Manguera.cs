@@ -50,6 +50,17 @@ public class Manguera : MonoBehaviourPunCallbacks
         view2 = ninja2.GetComponent<PhotonView>();
     }
 
+    [PunRPC]
+    public void cd1(float cd)
+    {
+        sumador = cd;
+    }
+    [PunRPC]
+    public void cd2(float cd)
+    {
+        sumador2 = cd;
+    }
+
     void Update()
     {
 

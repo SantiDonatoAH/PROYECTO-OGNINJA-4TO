@@ -48,7 +48,18 @@ public class Flotaflota : MonoBehaviourPunCallbacks
         view2 = ninja2.GetComponent<PhotonView>();
     }
 
-[PunRPC]
+    [PunRPC]
+    public void cd1(float cd)
+    {
+        cooldownTime = cd;
+    }
+    [PunRPC]
+    public void cd2(float cd)
+    {
+        cooldownTime2 = cd;
+    }
+
+    [PunRPC]
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingFlotaflota") == true && canFire && view.IsMine)

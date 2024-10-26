@@ -17,7 +17,7 @@ public class Spawner : MonoBehaviourPunCallbacks
     public CombatManager combat;
     public deathBarrier death;
     public GameObject weapon;
-    public GameObject ability;
+    public abilitySelector ability;
     public GameObject reload;
 
     public PlayerBlink pb;
@@ -77,7 +77,7 @@ public class Spawner : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsMasterClient)
             {
                 Instantiate(weapon, ninja2.position, ninja2.rotation);
-                Instantiate(ability, ninja2.position, ninja2.rotation);
+                ability. enabled = true;
             }
             
             death.enabled = true;
