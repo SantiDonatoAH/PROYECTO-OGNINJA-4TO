@@ -56,6 +56,10 @@ MonoBehaviour:
   - SpawnWeapon
   - DisableScriptRPC
   - Start
+  - Restar
+  - salto
+  - vel
+  - Vida
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

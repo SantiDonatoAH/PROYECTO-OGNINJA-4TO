@@ -106,6 +106,17 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
 
     }
 
+    [PunRPC]
+    public void salto(int saltof)
+    {
+        jumpForce = saltof;
+    }
+    [PunRPC]
+    public void vel(float velf)
+    {
+        moveSpeed = velf;
+    }
+
     void Move()
     {
         move = Input.GetAxisRaw("Horizontal2");

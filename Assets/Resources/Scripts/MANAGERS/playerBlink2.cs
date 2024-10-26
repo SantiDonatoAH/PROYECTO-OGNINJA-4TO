@@ -63,6 +63,23 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
         photonView.RPC("ApplyDamage", RpcTarget.AllBuffered); // Llamada RPC para sincronizar el daño entre todas las sesiones
 
     }
+
+    [PunRPC]
+    public void Restar(float menos)
+    {
+        restar = menos;
+
+    }
+
+    [PunRPC]
+    public void Vida(float vida)
+    {
+        health = vida;
+        total = vida;
+        healthBar.fillAmount = health / total;
+
+    }
+
     [PunRPC]
     public void ApplyDamage()
     {
@@ -72,7 +89,7 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
             anim.SetBool("IsBlinking", true);
 
             health -= restar;
-            photonView.RPC("UpdateHealthBar", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
+            photonView.RPC("UpdateHealthBar", RpcTarget.All, health); // Llamada RPC para sincronizar el daño entre todas las sesiones
 
             EnableBlink();
             Invoke("DisableBlink", 0.25f);
@@ -85,7 +102,7 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
     }
 
     [PunRPC]
-    public void UpdateHealthBar()
+    public void UpdateHealthBar(float health)
     {
         txt2.text = health.ToString();
         healthAmount = health;
@@ -120,7 +137,7 @@ public class playerBlink2 : MonoBehaviourPunCallbacks, IPunObservable
         else // Recibe los datos del jugador remoto
         {
             health = (float)stream.ReceiveNext();
-            photonView.RPC("UpdateHealthBar", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
+            photonView.RPC("UpdateHealthBar", RpcTarget.All, health); // Llamada RPC para sincronizar el daño entre todas las sesiones
         }
     }
 

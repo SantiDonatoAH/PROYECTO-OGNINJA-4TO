@@ -111,7 +111,7 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     if (h1 == "daño")
     {
         image1.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
-        playerblink2.restar = .75f;
+            playerblink2.photonView.RPC("Restar", RpcTarget.All, 0.75f); // Llamada RPC para sincronizar el daño entre todas las sesiones
     }
 
     if (h1 == "velocidad")
@@ -148,14 +148,14 @@ void Ninja2()
     if (h2 == "salto")
     {
         image2.sprite = Resources.Load<Sprite>("Salto");
-        ninjacontroller2.jumpForce = 10;
-    }
+        ninjacontroller2.photonView.RPC("salto", RpcTarget.AllBuffered, 10); // Llamada
+        }
 
     if (h2 == "vida")
     {
         image2.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
-        playerblink2.health = 15;
-            playerblink2.ranzo = true;
+           playerblink2. photonView.RPC("Vida", RpcTarget.AllBuffered, 15f); // Llamada RPC para sincronizar el daño entre todas las sesiones
+
 
         }
 
@@ -168,7 +168,7 @@ void Ninja2()
     if (h2 == "velocidad")
     {
         image2.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
-        ninjacontroller2.moveSpeed = 6.5f;
+            ninjacontroller2.photonView.RPC("vel", RpcTarget.AllBuffered, 6.5f); // Llamada
     }
 
     if (h2 == "cooldown")
