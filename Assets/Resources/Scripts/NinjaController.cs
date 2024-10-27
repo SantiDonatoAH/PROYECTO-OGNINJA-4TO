@@ -146,6 +146,18 @@ public class NinjaController : MonoBehaviourPunCallbacks
         }
     }
 
+
+    [PunRPC]
+    public void salto(int saltof)
+    {
+        jumpForce = saltof;
+    }
+    [PunRPC]
+    public void vel(float velf)
+    {
+        moveSpeed = velf;
+    }
+
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical");

@@ -91,7 +91,7 @@ public class abilitySelector : MonoBehaviourPunCallbacks
         if (h1 == "salto")
         {
             image1.sprite = Resources.Load<Sprite>("Salto");
-            ninjacontroller.jumpForce = 10;
+            ninjacontroller.photonView.RPC("salto", RpcTarget.AllBuffered, 10); // Llamada
         }
 
         if (h1 == "vida")
@@ -110,7 +110,7 @@ public class abilitySelector : MonoBehaviourPunCallbacks
         if (h1 == "velocidad")
         {
             image1.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
-            ninjacontroller.moveSpeed = 6.5f;
+            ninjacontroller.photonView.RPC("vel", RpcTarget.AllBuffered, 6.5f); // Llamada
         }
 
         if (h1 == "cooldown")
