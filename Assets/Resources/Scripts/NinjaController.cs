@@ -81,14 +81,6 @@ public class NinjaController : MonoBehaviourPunCallbacks
             CheckHoldingWeapon();
             WallSlide();
 
-            if (isTouchingWall && Input.GetKey(KeyCode.A))
-            {
-                jumpForce = saltoDoble;
-            }
-            else
-            {
-                jumpForce = kitaJ;
-            }
 
             if (move != 0 && isGrounded && !isTouchingWall && !isCrouching)
             {
@@ -136,7 +128,6 @@ public class NinjaController : MonoBehaviourPunCallbacks
                 (Input.GetKey(KeyCode.A) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
         {
             moveSpeed = 0;
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 1.5f);
             anim.SetBool("IsWallSliding", true);
         }
         else
@@ -156,6 +147,7 @@ public class NinjaController : MonoBehaviourPunCallbacks
     public void vel(float velf)
     {
         moveSpeed = velf;
+        kita = velf;
     }
 
     void Jump()
