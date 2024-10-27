@@ -32,6 +32,9 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     public GameObject im1;
     public GameObject im2;
 
+    public GameObject Vida;
+    public vidadeleter VidaD;
+
     public Image image1;
     public Image image2;
 
@@ -68,6 +71,9 @@ public class abilitySelector : MonoBehaviourPunCallbacks
         ninjacontroller2 = ninja2.GetComponent<NinjaController2>();
         playerblink2 = ninja2.GetComponent<playerBlink2>();
 
+        Vida = GameObject.FindGameObjectWithTag("Hposta");
+        VidaD = Vida.GetComponent<vidadeleter>();
+
         Ninja1();
         Ninja2();
 
@@ -90,32 +96,32 @@ public class abilitySelector : MonoBehaviourPunCallbacks
 
         if (h1 == "salto")
         {
-            image1.sprite = Resources.Load<Sprite>("Salto");
+           VidaD. photonView.RPC("Vida1", RpcTarget.All, "Salto");
             ninjacontroller.photonView.RPC("salto", RpcTarget.AllBuffered, 10); // Llamada
         }
 
         if (h1 == "vida")
         {
-            image1.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
+            VidaD.photonView.RPC("Vida1", RpcTarget.All, "Vida");
             playerblink.health = 15;
             playerblink.ranzo = true;
         }
 
         if (h1 == "daño")
         {
-            image1.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
+            VidaD.photonView.RPC("Vida1", RpcTarget.All, "Daño");
             playerblink2.photonView.RPC("Restar", RpcTarget.All, 0.75f); // Llamada RPC para sincronizar el daño entre todas las sesiones
         }
 
         if (h1 == "velocidad")
         {
-            image1.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
+            VidaD.photonView.RPC("Vida1", RpcTarget.All, "Velocidad");
             ninjacontroller.photonView.RPC("vel", RpcTarget.AllBuffered, 6.5f); // Llamada
         }
 
         if (h1 == "cooldown")
         {
-            image1.sprite = Resources.Load<Sprite>("Cooldown"); // Carga la imagen correspondiente a "cooldown"
+            VidaD.photonView.RPC("Vida1", RpcTarget.All, "Cooldown");
 
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Weapon"))
             {
@@ -157,13 +163,13 @@ public class abilitySelector : MonoBehaviourPunCallbacks
 
         if (h2 == "salto")
         {
-            image2.sprite = Resources.Load<Sprite>("Salto");
+            VidaD.photonView.RPC("Vida2", RpcTarget.All, "Salto"); // Llamada
             ninjacontroller2.photonView.RPC("salto", RpcTarget.AllBuffered, 10); // Llamada
         }
 
         if (h2 == "vida")
         {
-            image2.sprite = Resources.Load<Sprite>("Vida"); // Carga la imagen correspondiente a "vida"
+            VidaD.photonView.RPC("Vida2", RpcTarget.All, "Vida"); // Llamada
             playerblink2.photonView.RPC("Vida", RpcTarget.AllBuffered, 15f); // Llamada RPC para sincronizar el daño entre todas las sesiones
 
 
@@ -171,18 +177,20 @@ public class abilitySelector : MonoBehaviourPunCallbacks
 
         if (h2 == "daño")
         {
-            image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
+            VidaD.photonView.RPC("Vida2", RpcTarget.All, "Daño"); // Llamada
             playerblink.restar = .75f;
         }
 
         if (h2 == "velocidad")
         {
-            image2.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
+            VidaD.photonView.RPC("Vida2", RpcTarget.All, "Velocidad"); // Llamada
             ninjacontroller2.photonView.RPC("vel", RpcTarget.AllBuffered, 6.5f); // Llamada
         }
 
         if (h2 == "cooldown")
         {
+            VidaD.photonView.RPC("Vida2", RpcTarget.All, "Cooldown"); // Llamada
+
             foreach (GameObject obj in GameObject.FindGameObjectsWithTag("Weapon"))
             {
                 PhotonView photonView = obj.GetComponent<PhotonView>();

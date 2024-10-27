@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: -7534029660897735518}
   m_Layer: 0
   m_Name: Vida
-  m_TagString: Untagged
+  m_TagString: Hposta
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -706,6 +706,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b66fbea1b4e30942ab63310904062b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  im1: {fileID: 0}
+  im2: {fileID: 0}
+  image1: {fileID: 0}
+  image2: {fileID: 0}
 --- !u!1 &5741697232327357938
 GameObject:
   m_ObjectHideFlags: 0
