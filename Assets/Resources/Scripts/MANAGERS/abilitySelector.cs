@@ -29,14 +29,10 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     public string h1;
     public string h2;
 
-    public GameObject im1;
-    public GameObject im2;
-
+   
     public GameObject Vida;
     public vidadeleter VidaD;
 
-    public Image image1;
-    public Image image2;
 
     public GameObject combat;
 
@@ -48,19 +44,15 @@ public class abilitySelector : MonoBehaviourPunCallbacks
 
     private float PistolaC = .175f;
 
-    public bool ranzo = true;
+    public bool upd = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        im1 = GameObject.FindGameObjectWithTag("hab1");
-        im2 = GameObject.FindGameObjectWithTag("hab2");
-
+       
         ninja1 = GameObject.FindGameObjectWithTag("player1");
         ninja2 = GameObject.FindGameObjectWithTag("player2");
 
-        image1 = im1.GetComponent<Image>();
-        image2 = im2.GetComponent<Image>();
 
         combat = GameObject.FindGameObjectWithTag("combat");
         combatmanager = combat.GetComponent<CombatManager>();
@@ -71,11 +63,7 @@ public class abilitySelector : MonoBehaviourPunCallbacks
         ninjacontroller2 = ninja2.GetComponent<NinjaController2>();
         playerblink2 = ninja2.GetComponent<playerBlink2>();
 
-        Vida = GameObject.FindGameObjectWithTag("Hposta");
-        VidaD = Vida.GetComponent<vidadeleter>();
-
-        Ninja1();
-        Ninja2();
+       
 
 
 
@@ -85,6 +73,15 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     // Update is called once per frame
     void Update()
     {
+        Vida = GameObject.FindGameObjectWithTag("Hposta");
+        VidaD = Vida.GetComponent<vidadeleter>();
+
+        if (VidaD != null && upd == true)
+        {
+            Ninja1();
+            Ninja2();
+            upd = false;
+        }
 
     }
     [PunRPC]
