@@ -31,7 +31,7 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void SpawnWeaponD()
+   public void SpawnWeaponD()
     {
         if (armasD.Length == 0) return; // Si no hay armas, salir de la función
 
@@ -60,7 +60,7 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void SpawnWeaponN()
+    public void SpawnWeaponN()
     {
         if (armasN.Length == 0) return; // Si no hay armas, salir de la función
 

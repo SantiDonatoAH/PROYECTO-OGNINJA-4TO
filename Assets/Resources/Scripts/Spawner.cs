@@ -67,7 +67,10 @@ public class Spawner : MonoBehaviourPunCallbacks
         kita = GameObject.FindWithTag("player2");
         kita2 = GameObject.FindWithTag("player1");
 
+        mapaS.enabled = true;
+
        
+
         if (kita != null && kita2 !=null && spawn == true)
         {
             
@@ -87,10 +90,10 @@ public class Spawner : MonoBehaviourPunCallbacks
             {
                 Instantiate(weapon, ninja2.position, ninja2.rotation);
                 ability. enabled = true;
-                mapaS.enabled = true;
             }
             deathB = GameObject.FindGameObjectWithTag("Dead");
             death = deathB.GetComponent<deathBarrier>();
+
             death.enabled = true;
             combat.enabled = true;
             PhotonNetwork.Instantiate(reload.name, ninja2.position, ninja2.rotation);
