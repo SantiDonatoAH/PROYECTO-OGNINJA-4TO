@@ -19,20 +19,15 @@ public class RoundManager : MonoBehaviourPunCallbacks
              mapa = mapas[cuaren];
             GameObject piso = pisos[cuaren];
 
-            if (PhotonNetwork.IsConnected)
-            {
+
                 PhotonNetwork.Instantiate(mapa.name, mapa.transform.position, mapa.transform.rotation);
                 PhotonNetwork.Instantiate(piso.name, piso.transform.position, piso.transform.rotation);
 
                 
 
-            }
+            
 
-            else
-            {
-                Instantiate(mapa, mapa.transform.position, mapa.transform.rotation);
-                Instantiate(piso, piso.transform.position, piso.transform.rotation);
-            }
+           
         
     }
        

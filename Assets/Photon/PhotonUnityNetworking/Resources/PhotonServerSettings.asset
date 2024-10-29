@@ -66,6 +66,8 @@ MonoBehaviour:
   - Vida2
   - SpawnWeaponD
   - SpawnWeaponN
+  - Play
+  - Reseteo
   DisableAutoOpenWizard: 1
   ShowSettings: 0
   DevRegionSetOnce: 1

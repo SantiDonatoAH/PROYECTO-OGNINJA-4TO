@@ -835,6 +835,7 @@ MonoBehaviour:
   panelInicio: {fileID: 1691482497}
   mapa: {fileID: 0}
   mapaS: {fileID: 0}
+  te: {fileID: 0}
   spawn: 1
 --- !u!4 &450971891
 Transform:
@@ -2255,7 +2256,6 @@ MonoBehaviour:
   GAME_UI: {fileID: 931518903}
   pauseButton: {fileID: 432520451}
   ispaused: 1
-  vida: {fileID: 0}
   image1: {fileID: 0}
   image2: {fileID: 0}
 --- !u!4 &1174501607

@@ -32,6 +32,8 @@ public class Spawner : MonoBehaviourPunCallbacks
     public GameObject mapa;
     public RoundManager mapaS;
 
+    public Teleporter te;
+
     private PhotonView photonView;
 
     public bool spawn = true;
@@ -76,6 +78,9 @@ public class Spawner : MonoBehaviourPunCallbacks
             mapa = GameObject.FindGameObjectWithTag("mapa");
             mapaS = mapa.GetComponent<RoundManager>();
             mapaS.enabled = true;
+
+            te = kita2.GetComponent<Teleporter>();
+            te.enabled = false;
 
             pb = kita2.GetComponent<PlayerBlink>();
         pb2 = kita.GetComponent<playerBlink2>();

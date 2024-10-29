@@ -19385,6 +19385,7 @@ GameObject:
   - component: {fileID: -7877559922949339848}
   - component: {fileID: -1447177921477650796}
   - component: {fileID: -4312676840868476159}
+  - component: {fileID: -2204207316257738360}
   m_Layer: 0
   m_Name: ninja1
   m_TagString: player1
@@ -19844,6 +19845,20 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &-2204207316257738360
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5244374281112257547}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 08d95bf80cf41134691e9b0a04bfc6ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Respawn: {fileID: 0}
+  rb: {fileID: 0}
 --- !u!1 &8892114386156294158
 GameObject:
   m_ObjectHideFlags: 0

@@ -11,17 +11,17 @@ public class deathBarrier : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameObject ninja2 = GameObject.FindWithTag("player2");
-        ninja2Blink = ninja2.GetComponent<playerBlink2>();
-
-        GameObject ninja1 = GameObject.FindWithTag("player1");
-        ninjaBlink = ninja1.GetComponent<PlayerBlink>();
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        GameObject ninja2 = GameObject.FindWithTag("player2");
+        ninja2Blink = ninja2.GetComponent<playerBlink2>();
+
+        GameObject ninja1 = GameObject.FindWithTag("player1");
+        ninjaBlink = ninja1.GetComponent<PlayerBlink>();
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

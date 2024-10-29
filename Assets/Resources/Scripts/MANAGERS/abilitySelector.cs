@@ -74,10 +74,11 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     void Update()
     {
         Vida = GameObject.FindGameObjectWithTag("Hposta");
-        VidaD = Vida.GetComponent<vidadeleter>();
 
-        if (VidaD != null && upd == true)
+        if (Vida != null && upd == true)
         {
+            VidaD = Vida.GetComponent<vidadeleter>();
+
             Ninja1();
             Ninja2();
             upd = false;

@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using Photon.Pun;
 
-public class ScreenController : MonoBehaviour
+public class ScreenController : MonoBehaviourPunCallbacks
 {
     public GameObject pausePanel;
     public GameObject settingsPanel;
@@ -12,7 +13,6 @@ public class ScreenController : MonoBehaviour
     public Button pauseButton;
     public bool ispaused = false;
 
-    public GameObject vida;
 
     public GameObject image1;
     public GameObject image2;
@@ -30,13 +30,21 @@ public class ScreenController : MonoBehaviour
             if (pausePanel.activeSelf)
             {
                 ContinuePanel();  // Cierra el panel si está abierto
-                vida.SetActive(true);
+                if (PhotonNetwork.IsConnected)
+                {
+                    photonView.RPC("Play", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
+                }
             }
             else
             {
-                PausePanel();  // Abre el panel si está cerrado
-                vida.SetActive(false);
+                PausePanel();
+                if (PhotonNetwork.IsConnected)
+                {
+                    photonView.RPC("Reseteo", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
+                }
+
             }
+            
         }
     }
 
@@ -46,7 +54,6 @@ public class ScreenController : MonoBehaviour
         Time.timeScale = 0;
         pauseButton.gameObject.SetActive(false);
         ispaused = true;
-        vida.SetActive(false);
         image1.SetActive(false);
         image2.SetActive(false);
 
@@ -59,7 +66,6 @@ public class ScreenController : MonoBehaviour
         pauseButton.gameObject.SetActive(true);
         ispaused = false;
         settingsPanel.SetActive(false);
-        vida.SetActive(true);
         image1.SetActive(true);
         image2.SetActive(true);
     }
@@ -84,5 +90,15 @@ public class ScreenController : MonoBehaviour
         settingsPanel.SetActive(false);
     }
 
-    
+    [PunRPC]
+    public void Reseteo()
+    {
+        Time.timeScale = 0;
+    }
+
+    [PunRPC]
+    public void Play()
+    {
+        Time.timeScale = 1;
+    }
 }
