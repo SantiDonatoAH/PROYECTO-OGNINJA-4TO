@@ -141,6 +141,18 @@ public class abilitySelector : MonoBehaviourPunCallbacks
                     case "Pistola":
                         weaponValue = PistolaC;
                         break;
+                    case "Boomerang":
+                        weaponValue = BombuchaC;
+                        break;
+                    case "Serpiente":
+                        weaponValue = FlotaflotaC;
+                        break;
+                    case "Lanza":
+                        weaponValue = MangueraC;
+                        break;
+                    case "Roca":
+                        weaponValue = PistolaC;
+                        break;
                    
                 }
 
@@ -207,6 +219,18 @@ public class abilitySelector : MonoBehaviourPunCallbacks
                         weaponValue = MangueraC;
                         break;
                     case "Pistola":
+                        weaponValue = PistolaC;
+                        break;
+                    case "Boomerang":
+                        weaponValue = BombuchaC;
+                        break;
+                    case "Serpiente":
+                        weaponValue = FlotaflotaC;
+                        break;
+                    case "Lanza":
+                        weaponValue = MangueraC;
+                        break;
+                    case "Roca":
                         weaponValue = PistolaC;
                         break;
 

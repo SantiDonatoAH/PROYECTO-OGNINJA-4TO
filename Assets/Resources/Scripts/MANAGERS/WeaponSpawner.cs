@@ -33,7 +33,7 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
     [PunRPC]
    public void SpawnWeaponD()
     {
-        if (armasD.Length == 0) return; // Si no hay armas, salir de la función
+        if (armasD.Length == 2) return; // Si no hay armas, salir de la función
 
         // Convertir el array armas en una lista
         List<GameObject> listaArmas = new List<GameObject>(armasD);
@@ -62,7 +62,7 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
     [PunRPC]
     public void SpawnWeaponN()
     {
-        if (armasN.Length == 0) return; // Si no hay armas, salir de la función
+        if (armasN.Length == 2) return; // Si no hay armas, salir de la función
 
         // Convertir el array armas en una lista
         List<GameObject> listaArmas = new List<GameObject>(armasN);
