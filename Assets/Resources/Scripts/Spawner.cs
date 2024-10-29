@@ -67,16 +67,15 @@ public class Spawner : MonoBehaviourPunCallbacks
         kita = GameObject.FindWithTag("player2");
         kita2 = GameObject.FindWithTag("player1");
 
-        mapaS.enabled = true;
+       
 
        
 
         if (kita != null && kita2 !=null && spawn == true)
         {
-            
-
             mapa = GameObject.FindGameObjectWithTag("mapa");
             mapaS = mapa.GetComponent<RoundManager>();
+            mapaS.enabled = true;
 
             pb = kita2.GetComponent<PlayerBlink>();
         pb2 = kita.GetComponent<playerBlink2>();

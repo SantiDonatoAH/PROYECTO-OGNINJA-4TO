@@ -22,6 +22,7 @@ TagManager:
   - hab2
   - Hposta
   - ws
+  - mapa
   layers:
   - Default
   - TransparentFX
