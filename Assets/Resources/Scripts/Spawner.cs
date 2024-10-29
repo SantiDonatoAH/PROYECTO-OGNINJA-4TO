@@ -16,6 +16,7 @@ public class Spawner : MonoBehaviourPunCallbacks
 
     public CombatManager combat;
     public deathBarrier death;
+    public GameObject deathB;
     public GameObject weapon;
     public abilitySelector ability;
     public GameObject reload;
@@ -27,6 +28,9 @@ public class Spawner : MonoBehaviourPunCallbacks
     public Transform vidaT;
 
     public GameObject panelInicio;
+
+    public GameObject mapa;
+    public RoundManager mapaS;
 
     private PhotonView photonView;
 
@@ -66,7 +70,12 @@ public class Spawner : MonoBehaviourPunCallbacks
        
         if (kita != null && kita2 !=null && spawn == true)
         {
-             pb = kita2.GetComponent<PlayerBlink>();
+            
+
+            mapa = GameObject.FindGameObjectWithTag("mapa");
+            mapaS = mapa.GetComponent<RoundManager>();
+
+            pb = kita2.GetComponent<PlayerBlink>();
         pb2 = kita.GetComponent<playerBlink2>();
             GameObject vidaInstanciada = PhotonNetwork.Instantiate(vida.name, vidaT.position, vidaT.rotation);
             vidaInstanciada.transform.SetParent(GameObject.Find("Game UI").transform, false);
@@ -78,8 +87,10 @@ public class Spawner : MonoBehaviourPunCallbacks
             {
                 Instantiate(weapon, ninja2.position, ninja2.rotation);
                 ability. enabled = true;
+                mapaS.enabled = true;
             }
-            
+            deathB = GameObject.FindGameObjectWithTag("Dead");
+            death = deathB.GetComponent<deathBarrier>();
             death.enabled = true;
             combat.enabled = true;
             PhotonNetwork.Instantiate(reload.name, ninja2.position, ninja2.rotation);

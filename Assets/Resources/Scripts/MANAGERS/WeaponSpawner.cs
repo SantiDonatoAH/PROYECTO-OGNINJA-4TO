@@ -5,7 +5,8 @@ using Photon.Pun;
 
 public class WeaponSpawner : MonoBehaviourPunCallbacks
 {
-    public GameObject[] armas;        // Array de armas que se pueden spawnear
+    public GameObject[] armasD;        
+    public GameObject[] armasN;        
     public Transform[] spawnPoints;   // Puntos de spawn en el mapa
     public float timer = 20f;         // Tiempo entre spawns
     public float armasSpawneadas = 0;
@@ -13,8 +14,7 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
 
     void Start()
     {
-        SpawnWeapon(); 
-        SpawnWeapon();
+       
 }
 
     private void Awake()
@@ -31,12 +31,12 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
     }
 
     [PunRPC]
-    void SpawnWeapon()
+    void SpawnWeaponD()
     {
-        if (armas.Length == 0) return; // Si no hay armas, salir de la función
+        if (armasD.Length == 0) return; // Si no hay armas, salir de la función
 
         // Convertir el array armas en una lista
-        List<GameObject> listaArmas = new List<GameObject>(armas);
+        List<GameObject> listaArmas = new List<GameObject>(armasD);
 
         // Seleccionar un arma y un punto de spawn aleatorio
         Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
@@ -55,7 +55,36 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
             listaArmas.Remove(armaSeleccionada);
 
             // Convertir la lista de vuelta a un array si es necesario
-            armas = listaArmas.ToArray();
+            armasD = listaArmas.ToArray();
+        }
+    }
+
+    [PunRPC]
+    void SpawnWeaponN()
+    {
+        if (armasN.Length == 0) return; // Si no hay armas, salir de la función
+
+        // Convertir el array armas en una lista
+        List<GameObject> listaArmas = new List<GameObject>(armasN);
+
+        // Seleccionar un arma y un punto de spawn aleatorio
+        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        GameObject armaSeleccionada = listaArmas[Random.Range(0, listaArmas.Count)];
+        string prefabName = armaSeleccionada.name;
+
+        // Comprobar si ya existe un objeto del mismo tipo
+        GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
+
+        // Instanciar el arma si no existe
+        if (objetoExistente == null)
+        {
+            PhotonNetwork.Instantiate(prefabName, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+
+            // Eliminar el arma seleccionada de la lista
+            listaArmas.Remove(armaSeleccionada);
+
+            // Convertir la lista de vuelta a un array si es necesario
+            armasN = listaArmas.ToArray();
         }
     }
 }

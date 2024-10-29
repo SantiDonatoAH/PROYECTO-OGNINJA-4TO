@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8995880355843126667}
   - component: {fileID: 8995880355843126666}
   m_Layer: 0
-  m_Name: back 1 1
+  m_Name: dia
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

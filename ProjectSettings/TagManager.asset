@@ -21,6 +21,7 @@ TagManager:
   - hab1
   - hab2
   - Hposta
+  - ws
   layers:
   - Default
   - TransparentFX
