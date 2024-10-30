@@ -49884,6 +49884,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mapas:
   - {fileID: 8995880355843126661, guid: 980ead9b90d74f54e837b5766c3973a1, type: 3}
+  pisos: []
+  ws: {fileID: 0}
+  weapon: {fileID: 0}
+  mapa: {fileID: 0}
 --- !u!4 &728580641
 Transform:
   m_ObjectHideFlags: 0
@@ -49908,6 +49912,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 733158424}
+  - component: {fileID: 733158425}
   m_Layer: 0
   m_Name: MainFloor
   m_TagString: Untagged
@@ -49981,6 +49986,24 @@ Transform:
   m_Father: {fileID: 913378655}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &733158425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 733158423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a885819233163984d8334d88d4e4adf4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  island: {fileID: 733158424}
+  topPosition: {x: 0, y: 0, z: 0}
+  bottomPosition: {x: 0, y: 0, z: 0}
+  speed: 2
+  minWaitTime: 2
+  maxWaitTime: 5
 --- !u!1 &739502135
 GameObject:
   m_ObjectHideFlags: 0
@@ -52683,7 +52706,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1079590554
 Transform:
   m_ObjectHideFlags: 0
@@ -53346,7 +53369,6 @@ MonoBehaviour:
   GAME_UI: {fileID: 931518903}
   pauseButton: {fileID: 432520451}
   ispaused: 1
-  vida: {fileID: 1944479994}
   image1: {fileID: 1976501098}
   image2: {fileID: 1050538838}
 --- !u!4 &1174501607
@@ -62845,6 +62867,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1877627245}
+  - component: {fileID: 1877627246}
   m_Layer: 0
   m_Name: Islas
   m_TagString: Untagged
@@ -62870,6 +62893,23 @@ Transform:
   m_Father: {fileID: 913378655}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1877627246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1877627244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b3065d8441e9148ad008d3be9734cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  islands:
+  - {fileID: 82792635}
+  - {fileID: 369346577}
+  radius: 1
+  speed: 1
 --- !u!4 &1884797290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3577983498906363473, guid: 8a3b9bc3ddcdef94bbaa092def9304f8,
