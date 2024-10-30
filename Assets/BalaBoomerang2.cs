@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public class BalaBoomerang : MonoBehaviourPunCallbacks
+public class BalaBoomerang2 : MonoBehaviourPunCallbacks
 {
     private playerBlink2 ninja2Blink;
     private PlayerBlink ninjaBlink;
@@ -21,7 +21,7 @@ public class BalaBoomerang : MonoBehaviourPunCallbacks
     public float cooldownTime = 2f;
 
     public Rigidbody2D rb;
-    
+
 
     void Start()
     {
@@ -46,18 +46,18 @@ public class BalaBoomerang : MonoBehaviourPunCallbacks
     void OnCollisionEnter2D(Collision2D collision)
     {
 
-        if (collision.gameObject.CompareTag("player2"))
+      
+         if (collision.gameObject.CompareTag("player1"))
         {
             PhotonNetwork.Destroy(gameObject);
 
-            ninja2Blink.Blink();
-            ninja2Blink.Blink();
-            ninja2Blink.Blink();
-            ninja2Blink.Blink();
-            KnockbackManager.Ninja2();
+            ninjaBlink.Blink();
+            ninjaBlink.Blink();
+            ninjaBlink.Blink();
+            ninjaBlink.Blink();
+            KnockbackManager.Ninja1();
             AudioManager.instance.PlaySound(ouchSound);
         }
-
 
         else if (collision.gameObject.CompareTag("Weapon"))
         {
@@ -70,7 +70,7 @@ public class BalaBoomerang : MonoBehaviourPunCallbacks
         }
     }
 
-  
+
 
     IEnumerator CooldownRoutine()
     {

@@ -9,6 +9,10 @@ public class Boomerang : MonoBehaviourPunCallbacks
     public Rigidbody2D rb;
 
     public GameObject bala;
+
+    public Rigidbody2D rb2;
+
+    public GameObject bala2;
     public float bulletSpeed = 15f;
 
     public Animator anim;
@@ -106,10 +110,10 @@ public class Boomerang : MonoBehaviourPunCallbacks
             multiplicador2 = 1; // Dirección normal hacia la derecha
         }
 
-        GameObject nuevaBala = PhotonNetwork.Instantiate(bala.name, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
+        GameObject nuevaBala2 = PhotonNetwork.Instantiate(bala2.name, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
 
-        Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
-        rb.velocity = firePoint2.right * bulletSpeed;
+        Rigidbody2D rb2 = nuevaBala2.GetComponent<Rigidbody2D>();
+        rb2.velocity = firePoint2.right * bulletSpeed;
         AudioManager.instance.PlaySound(pewSound);
 
         canFire2 = false; // Inicia el cooldown para el segundo jugador

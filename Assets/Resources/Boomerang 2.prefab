@@ -10,15 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 7351104559564034625}
   - component: {fileID: 7351104559564034626}
-  - component: {fileID: 7351104559564034630}
   - component: {fileID: 7351104559564034631}
   - component: {fileID: 7351104559564034624}
   - component: {fileID: 7351104559564034629}
   - component: {fileID: 7351104559564034628}
-  - component: {fileID: 6560447854112808872}
-  - component: {fileID: 6692411972666262030}
+  - component: {fileID: 3577723734965491788}
   m_Layer: 0
-  m_Name: Boomerang
+  m_Name: Boomerang 2
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,33 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7351104559564034630
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7351104559564034627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e885d988935401642b933207e8e00ea2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 7351104559564034631, guid: 8e0a9fb9e4fef474d861d301700d27bb, type: 3}
-  bala: {fileID: 7351104559564034627, guid: 8e0a9fb9e4fef474d861d301700d27bb, type: 3}
-  rb2: {fileID: 7351104559564034631, guid: e86a804f12a5d6545ae14261276a3877, type: 3}
-  bala2: {fileID: 7351104559564034627, guid: e86a804f12a5d6545ae14261276a3877, type: 3}
-  bulletSpeed: 15
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
-  multiplicador: 0
-  multiplicador2: 0
-  pewSound: {fileID: 0}
-  cooldownTime: 0.3
-  cooldownTime2: 0.3
-  pausemanager: {fileID: 0}
 --- !u!50 &7351104559564034631
 Rigidbody2D:
   serializedVersion: 4
@@ -129,16 +100,16 @@ Rigidbody2D:
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_UseAutoMass: 1
+  m_Mass: 0.21397296
   m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 0
 --- !u!61 &7351104559564034624
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -152,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.007818177, y: 0.054727092}
+  m_Offset: {x: 0.009706244, y: -0.025133714}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -163,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.32636473, y: 0.39054582}
+  m_Size: {x: 0.14831924, y: 0.2308242}
   m_EdgeRadius: 0
 --- !u!114 &7351104559564034629
 MonoBehaviour:
@@ -203,7 +174,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
+    TeleportIfDistanceGreaterThan: 0.3
     InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -221,7 +192,7 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &6560447854112808872
+--- !u!114 &3577723734965491788
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,21 +201,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 7351104559564034627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5847402b403f8514182dfcf6c05557bb, type: 3}
+  m_Script: {fileID: 11500000, guid: 1c62a79f69e725d43bcf6074583d6381, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &6692411972666262030
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7351104559564034627}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24fb5a8d766fff249a64fb42f1885dce, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 7351104559564034631}
-  poder: 0
-  pos: {x: 0, y: 0}
+  ouchSound: {fileID: 0}
+  anim: {fileID: 0}
+  anim2: {fileID: 0}
+  ninja1: {fileID: 0}
+  ninja2: {fileID: 0}
+  combatManager: {fileID: 0}
+  KnockbackManager: {fileID: 0}
+  cooldownTime: 0.75
+  rb: {fileID: 0}
