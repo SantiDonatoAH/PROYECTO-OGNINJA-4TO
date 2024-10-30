@@ -4,8 +4,8 @@ using System.Collections;
 public class UpAndDownIsla : MonoBehaviour
 {
     public Transform island;             // Transform de la isla que se moverá
-    public float moveDistance = 5f;      // Distancia en el eje Y que se moverá la isla
-    public float speed = 2f;             // Velocidad de movimiento de la isla
+    public float moveDistance = 3f;      // Distancia en el eje Y que se moverá la isla
+    public float speed = 1f;             // Velocidad de movimiento de la isla
     public float minWaitTime = 2f;       // Tiempo mínimo de espera en cada posición
     public float maxWaitTime = 5f;       // Tiempo máximo de espera en cada posición
 

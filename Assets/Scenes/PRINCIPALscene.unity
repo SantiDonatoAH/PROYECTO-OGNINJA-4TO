@@ -49999,9 +49999,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   island: {fileID: 733158424}
-  topPosition: {x: 0, y: 0, z: 0}
-  bottomPosition: {x: 0, y: 0, z: 0}
-  speed: 2
+  moveDistance: 3
+  speed: 1
   minWaitTime: 2
   maxWaitTime: 5
 --- !u!1 &739502135
@@ -62909,7 +62908,7 @@ MonoBehaviour:
   - {fileID: 82792635}
   - {fileID: 369346577}
   radius: 1
-  speed: 1
+  speed: 0.5
 --- !u!4 &1884797290 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3577983498906363473, guid: 8a3b9bc3ddcdef94bbaa092def9304f8,
