@@ -18,7 +18,7 @@ public class BalaBoomerang : MonoBehaviourPunCallbacks
 
     public KnockbackManager KnockbackManager;
 
-    public float cooldownTime = 3f;
+    public float cooldownTime = 2f;
 
     public Rigidbody2D rb;
     
