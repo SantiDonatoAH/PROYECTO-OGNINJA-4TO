@@ -10,15 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 4170975709237221922}
   - component: {fileID: 4170975709237221923}
-  - component: {fileID: 4170975709237221935}
   - component: {fileID: 4170975709237221932}
   - component: {fileID: 4170975709237221933}
   - component: {fileID: 4170975709237221934}
   - component: {fileID: 4170975709237221929}
-  - component: {fileID: -9090984297086348717}
-  - component: {fileID: -8737285917561053986}
+  - component: {fileID: -7784246473071968789}
   m_Layer: 0
-  m_Name: Lanza
+  m_Name: Lanza 1
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,37 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4170975709237221935
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4170975709237221920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1e4f3ae4c4b0477438726459234ca5c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4170975709237221932, guid: 4b12bec70c19d574c894c12554fb3ceb, type: 3}
-  agua: {fileID: 4170975709237221920, guid: 4b12bec70c19d574c894c12554fb3ceb, type: 3}
-  bulletSpeed: 2
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
-  multiplicador: 0
-  multiplicador2: 0
-  pewSound: {fileID: 0}
-  pausemanager: {fileID: 0}
-  canFire: 1
-  canFire2: 1
-  cooldownTime: 0.085
-  cooldownTime2: 0.085
-  sumador: 0.02
-  sumador2: 0.02
-  poder: 0
-  poder2: 0
 --- !u!50 &4170975709237221932
 Rigidbody2D:
   serializedVersion: 4
@@ -134,15 +101,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_AngularDrag: 0.05
+  m_GravityScale: 2
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 0
 --- !u!61 &4170975709237221933
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -156,7 +123,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.004713297, y: 0.026394367}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -167,7 +134,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.5}
+  m_Size: {x: 0.36810684, y: 0.31523967}
   m_EdgeRadius: 0
 --- !u!114 &4170975709237221934
 MonoBehaviour:
@@ -207,7 +174,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
+    TeleportIfDistanceGreaterThan: 0.3
     InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -225,7 +192,7 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &-9090984297086348717
+--- !u!114 &-7784246473071968789
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -234,21 +201,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4170975709237221920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a9071abd3d1c80499d6b968b9f334c1, type: 3}
+  m_Script: {fileID: 11500000, guid: 3faf1f30e3073ad4c9fa1e10ce35cdda, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &-8737285917561053986
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4170975709237221920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8d0271bf295e7464b887f9fc3db9ac5d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 4170975709237221932}
-  poder: 0
-  pos: {x: 0, y: 0}
