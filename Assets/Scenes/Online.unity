@@ -836,6 +836,7 @@ MonoBehaviour:
   mapa: {fileID: 0}
   mapaS: {fileID: 0}
   te: {fileID: 0}
+  te2: {fileID: 0}
   spawn: 1
 --- !u!4 &450971891
 Transform:
@@ -866,6 +867,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Respawn: {fileID: 0}
   rb: {fileID: 0}
+  kita: {x: 0, y: 0}
 --- !u!1 &556487311
 GameObject:
   m_ObjectHideFlags: 0

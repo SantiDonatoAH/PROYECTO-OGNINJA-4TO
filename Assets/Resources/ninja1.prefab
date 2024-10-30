@@ -19871,6 +19871,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Respawn: {fileID: 0}
   rb: {fileID: 0}
+  kita: {x: 0, y: 0}
 --- !u!1 &8892114386156294158
 GameObject:
   m_ObjectHideFlags: 0

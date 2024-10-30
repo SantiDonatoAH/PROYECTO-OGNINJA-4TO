@@ -1,18 +1,131 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Boomerang : MonoBehaviour
+public class Boomerang : MonoBehaviourPunCallbacks
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public Rigidbody2D rb;
+
+    public GameObject bala;
+    public float bulletSpeed = 15f;
+
+    public Animator anim;
+    public Animator anim2;
+    public GameObject ninja1;
+    public GameObject ninja2;
+
+    public int multiplicador = 0;
+    public int multiplicador2 = 0;
+
+    [SerializeField] private AudioClip pewSound;
+
+    private bool canFire = true;  // Controla el cooldown para el primer jugador
+    private bool canFire2 = true; // Controla el cooldown para el segundo jugador
+    public float cooldownTime = .3f;
+    public float cooldownTime2 = .3f;
+
+    public ScreenController pausemanager;
+
+    PhotonView view;
+    PhotonView view2;
+
+    [PunRPC]
+    public void cd1(float cd)
     {
-        
+        cooldownTime = cd;
+    }
+    [PunRPC]
+    public void cd2(float cd)
+    {
+        cooldownTime2 = cd;
     }
 
-    // Update is called once per frame
+    void Start()
+    {
+        ninja1 = GameObject.FindWithTag("player1");
+        ninja2 = GameObject.FindWithTag("player2");
+
+        anim = ninja1.GetComponent<Animator>();
+        anim2 = ninja2.GetComponent<Animator>();
+
+        view = ninja1.GetComponent<PhotonView>();
+        view2 = ninja2.GetComponent<PhotonView>();
+    }
+
     void Update()
     {
-        
+
+        if (anim.GetBool("IsHoldingBoomerang") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire && view.IsMine)
+        {
+            Fire();
+        }
+
+        if (anim2.GetBool("IsHoldingBoomerang2") == true && Input.GetKeyDown(KeyCode.L) && canFire2 && view2.IsMine)
+        {
+            Fire2();
+        }
+
     }
+
+    void Fire()
+    {
+        Transform firePoint = ninja1.GetComponent<Transform>();
+
+        if (firePoint.rotation.y == 0)
+        {
+            multiplicador = 1; // Dirección normal hacia la derecha
+        }
+
+        else if (firePoint.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
+        {
+            multiplicador = -1; // Cambia la dirección de disparo
+        }
+
+        GameObject nuevaBala = PhotonNetwork.Instantiate(bala.name, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
+
+        rb = nuevaBala.GetComponent<Rigidbody2D>();
+        rb.velocity = firePoint.right * bulletSpeed;
+        AudioManager.instance.PlaySound(pewSound);
+
+        canFire = false; // Inicia el cooldown
+        StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
+    }
+
+    void Fire2()
+    {
+        Transform firePoint2 = ninja2.GetComponent<Transform>();
+
+        if (firePoint2.rotation.y != 0) // Si el ninja está mirando hacia la izquierda
+        {
+            multiplicador2 = -1; // Cambia la dirección de disparo
+        }
+        else if (firePoint2.rotation.y == 0)
+        {
+            multiplicador2 = 1; // Dirección normal hacia la derecha
+        }
+
+        GameObject nuevaBala = PhotonNetwork.Instantiate(bala.name, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
+
+        Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
+        rb.velocity = firePoint2.right * bulletSpeed;
+        AudioManager.instance.PlaySound(pewSound);
+
+        canFire2 = false; // Inicia el cooldown para el segundo jugador
+        StartCoroutine(CooldownRoutine2()); // Inic
+    }
+
+    IEnumerator CooldownRoutine()
+    {
+        yield return new WaitForSeconds(cooldownTime);
+        canFire = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
+
+    IEnumerator CooldownRoutine2()
+    {
+        yield return new WaitForSeconds(cooldownTime2);
+        canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
+
 }
