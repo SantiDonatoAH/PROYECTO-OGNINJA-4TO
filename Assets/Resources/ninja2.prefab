@@ -4890,6 +4890,7 @@ GameObject:
   - component: {fileID: 4021457285473894249}
   - component: {fileID: 1300543995364512339}
   - component: {fileID: -7355778837699150480}
+  - component: {fileID: 8526183021937069798}
   m_Layer: 0
   m_Name: ninja2
   m_TagString: player2
@@ -5247,6 +5248,18 @@ MonoBehaviour:
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
+--- !u!114 &8526183021937069798
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2950675939776314561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67f6b7553c1e04478634eed30cc61b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3450256302803906602
 GameObject:
   m_ObjectHideFlags: 0

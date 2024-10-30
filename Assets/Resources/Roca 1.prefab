@@ -10,15 +10,13 @@ GameObject:
   m_Component:
   - component: {fileID: 1768050049399912653}
   - component: {fileID: 1768050049399912652}
-  - component: {fileID: 1768050049399912640}
   - component: {fileID: 1768050049399912655}
   - component: {fileID: 1768050049399912641}
   - component: {fileID: 1768050049399912642}
-  - component: {fileID: 5045481861445907597}
-  - component: {fileID: 4768351693392630534}
   - component: {fileID: 2991178070193759728}
+  - component: {fileID: 2193677024037892672}
   m_Layer: 0
-  m_Name: Roca
+  m_Name: Roca 1
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,27 +89,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &1768050049399912640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768050049399912651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae2c5507ec73c2b45b1626ab24a11618, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bala: {fileID: 1768050049399912651, guid: 12eebc6924a80a34fa8c74321d529641, type: 3}
-  bulletSpeed: 10
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
-  multiplicador: 0
-  multiplicador2: 0
-  pausemanager: {fileID: 0}
-  cooldownTime: 1
-  cooldownTime2: 1
 --- !u!50 &1768050049399912655
 Rigidbody2D:
   serializedVersion: 4
@@ -124,15 +101,15 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 0.0001
+  m_Mass: 1
   m_LinearDrag: 0
-  m_AngularDrag: 0
-  m_GravityScale: 0.5
+  m_AngularDrag: 0.05
+  m_GravityScale: 5
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 5
+  m_Constraints: 0
 --- !u!114 &1768050049399912641
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -171,7 +148,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 3
+    TeleportIfDistanceGreaterThan: 0.3
     InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -189,33 +166,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &5045481861445907597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768050049399912651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f0c741f1068310243bb0358b109ba671, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &4768351693392630534
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1768050049399912651}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e4e5e64abe95bc439b02ce5e984861d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 1768050049399912655}
-  poder: 0
-  pos: {x: 0, y: 0}
 --- !u!58 &2991178070193759728
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -231,4 +181,16 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.15
+  m_Radius: 0.1
+--- !u!114 &2193677024037892672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1768050049399912651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3faf1f30e3073ad4c9fa1e10ce35cdda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

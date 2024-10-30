@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Teleporter : MonoBehaviour
+public class teleporter2 : MonoBehaviour
 {
     public GameObject Respawn;
     public Rigidbody2D rb;
@@ -10,7 +10,7 @@ public class Teleporter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Respawn = GameObject.FindWithTag("player1");
+        Respawn = GameObject.FindWithTag("player2");
         rb = Respawn.GetComponent<Rigidbody2D>();
         kita = Respawn.transform.position;
     }
