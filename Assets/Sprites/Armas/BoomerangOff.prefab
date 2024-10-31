@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &4219622008141861387
+--- !u!1 &7351104559564034627
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,44 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 4219622008141861397}
-  - component: {fileID: 4219622008141861396}
-  - component: {fileID: 4219622008141861392}
-  - component: {fileID: 4219622008141861399}
-  - component: {fileID: 4219622008141861398}
-  - component: {fileID: 4219622008141861393}
-  - component: {fileID: 4219622008141861394}
-  - component: {fileID: -5723760525512387414}
-  - component: {fileID: 4697869876149739478}
-  - component: {fileID: -619416706167106696}
+  - component: {fileID: 7351104559564034625}
+  - component: {fileID: 7351104559564034626}
+  - component: {fileID: 7351104559564034631}
+  - component: {fileID: 7351104559564034624}
+  - component: {fileID: 7351104559564034629}
+  - component: {fileID: 7351104559564034628}
+  - component: {fileID: 6560447854112808872}
+  - component: {fileID: 6692411972666262030}
+  - component: {fileID: 1320153822409231400}
   m_Layer: 0
-  m_Name: Serpiente
+  m_Name: BoomerangOff
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &4219622008141861397
+--- !u!4 &7351104559564034625
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.746959, y: 2.9437847, z: -0.9741732}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &4219622008141861396
+--- !u!212 &7351104559564034626
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -81,44 +80,25 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 5b4b386a1ea5e7240ad975c2872ae4b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bcd31f881e8795444b0feeb2734a1c5d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.48, y: 0.48}
+  m_Size: {x: 0.64, y: 0.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4219622008141861392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474d3944d1460614f9f2a859a4165b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
-  pausemanager: {fileID: 0}
-  cooldownTime: 0.75
-  cooldownTime2: 0.75
---- !u!50 &4219622008141861399
+--- !u!50 &7351104559564034631
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
@@ -132,39 +112,39 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
---- !u!61 &4219622008141861398
+--- !u!61 &7351104559564034624
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.007818177, y: 0.054727092}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.64, y: 0.64}
-    newSize: {x: 0.48, y: 0.48}
+    newSize: {x: 0.64, y: 0.64}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6, y: 0.5}
+  m_Size: {x: 0.32636473, y: 0.39054582}
   m_EdgeRadius: 0
---- !u!114 &4219622008141861393
+--- !u!114 &7351104559564034629
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
@@ -177,17 +157,17 @@ MonoBehaviour:
   OwnershipTransfer: 0
   observableSearch: 2
   ObservedComponents:
-  - {fileID: 4219622008141861394}
+  - {fileID: 7351104559564034628}
   sceneViewId: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &4219622008141861394
+--- !u!114 &7351104559564034628
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
@@ -214,49 +194,57 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &-5723760525512387414
+--- !u!114 &6560447854112808872
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0865983249b9be74e93ba240e9e6806e, type: 3}
+  m_Script: {fileID: 11500000, guid: 5847402b403f8514182dfcf6c05557bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4697869876149739478
+--- !u!114 &6692411972666262030
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c65cf6f3aaf63874881c89c7150aa3d0, type: 3}
+  m_Script: {fileID: 11500000, guid: 24fb5a8d766fff249a64fb42f1885dce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 4219622008141861399}
+  rb: {fileID: 7351104559564034631}
   poder: 0
   pos: {x: 0, y: 0}
---- !u!114 &-619416706167106696
+--- !u!114 &1320153822409231400
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
+  m_GameObject: {fileID: 7351104559564034627}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474d3944d1460614f9f2a859a4165b78, type: 3}
+  m_Script: {fileID: 11500000, guid: ac1b089f6bdb9d04aa72d3c37303d06d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
+  rb: {fileID: 7351104559564034631, guid: e9bee811054892f40aa48094904733ab, type: 3}
+  bala: {fileID: 7351104559564034627, guid: e9bee811054892f40aa48094904733ab, type: 3}
+  rb2: {fileID: 7351104559564034631, guid: f682b057d38ae3a43873763004d2f204, type: 3}
+  bala2: {fileID: 7351104559564034627, guid: f682b057d38ae3a43873763004d2f204, type: 3}
+  bulletSpeed: 15
   anim: {fileID: 0}
   anim2: {fileID: 0}
-  pausemanager: {fileID: 0}
+  ninja1: {fileID: 0}
+  ninja2: {fileID: 0}
+  multiplicador: 0
+  multiplicador2: 0
+  pewSound: {fileID: 0}
   cooldownTime: 0.75
   cooldownTime2: 0.75
+  pausemanager: {fileID: 0}

@@ -10,16 +10,15 @@ GameObject:
   m_Component:
   - component: {fileID: 4219622008141861397}
   - component: {fileID: 4219622008141861396}
-  - component: {fileID: 4219622008141861392}
   - component: {fileID: 4219622008141861399}
   - component: {fileID: 4219622008141861398}
   - component: {fileID: 4219622008141861393}
   - component: {fileID: 4219622008141861394}
   - component: {fileID: -5723760525512387414}
   - component: {fileID: 4697869876149739478}
-  - component: {fileID: -619416706167106696}
+  - component: {fileID: 3965273592984731912}
   m_Layer: 0
-  m_Name: Serpiente
+  m_Name: SerpienteOff
   m_TagString: Weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -92,25 +91,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &4219622008141861392
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4219622008141861387}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474d3944d1460614f9f2a859a4165b78, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ninja1: {fileID: 0}
-  ninja2: {fileID: 0}
-  anim: {fileID: 0}
-  anim2: {fileID: 0}
-  pausemanager: {fileID: 0}
-  cooldownTime: 0.75
-  cooldownTime2: 0.75
 --- !u!50 &4219622008141861399
 Rigidbody2D:
   serializedVersion: 4
@@ -241,7 +221,7 @@ MonoBehaviour:
   rb: {fileID: 4219622008141861399}
   poder: 0
   pos: {x: 0, y: 0}
---- !u!114 &-619416706167106696
+--- !u!114 &3965273592984731912
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -250,7 +230,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4219622008141861387}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 474d3944d1460614f9f2a859a4165b78, type: 3}
+  m_Script: {fileID: 11500000, guid: 049876cd436d1504a94dce7ac8de0076, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   ninja1: {fileID: 0}

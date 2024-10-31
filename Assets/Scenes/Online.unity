@@ -1066,6 +1066,7 @@ MonoBehaviour:
   - {fileID: 9192913979720171191, guid: ad7246a8137c8c84f9b946a50d1518e5, type: 3}
   - {fileID: 9192913979720171191, guid: ad7246a8137c8c84f9b946a50d1518e5, type: 3}
   ws: {fileID: 0}
+  wsO: {fileID: 0}
   weapon: {fileID: 0}
   mapa: {fileID: 0}
 --- !u!4 &728580641

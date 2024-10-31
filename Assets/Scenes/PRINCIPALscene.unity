@@ -52665,7 +52665,11 @@ MonoBehaviour:
   - {fileID: 7457272888433717637, guid: a6fe9b58889bcfd4eba71e482e1889c9, type: 3}
   - {fileID: 2857495050582825017, guid: ea83413b4e22bab47a56228315d25ef8, type: 3}
   - {fileID: 4026039771719922884, guid: 7721531946a412d4ab38f8841323f47f, type: 3}
-  armasN: []
+  armasN:
+  - {fileID: 7351104559564034627, guid: e524c527fc522af4582afae1d316b772, type: 3}
+  - {fileID: 4170975709237221920, guid: 591d9bfbba512c84ebfa7669fbb5c9ec, type: 3}
+  - {fileID: 1768050049399912651, guid: fd6b9fcac3191934f85f7765debb4078, type: 3}
+  - {fileID: 4219622008141861387, guid: 370dda7fe8a133f459fe5844af0917b3, type: 3}
   spawnPoints:
   - {fileID: 870233830}
   - {fileID: 1778200177}
