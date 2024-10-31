@@ -17,8 +17,8 @@ public class Roca : MonoBehaviourPunCallbacks
 
     private bool canFire = true;  // Controla el cooldown para el primer jugador
     private bool canFire2 = true; // Controla el cooldown para el segundo jugador
-    public float cooldownTime = 1f;
-    public float cooldownTime2 = 1f;
+    public float cooldownTime = .75f;
+    public float cooldownTime2 = .75f;
 
     PhotonView view;
     PhotonView view2;

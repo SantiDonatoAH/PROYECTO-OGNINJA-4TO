@@ -105,7 +105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4170975709237221932, guid: 4b12bec70c19d574c894c12554fb3ceb, type: 3}
   agua: {fileID: 4170975709237221920, guid: 4b12bec70c19d574c894c12554fb3ceb, type: 3}
-  bulletSpeed: 2
+  bulletSpeed: 4
   anim: {fileID: 0}
   anim2: {fileID: 0}
   ninja1: {fileID: 0}
@@ -116,10 +116,10 @@ MonoBehaviour:
   pausemanager: {fileID: 0}
   canFire: 1
   canFire2: 1
-  cooldownTime: 0.085
-  cooldownTime2: 0.085
-  sumador: 0.02
-  sumador2: 0.02
+  cooldownTime: 0.25
+  cooldownTime2: 0.25
+  sumador: 0.035
+  sumador2: 0.035
   poder: 0
   poder2: 0
 --- !u!50 &4170975709237221932

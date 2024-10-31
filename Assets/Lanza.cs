@@ -10,7 +10,7 @@ public class Lanza : MonoBehaviourPunCallbacks
     public Rigidbody2D rb;
 
     public GameObject agua;
-    public float bulletSpeed = 2f;
+    public float bulletSpeed = 4f;
 
     public Animator anim;
     public Animator anim2;
@@ -26,11 +26,11 @@ public class Lanza : MonoBehaviourPunCallbacks
 
     public bool canFire = true;  // Controla el cooldown para el primer jugador
     public bool canFire2 = true; // Controla el cooldown para el segundo jugador
-    public float cooldownTime = 0.085f;
-    public float cooldownTime2 = 0.085f;
+    public float cooldownTime = 0.25f;
+    public float cooldownTime2 = 0.25f;
 
-    public float sumador = 0.02f;
-    public float sumador2 = 0.02f;
+    public float sumador = 0.035f;
+    public float sumador2 = 0.035f;
 
     public float poder = 0f;
     public float poder2 = 0f;
@@ -67,28 +67,30 @@ public class Lanza : MonoBehaviourPunCallbacks
         if (anim.GetBool("IsHoldingLanza") == true && Input.GetKey(KeyCode.LeftShift) && canFire && view.IsMine)
         {
             poder += sumador;
-            if (poder >= 8.1f)
+            if (poder >= 6.1f)
             {
-                poder = 8.1f;
+                poder = 6.1f;
             }
         }
         else if (anim.GetBool("IsHoldingLanza") == true && Input.GetKeyUp(KeyCode.LeftShift) && view.IsMine)
         {
             Fire();
+            poder = 0;
         }
 
         if (anim2.GetBool("IsHoldingLanza2") == true && Input.GetKey(KeyCode.L) && canFire2 && view2.IsMine)
         {
             poder2 += sumador2;
-            if (poder2 >= 8.1f)
+            if (poder2 >= 6.1f)
             {
-                poder2 = 8.1f;
+                poder2 = 6.1f;
             }
 
         }
         else if (anim2.GetBool("IsHoldingLanza2") == true && Input.GetKeyUp(KeyCode.L) && view2.IsMine)
         {
             Fire2();
+            poder2 = 0;
         }
 
     }
@@ -96,6 +98,7 @@ public class Lanza : MonoBehaviourPunCallbacks
 
     void Fire()
     {
+        canFire = false;
         Transform firePoint = ninja1.GetComponent<Transform>();
 
         if (firePoint.rotation.y == 0)
@@ -111,12 +114,14 @@ public class Lanza : MonoBehaviourPunCallbacks
 
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed * poder;
+        StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
+
     }
 
-   
+
     void Fire2()
     {
-
+        canFire2 = false;
         Transform firePoint = ninja2.GetComponent<Transform>();
 
         if (firePoint.rotation.y == 0)
@@ -132,20 +137,23 @@ public class Lanza : MonoBehaviourPunCallbacks
 
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed * poder2;
+        StartCoroutine(CooldownRoutine2()); // Inicia el Coroutine para esperar 1.5 segundos
+
     }
 
 
- 
+
 
     IEnumerator CooldownRoutine()
     {
         yield return new WaitForSeconds(cooldownTime);
+        canFire = true;
     }
 
     IEnumerator CooldownRoutine2()
     {
         yield return new WaitForSeconds(cooldownTime2);
-
+        canFire2 = true;
     }
 
 }

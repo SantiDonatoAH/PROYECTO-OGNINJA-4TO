@@ -20,6 +20,10 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     public Manguera manguera;
     public CombatManager combatmanager;
     public Pistola pistola;
+    public Roca roca;
+    public Lanza lanza;
+    public Serpiente serpiente;
+    public Boomerang boomerang;
 
     public playerBlink2 playerblink2;
     public NinjaController2 ninjacontroller2;
@@ -43,6 +47,14 @@ public class abilitySelector : MonoBehaviourPunCallbacks
     private float MangueraC = 0.05f;
 
     private float PistolaC = .175f;
+
+    private float SerpienteC = .5f;
+
+    private float BoomerangC = .5f;
+
+    private float LanzaC = 0.06f;
+
+    private float RocaC = .5f;
 
     public bool upd = true;
 
@@ -143,16 +155,16 @@ public class abilitySelector : MonoBehaviourPunCallbacks
                         weaponValue = PistolaC;
                         break;
                     case "Boomerang":
-                        weaponValue = BombuchaC;
+                        weaponValue = BoomerangC;
                         break;
                     case "Serpiente":
-                        weaponValue = FlotaflotaC;
+                        weaponValue = SerpienteC;
                         break;
                     case "Lanza":
-                        weaponValue = MangueraC;
+                        weaponValue = LanzaC;
                         break;
                     case "Roca":
-                        weaponValue = PistolaC;
+                        weaponValue = RocaC;
                         break;
                    
                 }
@@ -223,16 +235,16 @@ public class abilitySelector : MonoBehaviourPunCallbacks
                         weaponValue = PistolaC;
                         break;
                     case "Boomerang":
-                        weaponValue = BombuchaC;
+                        weaponValue = BoomerangC;
                         break;
                     case "Serpiente":
-                        weaponValue = FlotaflotaC;
+                        weaponValue = SerpienteC;
                         break;
                     case "Lanza":
-                        weaponValue = MangueraC;
+                        weaponValue = LanzaC;
                         break;
                     case "Roca":
-                        weaponValue = PistolaC;
+                        weaponValue = RocaC;
                         break;
 
                 }

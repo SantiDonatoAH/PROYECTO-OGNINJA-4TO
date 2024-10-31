@@ -71,8 +71,7 @@ public class Serpiente : MonoBehaviourPunCallbacks
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
-                ninja2Blink.Blink();
-                ninja2Blink.Blink();
+
                 StartCoroutine(CooldownRoutineH());
             }
             else
@@ -87,10 +86,9 @@ public class Serpiente : MonoBehaviourPunCallbacks
             if (IsInRange(ninja2, ninja1))
             {
                 ninja1Blink.Blink();
-                ninja2Blink.Blink();
-                ninja2Blink.Blink();
-                ninja2Blink.Blink();
-                ninja2Blink.Blink();
+                ninja1Blink.Blink();
+                ninja1Blink.Blink();
+
                 StartCoroutine(CooldownRoutine2H());
             }
             else

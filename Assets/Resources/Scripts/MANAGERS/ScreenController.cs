@@ -54,8 +54,7 @@ public class ScreenController : MonoBehaviourPunCallbacks
         Time.timeScale = 0;
         pauseButton.gameObject.SetActive(false);
         ispaused = true;
-        image1.SetActive(false);
-        image2.SetActive(false);
+       
 
     }
 
@@ -66,8 +65,7 @@ public class ScreenController : MonoBehaviourPunCallbacks
         pauseButton.gameObject.SetActive(true);
         ispaused = false;
         settingsPanel.SetActive(false);
-        image1.SetActive(true);
-        image2.SetActive(true);
+       
     }
 
     public void OnMainMenu()
