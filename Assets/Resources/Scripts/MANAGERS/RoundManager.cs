@@ -9,43 +9,64 @@ public class RoundManager : MonoBehaviourPunCallbacks
     public GameObject[] pisos;
 
     public WeaponSpawner ws;
+    public WeaponSpawnerOff wsO;
     public GameObject weapon;
     public GameObject mapa;
     // Start is called before the first frame update
     void Start()
     {
-
             int cuaren = Random.Range(0, mapas.Length);
              mapa = mapas[cuaren];
             GameObject piso = pisos[cuaren];
 
-
-                PhotonNetwork.Instantiate(mapa.name, mapa.transform.position, mapa.transform.rotation);
-                PhotonNetwork.Instantiate(piso.name, piso.transform.position, piso.transform.rotation);
-
-                
-
-            
-
-           
-        
+        if (PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.Instantiate(mapa.name, mapa.transform.position, mapa.transform.rotation);
+            PhotonNetwork.Instantiate(piso.name, piso.transform.position, piso.transform.rotation);
+        }
+        else
+        {
+            Instantiate(mapa, mapa.transform.position, mapa.transform.rotation);
+            Instantiate(piso, piso.transform.position, piso.transform.rotation);
+        }
     }
-       
+
 
     void Update()
     {
         weapon = GameObject.FindGameObjectWithTag("ws");
     if (weapon != null)
     {
-        ws = weapon.GetComponent<WeaponSpawner>(); }
-        if (mapa.name == "dia")
+            if (PhotonNetwork.IsConnected)
+            {
+                ws = weapon.GetComponent<WeaponSpawner>();
+
+                if (mapa.name == "dia")
+                {
+                    ws.SpawnWeaponD();
+                }
+                else
+                {
+                    ws.SpawnWeaponN();
+                }
+            } 
+    }
+    else
         {
-            ws.SpawnWeaponD();
+            wsO = weapon.GetComponent<WeaponSpawnerOff>();
+
+            if (mapa.name == "dia")
+            {
+                wsO.SpawnWeaponD();
+                wsO.SpawnWeaponD();
+            }
+            else
+            {
+                wsO.SpawnWeaponN();
+                wsO.SpawnWeaponN();
+            }
         }
-        else
-        {
-            ws.SpawnWeaponN();
-        }
+
     }
 }
 

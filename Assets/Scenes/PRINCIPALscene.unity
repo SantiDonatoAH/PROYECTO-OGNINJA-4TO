@@ -49886,6 +49886,7 @@ MonoBehaviour:
   - {fileID: 8995880355843126661, guid: 980ead9b90d74f54e837b5766c3973a1, type: 3}
   pisos: []
   ws: {fileID: 0}
+  wsO: {fileID: 0}
   weapon: {fileID: 0}
   mapa: {fileID: 0}
 --- !u!4 &728580641
@@ -52937,7 +52938,7 @@ GameObject:
   - component: {fileID: 1095287916}
   m_Layer: 0
   m_Name: WeaponSpawnPoint
-  m_TagString: Untagged
+  m_TagString: ws
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52971,11 +52972,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82da89a91ba6da04482ad438125bd671, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  armas:
-  - {fileID: 4026039771719922884, guid: 7721531946a412d4ab38f8841323f47f, type: 3}
+  armasD:
+  - {fileID: 7371005533148593032, guid: e54260a1f903a6647a1dafd5712519dd, type: 3}
   - {fileID: 7457272888433717637, guid: a6fe9b58889bcfd4eba71e482e1889c9, type: 3}
   - {fileID: 2857495050582825017, guid: ea83413b4e22bab47a56228315d25ef8, type: 3}
-  - {fileID: 7371005533148593032, guid: e54260a1f903a6647a1dafd5712519dd, type: 3}
+  - {fileID: 4026039771719922884, guid: 7721531946a412d4ab38f8841323f47f, type: 3}
+  armasN: []
   spawnPoints:
   - {fileID: 870233830}
   - {fileID: 1778200177}
