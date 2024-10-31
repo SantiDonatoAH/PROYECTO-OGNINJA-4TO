@@ -12,6 +12,8 @@ public class RoundManager : MonoBehaviourPunCallbacks
     public WeaponSpawnerOff wsO;
     public GameObject weapon;
     public GameObject mapa;
+
+    private bool ranzo = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,7 +37,7 @@ public class RoundManager : MonoBehaviourPunCallbacks
     void Update()
     {
         weapon = GameObject.FindGameObjectWithTag("ws");
-    if (weapon != null)
+    if (weapon != null == ranzo == true)
     {
             if (PhotonNetwork.IsConnected)
             {
@@ -49,22 +51,25 @@ public class RoundManager : MonoBehaviourPunCallbacks
                 {
                     ws.SpawnWeaponN();
                 }
-            } 
-    }
-    else
-        {
-            wsO = weapon.GetComponent<WeaponSpawnerOff>();
-
-            if (mapa.name == "dia")
-            {
-                wsO.SpawnWeaponD();
-                wsO.SpawnWeaponD();
             }
+
             else
             {
-                wsO.SpawnWeaponN();
-                wsO.SpawnWeaponN();
+                wsO = weapon.GetComponent<WeaponSpawnerOff>();
+
+                if (mapa.name == "dia")
+                {
+                    wsO.SpawnWeaponD();
+                    wsO.SpawnWeaponD();
+                }
+                else
+                {
+                    wsO.SpawnWeaponN();
+                    wsO.SpawnWeaponN();
+                }
             }
+            ranzo = false;
+
         }
 
     }
