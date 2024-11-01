@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,427 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 8
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124d1af4708e07c489105e404b4979fb
+      internalID: 1453286854
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 8
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa03a8b034faf5c4a9cf25e3e4e70da2
+      internalID: 345849541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 8
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a505c49d84103e4f8d5626ffba39431
+      internalID: 1068902217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 8
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da0aab3b7cf69be4089b51b36095c3e7
+      internalID: 10818872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_4
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 8
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c14628d93ff838040abacfb71ce9ed26
+      internalID: -1714411818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_5
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 8
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56d9db1f0896a8e49951fba7dbc23bb8
+      internalID: -531999335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_6
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 8
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a143dc65f55d1ca4fa0013be44f2ba44
+      internalID: -725648502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_7
+      rect:
+        serializedVersion: 2
+        x: 459
+        y: 7
+        width: 41
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ac649016e3ca21478c3da43622b5ea2
+      internalID: 1451725317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_8
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 10
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc50420f65e3d5f4793f9b194c118687
+      internalID: 1912631381
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_9
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 8
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6735b7b551b40bd4b8dc70e1ce54de1f
+      internalID: -432551560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_10
+      rect:
+        serializedVersion: 2
+        x: 653
+        y: 9
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf30b18ea3e2821418b79d04be0afb86
+      internalID: 904756888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_11
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 10
+        width: 38
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af54d3e8077bda488914cb1471826df
+      internalID: -1939164306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_12
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 9
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5412e070a289aa140b9638a447075fa8
+      internalID: -73158809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_13
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 8
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e38a73612b6284c449131bca900c93af
+      internalID: 1249884889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_14
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 9
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3565db33bfd3cef45ac981409252dc65
+      internalID: 556482188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_15
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 8
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 513457468dc466749b57e6ab1fbddac1
+      internalID: -798797331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_16
+      rect:
+        serializedVersion: 2
+        x: 1028
+        y: 9
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 217baf1787ed0e046aaf86e141d41d14
+      internalID: -1730334392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 9
+        width: 64
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52f9a94f1d175d04faa9b07ce8266405
+      internalID: 1247561949
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_18
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 9
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65f58bc42e9d0c043b75007d0600dd6e
+      internalID: -1522623277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaRojoFinal_19
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 12
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1aca81090b8ec44a5e6aa2cf4e1027
+      internalID: -1250626963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +534,27 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AnimacionesFlotaFlotaRojoFinal_12: -73158809
+      AnimacionesFlotaFlotaRojoFinal_2: 1068902217
+      AnimacionesFlotaFlotaRojoFinal_19: -1250626963
+      AnimacionesFlotaFlotaRojoFinal_0: 1453286854
+      AnimacionesFlotaFlotaRojoFinal_3: 10818872
+      AnimacionesFlotaFlotaRojoFinal_6: -725648502
+      AnimacionesFlotaFlotaRojoFinal_1: 345849541
+      AnimacionesFlotaFlotaRojoFinal_9: -432551560
+      AnimacionesFlotaFlotaRojoFinal_10: 904756888
+      AnimacionesFlotaFlotaRojoFinal_15: -798797331
+      AnimacionesFlotaFlotaRojoFinal_16: -1730334392
+      AnimacionesFlotaFlotaRojoFinal_7: 1451725317
+      AnimacionesFlotaFlotaRojoFinal_14: 556482188
+      AnimacionesFlotaFlotaRojoFinal_13: 1249884889
+      AnimacionesFlotaFlotaRojoFinal_8: 1912631381
+      AnimacionesFlotaFlotaRojoFinal_18: -1522623277
+      AnimacionesFlotaFlotaRojoFinal_5: -531999335
+      AnimacionesFlotaFlotaRojoFinal_11: -1939164306
+      AnimacionesFlotaFlotaRojoFinal_17: 1247561949
+      AnimacionesFlotaFlotaRojoFinal_4: -1714411818
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

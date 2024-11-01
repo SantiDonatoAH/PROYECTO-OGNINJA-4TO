@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,364 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__0
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 8
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41da17af85216f843b997e1e9bff45fa
+      internalID: -60699990
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 8
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de5194007a3970e40aa160868a827b7d
+      internalID: 1161066966
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__2
+      rect:
+        serializedVersion: 2
+        x: 140
+        y: 8
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48f8da6662747bf4dbb15cdd06f51184
+      internalID: 1667560715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 8
+        width: 39
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5874d1becf37b145b3e7b17f701ec86
+      internalID: -749036602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__4
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 8
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ca925c65588ce49899ff63a33d10c6
+      internalID: 783238389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__5
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 8
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5472d674c4c70ae47ba9d93108cad5ef
+      internalID: -1297341498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__6
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 8
+        width: 44
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43d48a5d1d7faf146b8a1061ba1f9402
+      internalID: -1915934160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__7
+      rect:
+        serializedVersion: 2
+        x: 460
+        y: 8
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a3f801e7028494894d5248da3a74af
+      internalID: 596802747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__8
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 9
+        width: 39
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca8a9bbd354fc24d92c6e52cdcb895d
+      internalID: 696877012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__9
+      rect:
+        serializedVersion: 2
+        x: 588
+        y: 8
+        width: 39
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c4eb0a6cfb6cf6448982396e888bcda
+      internalID: 769049331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__10
+      rect:
+        serializedVersion: 2
+        x: 643
+        y: 8
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e894c9cafc3c85e49a2e1f33e09bccb6
+      internalID: -895945198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__11
+      rect:
+        serializedVersion: 2
+        x: 707
+        y: 9
+        width: 54
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08a5fd5bf44d1d34dbff41bf6b84f452
+      internalID: 1216292880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__12
+      rect:
+        serializedVersion: 2
+        x: 771
+        y: 8
+        width: 54
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d60ae8a16c5b4744aa97410df77cf18
+      internalID: 1688491061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__13
+      rect:
+        serializedVersion: 2
+        x: 843
+        y: 10
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ef1939137631544d941f83041bc23a0
+      internalID: 2058861814
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__14
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 12
+        width: 42
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3204773ccc89f0841991cf086441d5e8
+      internalID: 1072268992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__15
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 10
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a65b5f35f63285448036b90085a2714
+      internalID: 1331050961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpriteSheetLanzaDefin__16
+      rect:
+        serializedVersion: 2
+        x: 1039
+        y: 12
+        width: 39
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b546e8b9be5f2f4e9a910cf3c00b79c
+      internalID: 217383060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +495,24 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      SpriteSheetLanzaDefin__2: 1667560715
+      SpriteSheetLanzaDefin__14: 1072268992
+      SpriteSheetLanzaDefin__16: 217383060
+      SpriteSheetLanzaDefin__0: -60699990
+      SpriteSheetLanzaDefin__8: 696877012
+      SpriteSheetLanzaDefin__5: -1297341498
+      SpriteSheetLanzaDefin__3: -749036602
+      SpriteSheetLanzaDefin__12: 1688491061
+      SpriteSheetLanzaDefin__9: 769049331
+      SpriteSheetLanzaDefin__15: 1331050961
+      SpriteSheetLanzaDefin__7: 596802747
+      SpriteSheetLanzaDefin__4: 783238389
+      SpriteSheetLanzaDefin__10: -895945198
+      SpriteSheetLanzaDefin__11: 1216292880
+      SpriteSheetLanzaDefin__6: -1915934160
+      SpriteSheetLanzaDefin__13: 2058861814
+      SpriteSheetLanzaDefin__1: 1161066966
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -103,7 +103,448 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 8
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 214fed296b3c68449bdb7a7a7c635cbf
+      internalID: -1085199018
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 8
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 763a294eb26d99b49ac414fa7a369a76
+      internalID: -408696190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_2
+      rect:
+        serializedVersion: 2
+        x: 139
+        y: 8
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3138faf0b2ec5934289f74c055210c99
+      internalID: 1355615747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_3
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 8
+        width: 41
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cb6eb0101bdffd4cbc238ec9f14b5d7
+      internalID: 631188205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_4
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 8
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c362f6291edadb543ac41be977055f23
+      internalID: 291278421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_5
+      rect:
+        serializedVersion: 2
+        x: 333
+        y: 8
+        width: 38
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848772d54f5e8c64b8b19d90d0d7491d
+      internalID: 712527478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_6
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 8
+        width: 42
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37d7a5b7eeeab834b8bf504a55142c5c
+      internalID: -17358909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_7
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 8
+        width: 56
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9259ba1459133bf4088c888f37df8599
+      internalID: 1428904691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_8
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 7
+        width: 41
+        height: 51
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acbf6e5246c63bc43bce9f58cb645c0b
+      internalID: 1571323013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_9
+      rect:
+        serializedVersion: 2
+        x: 587
+        y: 10
+        width: 41
+        height: 44
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b43c3d1444db80048b683aa14f57b3a2
+      internalID: -848333505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_10
+      rect:
+        serializedVersion: 2
+        x: 651
+        y: 8
+        width: 41
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1406b11a6c027984fac3ffd41a7c0815
+      internalID: 1742764673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_11
+      rect:
+        serializedVersion: 2
+        x: 717
+        y: 9
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 866cfcdffc2d9af4b857894a3e29c484
+      internalID: 436766579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_12
+      rect:
+        serializedVersion: 2
+        x: 781
+        y: 10
+        width: 38
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4a48a8d50c383409ce2e1f6a171c6a
+      internalID: -1700768236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_13
+      rect:
+        serializedVersion: 2
+        x: 845
+        y: 9
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bee3f55b207c9c240affa7f99472a365
+      internalID: 1450205276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_14
+      rect:
+        serializedVersion: 2
+        x: 907
+        y: 8
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44abe2d05f1317b48a9154c182e91c6e
+      internalID: -1719924535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_15
+      rect:
+        serializedVersion: 2
+        x: 971
+        y: 9
+        width: 42
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1f9164b74a574748af3e150f66254bc
+      internalID: -2106211318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_16
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 8
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b181ba0fd1c101488351bb4d34c7cda
+      internalID: -514412104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_17
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 9
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2b0f900bcf3a6409f2519c3d6c4f35
+      internalID: 2113932961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_18
+      rect:
+        serializedVersion: 2
+        x: 1156
+        y: 10
+        width: 56
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 64d74dd3059a90b4c916d3ac6ac23e9e
+      internalID: -730484812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_19
+      rect:
+        serializedVersion: 2
+        x: 1220
+        y: 9
+        width: 56
+        height: 47
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 238298ea9303941438917880866a1226
+      internalID: 336995436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AnimacionesFlotaFlotaFinal_20
+      rect:
+        serializedVersion: 2
+        x: 1292
+        y: 12
+        width: 40
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c43f65eab782143b3a7049448bc4f5
+      internalID: -1611493314
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -114,7 +555,28 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      AnimacionesFlotaFlotaFinal_6: -17358909
+      AnimacionesFlotaFlotaFinal_5: 712527478
+      AnimacionesFlotaFlotaFinal_7: 1428904691
+      AnimacionesFlotaFlotaFinal_11: 436766579
+      AnimacionesFlotaFlotaFinal_0: -1085199018
+      AnimacionesFlotaFlotaFinal_13: 1450205276
+      AnimacionesFlotaFlotaFinal_2: 1355615747
+      AnimacionesFlotaFlotaFinal_17: 2113932961
+      AnimacionesFlotaFlotaFinal_16: -514412104
+      AnimacionesFlotaFlotaFinal_14: -1719924535
+      AnimacionesFlotaFlotaFinal_19: 336995436
+      AnimacionesFlotaFlotaFinal_12: -1700768236
+      AnimacionesFlotaFlotaFinal_1: -408696190
+      AnimacionesFlotaFlotaFinal_4: 291278421
+      AnimacionesFlotaFlotaFinal_9: -848333505
+      AnimacionesFlotaFlotaFinal_20: -1611493314
+      AnimacionesFlotaFlotaFinal_15: -2106211318
+      AnimacionesFlotaFlotaFinal_3: 631188205
+      AnimacionesFlotaFlotaFinal_8: 1571323013
+      AnimacionesFlotaFlotaFinal_10: 1742764673
+      AnimacionesFlotaFlotaFinal_18: -730484812
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
