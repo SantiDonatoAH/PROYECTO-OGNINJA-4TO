@@ -211,5 +211,5 @@ MonoBehaviour:
   ninja2: {fileID: 0}
   combatManager: {fileID: 0}
   KnockbackManager: {fileID: 0}
-  cooldownTime: 0.75
+  cooldownTime: 0.575
   rb: {fileID: 0}
