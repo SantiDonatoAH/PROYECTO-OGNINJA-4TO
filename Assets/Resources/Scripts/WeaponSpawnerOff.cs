@@ -35,7 +35,6 @@ public class WeaponSpawnerOff : MonoBehaviour
         {
             GameObject nuevaArma = Instantiate(armaSeleccionada, new Vector3(Random.Range(-6f, 6f), spawnPoint.position.y, 0f), spawnPoint.rotation);
             string newWeaponName = nuevaArma.name.Replace("(Clone)", "").Trim();
-            Debug.Log(newWeaponName);
 
 
             // Obtener el script del objeto clonado y deshabilitarlo
@@ -63,7 +62,6 @@ public class WeaponSpawnerOff : MonoBehaviour
         {
             GameObject nuevaArma = Instantiate(armaSeleccionada, new Vector3(Random.Range(-6f, 6f), spawnPoint.position.y, 0f), spawnPoint.rotation);
             string newWeaponName = nuevaArma.name.Replace("(Clone)", "").Trim();
-            Debug.Log(newWeaponName);
 
 
             // Obtener el script del objeto clonado y deshabilitarlo

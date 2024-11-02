@@ -1,8 +1,9 @@
+using Photon.Pun;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolaOff : MonoBehaviour
+public class PistolaOff : MonoBehaviourPunCallbacks
 {
 
     public Rigidbody2D rb;
@@ -37,6 +38,14 @@ public class PistolaOff : MonoBehaviour
         anim2 = ninja2.GetComponent<Animator>();
     }
 
+    public void cd1(float cd)
+    {
+        cooldownTime = cd;
+    }
+    public void cd2(float cd)
+    {
+        cooldownTime2 = cd;
+    }
     void Update()
     {
 

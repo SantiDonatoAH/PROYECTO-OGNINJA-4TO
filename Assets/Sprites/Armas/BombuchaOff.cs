@@ -1,7 +1,8 @@
 using System.Collections;
 using UnityEngine;
+using Photon.Pun;
 
-public class BombuchaOff : MonoBehaviour
+public class BombuchaOff : MonoBehaviourPunCallbacks
 {
     public GameObject bala;
     public float bulletSpeed = 10f;
@@ -26,6 +27,15 @@ public class BombuchaOff : MonoBehaviour
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
+    }
+
+    public void cd1(float cd)
+    {
+        cooldownTime = cd;
+    }
+    public void cd2(float cd)
+    {
+        cooldownTime2 = cd;
     }
 
     void Update()

@@ -13,6 +13,8 @@ public class RoundManager : MonoBehaviourPunCallbacks
     public GameObject weapon;
     public GameObject mapa;
 
+    public abilitySelectorOff ab;
+
     private bool ranzo = true;
     // Start is called before the first frame update
     void Start()
@@ -69,7 +71,7 @@ public class RoundManager : MonoBehaviourPunCallbacks
                 }
             }
             ranzo = false;
-
+            ab.enabled = true;
         }
 
     }

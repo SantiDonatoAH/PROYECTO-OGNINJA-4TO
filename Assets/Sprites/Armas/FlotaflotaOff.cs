@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlotaflotaOff : MonoBehaviour
+public class FlotaflotaOff : MonoBehaviourPunCallbacks
 {
 
     public GameObject ninja1;
@@ -42,6 +42,14 @@ public class FlotaflotaOff : MonoBehaviour
         anim2 = ninja2.GetComponent<Animator>();
     }
 
+    public void cd1(float cd)
+    {
+        cooldownTime = cd;
+    }
+    public void cd2(float cd)
+    {
+        cooldownTime2 = cd;
+    }
     // Update is called once per frame
     void Update()
     {

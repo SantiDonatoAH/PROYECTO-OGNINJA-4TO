@@ -44,6 +44,14 @@ public class MangueraOff : MonoBehaviour
         anim2 = ninja2.GetComponent<Animator>();
     }
 
+    public void cd1(float cd)
+    {
+        sumador = cd;
+    }
+    public void cd2(float cd)
+    {
+        sumador2 = cd;
+    }
     void Update()
     {
 

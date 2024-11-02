@@ -49577,6 +49577,7 @@ MonoBehaviour:
   wsO: {fileID: 0}
   weapon: {fileID: 0}
   mapa: {fileID: 0}
+  ab: {fileID: 846295323}
 --- !u!4 &728580641
 Transform:
   m_ObjectHideFlags: 0
@@ -50202,7 +50203,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 846295320}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 8485ec2d54633514ebe4644519d83407, type: 3}
   m_Name: 
@@ -50217,12 +50218,15 @@ MonoBehaviour:
   ninja2: {fileID: 1412429941}
   ninjacontroller: {fileID: 1019354702}
   playerblink: {fileID: 1019354703}
-  bombucha: {fileID: 114522585842031312, guid: 55e3a1623e305464a8aaffea455f2405, type: 3}
-  flotaflota: {fileID: 1500745841454471355, guid: e26d39f62ec44704b8e1c118dd4bfa15,
-    type: 3}
-  manguera: {fileID: 114822019631866956, guid: 5d9affd27d9078b469e3869baae499c7, type: 3}
+  bombucha: {fileID: 0}
+  flotaflota: {fileID: 0}
+  manguera: {fileID: 0}
   combatmanager: {fileID: 556487315}
-  pistola: {fileID: 114592013395552490, guid: ade1832b3a969a440be1e4ab76fcf0d7, type: 3}
+  pistola: {fileID: 0}
+  roca: {fileID: 0}
+  serpiente: {fileID: 0}
+  boomerang: {fileID: 0}
+  lanza: {fileID: 0}
   playerblink2: {fileID: 1412429952}
   ninjacontroller2: {fileID: 1412429951}
   habilidades: {fileID: 0}
@@ -50232,6 +50236,7 @@ MonoBehaviour:
   image2: {fileID: 1050538839}
   Vida1: 15
   Vida2: 15
+  newWeaponName: 
 --- !u!1001 &862796041
 PrefabInstance:
   m_ObjectHideFlags: 0
