@@ -48,9 +48,11 @@ public class RoundManager : MonoBehaviourPunCallbacks
                 if (mapa.name == "dia")
                 {
                     ws.SpawnWeaponD();
+                    ws.SpawnWeaponD();
                 }
                 else
                 {
+                    ws.SpawnWeaponN();
                     ws.SpawnWeaponN();
                 }
             }
@@ -69,9 +71,10 @@ public class RoundManager : MonoBehaviourPunCallbacks
                     wsO.SpawnWeaponN();
                     wsO.SpawnWeaponN();
                 }
+                ab.enabled = true;
+
             }
             ranzo = false;
-            ab.enabled = true;
         }
 
     }
