@@ -70,6 +70,8 @@ public class Serpiente : MonoBehaviourPunCallbacks
             {
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
+                ninja2Blink.Blink();
+                ninja2Blink.Blink();
 
                 StartCoroutine(CooldownRoutineH());
             }
@@ -84,6 +86,8 @@ public class Serpiente : MonoBehaviourPunCallbacks
             anim2.SetBool("IsAttacking", true);
             if (IsInRange(ninja2, ninja1))
             {
+                ninja1Blink.Blink();
+                ninja1Blink.Blink();
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
 
@@ -115,7 +119,9 @@ public class Serpiente : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime);
         ninja2Blink.Blink();
+        ninja2Blink.Blink();
         yield return new WaitForSeconds(cooldownTime);
+        ninja2Blink.Blink();
         ninja2Blink.Blink();
         canFire = true;
     }
@@ -124,7 +130,9 @@ public class Serpiente : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         ninja1Blink.Blink();
+        ninja1Blink.Blink();
         yield return new WaitForSeconds(cooldownTime2);
+        ninja1Blink.Blink();
         ninja1Blink.Blink();
         canFire2 = true;
     }

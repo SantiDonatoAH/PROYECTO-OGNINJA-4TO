@@ -1064,11 +1064,13 @@ MonoBehaviour:
   - {fileID: 3143022954601958004, guid: d354130f118184b4683fb05de75f72d7, type: 3}
   pisos:
   - {fileID: 9192913979720171191, guid: ad7246a8137c8c84f9b946a50d1518e5, type: 3}
-  - {fileID: 9192913979720171191, guid: ad7246a8137c8c84f9b946a50d1518e5, type: 3}
+  - {fileID: 4315141124181789773, guid: bb64bb11a09552c44874fb1652205ada, type: 3}
+  - {fileID: 4315141124181789773, guid: 1ac147f78436786449dcfba5d8aa8a6e, type: 3}
   ws: {fileID: 0}
   wsO: {fileID: 0}
   weapon: {fileID: 0}
   mapa: {fileID: 0}
+  ab: {fileID: 0}
 --- !u!4 &728580641
 Transform:
   m_ObjectHideFlags: 0

@@ -21,7 +21,7 @@ public class RoundManager : MonoBehaviourPunCallbacks
     {
             int cuaren = Random.Range(0, mapas.Length);
              mapa = mapas[cuaren];
-            GameObject piso = pisos[cuaren];
+            GameObject piso = pisos[Random.Range(0, pisos.Length)];
 
         if (PhotonNetwork.IsConnected)
         {
