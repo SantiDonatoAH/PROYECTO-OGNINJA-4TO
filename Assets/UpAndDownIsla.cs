@@ -6,8 +6,6 @@ public class UpAndDownIsla : MonoBehaviour
     public Transform island;             // Transform de la isla que se moverá
     public float moveDistance = 3f;      // Distancia en el eje Y que se moverá la isla
     public float speed = 1f;             // Velocidad de movimiento de la isla
-    public float minWaitTime = 2f;       // Tiempo mínimo de espera en cada posición
-    public float maxWaitTime = 5f;       // Tiempo máximo de espera en cada posición
 
     private Vector3 originalPosition;    // Posición original de la isla
     private Vector3 topPosition;         // Posición en la parte superior
@@ -30,14 +28,14 @@ public class UpAndDownIsla : MonoBehaviour
             yield return StartCoroutine(MoveToPosition(island, topPosition));
 
             // Espera un tiempo aleatorio en la posición superior
-            float waitTime = Random.Range(minWaitTime, maxWaitTime);
+            float waitTime = 2.5f;
             yield return new WaitForSeconds(waitTime);
 
             // Mueve la isla de regreso a la posición original
             yield return StartCoroutine(MoveToPosition(island, originalPosition));
 
             // Espera un tiempo aleatorio en la posición original
-            waitTime = Random.Range(minWaitTime, maxWaitTime);
+            waitTime = 4f;
             yield return new WaitForSeconds(waitTime);
         }
     }

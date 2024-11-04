@@ -23,6 +23,7 @@ TagManager:
   - Hposta
   - ws
   - mapa
+  - floor
   layers:
   - Default
   - TransparentFX

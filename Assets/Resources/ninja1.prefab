@@ -19677,7 +19677,7 @@ MonoBehaviour:
   m_PositionModel:
     SynchronizeEnabled: 1
     TeleportEnabled: 1
-    TeleportIfDistanceGreaterThan: 0.25
+    TeleportIfDistanceGreaterThan: 0.001
     InterpolateOption: 2
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 1
@@ -19711,16 +19711,16 @@ MonoBehaviour:
   ShowParameterInspector: 1
   m_SynchronizeParameters:
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsCrouching
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsJumping
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsPunching
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: Run
   - Type: 4
     SynchronizeType: 2
@@ -19729,7 +19729,7 @@ MonoBehaviour:
     SynchronizeType: 0
     Name: attack
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsWallSliding
   - Type: 4
     SynchronizeType: 0

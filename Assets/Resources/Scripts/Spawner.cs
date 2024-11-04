@@ -81,7 +81,10 @@ public class Spawner : MonoBehaviourPunCallbacks
                 mapa = GameObject.FindGameObjectWithTag("mapa");
                 mapaS = mapa.GetComponent<RoundManager>();
                 mapaS.enabled = true;
+
+               
             }
+           
 
             te = kita2.GetComponent<Teleporter>();
             te.enabled = false;
