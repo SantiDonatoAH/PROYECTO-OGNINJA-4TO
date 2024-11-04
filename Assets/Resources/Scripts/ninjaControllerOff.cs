@@ -48,7 +48,7 @@ public class ninjaControllerOff : MonoBehaviour
 
         kita = moveSpeed;
         kitaJ = jumpForce;
-        saltoDoble = kitaJ * 2;
+        saltoDoble = kitaJ * 3;
 
         audioSource = GetComponent<AudioSource>();
     }
@@ -87,6 +87,13 @@ public class ninjaControllerOff : MonoBehaviour
             if (footstepParticles.isPlaying || !isGrounded)
                 footstepParticles.Stop();
         }
+    }
+
+    public void cambio()
+    {
+        kita = moveSpeed;
+        kitaJ = jumpForce;
+        saltoDoble = kitaJ * 3;
     }
 
     void Move()

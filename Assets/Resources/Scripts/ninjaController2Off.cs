@@ -163,6 +163,12 @@ public class ninjaController2Off : MonoBehaviour
         }
     }
 
+    public void cambio()
+    {
+        kita = moveSpeed;
+        kitaJ = jumpForce;
+        saltoDoble = kitaJ * 3;
+    }
     void WallSlide()
     {
         if (anim.GetBool("IsWallSliding"))

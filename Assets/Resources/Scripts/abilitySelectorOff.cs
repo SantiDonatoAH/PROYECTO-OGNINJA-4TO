@@ -83,6 +83,7 @@ public class abilitySelectorOff : MonoBehaviour
         {
             image1.sprite = Resources.Load<Sprite>("Salto");
             ninjacontroller.jumpForce = 10;
+            ninjacontroller.cambio();
         }
 
         if (h1 == "vida")
@@ -101,6 +102,7 @@ public class abilitySelectorOff : MonoBehaviour
         {
             image1.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
             ninjacontroller.moveSpeed = 6.5f;
+            ninjacontroller.cambio();
         }
 
         if (h1 == "cooldown")
@@ -166,6 +168,7 @@ public class abilitySelectorOff : MonoBehaviour
         {
             image2.sprite = Resources.Load<Sprite>("Salto");
             ninjacontroller2.jumpForce = 10;
+            ninjacontroller2.cambio();
         }
 
         if (h2 == "vida")
@@ -184,6 +187,8 @@ public class abilitySelectorOff : MonoBehaviour
         {
             image2.sprite = Resources.Load<Sprite>("Velocidad"); // Carga la imagen correspondiente a "velocidad"
             ninjacontroller2.moveSpeed = 6.5f;
+            ninjacontroller2.cambio();
+
         }
 
         if (h2 == "cooldown")
