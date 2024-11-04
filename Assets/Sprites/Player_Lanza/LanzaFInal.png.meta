@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: d7fc74c9ed403b94fb02003545a45a40
+guid: aaa275b4bde7d3148bfe0711a193c4d5
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -129,7 +129,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__0
+      name: LanzaFInal_0
       rect:
         serializedVersion: 2
         x: 12
@@ -137,41 +137,41 @@ TextureImporter:
         width: 39
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 41da17af85216f843b997e1e9bff45fa
-      internalID: -60699990
+      spriteID: 58fb8e134aa86b94cab6767649955e16
+      internalID: -1365817795
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__1
+      name: LanzaFInal_1
       rect:
         serializedVersion: 2
-        x: 75
+        x: 76
         y: 8
         width: 39
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: de5194007a3970e40aa160868a827b7d
-      internalID: 1161066966
+      spriteID: 8302c76e9ee79d5459e81c1bf806b302
+      internalID: 1491655367
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__2
+      name: LanzaFInal_2
       rect:
         serializedVersion: 2
         x: 140
@@ -179,41 +179,41 @@ TextureImporter:
         width: 39
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 48f8da6662747bf4dbb15cdd06f51184
-      internalID: 1667560715
+      spriteID: 1a335e7ab48373f48945573f30e96063
+      internalID: 967423421
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__3
+      name: LanzaFInal_3
       rect:
         serializedVersion: 2
-        x: 206
+        x: 204
         y: 8
         width: 39
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5874d1becf37b145b3e7b17f701ec86
-      internalID: -749036602
+      spriteID: e22704d2eeb029a4f9e1c62d9165991f
+      internalID: 390408066
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__4
+      name: LanzaFInal_4
       rect:
         serializedVersion: 2
         x: 268
@@ -221,41 +221,41 @@ TextureImporter:
         width: 39
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c0ca925c65588ce49899ff63a33d10c6
-      internalID: 783238389
+      spriteID: 8ef9f34af6ad7534fb40bad08f60ee71
+      internalID: 22008204
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__5
+      name: LanzaFInal_5
       rect:
         serializedVersion: 2
-        x: 323
+        x: 325
         y: 8
         width: 54
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5472d674c4c70ae47ba9d93108cad5ef
-      internalID: -1297341498
+      spriteID: 167949628c827944fb7e71a5a4c3652e
+      internalID: -2087185268
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__6
+      name: LanzaFInal_6
       rect:
         serializedVersion: 2
         x: 394
@@ -263,20 +263,20 @@ TextureImporter:
         width: 44
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 43d48a5d1d7faf146b8a1061ba1f9402
-      internalID: -1915934160
+      spriteID: df67b60cdb911b848b84c66702ec855e
+      internalID: 445652508
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__7
+      name: LanzaFInal_7
       rect:
         serializedVersion: 2
         x: 460
@@ -284,20 +284,20 @@ TextureImporter:
         width: 39
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 07a3f801e7028494894d5248da3a74af
-      internalID: 596802747
+      spriteID: e1b378046a12f4c4fb4a262a3182db69
+      internalID: 787000576
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__8
+      name: LanzaFInal_8
       rect:
         serializedVersion: 2
         x: 524
@@ -305,20 +305,20 @@ TextureImporter:
         width: 39
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ca8a9bbd354fc24d92c6e52cdcb895d
-      internalID: 696877012
+      spriteID: 523f4c6bbd5736c438ba6bf304b26882
+      internalID: 1967193341
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__9
+      name: LanzaFInal_9
       rect:
         serializedVersion: 2
         x: 588
@@ -326,161 +326,161 @@ TextureImporter:
         width: 39
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9c4eb0a6cfb6cf6448982396e888bcda
-      internalID: 769049331
+      spriteID: 80127a8057f493a43a73ccbab69f9166
+      internalID: -1508213255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__10
+      name: LanzaFInal_10
       rect:
         serializedVersion: 2
-        x: 643
+        x: 645
         y: 8
         width: 54
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e894c9cafc3c85e49a2e1f33e09bccb6
-      internalID: -895945198
+      spriteID: 547d2bd0feb7f344cb81f32ee7754ee9
+      internalID: -38136100
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__11
+      name: LanzaFInal_11
       rect:
         serializedVersion: 2
-        x: 707
-        y: 9
+        x: 709
+        y: 8
         width: 54
         height: 48
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 08a5fd5bf44d1d34dbff41bf6b84f452
-      internalID: 1216292880
+      spriteID: 4aabce33fe48d944f9a5a23536e4a5e5
+      internalID: -785569405
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__12
+      name: LanzaFInal_12
       rect:
         serializedVersion: 2
-        x: 771
+        x: 773
         y: 8
         width: 54
         height: 49
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1d60ae8a16c5b4744aa97410df77cf18
-      internalID: 1688491061
+      spriteID: 487d842e89a6b9d478265b5a6ea97048
+      internalID: 1433054745
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__13
+      name: LanzaFInal_13
       rect:
         serializedVersion: 2
         x: 843
-        y: 10
+        y: 9
         width: 42
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0ef1939137631544d941f83041bc23a0
-      internalID: 2058861814
+      spriteID: fee4057dab6adff44819c15dbb01b568
+      internalID: 1235852662
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__14
+      name: LanzaFInal_14
       rect:
         serializedVersion: 2
         x: 907
-        y: 12
+        y: 10
         width: 42
         height: 45
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3204773ccc89f0841991cf086441d5e8
-      internalID: 1072268992
+      spriteID: 29b365c00fd5200459bacc7d06a1964b
+      internalID: 1095373179
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__15
+      name: LanzaFInal_15
       rect:
         serializedVersion: 2
         x: 971
-        y: 10
+        y: 9
         width: 42
         height: 47
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0a65b5f35f63285448036b90085a2714
-      internalID: 1331050961
+      spriteID: 98cf724dc3c8f3241aa78b7451317094
+      internalID: 1810383761
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: SpriteSheetLanzaDefin__16
+      name: LanzaFInal_16
       rect:
         serializedVersion: 2
-        x: 1039
+        x: 1036
         y: 12
         width: 39
         height: 40
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8b546e8b9be5f2f4e9a910cf3c00b79c
-      internalID: 217383060
+      spriteID: 32e4863cf9566984ba68ded1c3c0e451
+      internalID: 934694283
       vertices: []
       indices: 
       edges: []
@@ -496,23 +496,23 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      SpriteSheetLanzaDefin__2: 1667560715
-      SpriteSheetLanzaDefin__14: 1072268992
-      SpriteSheetLanzaDefin__16: 217383060
-      SpriteSheetLanzaDefin__0: -60699990
-      SpriteSheetLanzaDefin__8: 696877012
-      SpriteSheetLanzaDefin__5: -1297341498
-      SpriteSheetLanzaDefin__3: -749036602
-      SpriteSheetLanzaDefin__12: 1688491061
-      SpriteSheetLanzaDefin__9: 769049331
-      SpriteSheetLanzaDefin__15: 1331050961
-      SpriteSheetLanzaDefin__7: 596802747
-      SpriteSheetLanzaDefin__4: 783238389
-      SpriteSheetLanzaDefin__10: -895945198
-      SpriteSheetLanzaDefin__11: 1216292880
-      SpriteSheetLanzaDefin__6: -1915934160
-      SpriteSheetLanzaDefin__13: 2058861814
-      SpriteSheetLanzaDefin__1: 1161066966
+      LanzaFInal_11: -785569405
+      LanzaFInal_0: -1365817795
+      LanzaFInal_13: 1235852662
+      LanzaFInal_15: 1810383761
+      LanzaFInal_5: -2087185268
+      LanzaFInal_7: 787000576
+      LanzaFInal_14: 1095373179
+      LanzaFInal_2: 967423421
+      LanzaFInal_8: 1967193341
+      LanzaFInal_16: 934694283
+      LanzaFInal_9: -1508213255
+      LanzaFInal_10: -38136100
+      LanzaFInal_4: 22008204
+      LanzaFInal_12: 1433054745
+      LanzaFInal_1: 1491655367
+      LanzaFInal_3: 390408066
+      LanzaFInal_6: 445652508
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
