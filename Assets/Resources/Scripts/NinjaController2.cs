@@ -57,7 +57,7 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
 
         kita = moveSpeed;
         kitaJ = jumpForce;
-        saltoDoble = kitaJ * 2;
+        saltoDoble = kitaJ * 3;
 
         audioSource2 = GetComponent<AudioSource>();
     }
