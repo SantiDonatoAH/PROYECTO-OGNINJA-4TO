@@ -21,11 +21,18 @@ public class cameraScript : MonoBehaviour
 
     void Start()
     {
-        cam = GetComponent<Camera>(); // Obtiene la cámara adjunta a este script
+        cam = GetComponent<Camera>();
+        GameObject p = GameObject.FindGameObjectWithTag("player1");
+        GameObject p2 = GameObject.FindGameObjectWithTag("player2");
+
+        ninja1 = p.GetComponent<Transform>();
+        ninja2 = p2.GetComponent<Transform>();
     }
 
     void LateUpdate()
     {
+      
+
         if (ninja1 != null && ninja2 != null)
         {
             MoveCamera();

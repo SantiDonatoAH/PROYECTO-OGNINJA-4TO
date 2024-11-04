@@ -37,6 +37,9 @@ public class Spawner : MonoBehaviourPunCallbacks
 
     private PhotonView photonView;
 
+    public cameraScript cameraScript;
+    public GameObject cam;
+
     public bool spawn = true;
 
     void Start()
@@ -81,10 +84,10 @@ public class Spawner : MonoBehaviourPunCallbacks
                 mapa = GameObject.FindGameObjectWithTag("mapa");
                 mapaS = mapa.GetComponent<RoundManager>();
                 mapaS.enabled = true;
-
-               
             }
-           
+            cam = GameObject.Find("Main Camera");
+            cameraScript = cam.GetComponent<cameraScript>();
+            cameraScript.enabled = true;
 
             te = kita2.GetComponent<Teleporter>();
             te.enabled = false;
@@ -102,8 +105,8 @@ public class Spawner : MonoBehaviourPunCallbacks
 
             if (PhotonNetwork.IsMasterClient)
             {
+                ability.enabled = true;
                 Instantiate(weapon, ninja2.position, ninja2.rotation);
-                ability. enabled = true;
             }
             deathB = GameObject.FindGameObjectWithTag("Dead");
             death = deathB.GetComponent<deathBarrier>();
