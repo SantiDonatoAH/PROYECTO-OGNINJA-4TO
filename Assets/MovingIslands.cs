@@ -1,35 +1,52 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using System.Collections;
 
 public class MovingIslands : MonoBehaviour
 {
-    public Transform[] islands; // Array de islas que se moverán en círculo
-    public float radius = 1f;   // Radio del movimiento circular
-    public float speed = 1f;    // Velocidad de rotación
+    public Transform island;             // Transform de la isla que se moverá
+    public float moveDistance = 3f;      // Distancia en el eje Y que se moverá la isla
+    public float speed = 1f;             // Velocidad de movimiento de la isla
 
-    private Vector3[] originalPositions; // Posiciones originales de cada isla
+    private Vector3 originalPosition;    // Posición original de la isla
+    private Vector3 topPosition;         // Posición en la parte superior
 
     void Start()
     {
-        // Almacena las posiciones iniciales de cada isla
-        originalPositions = new Vector3[islands.Length];
-        for (int i = 0; i < islands.Length; i++)
+        // Define la posición original y la posición superior
+        originalPosition = island.position;
+        topPosition = originalPosition + new Vector3(moveDistance, 0, 0);
+
+        // Inicia el proceso de movimiento de la isla
+        StartCoroutine(MoveIsland());
+    }
+
+    IEnumerator MoveIsland()
+    {
+        while (true)
         {
-            originalPositions[i] = islands[i].position;
+            // Mueve la isla a la posición superior
+            yield return StartCoroutine(MoveToPosition(island, topPosition));
+
+            // Espera un tiempo aleatorio en la posición superior
+            float waitTime = 2.5f;
+            yield return new WaitForSeconds(waitTime);
+
+            // Mueve la isla de regreso a la posición original
+            yield return StartCoroutine(MoveToPosition(island, originalPosition));
+
+            // Espera un tiempo aleatorio en la posición original
+            waitTime = 4f;
+            yield return new WaitForSeconds(waitTime);
         }
     }
 
-    void Update()
+    IEnumerator MoveToPosition(Transform island, Vector3 targetPosition)
     {
-        for (int i = 0; i < islands.Length; i++)
+        // Mueve la isla a la posición objetivo
+        while (Vector3.Distance(island.position, targetPosition) > 0.1f)
         {
-            // Calcula el desplazamiento circular en el plano XZ
-            float offsetX = Mathf.Cos(Time.time * speed + i) * radius;
-            float offsetZ = Mathf.Sin(Time.time * speed + i) * radius;
-
-            // Aplica el movimiento circular alrededor de la posición original
-            islands[i].position = originalPositions[i] + new Vector3(offsetX, 0, offsetZ);
+            island.position = Vector3.MoveTowards(island.position, targetPosition, speed * Time.deltaTime);
+            yield return null;
         }
     }
 }

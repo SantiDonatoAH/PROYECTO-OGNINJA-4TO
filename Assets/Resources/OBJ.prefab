@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9192913978486563460}
-  - component: {fileID: 7612277600625004323}
   m_Layer: 0
   m_Name: Islas
   m_TagString: Untagged
@@ -34,23 +33,6 @@ Transform:
   m_Father: {fileID: 9192913979720171190}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7612277600625004323
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9192913978486563461}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 28b3065d8441e9148ad008d3be9734cf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  islands:
-  - {fileID: 9192913978872767314}
-  - {fileID: 9192913979176107000}
-  radius: 1
-  speed: 1
 --- !u!1 &9192913978872767315
 GameObject:
   m_ObjectHideFlags: 0
@@ -60,6 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9192913978872767314}
+  - component: {fileID: 7826479149241205521}
   m_Layer: 0
   m_Name: 1
   m_TagString: Untagged
@@ -102,6 +85,21 @@ Transform:
   m_Father: {fileID: 9192913978486563460}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7826479149241205521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9192913978872767315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b3065d8441e9148ad008d3be9734cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  island: {fileID: 9192913978872767314}
+  moveDistance: -2
+  speed: 0.75
 --- !u!1 &9192913979176107001
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +109,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9192913979176107000}
+  - component: {fileID: 8724809114098137172}
   m_Layer: 0
   m_Name: 2
   m_TagString: Untagged
@@ -161,6 +160,21 @@ Transform:
   m_Father: {fileID: 9192913978486563460}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8724809114098137172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9192913979176107001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28b3065d8441e9148ad008d3be9734cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  island: {fileID: 9192913979176107000}
+  moveDistance: 2
+  speed: 0.75
 --- !u!1 &9192913979623829502
 GameObject:
   m_ObjectHideFlags: 0
