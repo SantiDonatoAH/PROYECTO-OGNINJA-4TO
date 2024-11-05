@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FlotaFlotaSalta4
+  m_Name: FlotaFlotaRojoSalta1
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,13 +20,13 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 21300000, guid: bd0b35f7d84e1684c923ba645d9df062, type: 3}
+      value: {fileID: 21300000, guid: ace1fc51e74c54d4a93a43a69788daff, type: 3}
     - time: 0.75
-      value: {fileID: 21300000, guid: 2389f519bb7350347bc9631738cdc8e9, type: 3}
+      value: {fileID: 21300000, guid: 49ed166ee4133aa4b84a169017dd5adc, type: 3}
     - time: 0.9166667
-      value: {fileID: 21300000, guid: 6191b11e8a6512249bc3ca36a9a6cbcd, type: 3}
+      value: {fileID: 21300000, guid: 086692702c1623d4f8aff6cfd5c2c87d, type: 3}
     - time: 1.3333334
-      value: {fileID: 21300000, guid: 6191b11e8a6512249bc3ca36a9a6cbcd, type: 3}
+      value: {fileID: 21300000, guid: 086692702c1623d4f8aff6cfd5c2c87d, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -46,10 +46,10 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 21300000, guid: bd0b35f7d84e1684c923ba645d9df062, type: 3}
-    - {fileID: 21300000, guid: 2389f519bb7350347bc9631738cdc8e9, type: 3}
-    - {fileID: 21300000, guid: 6191b11e8a6512249bc3ca36a9a6cbcd, type: 3}
-    - {fileID: 21300000, guid: 6191b11e8a6512249bc3ca36a9a6cbcd, type: 3}
+    - {fileID: 21300000, guid: ace1fc51e74c54d4a93a43a69788daff, type: 3}
+    - {fileID: 21300000, guid: 49ed166ee4133aa4b84a169017dd5adc, type: 3}
+    - {fileID: 21300000, guid: 086692702c1623d4f8aff6cfd5c2c87d, type: 3}
+    - {fileID: 21300000, guid: 086692702c1623d4f8aff6cfd5c2c87d, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
