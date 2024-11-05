@@ -16,7 +16,7 @@ public class BalaBoomerangOff : MonoBehaviourPunCallbacks
     public GameObject ninja2;
     public GameObject combatManager;
 
-    public KnockbackManager KnockbackManager;
+    public float knockbackForce = 10f;
 
     public float cooldownTime = 2f;
 
@@ -33,7 +33,7 @@ public class BalaBoomerangOff : MonoBehaviourPunCallbacks
         ninjaBlink = ninja1.GetComponent<PlayerBlinkOff>();
 
         combatManager = GameObject.FindWithTag("combat");
-        KnockbackManager = combatManager.GetComponent<KnockbackManager>();
+        
 
 
         anim = ninja1.GetComponent<Animator>();
@@ -54,7 +54,7 @@ public class BalaBoomerangOff : MonoBehaviourPunCallbacks
             ninja2Blink.Blink();
             ninja2Blink.Blink();
             ninja2Blink.Blink();
-            KnockbackManager.Ninja2();
+            ApplyKnockback(collision, ninja2Blink.gameObject);
             AudioManager.instance.PlaySound(ouchSound);
         }
 
@@ -71,7 +71,18 @@ public class BalaBoomerangOff : MonoBehaviourPunCallbacks
     }
 
 
+    void ApplyKnockback(Collision2D collision, GameObject player)
+    {
+        // Calcula la dirección de knockback como la dirección opuesta a la bala
+        Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
 
+        // Accede al Rigidbody2D del jugador y aplica la fuerza de retroceso
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
+    }
     IEnumerator CooldownRoutine()
     {
         yield return new WaitForSeconds(cooldownTime);

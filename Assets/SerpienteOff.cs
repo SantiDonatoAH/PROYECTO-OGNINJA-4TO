@@ -26,7 +26,7 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     public float cooldownTime = .75f;
     public float cooldownTime2 = .75f;
 
- 
+    public float knockbackForce = 10f;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +43,7 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
 
-       
+
     }
 
     public void cd1(float cd)
@@ -57,17 +57,18 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingSerpiente") == true && canFire )
+        if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingSerpiente") == true && canFire)
         {
             canFire = false;
             anim.SetBool("IsAttacking", true);
             if (IsInRange(ninja1, ninja2))
             {
+                ApplyKnockback(ninja2Blink.gameObject);
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
-
+                
                 StartCoroutine(CooldownRoutineH());
             }
             else
@@ -81,11 +82,12 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
             anim2.SetBool("IsAttacking", true);
             if (IsInRange(ninja2, ninja1))
             {
+                ApplyKnockback(ninja1Blink.gameObject);
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
-
+                
                 StartCoroutine(CooldownRoutine2H());
             }
             else
@@ -142,5 +144,18 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true;
+    }
+
+    void ApplyKnockback(GameObject player)
+    {
+        // Calcula la dirección de knockback como la dirección opuesta a la bala
+        Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+
+        // Accede al Rigidbody2D del jugador y aplica la fuerza de retroceso
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
     }
 }

@@ -14,8 +14,8 @@ public class BalaOff : MonoBehaviour
     public GameObject ninja1;
     public GameObject ninja2;
     public GameObject combatManager;
+    public float knockbackForce = 10f;
 
-    public KnockbackManager KnockbackManager;
     void Start()
     {
 
@@ -26,7 +26,7 @@ public class BalaOff : MonoBehaviour
         ninjaBlink = ninja1.GetComponent<PlayerBlinkOff>();
 
         combatManager = GameObject.FindWithTag("combat");
-        KnockbackManager = combatManager.GetComponent<KnockbackManager>();
+       
 
 
         anim = ninja1.GetComponent<Animator>();
@@ -39,12 +39,12 @@ public class BalaOff : MonoBehaviour
         if (collision.gameObject.CompareTag("player2"))
         {
             Destroy(gameObject);
-
+            ApplyKnockback(collision, ninja2Blink.gameObject);
             ninja2Blink.Blink();
             ninja2Blink.Blink();
             ninja2Blink.Blink();
             ninja2Blink.Blink();
-            KnockbackManager.Ninja2();
+            
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }
@@ -52,12 +52,12 @@ public class BalaOff : MonoBehaviour
         else if (collision.gameObject.CompareTag("player1"))
         {
             Destroy(gameObject);
-
+            ApplyKnockback(collision, ninjaBlink.gameObject);
             ninjaBlink.Blink();
             ninjaBlink.Blink();
             ninjaBlink.Blink();
             ninjaBlink.Blink();
-            KnockbackManager.Ninja1();
+            
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }
@@ -68,7 +68,7 @@ public class BalaOff : MonoBehaviour
         }
         else
         {
-            Debug.Log("jsd");
+            
             Destroy(gameObject);
         }
     }
@@ -77,5 +77,17 @@ public class BalaOff : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("IsBlinking", false);
+    }
+    void ApplyKnockback(Collision2D collision, GameObject player)
+    {
+        // Calcula la dirección de knockback como la dirección opuesta a la bala
+        Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+
+        // Accede al Rigidbody2D del jugador y aplica la fuerza de retroceso
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
     }
 }
