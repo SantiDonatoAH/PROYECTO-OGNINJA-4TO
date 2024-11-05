@@ -191,7 +191,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   island: {fileID: 4315141123652438274}
-  moveDistance: 3
+  moveDistance: 2
   speed: 0.75
 --- !u!1 &4315141123872346537
 GameObject:
