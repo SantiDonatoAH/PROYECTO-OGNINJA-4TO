@@ -7,6 +7,12 @@ public class AguaOff : MonoBehaviour
     private playerBlink2Off ninja2Blink;
     private PlayerBlinkOff ninjaBlink;
     [SerializeField] private AudioClip ouchSound;
+    [SerializeField] private AudioClip water1;
+    [SerializeField] private AudioClip water2;
+    [SerializeField] private AudioClip water3;
+    [SerializeField] private AudioClip water4;
+
+    private AudioClip[] waterSounds;
 
     [SerializeField] Animator anim;
     [SerializeField] Animator anim2;
@@ -29,13 +35,15 @@ public class AguaOff : MonoBehaviour
         ninjaBlink = ninja1.GetComponent<PlayerBlinkOff>();
 
         combatManager = GameObject.FindWithTag("combat");
-        
+
 
 
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
 
         savedVelocity = GetComponent<Rigidbody2D>().velocity;
+
+        waterSounds = new AudioClip[] { water1, water2, water3, water4 };
     }
     void Update()
     {
@@ -44,6 +52,8 @@ public class AguaOff : MonoBehaviour
     }
     void OnCollisionEnter2D(Collision2D collision)
     {
+        AudioClip randomWaterSound = waterSounds[Random.Range(0, waterSounds.Length)];
+        AudioManager.instance.PlaySound(randomWaterSound);
 
         if (collision.gameObject.CompareTag("player2"))
         {

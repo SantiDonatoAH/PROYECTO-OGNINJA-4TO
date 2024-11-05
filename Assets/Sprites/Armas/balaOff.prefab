@@ -147,9 +147,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ouchSound: {fileID: 8300000, guid: f7d72949bce946d458879b74bca6b0a5, type: 3}
+  water1: {fileID: 8300000, guid: bf42e4248d3a5f9458528b3d413f2538, type: 3}
+  water2: {fileID: 8300000, guid: 93ef872c6938fd24fad730b7b5dd4a86, type: 3}
+  water3: {fileID: 8300000, guid: ee8dd549a9d6e7644baa0116bbc4b291, type: 3}
+  water4: {fileID: 8300000, guid: ca512a11fbe734e46b34bf3993307ad0, type: 3}
   anim: {fileID: 0}
   anim2: {fileID: 0}
   ninja1: {fileID: 0}
   ninja2: {fileID: 0}
   combatManager: {fileID: 0}
-  KnockbackManager: {fileID: 0}
+  knockbackForce: 10

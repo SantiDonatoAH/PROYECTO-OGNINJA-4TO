@@ -238,13 +238,15 @@ MonoBehaviour:
   rb2: {fileID: 7351104559564034631, guid: f682b057d38ae3a43873763004d2f204, type: 3}
   bala2: {fileID: 7351104559564034627, guid: f682b057d38ae3a43873763004d2f204, type: 3}
   bulletSpeed: 15
+  whoosh1: {fileID: 8300000, guid: ab36e5b0a4ebe2244b57282d26d9de1e, type: 3}
+  whoosh2: {fileID: 8300000, guid: 940c10943259dcf4aaa2392b5bc46fae, type: 3}
+  whoosh3: {fileID: 8300000, guid: 6580e599c80f7674ca44907e56ae80b4, type: 3}
   anim: {fileID: 0}
   anim2: {fileID: 0}
   ninja1: {fileID: 0}
   ninja2: {fileID: 0}
   multiplicador: 0
   multiplicador2: 0
-  pewSound: {fileID: 0}
   cooldownTime: 0.75
   cooldownTime2: 0.75
   pausemanager: {fileID: 0}

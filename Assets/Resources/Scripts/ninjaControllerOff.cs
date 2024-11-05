@@ -32,9 +32,9 @@ public class ninjaControllerOff : MonoBehaviour
     public ParticleSystem landParticles;
     public ParticleSystem wallSlideParticles;
 
-    [SerializeField] private AudioClip grassStepSound;
-    [SerializeField] private AudioClip grassJumpSound;
-    [SerializeField] private AudioClip crouchSound;
+    [SerializeField] private AudioClip[] grassStepSounds;
+    [SerializeField] private AudioClip[] grassJumpSounds;
+    [SerializeField] private AudioClip[] crouchSounds;
     [SerializeField] private AudioClip wallSlideSound;
 
     private AudioSource audioSource;
@@ -75,12 +75,11 @@ public class ninjaControllerOff : MonoBehaviour
             jumpForce = kitaJ;
         }
 
-        
         if (move != 0 && isGrounded && !isTouchingWall && !isCrouching)
         {
             if (!footstepParticles.isPlaying)
                 footstepParticles.Play();
-            PlayGrassStepSound();
+            PlayRandomStepSound();
         }
         else
         {
@@ -135,24 +134,19 @@ public class ninjaControllerOff : MonoBehaviour
     {
         movey = Input.GetAxisRaw("Vertical");
 
-        // Si el jugador está en el suelo o tocando la pared y presiona W, salta
         if (Input.GetKeyDown(KeyCode.W) && !isCrouching && (isTouchingWall || isGrounded))
         {
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", true);
             isGrounded = false;
 
-            // Aplica la fuerza de salto
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
 
-            // Reproducir las partículas de salto
             jumpParticles.Play();
 
-            PlayGrassJumpSound();
+            PlayRandomJumpSound();
         }
     }
-
-
 
     void Crouch()
     {
@@ -165,7 +159,7 @@ public class ninjaControllerOff : MonoBehaviour
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
             parado.enabled = false;
-            PlayCrouchSound();
+            PlayRandomCrouchSound();
         }
         else
         {
@@ -177,7 +171,6 @@ public class ninjaControllerOff : MonoBehaviour
 
     void WallSlide()
     {
-        // Si la animación de "IsWallSliding" está activa, activamos las partículas
         if (anim.GetBool("IsWallSliding"))
         {
             if (!wallSlideParticles.isPlaying)
@@ -189,12 +182,10 @@ public class ninjaControllerOff : MonoBehaviour
                 audioSource.PlayOneShot(wallSlideSound);
             }
 
-            // Actualizamos la posición de las partículas para que sigan al jugador
             wallSlideParticles.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles.transform.position.z);
         }
         else
         {
-            // Si la animación no está activa, detenemos las partículas
             if (wallSlideParticles.isPlaying)
             {
                 wallSlideParticles.Stop();
@@ -206,11 +197,9 @@ public class ninjaControllerOff : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-
             anim.SetBool("IsJumping", false);
             isGrounded = true;
 
-            // Detener las partículas de salto si siguen activas
             if (jumpParticles.isPlaying)
             {
                 jumpParticles.Stop();
@@ -218,7 +207,6 @@ public class ninjaControllerOff : MonoBehaviour
 
             if (!landParticles.isPlaying)
             {
-
                 landParticles.Play();
             }
         }
@@ -237,18 +225,15 @@ public class ninjaControllerOff : MonoBehaviour
 
             if (isHoldingWeapon)
             {
-                // Cambiar el arma actual por la nueva
                 anim.SetBool("IsHolding" + weaponName, false);
             }
 
-            // Agarrar la nueva arma
             weaponName = newWeaponName;
-            collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma agarrada fuera de la pantalla
+            collision.gameObject.transform.position = new Vector2(100, 0);
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
         }
     }
-
 
     void OnCollisionExit2D(Collision2D collision)
     {
@@ -266,22 +251,25 @@ public class ninjaControllerOff : MonoBehaviour
             anim.SetBool("IsPunching", false);
         }
     }
-    private void PlayGrassStepSound()
+
+    private void PlayRandomStepSound()
     {
-        //if (!audioSource.isPlaying)
-       // {
-         //   audioSource.PlayOneShot(grassStepSound);
-        //}
+        if (!audioSource.isPlaying)
+        {
+            AudioClip randomStepSound = grassStepSounds[Random.Range(0, grassStepSounds.Length)];
+            audioSource.PlayOneShot(randomStepSound);
+        }
     }
 
-    // Método para reproducir el sonido al saltar
-    private void PlayGrassJumpSound()
+    private void PlayRandomJumpSound()
     {
-       // audioSource.PlayOneShot(grassJumpSound);
-    }
-    private void PlayCrouchSound()
-    {
-       // audioSource.PlayOneShot(crouchSound);
+        AudioClip randomJumpSound = grassJumpSounds[Random.Range(0, grassJumpSounds.Length)];
+        audioSource.PlayOneShot(randomJumpSound);
     }
 
+    private void PlayRandomCrouchSound()
+    {
+        AudioClip randomCrouchSound = crouchSounds[Random.Range(0, crouchSounds.Length)];
+        audioSource.PlayOneShot(randomCrouchSound);
+    }
 }

@@ -35,9 +35,9 @@ public class ninjaController2Off : MonoBehaviour
     public ParticleSystem landParticles2;
     public ParticleSystem wallSlideParticles2;
 
-    [SerializeField] private AudioClip grassStepSound2;
-    [SerializeField] private AudioClip grassJumpSound2;
-    [SerializeField] private AudioClip crouchSound2;
+    [SerializeField] private AudioClip[] grassStepSound2;
+    [SerializeField] private AudioClip[] grassJumpSound2;
+    [SerializeField] private AudioClip[] crouchSound2;
     [SerializeField] private AudioClip wallSlideSound2;
 
     private AudioSource audioSource2;
@@ -80,7 +80,7 @@ public class ninjaController2Off : MonoBehaviour
         {
             if (!footstepParticles2.isPlaying)
                 footstepParticles2.Play();
-            //PlayGrassStepSound2();
+            PlayRandomStepSound2();
         }
         else
         {
@@ -118,6 +118,7 @@ public class ninjaController2Off : MonoBehaviour
             moveSpeed = 0;
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 1.5f);
             anim.SetBool("IsWallSliding", true);
+            //PlayWallSlideSound2();
         }
         else
         {
@@ -138,7 +139,7 @@ public class ninjaController2Off : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
 
             jumpParticles2.Play();
-            //PlayGrassJumpSound2();
+            PlayRandomJumpSound2();
         }
     }
 
@@ -153,7 +154,7 @@ public class ninjaController2Off : MonoBehaviour
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
             parar.enabled = false;
-            //PlayCrouchSound2();
+            PlayRandomCrouchSound2();
         }
         else
         {
@@ -178,10 +179,10 @@ public class ninjaController2Off : MonoBehaviour
                 wallSlideParticles2.Play();
             }
 
-            //if (!audioSource2.isPlaying)
-            //{
-            //  audioSource2.PlayOneShot(wallSlideSound2);
-            //}
+            if (!audioSource2.isPlaying)
+            {
+                audioSource2.PlayOneShot(wallSlideSound2);
+            }
 
             wallSlideParticles2.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles2.transform.position.z);
         }
@@ -207,7 +208,6 @@ public class ninjaController2Off : MonoBehaviour
 
             if (!landParticles2.isPlaying)
             {
-
                 landParticles2.Play();
             }
         }
@@ -226,13 +226,11 @@ public class ninjaController2Off : MonoBehaviour
 
             if (isHoldingWeapon)
             {
-                // Cambiar el arma actual por la nueva
                 anim.SetBool("IsHolding" + weaponName, false);
             }
 
-            // Agarrar la nueva arma
             weaponName = newWeaponName;
-            collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma agarrada fuera de la pantalla
+            collision.gameObject.transform.position = new Vector2(100, 0);
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
         }
@@ -255,22 +253,24 @@ public class ninjaController2Off : MonoBehaviour
         }
     }
 
-    /*  private void PlayGrassStepSound2()
-      {
-          if (!audioSource2.isPlaying)
-          {
-              audioSource2.PlayOneShot(grassStepSound2);
-          }
-      }
+    private void PlayRandomStepSound2()
+    {
+        if (!audioSource2.isPlaying)
+        {
+            AudioClip randomStepSound = grassStepSound2[Random.Range(0, grassStepSound2.Length)];
+            audioSource2.PlayOneShot(randomStepSound);
+        }
+    }
 
-      private void PlayGrassJumpSound2()
-      {
-          audioSource2.PlayOneShot(grassJumpSound2);
-      }
+    private void PlayRandomJumpSound2()
+    {
+        AudioClip randomJumpSound = grassJumpSound2[Random.Range(0, grassJumpSound2.Length)];
+        audioSource2.PlayOneShot(randomJumpSound);
+    }
 
-      private void PlayCrouchSound2()
-      {
-          audioSource2.PlayOneShot(crouchSound2);
-      }
-  */
+    private void PlayRandomCrouchSound2()
+    {
+        AudioClip randomCrouchSound = crouchSound2[Random.Range(0, crouchSound2.Length)];
+        audioSource2.PlayOneShot(randomCrouchSound);
+    }
 }

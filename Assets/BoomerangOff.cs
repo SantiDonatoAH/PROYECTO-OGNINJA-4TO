@@ -15,6 +15,12 @@ public class BoomerangOff : MonoBehaviourPunCallbacks
     public GameObject bala2;
     public float bulletSpeed = 15f;
 
+    [SerializeField] private AudioClip whoosh1;
+    [SerializeField] private AudioClip whoosh2;
+    [SerializeField] private AudioClip whoosh3;
+
+    private AudioClip[] whooshSounds;
+
     public Animator anim;
     public Animator anim2;
     public GameObject ninja1;
@@ -23,7 +29,7 @@ public class BoomerangOff : MonoBehaviourPunCallbacks
     public int multiplicador = 0;
     public int multiplicador2 = 0;
 
-    [SerializeField] private AudioClip pewSound;
+    
 
     private bool canFire = true;  // Controla el cooldown para el primer jugador
     private bool canFire2 = true; // Controla el cooldown para el segundo jugador
@@ -50,19 +56,23 @@ public class BoomerangOff : MonoBehaviourPunCallbacks
         anim = ninja1.GetComponent<Animator>();
         anim2 = ninja2.GetComponent<Animator>();
 
+        whooshSounds = new AudioClip[] { whoosh1, whoosh2, whoosh3 };
+
     }
 
     void Update()
     {
 
-        if (anim.GetBool("IsHoldingBoomerang") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire )
+        if (anim.GetBool("IsHoldingBoomerang") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
             Fire();
+            
         }
 
-        if (anim2.GetBool("IsHoldingBoomerang2") == true && Input.GetKeyDown(KeyCode.L) && canFire2 )
+        if (anim2.GetBool("IsHoldingBoomerang2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
         {
             Fire2();
+            
         }
 
     }
@@ -85,7 +95,8 @@ public class BoomerangOff : MonoBehaviourPunCallbacks
 
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed;
-        AudioManager.instance.PlaySound(pewSound);
+        AudioClip randomWhooshSound = whooshSounds[Random.Range(0, whooshSounds.Length)];
+        AudioManager.instance.PlaySound(randomWhooshSound);
 
         canFire = false; // Inicia el cooldown
         StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
@@ -108,7 +119,8 @@ public class BoomerangOff : MonoBehaviourPunCallbacks
 
         Rigidbody2D rb2 = nuevaBala2.GetComponent<Rigidbody2D>();
         rb2.velocity = firePoint2.right * bulletSpeed;
-        AudioManager.instance.PlaySound(pewSound);
+        AudioClip randomWhooshSound = whooshSounds[Random.Range(0, whooshSounds.Length)];
+        AudioManager.instance.PlaySound(randomWhooshSound);
 
         canFire2 = false; // Inicia el cooldown para el segundo jugador
         StartCoroutine(CooldownRoutine2()); // Inic
