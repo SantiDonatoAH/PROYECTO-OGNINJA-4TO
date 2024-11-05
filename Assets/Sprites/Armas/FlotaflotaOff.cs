@@ -20,6 +20,8 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
 
     public ScreenController pausemanager;
 
+    public float knockbackForce = 10f;
+
     private bool canFire = true;
     private bool canFire2 = true;
 
@@ -63,6 +65,7 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
+                ApplyKnockback(ninja1Blink.gameObject);
             }
             canFire = false;
             StartCoroutine(CooldownRoutine());
@@ -78,6 +81,7 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
+                ApplyKnockback(ninja1Blink.gameObject);
             }
             canFire2 = false; // Inicia el cooldown para el segundo jugador
             StartCoroutine(CooldownRoutine2());
@@ -109,5 +113,18 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true;
+    }
+
+    void ApplyKnockback(GameObject player)
+    {
+        // Calcula la dirección de knockback como la dirección opuesta a la bala
+        Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+
+        // Accede al Rigidbody2D del jugador y aplica la fuerza de retroceso
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
     }
 }

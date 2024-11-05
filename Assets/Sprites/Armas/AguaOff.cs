@@ -15,7 +15,7 @@ public class AguaOff : MonoBehaviour
     public GameObject ninja2;
     public GameObject combatManager;
 
-    public KnockbackManager KnockbackManager;
+    public float knockbackForce = 10f;
 
     public Vector3 savedVelocity;
 
@@ -29,7 +29,7 @@ public class AguaOff : MonoBehaviour
         ninjaBlink = ninja1.GetComponent<PlayerBlinkOff>();
 
         combatManager = GameObject.FindWithTag("combat");
-        KnockbackManager = combatManager.GetComponent<KnockbackManager>();
+        
 
 
         anim = ninja1.GetComponent<Animator>();
@@ -48,9 +48,9 @@ public class AguaOff : MonoBehaviour
         if (collision.gameObject.CompareTag("player2"))
         {
             Destroy(gameObject);
-
+            ApplyKnockback(collision, ninja2Blink.gameObject);
             ninja2Blink.Blink();
-            KnockbackManager.Ninja2();
+            
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }
@@ -61,7 +61,7 @@ public class AguaOff : MonoBehaviour
 
             ninjaBlink.Blink();
 
-            KnockbackManager.Ninja1();
+            ApplyKnockback(collision, ninjaBlink.gameObject);
             StartCoroutine(ResetBlink(anim2));
             AudioManager.instance.PlaySound(ouchSound);
         }
@@ -80,5 +80,17 @@ public class AguaOff : MonoBehaviour
     {
         yield return new WaitForSeconds(0.1f);
         animator.SetBool("IsBlinking", false);
+    }
+    void ApplyKnockback(Collision2D collision, GameObject player)
+    {
+        // Calcula la dirección de knockback como la dirección opuesta a la bala
+        Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+
+        // Accede al Rigidbody2D del jugador y aplica la fuerza de retroceso
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
     }
 }
