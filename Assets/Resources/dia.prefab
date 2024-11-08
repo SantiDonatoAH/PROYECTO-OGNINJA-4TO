@@ -155,4 +155,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 629110f20aff2ee44afbe296147128a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  backgroundTransform: {fileID: 8995880355843126667}
+  dia: {fileID: 0}

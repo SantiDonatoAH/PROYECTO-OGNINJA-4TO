@@ -26,14 +26,20 @@ public class WeaponSpawnerOff : MonoBehaviour
     }
    public void SpawnWeaponD()
     {
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform spawnPoint = spawnPoints[0];
+        List<Transform> Tran = new List<Transform>(spawnPoints);
+        Tran.Remove(spawnPoint);
+
+        // Convertir la lista de vuelta a un array si es necesario
+        spawnPoints = Tran.ToArray();
+
         GameObject armaSeleccionada = armasD[Random.Range(0, armasD.Length)];
         string prefabName = armaSeleccionada.name;
         GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
 
         if (objetoExistente != null)
         {
-            GameObject nuevaArma = Instantiate(armaSeleccionada, new Vector3(Random.Range(-6f, 6f), spawnPoint.position.y, 0f), spawnPoint.rotation);
+            GameObject nuevaArma = Instantiate(armaSeleccionada, new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0f), spawnPoint.rotation);
             string newWeaponName = nuevaArma.name.Replace("(Clone)", "").Trim();
 
 
@@ -46,21 +52,26 @@ public class WeaponSpawnerOff : MonoBehaviour
         }
         else
         {
-            Instantiate(armaSeleccionada, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+            Instantiate(armaSeleccionada, new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0), spawnPoint.rotation);
 
         }
     }
 
    public void SpawnWeaponN()
     {
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
+        Transform spawnPoint = spawnPoints[0];
+        List<Transform> Tran = new List<Transform>(spawnPoints);
+        Tran.Remove(spawnPoint);
+
+        // Convertir la lista de vuelta a un array si es necesario
+        spawnPoints = Tran.ToArray();
         GameObject armaSeleccionada = armasN[Random.Range(0, armasN.Length)];
         string prefabName = armaSeleccionada.name;
         GameObject objetoExistente = GameObject.Find(armaSeleccionada.name + "(Clone)");
 
         if (objetoExistente != null)
         {
-            GameObject nuevaArma = Instantiate(armaSeleccionada, new Vector3(Random.Range(-6f, 6f), spawnPoint.position.y, 0f), spawnPoint.rotation);
+            GameObject nuevaArma = Instantiate(armaSeleccionada, new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0f), spawnPoint.rotation);
             string newWeaponName = nuevaArma.name.Replace("(Clone)", "").Trim();
 
 
@@ -73,7 +84,7 @@ public class WeaponSpawnerOff : MonoBehaviour
         }
         else
         {
-            Instantiate(armaSeleccionada, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+            Instantiate(armaSeleccionada, new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0), spawnPoint.rotation);
 
         }
     }

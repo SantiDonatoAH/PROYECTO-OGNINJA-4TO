@@ -106,7 +106,7 @@ public class Spawner : MonoBehaviourPunCallbacks
             if (PhotonNetwork.IsMasterClient)
             {
                 ability.enabled = true;
-                Instantiate(weapon, ninja2.position, ninja2.rotation);
+                Instantiate(weapon, new Vector2 (0.74f, 0), ninja2.rotation);
             }
             deathB = GameObject.FindGameObjectWithTag("Dead");
             death = deathB.GetComponent<deathBarrier>();

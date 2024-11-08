@@ -33,14 +33,19 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
     [PunRPC]
    public void SpawnWeaponD()
     {
+
         if (armasD.Length == 2) return; // Si no hay armas, salir de la función
 
         // Convertir el array armas en una lista
         List<GameObject> listaArmas = new List<GameObject>(armasD);
 
         // Seleccionar un arma y un punto de spawn aleatorio
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject armaSeleccionada = listaArmas[Random.Range(0, listaArmas.Count)];
+        Transform spawnPoint = spawnPoints[0];
+        List<Transform> Tran = new List<Transform>(spawnPoints);
+        Tran.Remove(spawnPoint);
+
+        // Convertir la lista de vuelta a un array si es necesario
+        spawnPoints = Tran.ToArray(); GameObject armaSeleccionada = listaArmas[Random.Range(0, listaArmas.Count)];
         string prefabName = armaSeleccionada.name;
 
         // Comprobar si ya existe un objeto del mismo tipo
@@ -49,7 +54,7 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
         // Instanciar el arma si no existe
         if (objetoExistente == null)
         {
-            PhotonNetwork.Instantiate(prefabName, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+            PhotonNetwork.Instantiate(prefabName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0), spawnPoint.rotation);
 
             // Eliminar el arma seleccionada de la lista
             listaArmas.Remove(armaSeleccionada);
@@ -68,8 +73,12 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
         List<GameObject> listaArmas = new List<GameObject>(armasN);
 
         // Seleccionar un arma y un punto de spawn aleatorio
-        Transform spawnPoint = spawnPoints[Random.Range(0, spawnPoints.Length)];
-        GameObject armaSeleccionada = listaArmas[Random.Range(0, listaArmas.Count)];
+        Transform spawnPoint = spawnPoints[0];
+        List<Transform> Tran = new List<Transform>(spawnPoints);
+        Tran.Remove(spawnPoint);
+
+        // Convertir la lista de vuelta a un array si es necesario
+        spawnPoints = Tran.ToArray(); GameObject armaSeleccionada = listaArmas[Random.Range(0, listaArmas.Count)];
         string prefabName = armaSeleccionada.name;
 
         // Comprobar si ya existe un objeto del mismo tipo
@@ -78,7 +87,7 @@ public class WeaponSpawner : MonoBehaviourPunCallbacks
         // Instanciar el arma si no existe
         if (objetoExistente == null)
         {
-            PhotonNetwork.Instantiate(prefabName, new Vector3(Random.Range(-6, 6), spawnPoint.position.y, 0), spawnPoint.rotation);
+            PhotonNetwork.Instantiate(prefabName, new Vector3(spawnPoint.position.x, spawnPoint.position.y, 0), spawnPoint.rotation);
 
             // Eliminar el arma seleccionada de la lista
             listaArmas.Remove(armaSeleccionada);
