@@ -92,9 +92,9 @@ public class abilitySelectorOff : MonoBehaviour
             playerblink.health = Vida1;
         }
 
-        if (h1 == "daño")
+        if (h1 == "daÃ±o")
         {
-            image1.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
+            image1.sprite = Resources.Load<Sprite>("Daï¿½o"); // Carga la imagen correspondiente a "daï¿½o"
             playerblink2.restar = .75f;
         }
 
@@ -177,9 +177,9 @@ public class abilitySelectorOff : MonoBehaviour
             playerblink2.health = Vida2;
         }
 
-        if (h2 == "daño")
+        if (h2 == "daï¿½o")
         {
-            image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "daño"
+            image2.sprite = Resources.Load<Sprite>("Daï¿½o"); // Carga la imagen correspondiente a "daï¿½o"
             playerblink.restar = .75f;
         }
 
