@@ -160,7 +160,10 @@ public class ninjaControllerOff : MonoBehaviour
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
-            rb.velocity = new Vector2(0, -10f);
+            if (rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+            }
             agachar.enabled = true;
             parado.enabled = false;
         }

@@ -148,13 +148,19 @@ public class ninjaController2Off : MonoBehaviour
         isCrouching = Input.GetKey(KeyCode.DownArrow);
         if (isCrouching)
         {
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                PlayRandomCrouchSound2();
+            }
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
-            rb.velocity = new Vector2(0, -10f);
+            if (rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+            }
             agachar.enabled = true;
             parar.enabled = false;
-            PlayRandomCrouchSound2();
         }
         else
         {
@@ -163,7 +169,6 @@ public class ninjaController2Off : MonoBehaviour
             parar.enabled = true;
         }
     }
-
     public void cambio()
     {
         kita = moveSpeed;

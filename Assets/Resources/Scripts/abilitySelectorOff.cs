@@ -94,7 +94,7 @@ public class abilitySelectorOff : MonoBehaviour
 
         if (h1 == "daño")
         {
-            image1.sprite = Resources.Load<Sprite>("Da�o"); // Carga la imagen correspondiente a "da�o"
+            image1.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "da�o"
             playerblink2.restar = .75f;
         }
 
@@ -179,7 +179,7 @@ public class abilitySelectorOff : MonoBehaviour
 
         if (h2 == "da�o")
         {
-            image2.sprite = Resources.Load<Sprite>("Da�o"); // Carga la imagen correspondiente a "da�o"
+            image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "da�o"
             playerblink.restar = .75f;
         }
 
