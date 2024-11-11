@@ -153,13 +153,16 @@ public class ninjaControllerOff : MonoBehaviour
         isCrouching = Input.GetKey(KeyCode.S);
         if (isCrouching)
         {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                PlayRandomCrouchSound();
+            }
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
             rb.velocity = new Vector2(0, -10f);
             agachar.enabled = true;
             parado.enabled = false;
-            PlayRandomCrouchSound();
         }
         else
         {
