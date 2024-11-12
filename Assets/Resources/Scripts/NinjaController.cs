@@ -179,6 +179,7 @@ public class NinjaController : MonoBehaviourPunCallbacks
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
+            rb.velocity = new Vector2(0, rb.velocity.y);
             if (rb.velocity.y > 0)
             {
                 rb.velocity = new Vector2(rb.velocity.x, 0);
@@ -268,6 +269,7 @@ public class NinjaController : MonoBehaviourPunCallbacks
             collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma fuera de la pantalla
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
+            anim.SetBool("IsHoldingWeapon2", true);
 
             // Sincronizar con todos los jugadores
             var script = collision.gameObject.GetComponent(newWeaponName + "100") as MonoBehaviourPunCallbacks;
