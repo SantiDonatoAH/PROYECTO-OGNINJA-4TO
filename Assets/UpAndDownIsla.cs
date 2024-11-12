@@ -10,8 +10,12 @@ public class UpAndDownIsla : MonoBehaviour
     private Vector3 originalPosition;    // Posición original de la isla
     private Vector3 topPosition;         // Posición en la parte superior
 
+    public GameObject arbol;
+
     void Start()
     {
+        int cuaren = Random.Range (0,1);
+        if (cuaren == 1) { arbol.SetActive(true); }
         // Define la posición original y la posición superior
         originalPosition = island.position;
         topPosition = originalPosition + new Vector3(0, moveDistance, 0);

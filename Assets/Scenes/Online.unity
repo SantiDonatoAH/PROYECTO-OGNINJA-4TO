@@ -1065,9 +1065,9 @@ MonoBehaviour:
   - {fileID: 8995880355843126661, guid: 980ead9b90d74f54e837b5766c3973a1, type: 3}
   - {fileID: 3143022954601958004, guid: d354130f118184b4683fb05de75f72d7, type: 3}
   pisos:
-  - {fileID: 9192913979720171191, guid: ad7246a8137c8c84f9b946a50d1518e5, type: 3}
-  - {fileID: 4315141124181789773, guid: bb64bb11a09552c44874fb1652205ada, type: 3}
-  - {fileID: 4315141124181789773, guid: 1ac147f78436786449dcfba5d8aa8a6e, type: 3}
+  - {fileID: 4315141124181789773, guid: 4248c18204d7e0d4aa115e2f8824965f, type: 3}
+  - {fileID: 4315141124181789773, guid: ab312f8e680ce8446bb67fc51d09f84b, type: 3}
+  - {fileID: 4315141124181789773, guid: a3cf85bbf55da634495af32f17abf763, type: 3}
   ws: {fileID: 0}
   wsO: {fileID: 0}
   weapon: {fileID: 0}
