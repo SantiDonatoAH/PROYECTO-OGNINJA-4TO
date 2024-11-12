@@ -19544,9 +19544,18 @@ MonoBehaviour:
   jumpParticles: {fileID: 1679828702553140553}
   landParticles: {fileID: 4123657841706987974}
   wallSlideParticles: {fileID: 6763285568125900203}
-  grassStepSound: {fileID: 0}
-  grassJumpSound: {fileID: 0}
-  crouchSound: {fileID: 0}
+  grassStepSounds:
+  - {fileID: 8300000, guid: efaa3aae640c9364489d124c22326d5a, type: 3}
+  - {fileID: 8300000, guid: 021872ad2adc90040807a20e1c72ef7c, type: 3}
+  - {fileID: 8300000, guid: f695370c9ac3b604fa8ddc351c932324, type: 3}
+  grassJumpSounds:
+  - {fileID: 8300000, guid: ed24a70f25f8aa4498a89a968d8ee125, type: 3}
+  - {fileID: 8300000, guid: 2396e64d341d3074cb37b574f1da0921, type: 3}
+  - {fileID: 8300000, guid: 1cf23cc38c05f5c4f862d1e38d33c0ad, type: 3}
+  crouchSounds:
+  - {fileID: 8300000, guid: ed24a70f25f8aa4498a89a968d8ee125, type: 3}
+  - {fileID: 8300000, guid: 2396e64d341d3074cb37b574f1da0921, type: 3}
+  - {fileID: 8300000, guid: 1cf23cc38c05f5c4f862d1e38d33c0ad, type: 3}
   wallSlideSound: {fileID: 0}
   combatG: {fileID: 0}
   combat: {fileID: 0}

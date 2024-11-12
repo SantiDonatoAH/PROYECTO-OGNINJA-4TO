@@ -5049,11 +5049,17 @@ MonoBehaviour:
   landParticles2: {fileID: 7525566448605799318}
   wallSlideParticles2: {fileID: 7247581988399809907}
   grassStepSound2:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: efaa3aae640c9364489d124c22326d5a, type: 3}
+  - {fileID: 8300000, guid: 021872ad2adc90040807a20e1c72ef7c, type: 3}
+  - {fileID: 8300000, guid: f695370c9ac3b604fa8ddc351c932324, type: 3}
   grassJumpSound2:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: ed24a70f25f8aa4498a89a968d8ee125, type: 3}
+  - {fileID: 8300000, guid: 2396e64d341d3074cb37b574f1da0921, type: 3}
+  - {fileID: 8300000, guid: 1cf23cc38c05f5c4f862d1e38d33c0ad, type: 3}
   crouchSound2:
-  - {fileID: 0}
+  - {fileID: 8300000, guid: ed24a70f25f8aa4498a89a968d8ee125, type: 3}
+  - {fileID: 8300000, guid: 2396e64d341d3074cb37b574f1da0921, type: 3}
+  - {fileID: 8300000, guid: 1cf23cc38c05f5c4f862d1e38d33c0ad, type: 3}
   wallSlideSound2: {fileID: 0}
   combatG: {fileID: 0}
   combat: {fileID: 0}
