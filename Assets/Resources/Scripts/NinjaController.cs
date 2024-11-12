@@ -33,9 +33,9 @@ public class NinjaController : MonoBehaviourPunCallbacks
     public ParticleSystem landParticles;
     public ParticleSystem wallSlideParticles;
 
-    [SerializeField] private AudioClip grassStepSound;
-    [SerializeField] private AudioClip grassJumpSound;
-    [SerializeField] private AudioClip crouchSound;
+    [SerializeField] private AudioClip[] grassStepSounds;
+    [SerializeField] private AudioClip[] grassJumpSounds;
+    [SerializeField] private AudioClip[] crouchSounds;
     [SerializeField] private AudioClip wallSlideSound;
 
     private AudioSource audioSource;
@@ -86,7 +86,7 @@ public class NinjaController : MonoBehaviourPunCallbacks
             {
                 if (!footstepParticles.isPlaying)
                     footstepParticles.Play();
-                PlayGrassStepSound();
+                PlayRandomStepSound();
             }
             else
             {
@@ -162,7 +162,7 @@ public class NinjaController : MonoBehaviourPunCallbacks
 
             jumpParticles.Play();
 
-            PlayGrassJumpSound();
+            PlayRandomJumpSound();
 
         }
     }
@@ -172,14 +172,19 @@ public class NinjaController : MonoBehaviourPunCallbacks
         isCrouching = Input.GetKey(KeyCode.S);
         if (isCrouching)
         {
+            if (Input.GetKeyDown(KeyCode.S))
+            {
+                PlayRandomCrouchSound();
+            }
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
-            rb.velocity = new Vector2(0, -10f);
+            if (rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+            }
             agachar.enabled = true;
             parado.enabled = false;
-            PlayCrouchSound();
-
         }
         else
         {
@@ -287,21 +292,24 @@ public class NinjaController : MonoBehaviourPunCallbacks
             anim.SetBool("IsPunching", false);
         }
     }
-    private void PlayGrassStepSound()
+    private void PlayRandomStepSound()
     {
-        //if (!audioSource.isPlaying)
-        // {
-        //   audioSource.PlayOneShot(grassStepSound);
-        //}
+        if (!audioSource.isPlaying)
+        {
+            AudioClip randomStepSound = grassStepSounds[Random.Range(0, grassStepSounds.Length)];
+            audioSource.PlayOneShot(randomStepSound);
+        }
     }
 
-    // Método para reproducir el sonido al saltar
-    private void PlayGrassJumpSound()
+    private void PlayRandomJumpSound()
     {
-        // audioSource.PlayOneShot(grassJumpSound);
+        AudioClip randomJumpSound = grassJumpSounds[Random.Range(0, grassJumpSounds.Length)];
+        audioSource.PlayOneShot(randomJumpSound);
     }
-    private void PlayCrouchSound()
+
+    private void PlayRandomCrouchSound()
     {
-        // audioSource.PlayOneShot(crouchSound);
+        AudioClip randomCrouchSound = crouchSounds[Random.Range(0, crouchSounds.Length)];
+        audioSource.PlayOneShot(randomCrouchSound);
     }
 }

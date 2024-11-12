@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
-using System;
 
 public class NinjaController2 : MonoBehaviourPunCallbacks
 {
@@ -34,9 +33,9 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
     public ParticleSystem landParticles2;
     public ParticleSystem wallSlideParticles2;
 
-    [SerializeField] private AudioClip grassStepSound2;
-    [SerializeField] private AudioClip grassJumpSound2;
-    [SerializeField] private AudioClip crouchSound2;
+    [SerializeField] private AudioClip[] grassStepSound2;
+    [SerializeField] private AudioClip[] grassJumpSound2;
+    [SerializeField] private AudioClip[] crouchSound2;
     [SerializeField] private AudioClip wallSlideSound2;
 
     private AudioSource audioSource2;
@@ -44,10 +43,13 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
     public GameObject combatG;
     public CombatManager combat;
 
+    private AudioSource audioSource;
+
     PhotonView view;
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         combatG = GameObject.FindGameObjectWithTag("combat");
         combat = combatG.GetComponent<CombatManager>();
 
@@ -83,7 +85,7 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
             {
                 if (!footstepParticles2.isPlaying)
                     footstepParticles2.Play();
-                //PlayGrassStepSound2();
+                PlayRandomStepSound2();
             }
             else
             {
@@ -131,12 +133,13 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
             anim.SetBool("Run", false);
         }
 
-        if
-            ((Input.GetKey(KeyCode.RightArrow) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
-                (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
+        if ((Input.GetKey(KeyCode.RightArrow) && transform.position.x < paredT.transform.position.x && transform.rotation.y == 0 && isTouchingWall) ||
+            (Input.GetKey(KeyCode.LeftArrow) && transform.position.x > paredT.transform.position.x && transform.rotation.y < 100 && isTouchingWall))
         {
             moveSpeed = 0;
+            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y / 1.5f);
             anim.SetBool("IsWallSliding", true);
+            //PlayWallSlideSound2();
         }
         else
         {
@@ -148,6 +151,7 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
     void Jump()
     {
         movey = Input.GetAxisRaw("Vertical2");
+
         if (Input.GetKeyDown(KeyCode.UpArrow) && !isCrouching && (isTouchingWall || isGrounded))
         {
             anim.SetBool("IsPunching", false);
@@ -156,7 +160,7 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
             rb.velocity = new Vector2(rb.velocity.x, movey * jumpForce);
 
             jumpParticles2.Play();
-            //PlayGrassJumpSound2();
+            PlayRandomJumpSound2();
         }
     }
 
@@ -165,13 +169,19 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
         isCrouching = Input.GetKey(KeyCode.DownArrow);
         if (isCrouching)
         {
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                PlayRandomCrouchSound2();
+            }
             anim.SetBool("IsPunching", false);
             anim.SetBool("IsJumping", false);
             anim.SetBool("IsCrouching", isCrouching);
-            rb.velocity = new Vector2(0, -10f);
+            if (rb.velocity.y > 0)
+            {
+                rb.velocity = new Vector2(rb.velocity.x, 0);
+            }
             agachar.enabled = true;
             parado.enabled = false;
-            //PlayCrouchSound2();
         }
         else
         {
@@ -190,10 +200,10 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
                 wallSlideParticles2.Play();
             }
 
-            //if (!audioSource2.isPlaying)
-            //{
-            //  audioSource2.PlayOneShot(wallSlideSound2);
-            //}
+            if (!audioSource2.isPlaying)
+            {
+                audioSource2.PlayOneShot(wallSlideSound2);
+            }
 
             wallSlideParticles2.transform.position = new Vector3(transform.position.x, transform.position.y, wallSlideParticles2.transform.position.z);
         }
@@ -206,7 +216,6 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
         }
     }
 
-    
     [PunRPC]
     void OnCollisionEnter2D(Collision2D collision)
     {
@@ -273,22 +282,24 @@ public class NinjaController2 : MonoBehaviourPunCallbacks
         }
     }
 
-    /*  private void PlayGrassStepSound2()
-      {
-          if (!audioSource2.isPlaying)
-          {
-              audioSource2.PlayOneShot(grassStepSound2);
-          }
-      }
+    private void PlayRandomStepSound2()
+    {
+        if (!audioSource2.isPlaying)
+        {
+            AudioClip randomStepSound = grassStepSound2[Random.Range(0, grassStepSound2.Length)];
+            audioSource2.PlayOneShot(randomStepSound);
+        }
+    }
 
-      private void PlayGrassJumpSound2()
-      {
-          audioSource2.PlayOneShot(grassJumpSound2);
-      }
+    private void PlayRandomJumpSound2()
+    {
+        AudioClip randomJumpSound = grassJumpSound2[Random.Range(0, grassJumpSound2.Length)];
+        audioSource2.PlayOneShot(randomJumpSound);
+    }
 
-      private void PlayCrouchSound2()
-      {
-          audioSource2.PlayOneShot(crouchSound2);
-      }
-  */
+    private void PlayRandomCrouchSound2()
+    {
+        AudioClip randomCrouchSound = crouchSound2[Random.Range(0, crouchSound2.Length)];
+        audioSource2.PlayOneShot(randomCrouchSound);
+    }
 }
