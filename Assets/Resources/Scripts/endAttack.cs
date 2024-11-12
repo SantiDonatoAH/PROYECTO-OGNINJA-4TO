@@ -19,7 +19,7 @@ public class endAttack : MonoBehaviour
     }
     public IEnumerator endAttack1()
     {
-        yield return new WaitForSeconds(0.1f);
+        yield return new WaitForSeconds(2.5f);
         anim.SetBool("IsPunching", false);
     }
 }

@@ -107,12 +107,17 @@ public class LanzaOff : MonoBehaviourPunCallbacks
 
         GameObject nuevaBala = Instantiate(agua, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
 
+        // Asigna un tag o propiedad a la bala que indique quién la disparó
+        BalaRocaOff balaScript = nuevaBala.GetComponent<BalaRocaOff>();
+        if (balaScript != null)
+        {
+            balaScript.shooterTag = "player1"; // Marca la bala con el tag del disparador
+        }
+
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed * poder;
-        StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
-
+        StartCoroutine(CooldownRoutine());
     }
-
 
     void Fire2()
     {
@@ -130,10 +135,16 @@ public class LanzaOff : MonoBehaviourPunCallbacks
 
         GameObject nuevaBala = Instantiate(agua, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
 
+        // Asigna un tag o propiedad a la bala que indique quién la disparó
+        BalaRocaOff balaScript = nuevaBala.GetComponent<BalaRocaOff>();
+        if (balaScript != null)
+        {
+            balaScript.shooterTag = "player2"; // Marca la bala con el tag del disparador
+        }
+
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed * poder2;
-        StartCoroutine(CooldownRoutine2()); // Inicia el Coroutine para esperar 1.5 segundos
-
+        StartCoroutine(CooldownRoutine2());
     }
 
 
