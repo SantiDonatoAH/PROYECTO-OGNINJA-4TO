@@ -113,8 +113,9 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     IEnumerator CooldownRoutineH()
     {
 
-        yield return new WaitForSeconds(cooldownTime);
+        yield return new WaitForSeconds(cooldownTime / 2);
         anim.SetBool("IsAttacking", false);
+        yield return new WaitForSeconds(cooldownTime / 2);
 
         ninja2Blink.Blink();
         ninja2Blink.Blink();
@@ -127,8 +128,9 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     IEnumerator CooldownRoutine2H()
     {
 
-        yield return new WaitForSeconds(cooldownTime2);
-        anim2.SetBool("IsAttacking", false);
+        yield return new WaitForSeconds(cooldownTime2 / 2);
+        anim.SetBool("IsAttacking", false);
+        yield return new WaitForSeconds(cooldownTime2 / 2);
 
         ninja1Blink.Blink();
         ninja1Blink.Blink();
@@ -141,8 +143,9 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     IEnumerator CooldownRoutine()
     {
 
-        yield return new WaitForSeconds(cooldownTime);
+        yield return new WaitForSeconds(cooldownTime / 2);
         anim.SetBool("IsAttacking", false);
+        yield return new WaitForSeconds(cooldownTime / 2);
 
         canFire = true;
     }
@@ -150,8 +153,9 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     IEnumerator CooldownRoutine2()
     {
 
-        yield return new WaitForSeconds(cooldownTime2);
-        anim2.SetBool("IsAttacking", false);
+        yield return new WaitForSeconds(cooldownTime2 / 2);
+        anim.SetBool("IsAttacking", false);
+        yield return new WaitForSeconds(cooldownTime2/ 2);
 
         canFire2 = true;
     }

@@ -67,6 +67,7 @@ public class BalaBoomerangOff : MonoBehaviourPunCallbacks
         {
             Debug.Log("jsd");
             PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
