@@ -46259,6 +46259,8 @@ MonoBehaviour:
   ispaused: 1
   image1: {fileID: 1976501098}
   image2: {fileID: 1050538838}
+  pts1: {fileID: 999512866}
+  pts2: {fileID: 1411027778}
 --- !u!4 &1174501607
 Transform:
   m_ObjectHideFlags: 0
@@ -47122,6 +47124,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e225a8a2464bbf408131660dc5ce2ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  counter: {fileID: 0}
+  Counter: {fileID: 0}
+  health: 10
+  txt2: {fileID: 0}
+  healthI: {fileID: 0}
+  healthT: {fileID: 0}
+  healthBar: {fileID: 0}
+  healthAmount: 10
+  restar: 0.5
+  anim: {fileID: 1412429949}
+  total: 0
+  bloodParticles2: {fileID: 0}
 --- !u!82 &1412429953
 AudioSource:
   m_ObjectHideFlags: 0

@@ -17,8 +17,13 @@ public class ScreenController : MonoBehaviourPunCallbacks
     public GameObject image1;
     public GameObject image2;
 
+    public Text pts1;
+    public Text pts2;
+
     void Start()
     {
+       
+
         ispaused = false;
         pausePanel.SetActive(false);
     }
@@ -70,6 +75,12 @@ public class ScreenController : MonoBehaviourPunCallbacks
 
     public void OnMainMenu()
     {
+        int score1 = 0;
+        int score2 = 0;
+
+        pts1.text = score1.ToString();
+        pts2.text = score2.ToString();
+
         Time.timeScale = 1;
         ispaused = false;
         SceneManager.LoadScene("Lobby");
