@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 4170975709237221934}
   - component: {fileID: 4170975709237221929}
   - component: {fileID: 2583997617026807874}
-  - component: {fileID: -1784208784943860788}
+  - component: {fileID: -6826237426373308344}
   m_Layer: 0
-  m_Name: Lanza 1Off
+  m_Name: LanzaBO
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -191,7 +191,7 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
---- !u!114 &-1784208784943860788
+--- !u!114 &-6826237426373308344
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -200,6 +200,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 4170975709237221920}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3fb7798d19d12ad4f8b97b289237c77f, type: 3}
+  m_Script: {fileID: 11500000, guid: 2697bf795383a0240b69a68ab61b577e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shooterTag: 
+  knockbackForce: 10
+  rb: {fileID: 4170975709237221932}
+  i: 0

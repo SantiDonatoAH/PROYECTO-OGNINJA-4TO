@@ -10,6 +10,9 @@ public class LanzaOff : MonoBehaviourPunCallbacks
     public Rigidbody2D rb;
 
     public GameObject agua;
+    public Rigidbody2D rb2;
+
+    public GameObject agua2;
     public float bulletSpeed = 4f;
 
     public Animator anim;
@@ -108,11 +111,7 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         GameObject nuevaBala = Instantiate(agua, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
 
         // Asigna un tag o propiedad a la bala que indique quién la disparó
-        BalaRocaOff balaScript = nuevaBala.GetComponent<BalaRocaOff>();
-        if (balaScript != null)
-        {
-            balaScript.shooterTag = "player1"; // Marca la bala con el tag del disparador
-        }
+        
 
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed * poder;
@@ -133,17 +132,13 @@ public class LanzaOff : MonoBehaviourPunCallbacks
             multiplicador = -1; // Cambia la dirección de disparo
         }
 
-        GameObject nuevaBala = Instantiate(agua, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
+        GameObject nuevaBala = Instantiate(agua2, new Vector3(firePoint.position.x + (0.5f * multiplicador), firePoint.position.y, 0), firePoint.rotation);
 
         // Asigna un tag o propiedad a la bala que indique quién la disparó
-        BalaRocaOff balaScript = nuevaBala.GetComponent<BalaRocaOff>();
-        if (balaScript != null)
-        {
-            balaScript.shooterTag = "player2"; // Marca la bala con el tag del disparador
-        }
+       
 
-        rb = nuevaBala.GetComponent<Rigidbody2D>();
-        rb.velocity = firePoint.right * bulletSpeed * poder2;
+        rb2 = nuevaBala.GetComponent<Rigidbody2D>();
+        rb2.velocity = firePoint.right * bulletSpeed * poder2;
         StartCoroutine(CooldownRoutine2());
     }
 

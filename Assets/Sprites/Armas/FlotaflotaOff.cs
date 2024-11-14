@@ -96,22 +96,24 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
 
     void endAttack1()
     {
-        anim.SetBool("IsAttacking", false);
     }
     void endAttack2()
     {
-        anim2.SetBool("IsAttacking", false);
     }
 
     IEnumerator CooldownRoutine()
     {
         yield return new WaitForSeconds(cooldownTime);
+        anim.SetBool("IsAttacking", false);
+
         canFire = true;
     }
 
     IEnumerator CooldownRoutine2()
     {
         yield return new WaitForSeconds(cooldownTime2);
+        anim2.SetBool("IsAttacking", false);
+
         canFire2 = true;
     }
 

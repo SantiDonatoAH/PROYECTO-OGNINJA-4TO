@@ -49,7 +49,7 @@ public class BalaBoomerang2Off : MonoBehaviourPunCallbacks
 
         if (collision.gameObject.CompareTag("player1"))
         {
-            PhotonNetwork.Destroy(gameObject);
+           Destroy(gameObject);
 
             ninjaBlink.Blink();
             ninjaBlink.Blink();
@@ -57,6 +57,8 @@ public class BalaBoomerang2Off : MonoBehaviourPunCallbacks
             ninjaBlink.Blink();
             ApplyKnockback(collision, ninjaBlink.gameObject);
             AudioManager.instance.PlaySound(ouchSound);
+            Destroy(gameObject);
+
         }
 
         else if (collision.gameObject.CompareTag("Weapon"))
@@ -66,7 +68,7 @@ public class BalaBoomerang2Off : MonoBehaviourPunCallbacks
         else
         {
             Debug.Log("jsd");
-            PhotonNetwork.Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BalaRocaOff : MonoBehaviour
+public class BalaLanzaOff : MonoBehaviour
 {
     public string shooterTag; // Nuevo: Identifica quién disparó la bala
 
@@ -14,6 +14,9 @@ public class BalaRocaOff : MonoBehaviour
 
     public float knockbackForce = 10f;
 
+    public Rigidbody2D rb;
+    public float i = 0;
+
     void OnCollisionEnter2D(Collision2D collision)
     {
         // Si la bala colisiona con el jugador que la disparó, no hace nada
@@ -22,21 +25,35 @@ public class BalaRocaOff : MonoBehaviour
         // Lógica de colisión y daño a otros jugadores
         if (collision.gameObject.CompareTag("player1"))
         {
-            
+            if (name == "LanzaBO2(Clone)")
+            {
                 ninjaBlink = collision.gameObject.GetComponent<PlayerBlinkOff>();
                 ApplyKnockback(collision, ninjaBlink.gameObject);
-                ninjaBlink.Blink();
-            
+
+                float kita = rb.velocity.x;
+                for (  ;i <kita; i++)
+                {
+                    ninjaBlink.Blink();
+                }
+            }
+            Destroy(gameObject);
 
         }
 
         if (collision.gameObject.CompareTag("player2"))
         {
-            
+            if (name == "LanzaBO(Clone)")
+            {
                 ninja2Blink = collision.gameObject.GetComponent<playerBlink2Off>();
                 ApplyKnockback(collision, ninja2Blink.gameObject);
-                ninja2Blink.Blink();
-            
+                float kita = rb.velocity.magnitude;
+                for (int i = 0; i < kita; i++)
+                {
+                    Debug.Log(i);
+                    ninja2Blink.Blink();
+                }
+            }
+            Destroy(gameObject);
 
         }
         Destroy(gameObject);

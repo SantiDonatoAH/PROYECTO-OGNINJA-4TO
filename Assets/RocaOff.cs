@@ -5,6 +5,7 @@ using Photon.Pun;
 public class RocaOff : MonoBehaviourPunCallbacks
 {
     public GameObject bala;
+
     public float bulletSpeed = 10f;
 
     public Animator anim;
@@ -92,9 +93,9 @@ public class RocaOff : MonoBehaviourPunCallbacks
             multiplicador2 = 1; // Dirección normal hacia la derecha
         }
 
-        GameObject nuevaBala = Instantiate(bala, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
+        GameObject nuevaBala2 = Instantiate(bala, new Vector3(firePoint2.position.x + (0.5f * multiplicador2), firePoint2.position.y, 0), firePoint2.rotation);
 
-        Rigidbody2D rb = nuevaBala.GetComponent<Rigidbody2D>();
+        Rigidbody2D rb = nuevaBala2.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint2.right * bulletSpeed;
 
         canFire2 = false; // Inicia el cooldown para el segundo jugador
