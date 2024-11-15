@@ -20,8 +20,8 @@ public class CounterOff : MonoBehaviour
     public GameObject Texto2;
 
     // Variables estáticas para mantener los valores
-    private static int score1 = 0;
-    private static int score2 = 0;
+    public  static int score1 = 0;
+    public static int score2 = 0;
 
     // Start is called before the first frame update
     void Start()

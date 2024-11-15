@@ -20,6 +20,8 @@ public class ScreenController : MonoBehaviourPunCallbacks
     public Text pts1;
     public Text pts2;
 
+    public CounterOff coff;
+
     void Start()
     {
        
@@ -75,11 +77,11 @@ public class ScreenController : MonoBehaviourPunCallbacks
 
     public void OnMainMenu()
     {
-        int score1 = 0;
-        int score2 = 0;
+       CounterOff.score1 = 0;
+        CounterOff.score2 = 0;
 
-        pts1.text = score1.ToString();
-        pts2.text = score2.ToString();
+        pts1.text = 0.ToString();
+        pts2.text = 0.ToString();
 
         Time.timeScale = 1;
         ispaused = false;
