@@ -700,7 +700,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   island: {fileID: 4315141123652438274}
   moveDistance: 2
-  speed: 0.75
+  speed: 0.5
 --- !u!1 &4315141123872346537
 GameObject:
   m_ObjectHideFlags: 0
@@ -759,7 +759,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   island: {fileID: 4315141123872346536}
   moveDistance: -2
-  speed: 0.75
+  speed: 0.5
 --- !u!1 &4315141124181789773
 GameObject:
   m_ObjectHideFlags: 0
