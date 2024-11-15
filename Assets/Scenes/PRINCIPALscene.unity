@@ -46261,6 +46261,7 @@ MonoBehaviour:
   image2: {fileID: 1050538838}
   pts1: {fileID: 999512866}
   pts2: {fileID: 1411027778}
+  coff: {fileID: 0}
 --- !u!4 &1174501607
 Transform:
   m_ObjectHideFlags: 0
@@ -47135,7 +47136,7 @@ MonoBehaviour:
   restar: 0.5
   anim: {fileID: 1412429949}
   total: 0
-  bloodParticles2: {fileID: 0}
+  bloodParticles2: {fileID: 699864039}
 --- !u!82 &1412429953
 AudioSource:
   m_ObjectHideFlags: 0
