@@ -2292,7 +2292,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.6881795, y: -0.028660536}
+  m_Offset: {x: 0.39726782, y: -0.028660536}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2303,7 +2303,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.018237, y: 0.6103215}
+  m_Size: {x: 2.6000605, y: 0.6103215}
   m_EdgeRadius: 0
 --- !u!4 &5896825056052850599 stripped
 Transform:
@@ -2414,7 +2414,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.10952902, y: -0.44303167}
+  m_Offset: {x: -0.29870796, y: -0.44303167}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2425,7 +2425,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1586084, y: 1.4502943}
+  m_Size: {x: 0.34213448, y: 1.4502943}
   m_EdgeRadius: 0
 --- !u!4 &5868208028250737039 stripped
 Transform:
@@ -2632,7 +2632,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.11250973, y: -0.35587794}
+  m_Offset: {x: 0.22057247, y: -0.35587794}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2643,7 +2643,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.7166233, y: 1.7117556}
+  m_Size: {x: 0.5004978, y: 1.7117556}
   m_EdgeRadius: 0
 --- !u!1001 &4315141123400764665
 PrefabInstance:
@@ -2753,7 +2753,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.84532195, y: 0.35923612}
+  m_Offset: {x: -0.6524894, y: 0.35923612}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2764,7 +2764,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.1543665, y: 0.28152776}
+  m_Size: {x: 3.5400314, y: 0.28152776}
   m_EdgeRadius: 0
 --- !u!4 &1392581712683338888 stripped
 Transform:
