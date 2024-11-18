@@ -2333,6 +2333,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mapsheepv2_2
       objectReference: {fileID: 0}
+    - target: {fileID: 3168447819097900778, guid: 15765ed74bd751742b1fbe9434b0ef81,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 7679312333740077460, guid: 15765ed74bd751742b1fbe9434b0ef81,
         type: 3}
       propertyPath: m_RootOrder
@@ -2409,7 +2414,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.18157053, y: -0.44303167}
+  m_Offset: {x: 0.10952902, y: -0.44303167}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2420,7 +2425,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.0145254, y: 1.4502943}
+  m_Size: {x: 1.1586084, y: 1.4502943}
   m_EdgeRadius: 0
 --- !u!4 &5868208028250737039 stripped
 Transform:
@@ -2594,6 +2599,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mapsheepv2_7
+      objectReference: {fileID: 0}
+    - target: {fileID: 8812715519426227018, guid: 42400fe76d851fd40b8df80f1bff60f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42400fe76d851fd40b8df80f1bff60f3, type: 3}
@@ -4595,6 +4605,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mapsheepv2_21 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 1720909216105795353, guid: fad7533ec2bfdbe4e88ffad1dbb119b5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
     - target: {fileID: 3028643859288754714, guid: fad7533ec2bfdbe4e88ffad1dbb119b5,
         type: 3}
       propertyPath: m_RootOrder
@@ -4786,6 +4801,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Mapsheepv2_7 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8812715519426227018, guid: 42400fe76d851fd40b8df80f1bff60f3,
+        type: 3}
+      propertyPath: m_TagString
+      value: Wall
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 42400fe76d851fd40b8df80f1bff60f3, type: 3}
