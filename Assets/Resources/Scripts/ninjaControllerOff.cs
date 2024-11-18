@@ -126,8 +126,6 @@ public class ninjaControllerOff : MonoBehaviour
         else
         {
             moveSpeed = kita;
-            isTouchingWall = false;
-
             anim.SetBool("IsWallSliding", false);
         }
     }
@@ -249,7 +247,11 @@ public class ninjaControllerOff : MonoBehaviour
 
     void OnCollisionExit2D(Collision2D collision)
     {
-       
+        if (collision.gameObject.CompareTag("Wall"))
+        {
+            isTouchingWall = false;
+            anim.SetBool("IsWallSliding", false);
+        }
     }
 
     void CheckHoldingWeapon()
