@@ -75,6 +75,8 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
             {
                 StartCoroutine(CooldownRoutine());
             }
+            StartCoroutine(CooldownRoutineA());
+
         }
         if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingSerpiente2") == true && canFire2)
         {
@@ -94,6 +96,8 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
             {
                 StartCoroutine(CooldownRoutine2());
             }
+            StartCoroutine(CooldownRoutine2A());
+
         }
     }
 
@@ -113,9 +117,8 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     IEnumerator CooldownRoutineH()
     {
 
-        yield return new WaitForSeconds(cooldownTime / 2);
-        anim.SetBool("IsAttacking", false);
-        yield return new WaitForSeconds(cooldownTime / 2);
+      
+        yield return new WaitForSeconds(cooldownTime );
 
         ninja2Blink.Blink();
         ninja2Blink.Blink();
@@ -128,9 +131,7 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     IEnumerator CooldownRoutine2H()
     {
 
-        yield return new WaitForSeconds(cooldownTime2 / 2);
-        anim.SetBool("IsAttacking", false);
-        yield return new WaitForSeconds(cooldownTime2 / 2);
+        yield return new WaitForSeconds(cooldownTime2 );
 
         ninja1Blink.Blink();
         ninja1Blink.Blink();
@@ -143,19 +144,28 @@ public class SerpienteOff : MonoBehaviourPunCallbacks
     IEnumerator CooldownRoutine()
     {
 
-        yield return new WaitForSeconds(cooldownTime / 2);
-        anim.SetBool("IsAttacking", false);
-        yield return new WaitForSeconds(cooldownTime / 2);
+        yield return new WaitForSeconds(cooldownTime);
 
         canFire = true;
     }
 
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime / 3);
+        anim.SetBool("IsAttacking", false);
+
+    }
+
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2 / 3);
+        anim2.SetBool("IsAttacking", false);
+
+    }
     IEnumerator CooldownRoutine2()
     {
 
-        yield return new WaitForSeconds(cooldownTime2 / 2);
-        anim.SetBool("IsAttacking", false);
-        yield return new WaitForSeconds(cooldownTime2/ 2);
+        yield return new WaitForSeconds(cooldownTime2);
 
         canFire2 = true;
     }

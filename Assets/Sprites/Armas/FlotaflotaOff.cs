@@ -69,6 +69,8 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
             }
             canFire = false;
             StartCoroutine(CooldownRoutine());
+            StartCoroutine(CooldownRoutineA());
+
         }
 
         if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingFlotaflota2") == true && canFire2)
@@ -85,6 +87,8 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
             }
             canFire2 = false; // Inicia el cooldown para el segundo jugador
             StartCoroutine(CooldownRoutine2());
+            StartCoroutine(CooldownRoutine2A());
+
         }
     }
 
@@ -104,17 +108,29 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
     IEnumerator CooldownRoutine()
     {
         yield return new WaitForSeconds(cooldownTime);
-        anim.SetBool("IsAttacking", false);
 
         canFire = true;
+    }
+
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime/3);
+        anim.SetBool("IsAttacking", false);
+
     }
 
     IEnumerator CooldownRoutine2()
     {
         yield return new WaitForSeconds(cooldownTime2);
-        anim2.SetBool("IsAttacking", false);
 
         canFire2 = true;
+    }
+
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2/3);
+        anim2.SetBool("IsAttacking", false);
+
     }
 
     void ApplyKnockback(GameObject player)
