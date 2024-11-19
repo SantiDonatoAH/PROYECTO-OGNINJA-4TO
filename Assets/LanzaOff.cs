@@ -64,6 +64,7 @@ public class LanzaOff : MonoBehaviourPunCallbacks
 
         if (anim.GetBool("IsHoldingLanza") == true && Input.GetKey(KeyCode.LeftShift) && canFire)
         {
+            anim.SetBool("IsAttacking", true);
             poder += sumador;
             if (poder >= 6.1f)
             {
@@ -72,6 +73,8 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         }
         else if (anim.GetBool("IsHoldingLanza") == true && Input.GetKeyUp(KeyCode.LeftShift) )
         {
+            anim.SetBool("IsAttacking", false);
+
             Fire();
             poder = 0;
         }

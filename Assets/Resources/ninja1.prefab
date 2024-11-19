@@ -19741,7 +19741,7 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: IsWallSliding
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsBlinking
   - Type: 4
     SynchronizeType: 2
@@ -19750,7 +19750,7 @@ MonoBehaviour:
     SynchronizeType: 2
     Name: IsHoldingBombucha
   - Type: 4
-    SynchronizeType: 0
+    SynchronizeType: 2
     Name: IsAttacking
   - Type: 4
     SynchronizeType: 2
@@ -19767,6 +19767,9 @@ MonoBehaviour:
   - Type: 4
     SynchronizeType: 2
     Name: IsHoldingLanza
+  - Type: 4
+    SynchronizeType: 2
+    Name: IsHoldingWeapon
   m_SynchronizeLayers:
   - SynchronizeType: 2
     LayerIndex: 0
