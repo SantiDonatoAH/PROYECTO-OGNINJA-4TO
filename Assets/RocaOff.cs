@@ -47,11 +47,15 @@ public class RocaOff : MonoBehaviourPunCallbacks
 
         if (anim.GetBool("IsHoldingRoca") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
+            anim.SetBool("IsAttacking", true);
+
             Fire();
         }
 
         if (anim2.GetBool("IsHoldingRoca2") == true && Input.GetKeyDown(KeyCode.L) && canFire2 )
         {
+            anim2.SetBool("IsAttacking", true);
+
             Fire2();
         }
     }
@@ -77,6 +81,8 @@ public class RocaOff : MonoBehaviourPunCallbacks
 
         canFire = false; // Inicia el cooldown
         StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
+        StartCoroutine(CooldownRoutineA()); // Inicia el Coroutine para esperar 1.5 segundos
+
     }
 
     void Fire2()
@@ -100,6 +106,8 @@ public class RocaOff : MonoBehaviourPunCallbacks
 
         canFire2 = false; // Inicia el cooldown para el segundo jugador
         StartCoroutine(CooldownRoutine2()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
+        StartCoroutine(CooldownRoutine2A()); // Inicia el Coroutine para esperar 1.5 segundos
+
     }
 
     IEnumerator CooldownRoutine()
@@ -112,5 +120,20 @@ public class RocaOff : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
+
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime / 3);
+        anim.SetBool("IsAttacking", false);
+
+    }
+
+  
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2 / 3);
+        anim2.SetBool("IsAttacking", false);
+
     }
 }
