@@ -73,9 +73,9 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         }
         else if (anim.GetBool("IsHoldingLanza") == true && Input.GetKeyUp(KeyCode.LeftShift) )
         {
-            anim.SetBool("IsAttacking", false);
 
             Fire();
+
             poder = 0;
         }
 
@@ -119,6 +119,7 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed * poder;
         StartCoroutine(CooldownRoutine());
+        StartCoroutine(CooldownRoutineA());
     }
 
     void Fire2()
@@ -143,6 +144,8 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         rb2 = nuevaBala.GetComponent<Rigidbody2D>();
         rb2.velocity = firePoint.right * bulletSpeed * poder2;
         StartCoroutine(CooldownRoutine2());
+        StartCoroutine(CooldownRoutine2A());
+
     }
 
 
@@ -158,6 +161,20 @@ public class LanzaOff : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true;
+    }
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime / 3);
+        anim.SetBool("IsAttacking", false);
+
+    }
+
+
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2 / 3);
+        anim2.SetBool("IsAttacking", false);
+
     }
 
 }

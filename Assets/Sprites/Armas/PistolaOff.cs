@@ -51,11 +51,15 @@ public class PistolaOff : MonoBehaviourPunCallbacks
 
         if (anim.GetBool("IsHoldingPistola") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
+            anim.SetBool("IsAttacking", true);
+
             Fire();
         }
 
         if (anim2.GetBool("IsHoldingPistola2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
         {
+            anim2.SetBool("IsAttacking", true);
+
             Fire2();
         }
 
@@ -83,6 +87,8 @@ public class PistolaOff : MonoBehaviourPunCallbacks
 
         canFire = false; // Inicia el cooldown
         StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
+
+        StartCoroutine(CooldownRoutineA()); // Inicia el Coroutine para esperar 1.5 segundos
     }
 
     void Fire2()
@@ -106,6 +112,8 @@ public class PistolaOff : MonoBehaviourPunCallbacks
 
         canFire2 = false; // Inicia el cooldown para el segundo jugador
         StartCoroutine(CooldownRoutine2()); // Inic
+        StartCoroutine(CooldownRoutine2A()); // Inic
+
     }
 
     IEnumerator CooldownRoutine()
@@ -119,5 +127,18 @@ public class PistolaOff : MonoBehaviourPunCallbacks
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
     }
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime / 3);
+        anim.SetBool("IsAttacking", false);
 
+    }
+
+
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2 / 3);
+        anim2.SetBool("IsAttacking", false);
+
+    }
 }

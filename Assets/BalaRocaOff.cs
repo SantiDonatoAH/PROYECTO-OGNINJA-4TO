@@ -26,7 +26,10 @@ public class BalaRocaOff : MonoBehaviour
                 ninjaBlink = collision.gameObject.GetComponent<PlayerBlinkOff>();
                 ApplyKnockback(collision, ninjaBlink.gameObject);
                 ninjaBlink.Blink();
-            
+            ninjaBlink.Blink();
+            ninjaBlink.Blink();
+            ninjaBlink.Blink();
+
 
         }
 
@@ -36,7 +39,10 @@ public class BalaRocaOff : MonoBehaviour
                 ninja2Blink = collision.gameObject.GetComponent<playerBlink2Off>();
                 ApplyKnockback(collision, ninja2Blink.gameObject);
                 ninja2Blink.Blink();
-            
+            ninja2Blink.Blink();
+            ninja2Blink.Blink();
+            ninja2Blink.Blink();
+
 
         }
         Destroy(gameObject);
