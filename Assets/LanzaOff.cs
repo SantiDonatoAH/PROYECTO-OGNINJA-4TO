@@ -32,8 +32,8 @@ public class LanzaOff : MonoBehaviourPunCallbacks
     public float cooldownTime = 0.25f;
     public float cooldownTime2 = 0.25f;
 
-    public float sumador = 0.035f;
-    public float sumador2 = 0.035f;
+    public float sumador = 0.05f;
+    public float sumador2 = 0.05f;
 
     public float poder = 0f;
     public float poder2 = 0f;
@@ -64,7 +64,6 @@ public class LanzaOff : MonoBehaviourPunCallbacks
 
         if (anim.GetBool("IsHoldingLanza") == true && Input.GetKey(KeyCode.LeftShift) && canFire)
         {
-            anim.SetBool("IsAttacking", true);
             poder += sumador;
             if (poder >= 6.1f)
             {
@@ -73,10 +72,11 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         }
         else if (anim.GetBool("IsHoldingLanza") == true && Input.GetKeyUp(KeyCode.LeftShift) )
         {
+            anim.SetBool("IsAttacking", true);
 
-            Fire();
+            StartCoroutine(CooldownRoutineA());
 
-            poder = 0;
+
         }
 
         if (anim2.GetBool("IsHoldingLanza2") == true && Input.GetKey(KeyCode.L) && canFire2 )
@@ -90,8 +90,8 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         }
         else if (anim2.GetBool("IsHoldingLanza2") == true && Input.GetKeyUp(KeyCode.L))
         {
-            Fire2();
-            poder2 = 0;
+            StartCoroutine(CooldownRoutine2A());
+
         }
 
     }
@@ -119,7 +119,6 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed * poder;
         StartCoroutine(CooldownRoutine());
-        StartCoroutine(CooldownRoutineA());
     }
 
     void Fire2()
@@ -164,16 +163,20 @@ public class LanzaOff : MonoBehaviourPunCallbacks
     }
     IEnumerator CooldownRoutineA()
     {
-        yield return new WaitForSeconds(cooldownTime / 3);
+        yield return new WaitForSeconds(cooldownTime *1.80f);
         anim.SetBool("IsAttacking", false);
+        Fire();
+        poder = 0;
 
     }
 
 
     IEnumerator CooldownRoutine2A()
     {
-        yield return new WaitForSeconds(cooldownTime2 / 3);
+        yield return new WaitForSeconds(cooldownTime2 * 1.80f);
         anim2.SetBool("IsAttacking", false);
+        Fire2();
+            poder2 = 0;
 
     }
 

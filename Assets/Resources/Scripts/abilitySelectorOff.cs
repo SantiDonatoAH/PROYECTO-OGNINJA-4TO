@@ -48,7 +48,7 @@ public class abilitySelectorOff : MonoBehaviour
 
     private float BoomerangC = .5f;
 
-    private float LanzaC = 0.06f;
+    private float LanzaC = 0.1f;
 
     private float RocaC = .5f;
 

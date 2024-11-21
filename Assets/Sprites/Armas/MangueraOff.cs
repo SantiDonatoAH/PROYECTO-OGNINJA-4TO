@@ -25,11 +25,11 @@ public class MangueraOff : MonoBehaviour
 
     public bool canFire = true;  // Controla el cooldown para el primer jugador
     public bool canFire2 = true; // Controla el cooldown para el segundo jugador
-    public float cooldownTime = 0.085f;
-    public float cooldownTime2 = 0.085f;
+    public float cooldownTime = 0.25f;
+    public float cooldownTime2 = 0.25f;
 
-    public float sumador = 0.02f;
-    public float sumador2 = 0.02f;
+    public float sumador = 0.04f;
+    public float sumador2 = 0.04f;
 
     public float poder = 0f;
     public float poder2 = 0f;
@@ -65,6 +65,9 @@ public class MangueraOff : MonoBehaviour
         }
         else if (anim.GetBool("IsHoldingManguera") == true && Input.GetKeyUp(KeyCode.LeftShift))
         {
+            anim.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutineA());
+
             Fire();
         }
 
@@ -153,9 +156,13 @@ public class MangueraOff : MonoBehaviour
 
     }
 
-    IEnumerator CooldownRoutine()
+    IEnumerator CooldownRoutineA()
     {
-        yield return new WaitForSeconds(cooldownTime);
+        yield return new WaitForSeconds(cooldownTime * 1.80f);
+        anim.SetBool("IsAttacking", false);
+        Fire();
+        poder = 0;
+
     }
 
     IEnumerator CooldownRoutine2()
