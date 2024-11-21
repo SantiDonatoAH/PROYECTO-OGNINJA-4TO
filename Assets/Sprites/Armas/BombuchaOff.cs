@@ -43,6 +43,7 @@ public class BombuchaOff : MonoBehaviourPunCallbacks
         if (anim.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
             anim.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutineA()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
 
             Fire();
         }
@@ -50,6 +51,7 @@ public class BombuchaOff : MonoBehaviourPunCallbacks
         if (anim2.GetBool("IsHoldingBombucha2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
         {
             anim2.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutine2A()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
 
             Fire2();
         }
@@ -76,7 +78,6 @@ public class BombuchaOff : MonoBehaviourPunCallbacks
 
         canFire = false; // Inicia el cooldown
         StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
-        StartCoroutine(CooldownRoutineA()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
 
     }
 
@@ -101,7 +102,6 @@ public class BombuchaOff : MonoBehaviourPunCallbacks
 
         canFire2 = false; // Inicia el cooldown para el segundo jugador
         StartCoroutine(CooldownRoutine2()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
-        StartCoroutine(CooldownRoutine2A()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
     }
 
     IEnumerator CooldownRoutine()
@@ -118,7 +118,7 @@ public class BombuchaOff : MonoBehaviourPunCallbacks
 
     IEnumerator CooldownRoutineA()
     {
-        yield return new WaitForSeconds(cooldownTime / 3);
+        yield return new WaitForSeconds(cooldownTime / 4);
         anim.SetBool("IsAttacking", false);
 
     }
@@ -126,7 +126,7 @@ public class BombuchaOff : MonoBehaviourPunCallbacks
 
     IEnumerator CooldownRoutine2A()
     {
-        yield return new WaitForSeconds(cooldownTime2 / 3);
+        yield return new WaitForSeconds(cooldownTime2 / 4);
         anim2.SetBool("IsAttacking", false);
 
     }
