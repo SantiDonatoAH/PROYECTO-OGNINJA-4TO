@@ -65,7 +65,7 @@ public class FlotaflotaOff : MonoBehaviourPunCallbacks
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
-                ApplyKnockback(ninja1Blink.gameObject);
+                ApplyKnockback(ninja2Blink.gameObject);
             }
             canFire = false;
             StartCoroutine(CooldownRoutine());
