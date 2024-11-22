@@ -29,8 +29,8 @@ public class Manguera : MonoBehaviourPunCallbacks
     public float cooldownTime = 0.085f;
     public float cooldownTime2 = 0.085f;
 
-    public float sumador = 0.02f;
-    public float sumador2 = 0.02f;
+    public float sumador = 0.04f;
+    public float sumador2 = 0.04f;
 
     public float poder = 0f;
     public float poder2 = 0f;
@@ -74,6 +74,9 @@ public class Manguera : MonoBehaviourPunCallbacks
         }
         else if (anim.GetBool("IsHoldingManguera") == true && Input.GetKeyUp(KeyCode.LeftShift) && view.IsMine)
         {
+            anim.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutineA());
+
             Fire();
         }
 
@@ -88,6 +91,9 @@ public class Manguera : MonoBehaviourPunCallbacks
         }
         else if (anim2.GetBool("IsHoldingManguera2") == true && Input.GetKeyUp(KeyCode.L) && view2.IsMine)
         {
+            anim2.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutine2A());
+
             Fire2();
         }
 
@@ -162,15 +168,24 @@ public class Manguera : MonoBehaviourPunCallbacks
 
     }
 
-    IEnumerator CooldownRoutine()
-        {
-            yield return new WaitForSeconds(cooldownTime);
-        }
+   
 
-        IEnumerator CooldownRoutine2()
+        IEnumerator CooldownRoutine2A()
         {
-            yield return new WaitForSeconds(cooldownTime2);
+        yield return new WaitForSeconds(cooldownTime * 1.80f);
+        anim2.SetBool("IsAttacking", false);
+        Fire2();
+        poder = 0;
 
-        }
-    
+    }
+
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime * 1.80f);
+        anim.SetBool("IsAttacking", false);
+        Fire();
+        poder = 0;
+
+    }
+
 }

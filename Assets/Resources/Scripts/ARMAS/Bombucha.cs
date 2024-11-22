@@ -46,15 +46,21 @@ public class Bombucha : MonoBehaviourPunCallbacks
 
     void Update()
     {
-        
 
-        if (anim.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire && view.IsMine)
+
+        if (anim.GetBool("IsHoldingBombucha") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
+            anim.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutineA()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
+
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingBombucha2") == true && Input.GetKeyDown(KeyCode.L) && canFire2 && view2.IsMine)
+        if (anim2.GetBool("IsHoldingBombucha2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
         {
+            anim2.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutine2A()); // Inicia el Coroutine para esperar 1.5 segundos para el segundo jugador
+
             Fire2();
         }
     }
@@ -115,5 +121,19 @@ public class Bombucha : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime / 4);
+        anim.SetBool("IsAttacking", false);
+
+    }
+
+
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2 / 4);
+        anim2.SetBool("IsAttacking", false);
+
     }
 }

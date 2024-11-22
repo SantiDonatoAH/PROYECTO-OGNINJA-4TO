@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Flotaflota : MonoBehaviourPunCallbacks
 {
+    public float knockbackForce = 10f;
 
     public GameObject ninja1;
     public GameObject ninja2;
@@ -75,6 +76,8 @@ public class Flotaflota : MonoBehaviourPunCallbacks
             }
             canFire = false;
             StartCoroutine(CooldownRoutine());
+            StartCoroutine(CooldownRoutineA());
+
         }
 
         if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingFlotaflota2") == true && canFire2 && view2.IsMine)
@@ -90,6 +93,8 @@ public class Flotaflota : MonoBehaviourPunCallbacks
             }
             canFire2 = false; // Inicia el cooldown para el segundo jugador
             StartCoroutine(CooldownRoutine2());
+            StartCoroutine(CooldownRoutine2A());
+
         }
     }
 
@@ -99,14 +104,20 @@ public class Flotaflota : MonoBehaviourPunCallbacks
         return distance < 2.5f;
     }
 
-    void endAttack1()
+    IEnumerator CooldownRoutineA()
     {
+        yield return new WaitForSeconds(cooldownTime / 3);
         anim.SetBool("IsAttacking", false);
+
     }
-    void endAttack2()
+
+    IEnumerator CooldownRoutine2A()
     {
+        yield return new WaitForSeconds(cooldownTime2 / 3);
         anim2.SetBool("IsAttacking", false);
+
     }
+
 
     IEnumerator CooldownRoutine()
     {
@@ -118,5 +129,17 @@ public class Flotaflota : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true;
+    }
+    void ApplyKnockback(GameObject player)
+    {
+        // Calcula la dirección de knockback como la dirección opuesta a la bala
+        Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+
+        // Accede al Rigidbody2D del jugador y aplica la fuerza de retroceso
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
     }
 }
