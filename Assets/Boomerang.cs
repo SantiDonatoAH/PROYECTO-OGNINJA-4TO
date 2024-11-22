@@ -23,7 +23,7 @@ public class Boomerang : MonoBehaviourPunCallbacks
     public int multiplicador = 0;
     public int multiplicador2 = 0;
 
-    [SerializeField] private AudioClip pewSound;
+    [SerializeField] private AudioClip[] pewSound;
 
     private bool canFire = true;  // Controla el cooldown para el primer jugador
     private bool canFire2 = true; // Controla el cooldown para el segundo jugador
@@ -63,11 +63,17 @@ public class Boomerang : MonoBehaviourPunCallbacks
 
         if (anim.GetBool("IsHoldingBoomerang") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire && view.IsMine)
         {
+            anim.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutineA()); // Inicia el Coroutine para esperar 1.5 segundos
+
             Fire();
         }
 
         if (anim2.GetBool("IsHoldingBoomerang2") == true && Input.GetKeyDown(KeyCode.L) && canFire2 && view2.IsMine)
         {
+            anim2.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutine2A()); // Inic
+
             Fire2();
         }
 
@@ -91,7 +97,8 @@ public class Boomerang : MonoBehaviourPunCallbacks
 
         rb = nuevaBala.GetComponent<Rigidbody2D>();
         rb.velocity = firePoint.right * bulletSpeed;
-        AudioManager.instance.PlaySound(pewSound);
+        AudioClip randomWhooshSound = pewSound[Random.Range(0, pewSound.Length)];
+        AudioManager.instance.PlaySound(randomWhooshSound);
 
         canFire = false; // Inicia el cooldown
         StartCoroutine(CooldownRoutine()); // Inicia el Coroutine para esperar 1.5 segundos
@@ -114,7 +121,8 @@ public class Boomerang : MonoBehaviourPunCallbacks
 
         Rigidbody2D rb2 = nuevaBala2.GetComponent<Rigidbody2D>();
         rb2.velocity = firePoint2.right * bulletSpeed;
-        AudioManager.instance.PlaySound(pewSound);
+        AudioClip randomWhooshSound = pewSound[Random.Range(0, pewSound.Length)];
+        AudioManager.instance.PlaySound(randomWhooshSound);
 
         canFire2 = false; // Inicia el cooldown para el segundo jugador
         StartCoroutine(CooldownRoutine2()); // Inic
@@ -132,4 +140,18 @@ public class Boomerang : MonoBehaviourPunCallbacks
         canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
     }
 
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime / 3);
+        anim.SetBool("IsAttacking", false);
+
+    }
+
+
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2 / 3);
+        anim2.SetBool("IsAttacking", false);
+
+    }
 }

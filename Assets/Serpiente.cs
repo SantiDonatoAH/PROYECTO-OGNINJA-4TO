@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class Serpiente : MonoBehaviourPunCallbacks
 {
+    public float knockbackForce = 10f;
 
     public GameObject ninja1;
     public GameObject ninja2;
@@ -62,12 +63,13 @@ public class Serpiente : MonoBehaviourPunCallbacks
     [PunRPC]
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingSerpiente") == true && canFire && view.IsMine)
+        if (Input.GetKeyDown(KeyCode.LeftShift) && anim.GetBool("IsHoldingSerpiente") == true && canFire)
         {
             canFire = false;
             anim.SetBool("IsAttacking", true);
             if (IsInRange(ninja1, ninja2))
             {
+                ApplyKnockback(ninja2Blink.gameObject);
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
                 ninja2Blink.Blink();
@@ -79,13 +81,16 @@ public class Serpiente : MonoBehaviourPunCallbacks
             {
                 StartCoroutine(CooldownRoutine());
             }
+            StartCoroutine(CooldownRoutineA());
+
         }
-        if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingSerpiente2") == true && canFire2 && view2.IsMine)
+        if (Input.GetKeyDown(KeyCode.L) && anim2.GetBool("IsHoldingSerpiente2") == true && canFire2)
         {
             canFire2 = false; // Inicia el cooldown para el segundo jugador
             anim2.SetBool("IsAttacking", true);
             if (IsInRange(ninja2, ninja1))
             {
+                ApplyKnockback(ninja1Blink.gameObject);
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
                 ninja1Blink.Blink();
@@ -97,6 +102,8 @@ public class Serpiente : MonoBehaviourPunCallbacks
             {
                 StartCoroutine(CooldownRoutine2());
             }
+            StartCoroutine(CooldownRoutine2A());
+
         }
     }
 
@@ -106,15 +113,7 @@ public class Serpiente : MonoBehaviourPunCallbacks
         return distance < 2.5f;
     }
 
-    void endAttack1()
-    {
-        anim.SetBool("IsAttacking", false);
-    }
-    void endAttack2()
-    {
-        anim2.SetBool("IsAttacking", false);
-    }
-
+   
     IEnumerator CooldownRoutineH()
     {
         yield return new WaitForSeconds(cooldownTime);
@@ -147,5 +146,31 @@ public class Serpiente : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true;
+    }
+
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime / 3);
+        anim.SetBool("IsAttacking", false);
+
+    }
+
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2 / 3);
+        anim2.SetBool("IsAttacking", false);
+
+    }
+    void ApplyKnockback(GameObject player)
+    {
+        // Calcula la dirección de knockback como la dirección opuesta a la bala
+        Vector2 knockbackDirection = (player.transform.position - transform.position).normalized;
+
+        // Accede al Rigidbody2D del jugador y aplica la fuerza de retroceso
+        Rigidbody2D playerRb = player.GetComponent<Rigidbody2D>();
+        if (playerRb != null)
+        {
+            playerRb.AddForce(knockbackDirection * knockbackForce, ForceMode2D.Impulse);
+        }
     }
 }

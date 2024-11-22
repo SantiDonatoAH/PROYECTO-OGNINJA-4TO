@@ -48,13 +48,19 @@ public class Roca : MonoBehaviourPunCallbacks
     {
 
 
-        if (anim.GetBool("IsHoldingRoca") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire && view.IsMine)
+        if (anim.GetBool("IsHoldingRoca") == true && Input.GetKeyDown(KeyCode.LeftShift) && canFire)
         {
+            anim.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutineA()); // Inicia el Coroutine para esperar 1.5 segundos
+
             Fire();
         }
 
-        if (anim2.GetBool("IsHoldingRoca2") == true && Input.GetKeyDown(KeyCode.L) && canFire2 && view2.IsMine)
+        if (anim2.GetBool("IsHoldingRoca2") == true && Input.GetKeyDown(KeyCode.L) && canFire2)
         {
+            anim2.SetBool("IsAttacking", true);
+            StartCoroutine(CooldownRoutine2A()); // Inicia el Coroutine para esperar 1.5 segundos
+
             Fire2();
         }
     }
@@ -115,5 +121,19 @@ public class Roca : MonoBehaviourPunCallbacks
     {
         yield return new WaitForSeconds(cooldownTime2);
         canFire2 = true; // Habilita el disparo nuevamente después de 1.5 segundos
+    }
+    IEnumerator CooldownRoutineA()
+    {
+        yield return new WaitForSeconds(cooldownTime / 3);
+        anim.SetBool("IsAttacking", false);
+
+    }
+
+
+    IEnumerator CooldownRoutine2A()
+    {
+        yield return new WaitForSeconds(cooldownTime2 / 3);
+        anim2.SetBool("IsAttacking", false);
+
     }
 }
