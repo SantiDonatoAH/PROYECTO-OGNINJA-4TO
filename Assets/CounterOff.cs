@@ -48,6 +48,8 @@ public class CounterOff : MonoBehaviour
             playerb.enabled = true;
             playerb2.enabled = true;
             abilty.enabled = true;
+            abilty.Ninja1();
+            abilty.Ninja2();
         }
     }
 

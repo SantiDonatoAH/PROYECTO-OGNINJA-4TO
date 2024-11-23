@@ -52,17 +52,15 @@ public class abilitySelectorOff : MonoBehaviour
 
     private float RocaC = .5f;
 
-    public float Vida1 = 15;
-    public float Vida2 = 15;
+    public static float Vida1 = 15;
+    public static float Vida2 = 15;
 
     public string newWeaponName;
 
     // Start is called before the first frame update
     void Start()
     {
-
-        Ninja1();
-        Ninja2();
+        
 
 
         // h1 = habilidades.habilidadesDropdown1.text;
@@ -73,10 +71,10 @@ public class abilitySelectorOff : MonoBehaviour
     {
 
     }
-    void Ninja1()
+   public void Ninja1()
     {
         h1 = abilities[Random.Range(0, abilities.Length)];
-
+        playerblink.health = Vida1 * 0.6666666666f;
         Debug.Log(h1);
 
         if (h1 == "salto")
@@ -159,9 +157,10 @@ public class abilitySelectorOff : MonoBehaviour
         }
     }
 
-    void Ninja2()
+  public  void Ninja2()
     {
-        h2 = abilities[Random.Range(0, abilities.Length)];
+        h2 = abilities[Random.Range(0, abilities.Length)]; playerblink2.health = Vida2 * 0.6666666666f;
+
         Debug.Log(h2);
 
         if (h2 == "salto")
@@ -242,5 +241,11 @@ public class abilitySelectorOff : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void CambioV(float vida)
+    {
+        Vida1 = vida;
+            Vida2 = vida;
     }
 }

@@ -65,11 +65,12 @@ public class ajustes : MonoBehaviour
         abilty.enabled = true;
         coff.rondas(rondas)  ;
 
-        playerb.health = Vida;
-        playerb2.health = Vida;
-        abilty.Vida1 = Vida + vida/2;
-        abilty.Vida2 = Vida + vida/2;
+        playerb.health = vida;
+        playerb2.health = vida;
 
+        abilty.CambioV(vida + vida/2);
+        abilty.Ninja1();
+        abilty.Ninja2();
         float panelWidth = panelRectTransform.rect.width;
 
         // Mueve el panel fuera de la pantalla hacia la izquierda
