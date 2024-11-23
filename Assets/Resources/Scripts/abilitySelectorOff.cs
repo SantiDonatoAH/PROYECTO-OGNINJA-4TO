@@ -36,6 +36,9 @@ public class abilitySelectorOff : MonoBehaviour
     public Image image1;
     public Image image2;
 
+    public static float restar = 0.75f;
+    public static float restar2 = 0.75f;
+
     private float BombuchaC = .5f;
 
     private float FlotaflotaC = .375f;
@@ -57,6 +60,8 @@ public class abilitySelectorOff : MonoBehaviour
 
     public string newWeaponName;
 
+    public static float vn, dn;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +79,8 @@ public class abilitySelectorOff : MonoBehaviour
    public void Ninja1()
     {
         h1 = abilities[Random.Range(0, abilities.Length)];
-        playerblink.health = Vida1 * 0.6666666666f;
+        playerblink.health = vn;
+        playerblink2.restar = dn;
         Debug.Log(h1);
 
         if (h1 == "salto")
@@ -93,7 +99,7 @@ public class abilitySelectorOff : MonoBehaviour
         if (h1 == "daño")
         {
             image1.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "da�o"
-            playerblink2.restar = .75f;
+            playerblink2.restar = restar;
         }
 
         if (h1 == "velocidad")
@@ -159,7 +165,7 @@ public class abilitySelectorOff : MonoBehaviour
 
   public  void Ninja2()
     {
-        h2 = abilities[Random.Range(0, abilities.Length)]; playerblink2.health = Vida2 * 0.6666666666f;
+        h2 = abilities[Random.Range(0, abilities.Length)]; playerblink2.health = vn; playerblink.restar = dn;
 
         Debug.Log(h2);
 
@@ -179,7 +185,7 @@ public class abilitySelectorOff : MonoBehaviour
         if (h2 == "da�o")
         {
             image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "da�o"
-            playerblink.restar = .75f;
+            playerblink.restar = restar2;
         }
 
         if (h2 == "velocidad")
@@ -243,9 +249,17 @@ public class abilitySelectorOff : MonoBehaviour
         }
     }
 
-    public void CambioV(float vida)
+    public void CambioV(float vida, float normal)
     {
         Vida1 = vida;
             Vida2 = vida;
+        vn = normal;
+    }
+
+    public void CambioD(float vida, float normal)
+    {
+        restar = vida;
+        restar2 = vida;
+        dn = normal;
     }
 }

@@ -23,7 +23,7 @@ public class ajustes : MonoBehaviour
 
     public RectTransform panelRectTransform;
 
-    public Slider sliderV, sliderR;
+    public Slider sliderV, sliderR, sliderD;
 
     public CounterOff coff;
 
@@ -58,6 +58,7 @@ public class ajustes : MonoBehaviour
     public void OnHide() {
         float vida = sliderV.value;
         int rondas = (int)sliderR.value; // Resultado: 5
+        float daño = sliderD.value;
 
 
         playerb.enabled = true;
@@ -68,7 +69,9 @@ public class ajustes : MonoBehaviour
         playerb.health = vida;
         playerb2.health = vida;
 
-        abilty.CambioV(vida + vida/2);
+        abilty.CambioV(vida + vida/2, vida);
+        abilty.CambioD(daño + daño/ 2, daño);
+
         abilty.Ninja1();
         abilty.Ninja2();
         float panelWidth = panelRectTransform.rect.width;
