@@ -49175,7 +49175,7 @@ PrefabInstance:
     - target: {fileID: 2739908698514256174, guid: d2c2d02906a9b1b4f94b862a418b0a08,
         type: 3}
       propertyPath: blinks
-      value: 100
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2c2d02906a9b1b4f94b862a418b0a08, type: 3}

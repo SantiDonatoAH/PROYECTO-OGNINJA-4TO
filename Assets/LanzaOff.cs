@@ -90,6 +90,8 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         }
         else if (anim2.GetBool("IsHoldingLanza2") == true && Input.GetKeyUp(KeyCode.L))
         {
+            anim2.SetBool("IsAttacking", true);
+
             StartCoroutine(CooldownRoutine2A());
 
         }
@@ -143,7 +145,6 @@ public class LanzaOff : MonoBehaviourPunCallbacks
         rb2 = nuevaBala.GetComponent<Rigidbody2D>();
         rb2.velocity = firePoint.right * bulletSpeed * poder2;
         StartCoroutine(CooldownRoutine2());
-        StartCoroutine(CooldownRoutine2A());
 
     }
 
