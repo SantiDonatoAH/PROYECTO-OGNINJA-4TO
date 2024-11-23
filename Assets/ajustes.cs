@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class ajustes : MonoBehaviour
@@ -18,9 +19,19 @@ public class ajustes : MonoBehaviour
     public int Vida = 10;
     public int Rondas = 3;
 
+    public static ajustes instance;
+
+    public RectTransform panelRectTransform;
+
+    public Slider sliderV, sliderR;
+
+    public CounterOff coff;
+
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
+       
+          
         
     }
 
@@ -30,18 +41,7 @@ public class ajustes : MonoBehaviour
         
     }
 
-    public void OnmasVida()
-    {
-        Vida += 1;
-        inputVida.text = Vida.ToString();
-    }
-    public void OnmenosVida()
-    {
-        Vida -= 1;
-        inputVida.text = Vida.ToString();
-
-    }
-
+   
     public void OnmasRondas()
     {
         Rondas += 1;
@@ -56,14 +56,23 @@ public class ajustes : MonoBehaviour
     }
 
     public void OnHide() {
+        float vida = sliderV.value;
+        int rondas = (int)sliderR.value; // Resultado: 5
+
+
         playerb.enabled = true;
         playerb2.enabled = true;
         abilty.enabled = true;
+        coff.rondas(rondas)  ;
 
         playerb.health = Vida;
         playerb2.health = Vida;
-        abilty.Vida1 = Vida + 5;
-        abilty.Vida2 = Vida + 5;
-        panel.SetActive(false);
-            }
+        abilty.Vida1 = Vida + vida/2;
+        abilty.Vida2 = Vida + vida/2;
+
+        float panelWidth = panelRectTransform.rect.width;
+
+        // Mueve el panel fuera de la pantalla hacia la izquierda
+        panelRectTransform.anchoredPosition = new Vector2(-panelWidth, panelRectTransform.anchoredPosition.y);
+    }
 }

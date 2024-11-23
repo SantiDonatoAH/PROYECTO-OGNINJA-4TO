@@ -14,16 +14,19 @@ public class CounterOff : MonoBehaviour
 
     public Text pts2;
     public Text pts1;
-    public int Rondas = 3;
+    public static int Rondas = 3;
     public GameObject PanelVictoria;
     public GameObject Texto1;
     public GameObject Texto2;
 
+    public playerBlink2Off playerb2;
+    public PlayerBlinkOff playerb;
+    public abilitySelectorOff abilty;
     // Variables estáticas para mantener los valores
     public  static int score1 = 0;
     public static int score2 = 0;
 
-    // Start is called before the first frame update
+    public RectTransform panelRectTransform;
     void Start()
     {
         ninja1 = GameObject.FindGameObjectWithTag("player1");
@@ -35,6 +38,17 @@ public class CounterOff : MonoBehaviour
         PanelVictoria.SetActive(false);
         Texto1.SetActive(false);
         Texto2.SetActive(false);
+
+        if (score1 != 0 || score2 != 0)
+        {
+            float panelWidth = panelRectTransform.rect.width;
+
+            // Mueve el panel fuera de la pantalla hacia la izquierda
+            panelRectTransform.anchoredPosition = new Vector2(-panelWidth, panelRectTransform.anchoredPosition.y);
+            playerb.enabled = true;
+            playerb2.enabled = true;
+            abilty.enabled = true;
+        }
     }
 
     public void WIN1()
@@ -89,5 +103,8 @@ public class CounterOff : MonoBehaviour
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
+    public void rondas(int cant)
+    {
+        Rondas = cant;
+    }
 }

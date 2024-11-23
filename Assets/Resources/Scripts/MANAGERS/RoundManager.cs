@@ -71,7 +71,7 @@ public class RoundManager : MonoBehaviourPunCallbacks
                     wsO.SpawnWeaponN();
                     wsO.SpawnWeaponN();
                 }
-                ab.enabled = true;
+//                ab.enabled = true;
 
             }
             ranzo = false;
