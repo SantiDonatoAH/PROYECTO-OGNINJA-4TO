@@ -23,22 +23,23 @@ public class ajustes : MonoBehaviour
 
     public RectTransform panelRectTransform;
 
-    public Slider sliderV, sliderR, sliderD;
+    public Slider sliderV, sliderR;
+    public  Text textoD;
+
 
     public CounterOff coff;
 
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
-       
-          
-        
+        Time.timeScale = 0;
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
     }
 
    
@@ -56,9 +57,12 @@ public class ajustes : MonoBehaviour
     }
 
     public void OnHide() {
+        Time.timeScale = 1;
+
         float vida = sliderV.value;
         int rondas = (int)sliderR.value; // Resultado: 5
-        float daño = sliderD.value;
+        float number = float.Parse(textoD.text); // Convierte el string a float
+        float daño = number;
 
 
         playerb.enabled = true;
@@ -79,4 +83,11 @@ public class ajustes : MonoBehaviour
         // Mueve el panel fuera de la pantalla hacia la izquierda
         panelRectTransform.anchoredPosition = new Vector2(-panelWidth, panelRectTransform.anchoredPosition.y);
     }
+
+    public void Dont() 
+    {
+        counter.delete();
+    }
+
+
 }

@@ -26,7 +26,10 @@ public class CounterOff : MonoBehaviour
     public  static int score1 = 0;
     public static int score2 = 0;
 
+    public static bool reactive = true;
     public RectTransform panelRectTransform;
+
+    public Image im;
     void Start()
     {
         ninja1 = GameObject.FindGameObjectWithTag("player1");
@@ -39,8 +42,10 @@ public class CounterOff : MonoBehaviour
         Texto1.SetActive(false);
         Texto2.SetActive(false);
 
-        if (score1 != 0 || score2 != 0)
+        if ((score1 != 0 || score2 != 0) || reactive == false)
         {
+            Time.timeScale = 1;
+
             float panelWidth = panelRectTransform.rect.width;
 
             // Mueve el panel fuera de la pantalla hacia la izquierda
@@ -104,9 +109,31 @@ public class CounterOff : MonoBehaviour
         Time.timeScale = 1;
 
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+
+
     }
     public void rondas(int cant)
     {
         Rondas = cant;
+    }
+
+    public void delete()
+    {
+        reactive = false;
+        im.sprite = Resources.Load<Sprite>("no");
+
+    }
+
+    public void Change()
+    {
+        reactive = !reactive;
+        if (reactive == true)
+        {
+            im.sprite = Resources.Load<Sprite>("si");
+        }
+        else
+        {
+            im.sprite = Resources.Load<Sprite>("no");
+        }
     }
 }

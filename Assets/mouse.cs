@@ -1,24 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class texttoslide : MonoBehaviour
+public class mouse : MonoBehaviour
 {
-    public Text texto;
-    public Slider slider;
+    public Text hint;
     // Start is called before the first frame update
     void Start()
     {
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        float valor = slider.value;
-        float trimmedFloat = Mathf.Floor(valor * 10) / 10;
-
-        texto.text = trimmedFloat.ToString();
+        
     }
+
+    void OnMouseOver()
+    {
+        hint.enabled = true;    }
+    void OnMouseExit()
+    {
+        hint.enabled = false;
+    }
+
 }
