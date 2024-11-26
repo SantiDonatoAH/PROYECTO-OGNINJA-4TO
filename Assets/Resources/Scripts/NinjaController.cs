@@ -269,7 +269,7 @@ public class NinjaController : MonoBehaviourPunCallbacks
             collision.gameObject.transform.position = new Vector2(100, 0);  // Mover el arma fuera de la pantalla
             isHoldingWeapon = true;
             anim.SetBool("IsHolding" + weaponName, true);
-            anim.SetBool("IsHoldingWeapon2", true);
+            anim.SetBool("IsHoldingWeapon", true);
 
             // Sincronizar con todos los jugadores
             var script = collision.gameObject.GetComponent(newWeaponName + "100") as MonoBehaviourPunCallbacks;

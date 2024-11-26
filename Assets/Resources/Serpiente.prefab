@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474d3944d1460614f9f2a859a4165b78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  knockbackForce: 10
   ninja1: {fileID: 0}
   ninja2: {fileID: 0}
   anim: {fileID: 0}

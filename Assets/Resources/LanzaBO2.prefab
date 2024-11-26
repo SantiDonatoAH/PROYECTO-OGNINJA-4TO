@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 4170975709237221932}
   - component: {fileID: 4170975709237221934}
   - component: {fileID: 4170975709237221929}
-  - component: {fileID: -7784246473071968789}
   - component: {fileID: 2583997617026807874}
+  - component: {fileID: -3579690961365415545}
   m_Layer: 0
-  m_Name: Lanza 1
+  m_Name: LanzaBO2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -166,18 +166,6 @@ MonoBehaviour:
     InterpolateOption: 0
     InterpolateMoveTowardsSpeed: 1
     InterpolateLerpSpeed: 0
---- !u!114 &-7784246473071968789
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4170975709237221920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3faf1f30e3073ad4c9fa1e10ce35cdda, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!68 &2583997617026807874
 EdgeCollider2D:
   m_ObjectHideFlags: 0
@@ -203,3 +191,19 @@ EdgeCollider2D:
   m_AdjacentEndPoint: {x: 0, y: 0}
   m_UseAdjacentStartPoint: 0
   m_UseAdjacentEndPoint: 0
+--- !u!114 &-3579690961365415545
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4170975709237221920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 905ad06f09599bd4dbc6f77ecf7d0e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shooterTag: 
+  knockbackForce: 10
+  rb: {fileID: 4170975709237221932}
+  i: 0

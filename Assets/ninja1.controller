@@ -3447,7 +3447,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 1102899812881142198}
-    m_Position: {x: 360, y: 130, z: 0}
+    m_Position: {x: 670, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1102363235461882994}
     m_Position: {x: -890, y: -320, z: 0}
@@ -4923,7 +4923,7 @@ AnimatorStateTransition:
     m_ConditionEvent: IsCrouching
     m_EventTreshold: 0
   - m_ConditionMode: 1
-    m_ConditionEvent: IsHoldingRoca
+    m_ConditionEvent: IsHoldingBoomerang
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: IsJumping

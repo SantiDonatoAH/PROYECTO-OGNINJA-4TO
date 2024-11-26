@@ -105,6 +105,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 4170975709237221932, guid: 4b12bec70c19d574c894c12554fb3ceb, type: 3}
   agua: {fileID: 4170975709237221920, guid: 4b12bec70c19d574c894c12554fb3ceb, type: 3}
+  rb2: {fileID: 0}
+  agua2: {fileID: 0}
   bulletSpeed: 4
   anim: {fileID: 0}
   anim2: {fileID: 0}
