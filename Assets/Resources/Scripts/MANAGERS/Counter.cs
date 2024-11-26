@@ -17,13 +17,13 @@ public class Counter : MonoBehaviourPunCallbacks
     public Text pts1;
     public int Rondas = 3;
     public GameObject PanelVictoria;
-    public GameObject Texto1;
-    public GameObject Texto2;
 
     // Variables estáticas para mantener los valores
     private static int score1 = 0;
     private static int score2 = 0;
 
+    public GameObject i1;
+    public GameObject i2;
     // Start is called before the first frame update
     void Start()
     {
@@ -36,8 +36,7 @@ public class Counter : MonoBehaviourPunCallbacks
         pts2.text = score2.ToString();
 
         PanelVictoria.SetActive(false);
-        Texto1.SetActive(false);
-        Texto2.SetActive(false);
+       
     }
 
     public void WIN1()
@@ -54,7 +53,15 @@ public class Counter : MonoBehaviourPunCallbacks
             combatManagerOff.enabled = false;
             Time.timeScale = 0;
             PanelVictoria.SetActive(true);
-            Texto1.SetActive(true);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                i1.SetActive(true);
+            }
+            else
+            {
+                i2.SetActive(true);
+            }
+
         }
         else
         {
@@ -78,12 +85,22 @@ public class Counter : MonoBehaviourPunCallbacks
             combatManagerOff.enabled = false;
             Time.timeScale = 0;
             PanelVictoria.SetActive(true);
-            Texto2.SetActive(true);
+            if (PhotonNetwork.IsMasterClient)
+            {
+                i2.SetActive(true);
+            }
+            else
+            {
+                i1.SetActive(true);
+            }
+
         }
         else
         {
             PhotonNetwork.LoadLevel(SceneManager.GetActiveScene().buildIndex);
         }
+
+       
     }
     [PunRPC]
     public void OnBorrar()
