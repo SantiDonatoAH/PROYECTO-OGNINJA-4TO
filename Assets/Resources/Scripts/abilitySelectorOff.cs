@@ -182,7 +182,7 @@ public class abilitySelectorOff : MonoBehaviour
             playerblink2.health = Vida2;
         }
 
-        if (h2 == "da�o")
+        if (h2 == "daño")
         {
             image2.sprite = Resources.Load<Sprite>("Daño"); // Carga la imagen correspondiente a "da�o"
             playerblink.restar = restar2;

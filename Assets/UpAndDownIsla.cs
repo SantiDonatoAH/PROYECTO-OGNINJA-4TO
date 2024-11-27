@@ -14,7 +14,8 @@ public class UpAndDownIsla : MonoBehaviour
 
     void Start()
     {
-        int cuaren = Random.Range (0,1);
+        int cuaren = Random.Range (0,2);
+        Debug.Log(cuaren);
         if (cuaren == 1) { arbol.SetActive(true); }
         // Define la posición original y la posición superior
         originalPosition = island.position;
