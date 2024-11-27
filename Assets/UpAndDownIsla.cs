@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System;
 
 public class UpAndDownIsla : MonoBehaviour
 {
@@ -11,12 +12,28 @@ public class UpAndDownIsla : MonoBehaviour
     private Vector3 topPosition;         // Posición en la parte superior
 
     public GameObject arbol;
+    public GameObject[] pastos;
 
     void Start()
     {
-        int cuaren = Random.Range (0,2);
+        int cuaren = UnityEngine.Random.Range (0,4);
         Debug.Log(cuaren);
         if (cuaren == 1) { arbol.SetActive(true); }
+        if (cuaren == 2) {
+            foreach (GameObject objeto in pastos)
+            {
+               
+                   objeto.SetActive(true);
+                
+            }
+        }
+        if (cuaren == 3) { arbol.SetActive (true); foreach (GameObject objeto in pastos)
+            {
+
+                objeto.SetActive(true);
+
+            }
+        }
         // Define la posición original y la posición superior
         originalPosition = island.position;
         topPosition = originalPosition + new Vector3(0, moveDistance, 0);
