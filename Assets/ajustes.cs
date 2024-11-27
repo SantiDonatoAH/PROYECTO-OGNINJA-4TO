@@ -62,7 +62,7 @@ public class ajustes : MonoBehaviour
         float vida = sliderV.value;
         int rondas = (int)sliderR.value; // Resultado: 5
         float number = float.Parse(textoD.text); // Convierte el string a float
-        float daño = number;
+        float daÃ±o = number;
 
 
         playerb.enabled = true;
@@ -74,7 +74,7 @@ public class ajustes : MonoBehaviour
         playerb2.health = vida;
 
         abilty.CambioV(vida + vida/2, vida);
-        abilty.CambioD(daño + daño/ 2, daño);
+        abilty.CambioD(daÃ±o + daÃ±o/ 2, daÃ±o);
 
         abilty.Ninja1();
         abilty.Ninja2();
