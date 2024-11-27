@@ -187,7 +187,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
@@ -1040,17 +1040,17 @@ TextureImporter:
       Mapsheepv2_28: 21300056
       Mapsheepv2_21: 21300042
       Mapsheepv2_19: 21300038
+      Mapsheepv2_1: 21300002
       Mapsheepv2_4: 21300008
-      Mapsheepv2_30: 21300060
       Mapsheepv2_16: 21300032
-      Mapsheepv2_22: 21300044
+      Mapsheepv2_30: 21300060
       Mapsheepv2_17: 21300034
-      Mapsheepv2_2: 21300004
+      Mapsheepv2_22: 21300044
       Mapsheepv2_31: 21300062
-      Mapsheepv2_0: 21300000
+      Mapsheepv2_2: 21300004
       Mapsheepv2_27: 21300054
       Mapsheepv2_24: 21300048
-      Mapsheepv2_1: 21300002
+      Mapsheepv2_0: 21300000
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
