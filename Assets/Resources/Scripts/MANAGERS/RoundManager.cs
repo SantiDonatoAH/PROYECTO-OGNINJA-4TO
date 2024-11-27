@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using UnityEngine.SceneManagement;
 
 public class RoundManager : MonoBehaviourPunCallbacks
 {
@@ -41,7 +42,7 @@ public class RoundManager : MonoBehaviourPunCallbacks
         weapon = GameObject.FindGameObjectWithTag("ws");
     if (weapon != null == ranzo == true)
     {
-            if (PhotonNetwork.IsConnected)
+            if (PhotonNetwork.IsConnected && SceneManager.GetActiveScene().name == "Online")
             {
                 ws = weapon.GetComponent<WeaponSpawner>();
 
