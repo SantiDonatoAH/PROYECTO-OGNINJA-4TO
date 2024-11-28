@@ -22,6 +22,8 @@ public class ScreenController : MonoBehaviourPunCallbacks
 
     public CounterOff coff;
 
+    public GameObject help;
+    public bool Ishelp = false;
     void Start()
     {
        
@@ -34,6 +36,7 @@ public class ScreenController : MonoBehaviourPunCallbacks
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
+            Ishelp = false;
             if (pausePanel.activeSelf)
             {
                 ContinuePanel();  // Cierra el panel si está abierto
@@ -53,6 +56,7 @@ public class ScreenController : MonoBehaviourPunCallbacks
             }
             
         }
+        if (Ishelp == false) { help.SetActive(false); }
     }
 
     public void PausePanel()
@@ -98,6 +102,8 @@ public class ScreenController : MonoBehaviourPunCallbacks
 
     public void OnCloseSettings()
     {
+        Ishelp = false;
+
         settingsPanel.SetActive(false);
     }
 
@@ -111,5 +117,11 @@ public class ScreenController : MonoBehaviourPunCallbacks
     public void Play()
     {
         Time.timeScale = 1;
+    }
+
+    public void OnHelp()
+    {
+        help.SetActive(true) ;
+        Ishelp = true;
     }
 }
