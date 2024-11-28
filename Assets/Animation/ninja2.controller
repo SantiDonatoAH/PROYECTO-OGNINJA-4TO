@@ -413,7 +413,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &-7765805659688791752
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1182,7 +1182,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &-5869928104584892188
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -1513,7 +1513,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1102 &-5002266054315869727
 AnimatorState:
   serializedVersion: 6
@@ -2329,7 +2329,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &-1398164435700956573
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3011,7 +3011,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &272081689976128846
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -3731,7 +3731,7 @@ AnimatorStateMachine:
     m_Position: {x: 930, y: 560, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9046422837317506477}
-    m_Position: {x: 690, y: 480, z: 0}
+    m_Position: {x: 700, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1548601154235062765}
     m_Position: {x: 460, y: 560, z: 0}
@@ -4399,7 +4399,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &2217777999357365872
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4543,6 +4543,9 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingSerpiente2
+    m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: IsAttacking
     m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: -6679047869776827333}
@@ -4892,7 +4895,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &4010065755685056622
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -5460,7 +5463,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &6472811714385469609
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -5962,7 +5965,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &8421513328326460833
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
