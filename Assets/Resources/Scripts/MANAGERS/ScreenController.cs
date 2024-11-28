@@ -26,9 +26,11 @@ public class ScreenController : MonoBehaviourPunCallbacks
     public bool Ishelp = false;
     void Start()
     {
-       
 
-        ispaused = false;
+        if (PhotonNetwork.IsConnected && SceneManager.GetActiveScene().name == "Online")
+        { }
+        else {
+            ispaused = false; }
         pausePanel.SetActive(false);
     }
     // Update is called once per frame
@@ -40,7 +42,7 @@ public class ScreenController : MonoBehaviourPunCallbacks
             if (pausePanel.activeSelf)
             {
                 ContinuePanel();  // Cierra el panel si está abierto
-                if (PhotonNetwork.IsConnected)
+                if (PhotonNetwork.IsConnected && SceneManager.GetActiveScene().name == "Online")
                 {
                     photonView.RPC("Play", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
                 }
@@ -48,7 +50,7 @@ public class ScreenController : MonoBehaviourPunCallbacks
             else
             {
                 PausePanel();
-                if (PhotonNetwork.IsConnected && SceneManager.GetActiveScene().name != "Online")
+                if (PhotonNetwork.IsConnected && SceneManager.GetActiveScene().name == "Online")
                 {
                     photonView.RPC("Reseteo", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
                 }

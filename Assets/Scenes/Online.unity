@@ -1060,14 +1060,18 @@ MonoBehaviour:
   mapas:
   - {fileID: 8995880355843126661, guid: 980ead9b90d74f54e837b5766c3973a1, type: 3}
   - {fileID: 3143022954601958004, guid: d354130f118184b4683fb05de75f72d7, type: 3}
-  pisos:
+  pisosD:
   - {fileID: 4315141124181789773, guid: 4248c18204d7e0d4aa115e2f8824965f, type: 3}
   - {fileID: 4315141124181789773, guid: ab312f8e680ce8446bb67fc51d09f84b, type: 3}
   - {fileID: 4315141124181789773, guid: a3cf85bbf55da634495af32f17abf763, type: 3}
+  pisosN:
+  - {fileID: 534219572595326303, guid: 54b6e8f0a5414a7489d2cd80084a9dc2, type: 3}
+  - {fileID: 3199611769630886230, guid: 6427382e654064f4596291a2281f5fbf, type: 3}
   ws: {fileID: 0}
   wsO: {fileID: 0}
   weapon: {fileID: 0}
   mapa: {fileID: 0}
+  piso: {fileID: 0}
   ab: {fileID: 0}
 --- !u!4 &728580641
 Transform:
@@ -2264,6 +2268,8 @@ MonoBehaviour:
   pts1: {fileID: 0}
   pts2: {fileID: 0}
   coff: {fileID: 0}
+  help: {fileID: 0}
+  Ishelp: 0
 --- !u!4 &1174501607
 Transform:
   m_ObjectHideFlags: 0
