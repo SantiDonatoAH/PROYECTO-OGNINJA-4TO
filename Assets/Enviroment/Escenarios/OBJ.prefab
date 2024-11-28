@@ -436,6 +436,7 @@ MonoBehaviour:
   moveDistance: 3
   speed: 1
   arbol: {fileID: 4873187816541565767}
+  pastos: []
 --- !u!1 &4873187816541565767
 GameObject:
   m_ObjectHideFlags: 0
