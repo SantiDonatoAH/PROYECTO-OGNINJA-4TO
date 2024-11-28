@@ -24,7 +24,7 @@ public class RoundManager : MonoBehaviourPunCallbacks
              mapa = mapas[cuaren];
             GameObject piso = pisos[Random.Range(0, pisos.Length)];
 
-        if (PhotonNetwork.IsConnected)
+        if (PhotonNetwork.IsConnected && SceneManager.GetActiveScene().name == "Online")
         {
             PhotonNetwork.Instantiate(mapa.name, mapa.transform.position, mapa.transform.rotation);
             PhotonNetwork.Instantiate(piso.name, piso.transform.position, piso.transform.rotation);

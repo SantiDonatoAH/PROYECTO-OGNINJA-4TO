@@ -9,7 +9,6 @@ public class Main : MonoBehaviour
 {
     public GameObject secondPanel;
     public GameObject panelhabilidad;
-    public GameObject PanelSettings;
     public GameObject PanelMusic;
     public GameObject PanelGame;
 
@@ -20,7 +19,6 @@ public class Main : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PanelSettings.SetActive(false);
         PanelGame.SetActive(false);
         PanelMusic.SetActive(false);
         panelhabilidad.SetActive(false);
@@ -39,7 +37,6 @@ public class Main : MonoBehaviour
 
     public void OnClickSettings()
     {
-        PanelSettings.SetActive(true);
         secondPanel.SetActive(false);
         PanelGame.SetActive(true);
         panelhabilidad.SetActive(false);
@@ -54,7 +51,6 @@ public class Main : MonoBehaviour
 
     public void OnBack()
     {
-        PanelSettings.SetActive(false);
         PanelMusic.SetActive(false);
         secondPanel.SetActive(true);
         panelhabilidad.SetActive(false);

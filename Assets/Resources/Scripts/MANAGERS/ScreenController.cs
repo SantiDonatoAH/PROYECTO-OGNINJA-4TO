@@ -56,7 +56,7 @@ public class ScreenController : MonoBehaviourPunCallbacks
             }
             
         }
-        if (Ishelp == false) { help.SetActive(false); }
+        if (Ishelp == false && SceneManager.GetActiveScene().name != "Online") { help.SetActive(false); }
     }
 
     public void PausePanel()
