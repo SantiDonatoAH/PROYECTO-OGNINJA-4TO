@@ -7,12 +7,15 @@ using UnityEngine.SceneManagement;
 public class RoundManager : MonoBehaviourPunCallbacks
 {
     public GameObject[] mapas;
-    public GameObject[] pisos;
+    public GameObject[] pisosD;
+    public GameObject[] pisosN;
 
     public WeaponSpawner ws;
     public WeaponSpawnerOff wsO;
     public GameObject weapon;
     public GameObject mapa;
+
+    public GameObject piso;
 
     public abilitySelectorOff ab;
 
@@ -20,10 +23,18 @@ public class RoundManager : MonoBehaviourPunCallbacks
     // Start is called before the first frame update
     void Start()
     {
-            int cuaren = Random.Range(0, mapas.Length);
-             mapa = mapas[cuaren];
-            GameObject piso = pisos[Random.Range(0, pisos.Length)];
+        int cuaren = Random.Range(0, mapas.Length);
+        mapa = mapas[cuaren];
 
+        if (mapa.name == "dia")
+        { 
+         piso = pisosD[Random.Range(0, pisosD.Length)];
+        }
+        else
+        {
+             piso = pisosN[Random.Range(0, pisosN.Length)];
+
+        }
         if (PhotonNetwork.IsConnected && SceneManager.GetActiveScene().name == "Online")
         {
             PhotonNetwork.Instantiate(mapa.name, mapa.transform.position, mapa.transform.rotation);
