@@ -48,7 +48,7 @@ public class ScreenController : MonoBehaviourPunCallbacks
             else
             {
                 PausePanel();
-                if (PhotonNetwork.IsConnected)
+                if (PhotonNetwork.IsConnected && SceneManager.GetActiveScene().name != "Online")
                 {
                     photonView.RPC("Reseteo", RpcTarget.All); // Llamada RPC para sincronizar el daño entre todas las sesiones
                 }
