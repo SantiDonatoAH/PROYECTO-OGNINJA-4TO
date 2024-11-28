@@ -212,7 +212,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingSerpiente2
     m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: IsJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
@@ -1427,7 +1427,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingLanza2
     m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: IsJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
@@ -1770,7 +1770,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &-3929623665604477212
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -2456,7 +2456,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingFlotaflota2
     m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: IsJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
@@ -2719,7 +2719,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingBoomerang2
     m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: IsJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
@@ -3023,8 +3023,8 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingManguera2
     m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: IsCrouching
+  - m_ConditionMode: 1
+    m_ConditionEvent: IsJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: IsAttacking
@@ -3198,7 +3198,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingBombucha2
     m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: IsJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
@@ -4560,7 +4560,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1101 &2623372847934006466
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -4653,7 +4653,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1102 &2930672956912184531
 AnimatorState:
   serializedVersion: 6
@@ -4907,7 +4907,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingRoca2
     m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: IsJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
@@ -5105,7 +5105,7 @@ AnimatorStateTransition:
   m_HasFixedDuration: 1
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
-  m_CanTransitionToSelf: 1
+  m_CanTransitionToSelf: 0
 --- !u!1102 &5053300436576075033
 AnimatorState:
   serializedVersion: 6
@@ -5475,7 +5475,7 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: IsHoldingPistola2
     m_EventTreshold: 0
-  - m_ConditionMode: 2
+  - m_ConditionMode: 1
     m_ConditionEvent: IsJumping
     m_EventTreshold: 0
   - m_ConditionMode: 1
